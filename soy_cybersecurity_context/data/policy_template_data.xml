@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Incluir en manifest.py, mientras emulemos el mismo record id el contenido se SOBREESCRIBIRÁ -->
+        <record id="policy_system_cybersecurity" model="mgmtsystem.context.system">
+            <field name="name">Seguridad de la información</field>
+        </record>
+    </data>
+
+    <!--
+    <record id="policy_template_cybersecurity" model="mgmtsystem.context.policy.template">
+        <field name="name">Política de Innovación</field>
+        <field name="sin_organization_context">Nuestra organización fue establecida en Fecha de fundación para proporcionar Productos o servicios que ofrece. Tenemos Indique sus sedes y clientes.</field>
+        <field name="sin_direction_help">Es compromiso de la Dirección que el sistema de gestión de la innovación este alineado y apoye a la Dirección en el logro de sus objetivos.</field>
+ 
+        <field name="strategies_for_innovation"> Estamos comprometidos a fomentar uan cultura de innovación en nuestra empresa. Para ello, hemos puesto en marcha una serie de iniciativas que nos ayudarán a alcanzar nuestros objetivos.</field>
+        <field name="sin_legal_req">Es compromiso de la Gerencia General de " " cumplir con los requisitos legales y reglamentarlos en materia de igualdad. Actuando con transparencia y lealtad en todo momento, con nuestros colaboradores.</field>
+        <field name="sin_standard_commitment">Nuestra organización adopta como modelos para la gestión de la innovación la norma ISO 56002 y se compromete a cumplir sus requisitos de manera ética, asegurando una sostenibilidad en el tiempo y teniendo en cuenta los principios que rigen la gestión de la innovación.</field>
+        
+        <field name="commitment_to_innovation_activitiest">La innovación es fundamental para nuestro éxito. Nos esforzamos por crear un entorno en donde se puedan practicar actividades que promuevan el pensamiento innovador y creativo de todos nuestros trabajadores.</field>
+        <field name="sin_continuous_improvement">La Gerencia General se compromete a mejorar continuamente el sistema de gestión de la innovación.</field>
+        <field name="goals_for_innovation">Nuestros principales objetivos de innovación son: Generar iniciativas de innovación, implementar las ideas de forma exitosa y mejorar el rendimiento de los procesos de la empresa. Anualmente, estos objetivos generales serán medidos.</field>
+        <field name="sin_communication">El principal encargado de lograr el cumplimiento de los descritos es el Gerente General, este debe promover y afianzar el alcance de la innovación en todos los empleados y la compañía.</field>
+
+    </record>
+    -->
+
+</odoo>
+
+
