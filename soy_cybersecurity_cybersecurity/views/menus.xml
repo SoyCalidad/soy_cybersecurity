@@ -1,0 +1,45 @@
+<odoo>
+
+    <menuitem
+        id="menu_cybersecurity_root"
+        name="Seguridad de la Información"
+        web_icon="soy_cybersecurity_cybersecurity,static/description/icon.png"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        sequence="4"
+        />
+
+    <menuitem
+        id="menu_information_asset_management"
+        name="Gestión de inventario de activos de información"
+        parent="menu_cybersecurity_root"
+        sequence="10"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        />
+
+    <!--
+    <menuitem
+        id="menu_cybersecurity"
+        name="Gestión de oportunidades"
+        parent="menu_cybersecurity_root"
+        sequence="15"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        />
+    -->
+
+    <menuitem
+        id="menu_report"
+        name="Reportes"
+        parent="menu_cybersecurity_root"
+        sequence="70"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        />
+
+    <menuitem
+        id="menu_configuration"
+        name="Configuración"
+        parent="menu_cybersecurity_root"
+        sequence="150"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        />
+
+</odoo>

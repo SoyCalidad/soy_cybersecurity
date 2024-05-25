@@ -1,0 +1,141 @@
+<odoo>
+    
+    <!--Settings Views-->
+        <!-- Resources Settings-->
+    <record id="cyber_matrix_block_line_resource_form" model="ir.ui.view">
+        <field name="name">cyber_matrix.block.line.resource.form</field>
+        <field name="model">cyber_matrix.block.line.resource</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                        <label for="name" string="Nombre del Recurso" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
+                        <field name="name" style="font-size: 18px; display: block;"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+        <!-- tree view resources
+    <record id="cyber_matrix_block_line_resource_tree" model="ir.ui.view">
+        <field name="name">cyber_matrix.block.line.resource.tree</field>
+        <field name="model">cyber_matrix.block.line.resource</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Recursos">
+                <field name="name" string="Nombre del Recurso"/>
+            </tree>
+        </field>
+    </record>
+    -->
+        <!-- Locations Settings-->
+    <record id="cyber_matrix_block_line_location_form" model="ir.ui.view">
+        <field name="name">cyber_matrix.block.line.location.form</field>
+        <field name="model">cyber_matrix.block.line.location</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                        <label for="name" string="Nombre de la Ubicación" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
+                        <field name="name" style="font-size: 18px; display: block;"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+        <!-- Language Settings-->
+    <record id="cyber_matrix_block_line_language_form" model="ir.ui.view">
+        <field name="name">cyber_matrix.block.line.language.form</field>
+        <field name="model">cyber_matrix.block.line.language</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                        <label for="name" string="Idioma" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
+                        <field name="name" style="font-size: 18px; display: block;"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+        <!-- Assets Types Settings-->
+    <record id="cyber_matrix_block_line_asset_type_form" model="ir.ui.view">
+        <field name="name">cyber_matrix.block.line.asset_type.form</field>
+        <field name="model">cyber_matrix.block.line.asset_type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                        <label for="name" string="Nombre del Tipo de Activo" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
+                        <field name="name" style="font-size: 18px; display: block;"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Actions-->
+    <record model="ir.actions.act_window" id="cyber_matrix_block_line_resource_action">
+        <field name="name">Recursos</field>
+        <field name="res_model">cyber_matrix.block.line.resource</field>
+        <field name="view_mode">tree,form</field>
+    </record>        
+
+
+    <record model="ir.actions.act_window" id="cyber_matrix_block_line_location_action">
+        <field name="name">Ubicaciones</field>
+        <field name="res_model">cyber_matrix.block.line.location</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cyber_matrix_block_line_language_action">
+        <field name="name">Idiomas</field>
+        <field name="res_model">cyber_matrix.block.line.language</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cyber_matrix_block_line_asset_type_action">
+        <field name="name">Tipos de activos</field>
+        <field name="res_model">cyber_matrix.block.line.asset_type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+        
+    <!-- Menus -->
+    <menuitem 
+        name="Recursos" 
+        id="mitem_cyber_matrix_block_line_resource" 
+        parent="menu_configuration"
+        sequence="11"
+        action="cyber_matrix_block_line_resource_action" 
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
+
+    <menuitem 
+        name="Ubicaciones" 
+        id="mitem_cyber_matrix_block_line_location" 
+        parent="menu_configuration"
+        sequence="12"
+        action="cyber_matrix_block_line_location_action" 
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
+
+    <menuitem 
+        name="Idiomas" 
+        id="mitem_cyber_matrix_block_line_language" 
+        parent="menu_configuration"
+        sequence="13"
+        action="cyber_matrix_block_line_language_action" 
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
+
+    <menuitem 
+        name="Tipos de Activos"
+        id="mitem_cyber_matrix_block_line_asset_type" 
+        parent="menu_configuration"
+        sequence="14"
+        action="cyber_matrix_block_line_asset_type_action" 
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
+
+
+</odoo>

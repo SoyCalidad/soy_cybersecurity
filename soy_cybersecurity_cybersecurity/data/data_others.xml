@@ -1,0 +1,14 @@
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Tipos de Activos -->
+
+        <record model="cyber_matrix.block.line.asset_type" id="type_asset_1">
+            <field name="name">Software</field>
+        </record>
+        <record model="cyber_matrix.block.line.asset_type" id="type_asset_2">
+            <field name="name">Hardware</field>
+        </record>
+
+    </data>
+</odoo>

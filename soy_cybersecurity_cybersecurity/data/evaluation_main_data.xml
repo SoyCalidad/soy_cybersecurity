@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="matrix_block_line_system_1" model="cyber_matrix.block.line.system">
+        <field name="name">Calidad</field>
+    </record>
+
+     <!--Evaluaciones-->
+        <record model="cyber_evaluation.evaluation" id="cyber_evaluation_1">
+            <field name="name">Evaluación de activos de información</field>
+            <!--<field name="type">risk</field>-->
+        </record>
+        
+        <!--
+        <record model="cyber_evaluation.evaluation" id="cyber_evaluation_2">
+            <field name="name">Evaluación con Indices (oportunidad)</field>
+            <field name="type">opportunity</field>
+        </record>
+        -->
+
+        <!--Criterios: cyber_evaluation_1-->
+        <record model="cyber_evaluation.criterio" id="criterio_1">
+            <field name="name">Confidencialidad</field>
+            <field name="description">La confidencialidad se refiere a la protección de la información de forma que solo las personas autorizadas puedan acceder a ella. Esto incluye la protección contra el acceso, la divulgación, la copia o la modificación no autorizados.</field>
+            <field name="evaluation_id" ref="cyber_evaluation_1"/>
+        </record>
+        <record model="cyber_evaluation.criterio" id="criterio_2">
+            <field name="name">Integridad</field>
+            <field name="description">La integridad se refiere a la protección de la información de forma que no se modifique, destruya o corrompa sin autorización. Esto incluye la protección contra el acceso no autorizado, la modificación, la destrucción o la corrupción.</field>
+            <field name="evaluation_id" ref="cyber_evaluation_1"/>
+        </record>
+        <record model="cyber_evaluation.criterio" id="criterio_3">
+            <field name="name">Disponibilidad</field>
+            <field name="description">La disponibilidad se refiere a la protección de la información de forma que esté disponible cuando se necesite. Esto incluye la protección contra la pérdida, el daño o la interrupción del acceso.</field>
+            <field name="evaluation_id" ref="cyber_evaluation_1"/>
+        </record>
+        <!--Criterio: cyber_evaluation_2-->
+        <!--
+        <record model="cyber_evaluation.criterio" id="criterio_2_1">
+            <field name="name">Impacto (I)</field>
+            <field name="description">Para cada oportunidad se tiene en cuenta y se puntúa el mejor efecto que tenga en el cliente la oportunidad especificada.</field>
+            <field name="evaluation_id" ref="cyber_evaluation_2"/>
+        </record>
+        -->
+
+        <!--lineas de Confidencialidad-->
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_1_1">
+            <field name="name">No Clasificada</field>
+            <field name="criterio_id" ref="criterio_1"/>
+            <field name="description">Información sin restricciones especiales, pero no necesariamente destinada al público general.</field>
+            <field name="value_less">8</field>
+            <field name="value_high">10</field>
+        </record>
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_1_2">
+            <field name="name">Pública</field>
+            <field name="criterio_id" ref="criterio_1"/>
+            <field name="description">Información accesible para todos sin restricciones.</field>
+            <field name="value_less">1</field>
+            <field name="value_high">3</field>
+        </record>
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_1_3">
+            <field name="name">Confidencial</field>
+            <field name="criterio_id" ref="criterio_1"/>
+            <field name="description">Información sensible que podría causar daños moderados si se divulga.</field>
+            <field name="value_less">4</field>
+            <field name="value_high">7</field>
+        </record>
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_1_4">
+            <field name="name">Altamente confidencial</field>
+            <field name="criterio_id" ref="criterio_1"/>
+            <field name="description">Información crítica cuya divulgación podría causar daños graves.</field>
+            <field name="value_less">8</field>
+            <field name="value_high">10</field>
+        </record>
+
+        <!--lineas de Impacto(I) de criterio_2_1-->
+        <!--
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_op_1">
+            <field name="name">Muy baja, Impactos imperceptibles</field>
+            <field name="criterio_id" ref="criterio_2_1"/>
+            <field name="description">No es razonable esperar que esta oportunidad de pequeña importancia origine efecto real alguno sobre el rendimiento del sistema. Se debe evaluar el costo y beneficio</field>
+            <field name="value_less">1</field>
+            <field name="value_high">1</field>
+        </record>
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_op_2">
+            <field name="name">Baja, Impactos apenas perceptibles</field>
+            <field name="criterio_id" ref="criterio_2_1"/>
+            <field name="description">La oportunidad detectada originaría un ligero cambio en el sistema, sin mayor importancia. Se debe evaluar el costo y beneficio.</field>
+            <field name="value_less">2</field>
+            <field name="value_high">3</field>
+        </record>
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_op_3">
+            <field name="name">Moderada, Impacto de relativa importancia</field>
+            <field name="criterio_id" ref="criterio_2_1"/>
+            <field name="description">La oportunidad puede tener relativa importancia para la mejora del sistema. Se debe evaluar el costo y beneficio</field>
+            <field name="value_less">4</field>
+            <field name="value_high">6</field>
+        </record>
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_op_4">
+            <field name="name">Alta</field>
+            <field name="criterio_id" ref="criterio_2_1"/>
+            <field name="description">La oportunidad tiene un impacto de mejora alto en el sistema. Es conveniente evaluar el costo y beneficio</field>
+            <field name="value_less">7</field>
+            <field name="value_high">8</field>
+        </record>
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_op_5">
+            <field name="name">Muy alta</field>
+            <field name="criterio_id" ref="criterio_2_1"/>
+            <field name="description">Oportunidad con impacto positivo muy alto, ya que presentaría una mejora muy importante en el Sistema</field>
+            <field name="value_less">9</field>
+            <field name="value_high">10</field>
+        </record>
+        -->
+        
+        <!--lineas de Integridad-->
+
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_2_1">
+            <field name="name">Baja</field>
+            <field name="criterio_id" ref="criterio_2"/>
+            <field name="description">Información importante, pero la exactitud puede tolerar ligeras modificaciones sin graves consecuencias.</field>
+            <field name="value_less">1</field>
+            <field name="value_high">3</field>
+        </record>
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_2_2">
+            <field name="name">Moderada</field>
+            <field name="criterio_id" ref="criterio_2"/>
+            <field name="description">Información muy importante donde la precisión es necesaria, pero pequeñas alteraciones no causan graves daños.</field>
+            <field name="value_less">4</field>
+            <field name="value_high">7</field>
+        </record>
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_2_3">
+            <field name="name">Alta</field>
+            <field name="criterio_id" ref="criterio_2"/>
+            <field name="description">Información crítica que debe mantenerse exacta y sin alteraciones.</field>
+            <field name="value_less">8</field>
+            <field name="value_high">10</field>
+        </record>
+
+        <!--lineas de Disponibilidad-->
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_3_1">
+            <field name="name">Baja</field>
+            <field name="criterio_id" ref="criterio_3"/>
+            <field name="description">La accesibilidad es importante, pero puede tolerar interrupciones ocasionales sin graves consecuencias.</field>
+            <field name="value_less">1</field>
+            <field name="value_high">3</field>
+        </record>        
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_3_2">
+            <field name="name">Media</field>
+            <field name="criterio_id" ref="criterio_3"/>
+            <field name="description">Debe estar accesible en la mayoría de los casos, pero puede tolerar breves periodos de inaccesibilidad.</field>
+            <field name="value_less">4</field>
+            <field name="value_high">7</field>
+        </record>
+        <record model="cyber_evaluation.criterio.line" id="criterio_line_3_3">
+            <field name="name">Alta</field>
+            <field name="criterio_id" ref="criterio_3"/>
+            <field name="description">Debe estar siempre accesible, su falta puede causar daños graves.</field>
+            <field name="value_less">8</field>
+            <field name="value_high">10</field>
+        </record>
+
+</odoo>
