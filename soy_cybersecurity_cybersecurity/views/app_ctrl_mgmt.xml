@@ -1,0 +1,124 @@
+<odoo>
+    <!--
+    <record model="ir.ui.view" id="cyber_view_2matrix_block_search">
+        <field name="name">cyber_2matrix.block.search</field>
+        <field name="model">cyber_2matrix.block</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="state" />
+            </search>
+        </field>
+    </record>
+    -->
+
+
+    <record model="ir.ui.view" id="cyber_view_2matrix_block_line_tree">
+        <field name="name">cyber_2matrix.block.line.tree</field>
+        <field name="model">cyber_2matrix.block.line</field>
+        <field name="arch" type="xml">
+            <tree class="o_matrix_block_line" > <!-- banner_route="/opportunity/opportunity_onboarding" -->
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="cyber_view_2matrix_block_line_form">
+        <field name="name">cyber_2matrix.block.line.form</field>
+        <field name="model">cyber_2matrix.block.line</field>
+        <field name="arch" type="xml">
+            <form class="o_matrix_block_line">
+                <header>
+                    <button name="send_validate"
+                            type="object"
+                            string="Validar"
+                            class="btn-primary"
+                            attrs="{'invisible': [('state','!=','draft')]}" />
+                    <button name="send_cancel"
+                            confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
+                            type="object"
+                            string="Cancelar"
+                            class="btn-second"
+                            attrs="{'invisible': [('state','=','cancel')]}" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,validate" />
+                    <button name="button_new_version"
+                            type="object"
+                            string="Nueva versión"
+                            attrs="{'invisible':[('state', '!=', 'validate')]}"
+                            class="oe_highlight" />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object"
+                                name="action_open_older_versions"
+                                class="oe_stat_button"
+                                icon="fa-archive"
+                                style="white-space: nowrap;"
+                                string="Versiones antiguas" />
+                    </div>
+                    <!--
+                    <h1>
+                        <field name="code" />
+                    </h1>
+                    -->
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h2>
+                            <field name="name" attrs="{'readonly': [('state','!=','draft')]}" class="o_mbline_name" />
+                        </h2>
+                    </div>
+                    <group col="4">
+                        <!--<field name="process_id" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />-->
+                        <!--<field name="system_id"  options="{'no_create': True, 'no_edit': True}"   />-->
+                        <field name="domain_id" options="{'no_create': True, 'no_open': True, 'no_create_edit':True}"/>
+                        <field name="application" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
+                        <field name="domain_description" readonly="1"/>
+                        <field name="description_application" attrs="{'invisible': [('application', '=', False)]}"/>
+                        <field name="user_id" invisible="1" />       
+                        <field name="implementation_record" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />    
+                        <field name="ctrl_target_id" options="{'no_create': True, 'no_open': True, 'no_create_edit':True}" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
+                        <field name="type" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
+                        <field name="version" />
+                        <!--<field name="user_id" invisible="1" />-->
+                        <!--<field name="description" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />-->
+                        <!--<field name="type_id" />-->
+                        <!--<field name="type" invisible="1" />-->
+                        
+                        
+                    </group>
+
+                    <notebook>
+                        <page string="Controles Adicionales">
+                            <field name="action_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="matrix_block_line_app_ctrl_mgmt_action">
+        <field name="name">Declaración de aplicabilidad</field>
+        <field name="res_model">cyber_2matrix.block.line</field>
+        <field name="view_mode">tree,form</field>
+        <!--
+        <field name="domain">[('type','=','risk')]</field>
+        <field name="context">{'default_type':'risk'}</field>
+        -->
+    </record>
+
+    <menuitem name="Declaración de Aplicabilidad"
+              id="mitem_block_line_app_ctrl_mgmt"
+              parent="menu_app_ctrl_mgmt"
+              sequence="2"
+              action="matrix_block_line_app_ctrl_mgmt_action"
+              groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
+
+
+</odoo>

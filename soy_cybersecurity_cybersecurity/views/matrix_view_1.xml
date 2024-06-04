@@ -1,7 +1,7 @@
 <odoo>
 
     <!--Views: cyber_matrix.matrix-->
-    <record model="ir.ui.view" id="view_matrix_matrix_tree">
+    <record model="ir.ui.view" id="cyber_matrix_matrix_tree">
         <field name="name">cyber_matrix.matrix.tree</field>
         <field name="model">cyber_matrix.matrix</field>
         <field name="arch" type="xml">
@@ -15,7 +15,7 @@
     </record>
 
 
-    <record model="ir.ui.view" id="view_matrix_matrix_form">
+    <record model="ir.ui.view" id="cyber_matrix_matrix_form">
         <field name="name">cyber_matrix.matrix.form</field>
         <field name="model">cyber_matrix.matrix</field>
         <field name="arch" type="xml">
@@ -126,13 +126,16 @@
             </form>
         </field>
     </record>
-
+    
+    <!--
     <menuitem name="Matrices"
               id="menu_cyber_matrix_matrix"
               parent="menu_cybersecurity_root"
               sequence="5"
               groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
+    -->
 
+    
     <record model="ir.actions.act_window" id="matrix_matrix_information_asset_action">
         <field name="name">Matrices de Investario de Activos de Información</field>
         <field name="res_model">cyber_matrix.matrix</field>

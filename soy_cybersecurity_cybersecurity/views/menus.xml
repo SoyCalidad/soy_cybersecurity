@@ -8,6 +8,7 @@
         sequence="4"
         />
 
+    <!-- Assets Management-->
     <menuitem
         id="menu_information_asset_management"
         name="Gestión de inventario de activos de información"
@@ -16,15 +17,16 @@
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
         />
 
-    <!--
+    <!-- Applicability Control Management-->
     <menuitem
-        id="menu_cybersecurity"
-        name="Gestión de oportunidades"
+        id="menu_app_ctrl_mgmt"
+        name="Declaración de Aplicabilidad"
         parent="menu_cybersecurity_root"
-        sequence="15"
+        sequence="11"
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
         />
-    -->
+
+
 
     <menuitem
         id="menu_report"
@@ -41,5 +43,11 @@
         sequence="150"
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
         />
+
+
+
+
+
+
 
 </odoo>

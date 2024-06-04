@@ -51,7 +51,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_matrix_block_search">
+    <record model="ir.ui.view" id="cyber_view_matrix_block_search">
         <field name="name">cyber_matrix.block.search</field>
         <field name="model">cyber_matrix.block</field>
         <field name="arch" type="xml">
@@ -62,7 +62,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_matrix_block_tree">
+    <record model="ir.ui.view" id="cyber_view_matrix_block_tree">
         <field name="name">cyber_matrix.block.tree</field>
         <field name="model">cyber_matrix.block</field>
         <field name="arch" type="xml">
@@ -74,7 +74,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_matrix_block_form">
+    <record model="ir.ui.view" id="cyber_view_matrix_block_form">
         <field name="name">cyber_matrix.block.form</field>
         <field name="model">cyber_matrix.block</field>
         <field name="arch" type="xml">
@@ -131,7 +131,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_matrix_block_line_tree">
+    <record model="ir.ui.view" id="cyber_view_matrix_block_line_tree">
         <field name="name">cyber_matrix.block.line.tree</field>
         <field name="model">cyber_matrix.block.line</field>
         <field name="arch" type="xml">
@@ -145,7 +145,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_matrix_block_line_form">
+    <record model="ir.ui.view" id="cyber_view_matrix_block_line_form">
         <field name="name">cyber_matrix.block.line.form</field>
         <field name="model">cyber_matrix.block.line</field>
         <field name="arch" type="xml">
