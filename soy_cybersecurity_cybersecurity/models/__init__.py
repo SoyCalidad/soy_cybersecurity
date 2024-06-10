@@ -10,3 +10,5 @@ from . import app_ctrl_mgmt
 from . import app_ctrl_mgmt_validation
 #from . import app_ctrl_mgmt_onboarding
 
+from . import controls
+

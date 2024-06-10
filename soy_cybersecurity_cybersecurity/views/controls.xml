@@ -1,6 +1,6 @@
 <odoo>
     <!--
-    <record model="ir.ui.view" id="cyber_view_2matrix_block_search">
+    <record model="ir.ui.view" id="controls_block_search">
         <field name="name">cyber_2matrix.block.search</field>
         <field name="model">cyber_2matrix.block</field>
         <field name="arch" type="xml">
@@ -13,8 +13,8 @@
     -->
 
 
-    <record model="ir.ui.view" id="cyber_view_2matrix_block_line_tree">
-        <field name="name">cyber_2matrix.block.line.tree</field>
+    <record model="ir.ui.view" id="controls_block_line_tree">
+        <field name="name">cyber_2matrix.controls.block.line.tree</field>
         <field name="model">cyber_2matrix.block.line</field>
         <field name="arch" type="xml">
             <tree class="o_matrix_block_line" > <!-- banner_route="/opportunity/opportunity_onboarding" -->
@@ -23,11 +23,21 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="cyber_view_2matrix_block_line_form">
-        <field name="name">cyber_2matrix.block.line.form</field>
+    <record model="ir.ui.view" id="controls_block_line_form">
+        <field name="name">cyber_2matrix.controls.block.line.form</field>
         <field name="model">cyber_2matrix.block.line</field>
         <field name="arch" type="xml">
             <form class="o_matrix_block_line">
+                <header>
+                    <!--<button string="Añadir a Declaración de Aplicabilidad" type="object" name="button_custom_save_redirect" class="oe_highlight"/>-->
+                    <field name="state" widget="statusbar" clickable="True" />
+                    <button string="Añadir a Declaración de Aplicabilidad"
+                        name="button_custom_save_redirect"
+                        type="object"
+                        class="btn-primary"
+                    />
+                </header>                
+                <!--
                 <header>
                     <button name="send_validate"
                             type="object"
@@ -47,7 +57,10 @@
                             attrs="{'invisible':[('state', '!=', 'validate')]}"
                             class="oe_highlight" />
                 </header>
+                -->
                 <sheet>
+                
+                    <!--
                     <div class="oe_button_box" name="button_box">
                         <button type="object"
                                 name="action_open_older_versions"
@@ -56,7 +69,7 @@
                                 style="white-space: nowrap;"
                                 string="Versiones antiguas" />
                     </div>
-                    <!--
+                    
                     <h1>
                         <field name="code" />
                     </h1>
@@ -64,23 +77,30 @@
                     <div class="oe_title">
                         <label for="name" />
                         <h2>
-                            <field name="name" attrs="{'readonly': [('state','!=','draft')]}" class="o_mbline_name" />
+                            <field name="name" />
                         </h2>
                     </div>
                     <group col="4">
-                        <!--<field name="process_id" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />-->
+                        <!--<field name="process_id"  />-->
                         <!--<field name="system_id"  options="{'no_create': True, 'no_edit': True}"   />-->
                         <field name="domain_id" options="{'no_create': True, 'no_open': True, 'no_create_edit':True}"/>
-                        <field name="application" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
+                        <field name="reference"  />
                         <field name="domain_description" readonly="1"/>
-                        <field name="description_application" attrs="{'invisible': [('application', '=', False)]}"/>
-                        <field name="user_id" invisible="1" />       
-                        <field name="implementation_record" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />    
-                        <field name="ctrl_target_id" options="{'no_create': True, 'no_open': True, 'no_create_edit':True}" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
-                        <field name="type" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
-                        <field name="version" />
-                        <!--<field name="user_id" invisible="1" />-->
-                        <!--<field name="description" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />-->
+                        <field name="priority" widget="priority"/>
+                        <field name="ctrl_target_id" options="{'no_create': True, 'no_open': True, 'no_create_edit':True}"  />
+                        <field name="executor_user_id" invisible="1" />     
+                        <field name="executor_user_id" />  
+                        <field name="executor_user_id" invisible="1" />
+                        <field name="tracking_hr_employee_id" />
+                        <field name="executor_user_id" invisible="1" />
+                        <field name="process_id"  />
+                        <field name="executor_user_id" invisible="1" />
+                        <field name="authorizing_user_id" />
+                        
+                        <!--<field name="type"  />
+                        <field name="version" />-->
+                        <!--<field name="executor_user_id" invisible="1" />-->
+                        <!--<field name="description"  />-->
                         <!--<field name="type_id" />-->
                         <!--<field name="type" invisible="1" />-->
                         
@@ -88,8 +108,8 @@
                     </group>
 
                     <notebook>
-                        <page string="Controles Adicionales">
-                            <field name="action_ids" />
+                        <page string="Descripción">
+                            <!--<field name="action_ids" />-->
                         </page>
                     </notebook>
                 </sheet>
@@ -103,27 +123,29 @@
     </record>
 
 
-    <record model="ir.actions.act_window" id="matrix_block_line_app_ctrl_mgmt_action">
-        <field name="name">Declaración de aplicabilidad</field>
+    <record model="ir.actions.act_window" id="controls_block_line_action">
+        <field name="name">Controles</field>
         <field name="res_model">cyber_2matrix.block.line</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('type_ctrl', '=', 'app_ctrl')]</field>
-        <field name="context">{'default_type_ctrl': 'app_ctrl'}</field>
+        <!--<field name="domain">[('type_ctrl', '=', 'controls')]</field>-->
+        <field name="context">{'default_type_ctrl': 'controls'}</field>
         <field name="view_ids" eval="[(5, 0, 0),
-                                (0, 0, {'view_mode': 'tree', 'view_id': ref('soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_tree')}),
-                                (0, 0, {'view_mode': 'form', 'view_id': ref('soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_form')})]"/>
+                                  (0, 0, {'view_mode': 'tree', 'view_id': ref('soy_cybersecurity_cybersecurity.controls_block_line_tree')}),
+                                  (0, 0, {'view_mode': 'form', 'view_id': ref('soy_cybersecurity_cybersecurity.controls_block_line_form')})]"/>
+
         <!--
         <field name="domain">[('type','=','risk')]</field>
         <field name="context">{'default_type':'risk'}</field>
         -->
     </record>
 
-    <menuitem name="Declaración de Aplicabilidad"
-              id="mitem_block_line_app_ctrl_mgmt"
+    <!--
+    <menuitem name="Controles"
+              id="mitem_controls_block_line"
               parent="menu_app_ctrl_mgmt"
               sequence="2"
-              action="matrix_block_line_app_ctrl_mgmt_action"
+              action="controls_block_line_action"
               groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
-
+    -->
 
 </odoo>

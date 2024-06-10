@@ -26,7 +26,15 @@
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
         />
 
-
+    <!-- Controls Management-->
+    <menuitem
+        id="menu_controls_mgmt"
+        name="Controles"
+        parent="menu_cybersecurity_root"
+        sequence="12"
+        action="controls_block_line_action"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        />
 
     <menuitem
         id="menu_report"
