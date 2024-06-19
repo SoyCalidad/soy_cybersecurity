@@ -137,8 +137,8 @@
         <field name="arch" type="xml">
             <tree class="o_matrix_block_line" > <!-- banner_route="/opportunity/opportunity_onboarding" -->
                 <field name="name" />
-                <field name="effect" />
-                <field name="cause" />
+                <field name="process_id" />
+                <field name="storage_medium" />
                 <field name="version" />
                 <field name="user_id" />
             </tree>

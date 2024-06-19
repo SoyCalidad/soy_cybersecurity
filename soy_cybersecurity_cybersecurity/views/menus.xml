@@ -11,7 +11,7 @@
     <!-- Assets Management-->
     <menuitem
         id="menu_information_asset_management"
-        name="Gestión de inventario de activos de información"
+        name="Inventario de activos"
         parent="menu_cybersecurity_root"
         sequence="10"
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"

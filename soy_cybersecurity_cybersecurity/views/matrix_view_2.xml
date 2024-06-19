@@ -136,7 +136,7 @@
 
     
     <record model="ir.actions.act_window" id="matrix_matrix_app_ctrl_mgmt_action">
-        <field name="name">Matrices de declaración de aplicabilidad</field>
+        <field name="name">Matriz de declaración de aplicabilidad</field>
         <field name="res_model">cyber_2matrix.matrix</field>
         <field name="view_mode">tree,form</field>
         <!--<field name="domain">[('type','=','risk'), ('state','!=','cancel')]</field>-->
@@ -144,7 +144,7 @@
         <!--<field name="context">{"default_type":'risk'}</field>-->
     </record>
 
-    <menuitem name="Matrices de declaración de aplicabilidad"
+    <menuitem name="Matriz de declaración de aplicabilidad"
               id="mitem_matrix_matrix_app_ctrl_mgmt"
               parent="menu_app_ctrl_mgmt"
               sequence="5"

@@ -402,7 +402,6 @@ class Line(models.Model):
         string='Estado',
         selection=[
             ('draft', 'Borrador'),
-            ('elaborate', 'En proceso'),
             ('validate', 'Validado'),
             ('cancel', 'Cancelado')],
         default='draft',

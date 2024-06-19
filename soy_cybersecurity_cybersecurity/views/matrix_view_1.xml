@@ -137,7 +137,7 @@
 
     
     <record model="ir.actions.act_window" id="matrix_matrix_information_asset_action">
-        <field name="name">Matrices de Investario de Activos de Información</field>
+        <field name="name">Matriz de inventario de activos de la información</field>
         <field name="res_model">cyber_matrix.matrix</field>
         <field name="view_mode">tree,form</field>
         <!--<field name="domain">[('type','=','risk'), ('state','!=','cancel')]</field>-->
@@ -145,7 +145,7 @@
         <!--<field name="context">{"default_type":'risk'}</field>-->
     </record>
 
-    <menuitem name="Matrices de Investario de Activos de Información"
+    <menuitem name="Matriz de inventario de activos de la información"
               id="mitem_matrix_matrix_information_asset"
               parent="menu_information_asset_management"
               sequence="4"
