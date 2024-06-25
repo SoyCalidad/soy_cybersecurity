@@ -17,6 +17,8 @@
 
 
     'depends': ['mgmtsystem_action',
+                'mgmtsystem_nonconformity',
+                'website',
                 'mgmtsystem_process',
                 'hola_calidad',
                 'mgmtsystem_documentary_control', ],
@@ -28,9 +30,12 @@
         'security/rules.xml',
         'data/evaluation_main_data.xml',
         'data/app_ctrl_data.xml',
+        'data/incidents_data.xml',
         'data/data_others.xml',
 
+        'views/web_assets.xml',
         'views/controls.xml',
+        'views/incidents.xml',
         'views/menus.xml',
         'views/asset_management.xml',
         'views/app_ctrl_mgmt.xml',
@@ -42,6 +47,7 @@
         
         'reports/matrix_report.xml',
         'reports/app_ctrl_mgmt_report.xml',
+        "static/src/xml/incident.xml",
 
         #'views/configuration_views.xml',
         #'views/assets.xml',

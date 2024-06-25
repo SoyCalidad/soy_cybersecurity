@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="soy_cybersecurity_cybersecurity.incident" name="inadequacy">
+        <t t-call="website.layout">
+            <div class="center">
+                <form action="/incidente_enviado" method="post" id="msform" enctype="multipart/form-data">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li class="active">Información del incidente</li>
+                        <li>Información adicional</li>
+                        <li>Información personal</li>
+                    </ul>
+                    <!-- fieldsets -->
+                    <fieldset>
+                        <h2 class="fs-title">Información del incidente</h2>
+                        <h3 class="fs-subtitle">Introduzca los datos relativos al incidente</h3>
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                        <!--
+                        <select id="categ_id" name="categ_id" required="">
+                            <option disabled="" selected="selected" value="">Categoría</option>
+                            <t t-foreach="categ_id" t-as="adm">
+                                <option t-att-value="adm.id" t-esc="adm.name" />
+                            </t>
+                        </select>
+                        -->
+                        <select id="type" name="type" required="">
+                            <option disabled="" selected="selected" value="">Tipo</option>
+                            <option t-att-value="internal" t-esc="internal">Interna</option>
+                            <option t-att-value="ext" t-esc="ext">Externa</option>
+                        </select>
+                        <input placeholder="Fecha y hora del incidente" class="textbox-n" type="text" onfocus="(this.type='datetime-local')" name="date_incident" />
+                        <input type="text" name="perspective" placeholder="Descripción" />
+                        <input type="file" widget="many2many_binary" multiple="true" class="o_website_form_input" name="incident_files" style="height:100px"></input>
+                        <input type="button" name="next" class="next action-button" value="Siguiente" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">Información adicional</h2>
+                        <div class="form-inputs">
+                            <div>
+                                <h4>1. Identifica el motivo del incidente. Puedes seleccionar máximo 2 opciones.</h4>
+                                <t t-foreach="reason_ids" t-as="adm">
+                                    <label class="checkbox_container">
+                                        <strong>
+                                            <span t-esc="adm.name" />
+                                            :
+                                        </strong>
+                                        <span t-esc="adm.description" />
+                                        <input class="reason_checkbox" t-attf-name="reason_#{adm.id}" t-attf-id="reason_#{adm.id}" type="checkbox" t-att-value="adm.id" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </t>
+                                <input type="text" name="reason_other" placeholder="Otro motivo" />
+                            </div>
+                            <div>
+                                <!--
+                                <h4>2. ¿Trataron de darte una solución previa al registro del incidente?</h4>
+                                <select id="solution" name="solution">
+                                    <option t-att-value="1">Sí</option>
+                                    <option t-att-value="0">No</option>
+                                </select>
+                                -->
+                            </div>
+                        </div>
+                        <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                        <input type="button" name="next" class="next action-button" value="Siguiente" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">Información personal</h2>
+                        <h3 class="fs-subtitle">Introduzca sus datos personales</h3>
+                        <input type="text" name="name" placeholder="Nombres y apellidos" />
+                        <input type="text" name="complainer_document_number" placeholder="Número de documento" />
+                        <select id="complainer_delivery_type" name="complainer_delivery_type" onchange="showDiv('hidden_email', 'hidden_phone', this)">
+                            <option selected="selected">Seleccione como quiere recibir la respuesta a tu incidente</option>
+                            <option t-att-value="email">Quiero recibirla por correo electronico</option>
+                            <option t-att-value="phone">Quiero recibirla por celular</option>
+                        </select>
+                        <input type="text" id="hidden_phone" name="complainer_phone" placeholder="Teléfono" />
+                        <input type="text" id="hidden_email" name="complainer_email" placeholder="Correo electrónico" />
+                        <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                        <input type="submit" class="submit action-button o_website_form_send" value="REPORTAR INCIDENTE" />
+                    </fieldset>
+                </form>
+            </div>
+        </t>
+        <script>
+function showDiv(divId1, divId2, element)
+{
+    console.log(element.value)
+    document.getElementById(divId1).style.display = element.value == 'Quiero recibirla por correo electronico' ? 'block' : 'none';
+    document.getElementById(divId2).style.display = element.value == 'Quiero recibirla por celular' ? 'block' : 'none';
+}
+    </script>
+        <script lnguage="JavaScript" type="text/javascript">
+            //
+            <![CDATA[
+var checks = document.querySelectorAll(".reason_checkbox");
+var max = 2;
+for (var i = 0; i < checks.length; i++)
+    checks[i].onclick = selectiveCheck;
+function selectiveCheck (event) 
+{
+    var checkedChecks = document.querySelectorAll(".reason_checkbox:checked");
+    if (checkedChecks.length >= max + 1)
+    return false;
+}
+//]]>
+        </script>
+    </template>
+
+    <template id="soy_cybersecurity_cybersecurity.incident_done" name="incident Done">
+        <t t-call="website.layout">
+            <div class="thankyou-page" style="text-align: center; padding: 50px 0;">
+                <div class="thankyou-content" style="max-width: 600px; margin: auto; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background: #f9f9f9;">
+                    <!--<img src="/web/static/src/img/icons/thankyou_icon.png" alt="Thank You" style="width: 100px; height: auto; margin-bottom: 20px;"/>-->
+                    <h1 style="color: #4CAF50; font-size: 36px; font-weight: bold; margin-bottom: 20px;">¡Gracias!</h1>
+                    <p style="color: #666; font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
+                        El incidente ha sido enviado con éxito. Nos pondremos en contacto con usted lo antes posible.
+                    </p>
+                    <!--
+                    <a href="/" style="display: inline-block; padding: 12px 30px; font-size: 18px; color: #fff; background: #4CAF50; border-radius: 5px; text-decoration: none; transition: background 0.3s;">
+                        Volver a la página principal
+                    </a>
+                    -->
+                </div>
+            </div>
+        </t>
+        <!--
+        <form>
+            <div class="form-group form-field o_website_form_required_custom" align="center">
+                <h1 style="align:center;padding-top:100px;text-weight:bold;">Gracias! Su incidente ha sido enviado</h1>
+            </div>
+        </form>
+        -->
+    </template>
+
+
+</odoo>

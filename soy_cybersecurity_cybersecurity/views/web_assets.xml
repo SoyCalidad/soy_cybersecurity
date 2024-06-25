@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_frontend" name="soy_cybersecurity_cybersecurity assets" inherit_id="web.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link rel="stylesheet" href="/soy_cybersecurity_cybersecurity/static/src/css/incident.css" />
+        </xpath>
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/soy_cybersecurity_cybersecurity/static/src/js/incident.js"></script>
+        </xpath>
+    </template>
+
+</odoo>

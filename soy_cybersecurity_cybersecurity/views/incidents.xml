@@ -1,0 +1,169 @@
+<odoo>
+    <record model="ir.ui.view" id="view_incident_incident_tree">
+        <field name="name">incident.incident.tree</field>
+        <field name="model">incident.incident</field>
+        <field name="arch" type="xml">
+            <tree > <!--banner_route="/incidents/incidents_onboarding"-->
+                <field name="date_incident" />
+                <field name="employee_id" />
+                <field name="name" />
+                <field name="elaborate_ids" />
+                <!--<field name="categ_id" />-->
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_incident_incident_form">
+        <field name="name">incident.incident.form</field>
+        <field name="model">incident.incident</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="open,in_process,close" clickable="True" />
+                </header>
+                <sheet>
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="code" />
+                        </h1>
+                        <label for="name" />
+                        <h2>
+                            <field name="name" />
+                        </h2>
+                    </div>
+                    <group string="Identificación">
+                        <field name="validation_date" />
+                        <field name="type" invisible="1" />
+                        <field name="reason_ids" widget="many2many_tags" />
+                        <field name="reason_other" />
+                        <!--<field name="categ_id" options="{'no_open': True, 'no_create_edit': True}" />-->
+                        <field name="department_id" options="{'no_open': True, 'no_create': True, 'no_create_edit': True}" />
+                        <field name="employee_id" options="{'no_create':True,'no_create_edit':True}" attrs="{'invisible': [('type','!=','ext')]}" string="Implicado" />
+                        <field name="elaborate_ids" />
+                        <field name="partner_id" options="{'no_create':True,'no_create_edit':True}" string="Cliente/Proveedor" attrs="{'invisible': [('type','!=','ext')]}" />
+                        <field name="employee_notify_id" options="{'no_create':True,'no_create_edit':True}" attrs="{'invisible': [('type','!=','internal')]}" />
+                        <field name="place" />
+                        <!--<field name="via_ids" widget="many2many_tags" />-->
+                        <field name="date_incident" />
+                        <field name="date_fin" attrs="{'invisible': [('date_fin','=',False)],'required': [('state','=','close')]}" />
+                        <field name="reclamation_book" invisible="1" />
+                        <separator />
+                        <field name="perspective" />
+                        <field name="description" />
+                    </group>
+                    <notebook>
+                        <page name="personal_data" string="Datos personales">
+                            <group>
+                                <field name="complainer_name" />
+                                <field name="complainer_document_type" />
+                                <field name="complainer_document_number" />
+                                <field name="complainer_delivery_type" />
+                                <field name="complainer_phone" />
+                                <field name="complainer_email" />
+                            </group>
+                        </page>
+                        <page name="investigation" string="Investigación">
+                            <group>
+                                <field name="investigation" />
+                                <field name="investigation_method" />
+                            </group>
+                            <group attrs="{'invisible': [('investigation_method','!=','cause')]}">
+                                <field name="cause_ids" context="{'default_cause_why_type': 'cause'}">
+                                    <tree editable="bottom">
+                                        <field name="cause_id" />
+                                        <field name="description" />
+                                        <field name="subcause_ids" widget="many2many_tags" context="{'default_parent_id': cause_id}">
+                                            <form>
+                                                <field name="name" string="Subcausa" />
+                                                <field name="description" />
+                                            </form>
+                                        </field>
+                                        <field name="attachment_ids" widget="many2many_binary" />
+                                    </tree>
+                                </field>
+                                <field name="conclusions" />
+                            </group>
+                            <group attrs="{'invisible': [('investigation_method','!=','why')]}">
+                                <field name="why_ids" context="{'default_cause_why_type': 'why'}">
+                                    <tree editable="bottom">
+                                        <field name="why_id" />
+                                        <field name="description" />
+                                    </tree>
+                                </field>
+                                <field name="root_cause" />
+                            </group>
+                            <group>
+                                <field name="incident_files" />
+                            </group>
+                        </page>
+                        <page name="solution" string="Solución">
+                            <group string="Solución">
+                                <field name="quick_action_id" />
+                                <field name="date_solution" />
+                                <field name="is_open" class="oe_inline" />
+                                <field name="attachment_ids" widget="many2many_binary" />
+                            </group>
+                            <!--
+                            <group string="Respuesta">
+                                <field name="satisfied" widget="boolean_toggle" />
+                                <field name="quick_response" widget="html" />
+                                <field name="attachment_ids" widget="many2many_binary" />
+                            </group>
+                            -->
+                        </page>
+                        <page string="No conformidades" attrs="{'invisible': [('is_open','=',False)]}">
+                            <field name="nonconformity_ids" />
+                        </page>
+                        <page name="action_ids" string="Acciones" attrs="{'invisible': [('is_open','=',False)]}">
+                            <field name="action_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <menuitem name="Incidentes" 
+            id="indicent_menu" 
+            parent="menu_cybersecurity_root" 
+            sequence="15" />
+
+    <record model="ir.actions.act_window" id="incident_incident_int_action">
+        <field name="name">Incidentes internos</field>
+        <field name="res_model">incident.incident</field>
+        <field name="view_mode">tree,form</field>
+        <!--<field name="search_view_id" ref="view_incident_incident_search" />-->
+        <field name="domain">[('type','=','internal')]</field>
+        <field name="context">{"default_type":'internal'}</field>
+    </record>
+
+
+    <menuitem name="Incidentes internos"
+              id="indicent_menu_int"
+              parent="indicent_menu"
+              sequence="1"
+              action="incident_incident_int_action" />
+
+    <record model="ir.actions.act_window" id="incident_incident_ext_action">
+        <field name="name">Incidentes externos</field>
+        <field name="res_model">incident.incident</field>
+        <field name="view_mode">tree,form</field>
+        <!--<field name="search_view_id" ref="view_incident_incident_search" />-->
+        <field name="domain">[('type','=','ext')]</field>
+        <field name="context">{"default_type":'ext'}</field>
+    </record>
+
+    <menuitem name="Incidentes externos"
+              id="indicent_menu_ext"
+              parent="indicent_menu"
+              sequence="2"
+              action="incident_incident_ext_action" />
+
+</odoo>
