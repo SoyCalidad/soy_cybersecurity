@@ -1,0 +1,189 @@
+<odoo>
+    <data>
+        <!-- Hereda la vista original -->
+        <record id="management_review_form_view_inherit" model="ir.ui.view">
+            <field name="name">management.review.form.view.inherit</field>
+            <field name="model">management.review</field>
+            <field name="inherit_id" ref="mgmtsystem_management_review.management_review_form_view"/>
+            <field name="arch" type="xml">
+                <!-- Reemplaza el contenido de la página "detail" -->
+                <xpath expr="//sheet/notebook/page[@name='detail']" position="replace">
+                    <page name="detail" string="Detalles" col="4">
+                        <div class="main_s">
+                            <style type="text/css">
+                                .script {
+                                font-size: 1.5em;
+                                position: relative;
+                                margin: 0 auto 1em;
+                                text-transform: uppercase;
+                                }
+                            </style>
+                            <group>
+                                <div class="plate">
+                                    <p class="script">
+                                        <h2>a. El estado de las acciones de las revisiones por la dirección previas</h2>
+                                    </p>
+                                    <group>
+                                        <field name="record_meeting_ids" widget="many2many_tags" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="record_meeting_actions" />
+                                    </group>
+                                </div>
+                            </group>
+                            <group>
+                                <div class="plate">
+                                    <p class="script">
+                                        <h2>b. Los cambios en las cuestiones externas e internas</h2>
+                                    </p>
+                                    <group>
+                                        <field name="foda" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="foda_description" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                    <group>
+                                        <field name="stakeholders_id" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="stakeholders_description" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                </div>
+                            </group>
+                            <!--
+                            <group id="item_c">
+                                <div class="plate">
+                                    <p class="script">
+                                        <h2>c. La información sobre el desempeño y la eficacia del sistema de gestión</h2>
+                                    </p>
+                                    <p class="script" style="margin-left:5em">
+                                        <h3>c.1. la satisfacción del cliente y la retroalimentación de las partes interesadas pertinentes</h3>
+                                    </p>
+                                    <group>
+                                        <field name="survey_ids" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}">
+                                            <tree>
+                                                <field name="title" />
+                                                <field name="title_complete" />
+                                            </tree>
+                                        </field>
+                                        <field name="survey_description" />
+                                    </group>
+                                    <p class="script" style="margin-left:5em">
+                                        <h3>c.2. el grado en que se han logrado los objetivos del sistema de gestión</h3>
+                                    </p>
+                                    <group>
+                                        <button type="object" name="action_view_graph_indicator" string="Ver gráfico resumido de objetivos" class="btn btn-primary oe_right" />
+                                    </group>
+                                    <group colspan="3">
+                                        <field name="target_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                    <p class="script" style="margin-left:5em">
+                                        <h3>c.3. el grado en que se cumplido la política del SIG</h3>
+                                    </p>
+                                    <group>
+                                        <field name="policy_ids" widget="many2many_tags" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                    <group colspan="3">
+                                        <field name="policy_interpretation" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                </div>
+                            </group>
+                            -->
+                            <group id="item_c_update">
+                                <div class="plate">
+                                    <p class="script">
+                                        <h2>c. La información sobre el desempeño</h2>
+                                    </p>
+                                    <p class="script" style="margin-left:5em">
+                                        <h3>c.1. EL DESEMPEÑO DE LOS PROCESOS Y CONFORMIDAD DE LOS PRODUCTOS Y SERVICIOS</h3>
+                                    </p>
+                                    <group colspan="3">
+                                        <field name="process" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="process_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                    <p class="script" style="margin-left:5em">
+                                        <h3>c.2. CUMPLIMIENTO DE REQUISITOS LEGALES Y OTROS REQUISITOS</h3>
+                                    </p>
+                                    <group colspan="3">
+                                        <field name="it_legal_requirements" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="it_legal_requirements_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>                                    
+                                    <p class="script" style="margin-left:5em">
+                                        <h3>c.3. LAS NO CONFORMIDADES Y ACCIONES CORRECTIVAS</h3>
+                                    </p>
+                                    <group>
+                                        <field name="nonconformity_action" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="nonconformity_action_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                    <p class="script" style="margin-left:5em">
+                                        <h3>c.4. LOS RESULTADOS DE SEGUIMIENTO Y MEDICIÓN</h3>
+                                    </p>
+                                    <group>
+                                        <field name="indicator" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="indicator_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                    <p class="script" style="margin-left:5em">
+                                        <h3>c.5. LOS RESULTADOS DE LAS AUDITORÍAS</h3>
+                                    </p>
+                                    <group>
+                                        <field name="audit" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="audit_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                    <p class="script" style="margin-left:5em">
+                                        <h3>c.6. Cumplimiento de los objetivos de la seguridad de la información</h3>
+                                    </p>
+                                    <group colspan="3">
+                                        <field name="it_security_target" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="it_security_target_description" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                </div>
+                            </group>
+                            <group id="item_e">
+                                <div class="plate">
+                                    <p class="script">
+                                        <h2>d. La adecuación de los recursos</h2>
+                                    </p>
+                                    <group>
+                                        <field name="resource" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="resource_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                </div>
+                            </group>
+                            <group id="item_f">
+                                <div class="plate">
+                                    <p class="script">
+                                        <h2>e. La eficacia de las acciones tomadas para abordar los riesgos y las oportunidades</h2>
+                                    </p>
+                                    <group>
+                                        <field name="risk" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                        <field name="risk_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    </group>
+                                </div>
+                            </group>
+                            <group id="it_review_item_f">
+                                <div class="plate">
+                                    <p class="script">
+                                        <h2>F. COMUNICACIONES PERTINENTES CON LAS PARTES INTERESADAS</h2>
+                                    </p>
+                                </div>
+                                <br/>
+                                <group colspan="3">
+                                    <field name="it_comunication_plan_ids" widget="many2many_tags" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}"/>
+                                    <field name="it_comunication_plan" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}"/>
+                                    <field name="it_comunication_plan_interpretation" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}"/>
+                                </group>
+                            </group>
+                            <group id="item_g">
+                                <div class="plate">
+                                    <p class="script">
+                                        <h2>g. Las oportunidades de mejora</h2>
+                                    </p>
+                                </div>
+                                <br />
+                                <group colspan="3">
+                                    <field name="improve_action_ids" widget="many2many_tags" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    <field name="improve_action" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                    <field name="improve_action_des" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                </group>
+                            </group>
+                        </div>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>                    
