@@ -114,6 +114,12 @@
                                 </group>
                             </group>
                         </page>
+                        <page name="risk_opp" string="Riesgos y oportunidades">
+                            <separator string="Riesgos"/>
+                            <field name="risk_ids" context="{'default_type': 'risk'}"/>
+                            <separator string="Oportunidades"/>
+                            <field name="opp_ids" context="{'default_type': 'opportunity'}"/>
+                        </page>
                     </notebook>
                 </sheet>
 

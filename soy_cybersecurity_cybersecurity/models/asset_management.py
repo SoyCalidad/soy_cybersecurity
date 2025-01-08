@@ -207,6 +207,35 @@ class Matrix(models.Model):
         column1='line_id',
         column2='matrix_id',
     )
+    risk_ids = fields.Many2many('matrix.block.line',
+                                relation='cyber_matrix_matrix_risk_rel',
+                                column1='risk_id',
+                                column2='cyber_matrix_matrix_id',
+                                string='Riesgos',
+                                domain=[('type', '=', 'risk')])
+    risks_count = fields.Integer(compute='_compute_risks_count', string='Riesgos')
+
+    opp_ids = fields.Many2many('matrix.block.line',
+                               relation='cyber_matrix_matrix_opp_rel',
+                               column1='opp_id',
+                               column2='cyber_matrix_matrix_id',
+                               string='Oportunidades',
+                               domain=[('type', '=', 'opportunity')])
+    opps_count = fields.Integer(compute='_compute_opps_count', string='Oportunidades')
+
+    @api.depends('risk_ids')
+    def _compute_risks_count(self):
+        for each in self:
+            each.risks_count = 0
+            if each.risk_ids:
+                each.risks_count = len(each.risk_ids)
+
+    @api.depends('opp_ids')
+    def _compute_opps_count(self):
+        for each in self:
+            each.opps_count = 0
+            if each.opp_ids:
+                each.opps_count = len(each.opp_ids)
 
     def send_elaborate(self):
         self.state = 'elaborate'
@@ -524,6 +553,35 @@ class Line(models.Model):
             ('cancel', 'Cancelado')],
         default='draft',
     )
+    risk_ids = fields.Many2many('matrix.block.line',
+                                relation='cyber_matrix_block_line_risk_rel',
+                                column1='risk_id',
+                                column2='cyber_matrix_block_line_id',
+                                string='Riesgos',
+                                domain=[('type', '=', 'risk')])
+    risks_count = fields.Integer(compute='_compute_risks_count', string='Riesgos')
+
+    opp_ids = fields.Many2many('matrix.block.line',
+                               relation='cyber_matrix_block_line_opp_rel',
+                               column1='opp_id',
+                               column2='cyber_matrix_block_line_id',
+                               string='Oportunidades',
+                               domain=[('type', '=', 'opportunity')])
+    opps_count = fields.Integer(compute='_compute_opps_count', string='Oportunidades')
+
+    @api.depends('risk_ids')
+    def _compute_risks_count(self):
+        for each in self:
+            each.risks_count = 0
+            if each.risk_ids:
+                each.risks_count = len(each.risk_ids)
+
+    @api.depends('opp_ids')
+    def _compute_opps_count(self):
+        for each in self:
+            each.opps_count = 0
+            if each.opp_ids:
+                each.opps_count = len(each.opp_ids)
 
     def write(self, vals):
         res = super().write(vals)

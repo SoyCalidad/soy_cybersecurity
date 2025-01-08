@@ -21,7 +21,8 @@
                 'website',
                 'mgmtsystem_process',
                 'hola_calidad',
-                'mgmtsystem_documentary_control', ],
+                'mgmtsystem_documentary_control',
+                'mgmtsystem_opportunity'],
 
 
     'data': [
