@@ -43,8 +43,7 @@
         'views/app_ctrl_mgmt.xml',
         'views/matrix_view_1.xml',
         'views/matrix_view_2.xml',
-        
-        
+
         'views/configuration_views_2.xml',
         'views/menus.xml',
         

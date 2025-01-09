@@ -104,38 +104,40 @@
     </record>
 
         
-    <!-- Menus -->
-    <menuitem 
-        name="Recursos" 
-        id="mitem_cyber_matrix_block_line_resource" 
+<!--
+    &lt;!&ndash; Menus &ndash;&gt;
+    <menuitem
+        name="Recursos"
+        id="mitem_cyber_matrix_block_line_resource"
         parent="menu_configuration"
         sequence="11"
-        action="cyber_matrix_block_line_resource_action" 
+        action="cyber_matrix_block_line_resource_action"
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
 
-    <menuitem 
-        name="Ubicaciones" 
-        id="mitem_cyber_matrix_block_line_location" 
+    <menuitem
+        name="Ubicaciones"
+        id="mitem_cyber_matrix_block_line_location"
         parent="menu_configuration"
         sequence="12"
-        action="cyber_matrix_block_line_location_action" 
+        action="cyber_matrix_block_line_location_action"
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
 
-    <menuitem 
-        name="Idiomas" 
-        id="mitem_cyber_matrix_block_line_language" 
+    <menuitem
+        name="Idiomas"
+        id="mitem_cyber_matrix_block_line_language"
         parent="menu_configuration"
         sequence="13"
-        action="cyber_matrix_block_line_language_action" 
+        action="cyber_matrix_block_line_language_action"
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
 
-    <menuitem 
+    <menuitem
         name="Tipos de Activos"
-        id="mitem_cyber_matrix_block_line_asset_type" 
+        id="mitem_cyber_matrix_block_line_asset_type"
         parent="menu_configuration"
         sequence="14"
-        action="cyber_matrix_block_line_asset_type_action" 
+        action="cyber_matrix_block_line_asset_type_action"
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
 
+-->
 
 </odoo>

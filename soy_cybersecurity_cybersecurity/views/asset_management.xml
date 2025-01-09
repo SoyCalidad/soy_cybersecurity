@@ -284,12 +284,14 @@
         -->
     </record>
 
+<!--
     <menuitem name="Inventario de Activos de Información"
               id="mitem_block_line_information_asset"
               parent="menu_information_asset_management"
               sequence="2"
               action="matrix_block_line_information_asset_action"
               groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
+-->
 
     <!--Oportunidades-->
     <!--

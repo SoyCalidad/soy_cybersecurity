@@ -151,13 +151,13 @@
         <!--<field name="context">{"default_type":'risk'}</field>-->
     </record>
 
-    <menuitem name="Matriz de inventario de activos de la información"
+    <!--<menuitem name="Matriz de inventario de activos de la información"
               id="mitem_matrix_matrix_information_asset"
               parent="menu_information_asset_management"
               sequence="4"
               action="matrix_matrix_information_asset_action"
               groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
-
+-->
     <!-- <menuitem id="mgmtsystem_risk" name="Matrices de riesgo" parent="hola_calidad.menu_plan_main" sequence="65" action="matrix_matrix_risk_action"/> -->
 
     <!--

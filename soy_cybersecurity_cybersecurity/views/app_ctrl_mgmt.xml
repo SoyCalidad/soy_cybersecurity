@@ -118,12 +118,14 @@
         -->
     </record>
 
+<!--
     <menuitem name="Declaración de Aplicabilidad"
               id="mitem_block_line_app_ctrl_mgmt"
               parent="menu_app_ctrl_mgmt"
               sequence="2"
               action="matrix_block_line_app_ctrl_mgmt_action"
               groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
+-->
 
     <record model="ir.ui.view" id="cyber_view_2matrix_checklist_tree">
         <field name="name">cyber_2matrix.checklist.tree</field>

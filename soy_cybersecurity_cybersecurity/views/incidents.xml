@@ -130,10 +130,10 @@
         </field>
     </record>
 
-    <menuitem name="Incidentes" 
+<!--    <menuitem name="Incidentes"
             id="indicent_menu" 
             parent="menu_cybersecurity_root" 
-            sequence="15" />
+            sequence="15" />-->
 
     <record model="ir.actions.act_window" id="incident_incident_int_action">
         <field name="name">Incidentes internos</field>
@@ -145,11 +145,11 @@
     </record>
 
 
-    <menuitem name="Incidentes internos"
+<!--    <menuitem name="Incidentes internos"
               id="indicent_menu_int"
               parent="indicent_menu"
               sequence="1"
-              action="incident_incident_int_action" />
+              action="incident_incident_int_action" />-->
 
     <record model="ir.actions.act_window" id="incident_incident_ext_action">
         <field name="name">Incidentes externos</field>
@@ -160,10 +160,10 @@
         <field name="context">{"default_type":'ext'}</field>
     </record>
 
-    <menuitem name="Incidentes externos"
+<!--    <menuitem name="Incidentes externos"
               id="indicent_menu_ext"
               parent="indicent_menu"
               sequence="2"
-              action="incident_incident_ext_action" />
+              action="incident_incident_ext_action" />-->
 
 </odoo>
