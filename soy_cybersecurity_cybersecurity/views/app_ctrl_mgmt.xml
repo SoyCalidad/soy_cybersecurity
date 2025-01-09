@@ -125,5 +125,136 @@
               action="matrix_block_line_app_ctrl_mgmt_action"
               groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
 
+    <record model="ir.ui.view" id="cyber_view_2matrix_checklist_tree">
+        <field name="name">cyber_2matrix.checklist.tree</field>
+        <field name="model">cyber_2matrix.checklist</field>
+        <field name="arch" type="xml">
+            <tree class="o_matrix_block_line" >
+                <field name="name" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
 
+    <record model="ir.ui.view" id="cyber_view_2matrix_checklist_form">
+        <field name="name">cyber_2matrix.checklist.form</field>
+        <field name="model">cyber_2matrix.checklist</field>
+        <field name="arch" type="xml">
+            <form class="o_matrix_block_line">
+                <header>
+                    <button name="action_send_validate"
+                            type="object"
+                            string="Validar"
+                            class="btn-primary"
+                            attrs="{'invisible': [('state','!=','draft')]}" />
+                    <button name="action_send_cancel"
+                            confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
+                            type="object"
+                            string="Cancelar"
+                            class="btn-second"
+                            attrs="{'invisible': [('state','=','cancel')]}" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,validate" />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" position="inside">
+                        <button name="action_dms_lines_evidence_ids" type="object" class="oe_stat_button" icon="fa-file-text-o">
+                            <field string="Evidencias" name="dms_lines_evidence_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h2>
+                            <field name="name" class="o_mbline_name" required="1" attrs="{'readonly':[('state','in', ('validate','cancel'))]}" />
+                        </h2>
+                    </div>
+                    <notebook>
+                        <page string="Líneas">
+                            <field name="line_ids" attrs="{'readonly':[('state','in', ('validate','cancel'))]}" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cyber_2matrix_checklist_action">
+        <field name="name">Lista de verificación</field>
+        <field name="res_model">cyber_2matrix.checklist</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="cyber_view_2matrix_checklist_line_tree">
+        <field name="name">cyber_2matrix.checklist.line.tree</field>
+        <field name="model">cyber_2matrix.checklist.line</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" create="false" limit="100">
+                <field name="checklist_id" invisible="1"/>
+                <field name="checklist_control_id" invisible="1"/>
+                <field name="checklist_control_number" />
+                <field name="checklist_control_description" />
+                <field name="checklist_control_control" />
+                <field name="applies" />
+                <field name="documentary_control_ids" widget="many2many_tags" options="{'no_create': True, 'no_edit': True}" />
+                <field name="dms_evidence_ids" widget="many2many_tags" />
+                <field name="comments" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="cyber_view_2matrix_checklist_line_form">
+        <field name="name">cyber_2matrix.checklist.line.form</field>
+        <field name="model">cyber_2matrix.checklist.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="checklist_id" invisible="1"/>
+                <sheet>
+                    <group>
+                        <field name="checklist_control_id" invisible="1"/>
+                        <field name="checklist_control_number" />
+                        <field name="checklist_control_description" />
+                        <field name="checklist_control_control" />
+                        <field name="applies" />
+                        <field name="documentary_control_ids" />
+                        <field name="dms_evidence_ids" />
+                        <field name="comments" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="cyber_2matrix_checklist_control_tree">
+        <field name="name">cyber_2matrix.checklist.control.tree</field>
+        <field name="model">cyber_2matrix.checklist.control</field>
+        <field name="arch" type="xml">
+            <tree class="o_matrix_block_line" >
+                <field name="sequence" widget="handle" />
+                <field name="number" />
+                <field name="description" />
+                <field name="control" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="cyber_2matrix_checklist_control_form">
+        <field name="name">cyber_2matrix.checklist.control.form</field>
+        <field name="model">cyber_2matrix.checklist.control</field>
+        <field name="arch" type="xml">
+            <form class="o_matrix_block_line">
+                <sheet>
+                    <group>
+                        <field name="number" />
+                        <field name="description" />
+                        <field name="control" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cyber_2matrix_checklist_control_action">
+        <field name="name">Controles de Lista de verificación</field>
+        <field name="res_model">cyber_2matrix.checklist.control</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 </odoo>

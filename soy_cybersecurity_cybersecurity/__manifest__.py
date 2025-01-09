@@ -22,7 +22,8 @@
                 'mgmtsystem_process',
                 'hola_calidad',
                 'mgmtsystem_documentary_control',
-                'mgmtsystem_opportunity'],
+                'mgmtsystem_opportunity',
+                'soycalidad_dms',],
 
 
     'data': [
@@ -33,11 +34,11 @@
         'data/app_ctrl_data.xml',
         'data/incidents_data.xml',
         'data/data_others.xml',
+        'data/dms.xml',
 
         'views/web_assets.xml',
         'views/controls.xml',
         'views/incidents.xml',
-        'views/menus.xml',
         'views/asset_management.xml',
         'views/app_ctrl_mgmt.xml',
         'views/matrix_view_1.xml',
@@ -45,6 +46,7 @@
         
         
         'views/configuration_views_2.xml',
+        'views/menus.xml',
         
         'reports/matrix_report.xml',
         'reports/app_ctrl_mgmt_report.xml',

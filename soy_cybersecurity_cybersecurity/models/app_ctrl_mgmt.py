@@ -322,6 +322,99 @@ class CyberMatrixBlockLineCtrlTarget(models.Model):
     domain_id = fields.Many2one('cyber_2matrix.block.line.domain', string='Dominio')
 
 
+class Checklist(models.Model):
+    _name = 'cyber_2matrix.checklist'
+    _inherit = ['mgmtsystem.version', 'mail.thread', 'mail.activity.mixin', 'mgmtsystem.code']
+    _description = "Lista de verificación"
+
+    name = fields.Char('Nombre')
+    state = fields.Selection([
+        ('draft', 'Borrador'),
+        ('validate', 'Validado'),
+        ('cancel', 'Cancelado'),
+    ], default='draft', string='Estado')
+    line_ids = fields.One2many('cyber_2matrix.checklist.line', 'checklist_id', string='Líneas')
+    dms_lines_evidence_ids = fields.Many2many('dms.file', string='Evidencias')
+    dms_lines_evidence_count = fields.Integer(compute='_compute_dms_lines_evidence_count', string='Evidencias')
+
+    @api.depends('line_ids.dms_evidence_ids')
+    def _compute_dms_lines_evidence_count(self):
+        for checklist in self:
+            all_evidence = checklist.line_ids.mapped('dms_evidence_ids')
+            checklist.dms_lines_evidence_ids = [(6, 0, all_evidence.ids)]
+            checklist.dms_lines_evidence_count = len(all_evidence)
+
+    def set_root_directory(self):
+        directory = 'soy_cybersecurity_cybersecurity.directory_soy_cybersecurity'
+        return directory
+
+    def action_dms_lines_evidence_ids(self):
+        result = self.env.ref('dms.action_dms_file').read()[0]
+        directory = self.set_root_directory()
+        result['domain'] = [('id', 'in', self.dms_lines_evidence_ids.ids)]
+        result['context'] = {'default_directory_id': self.env.ref(directory).id}
+        return result
+
+    def action_send_validate(self):
+        self.state = 'validate'
+
+    def action_send_cancel(self):
+        self.state = 'cancel'
+
+    @api.model
+    def default_get(self, fields_list):
+        defaults = super(Checklist, self).default_get(fields_list)
+        control_records = self.env['cyber_2matrix.checklist.control'].search([])
+        line_values = [(0, 0, {'checklist_control_id': control.id}) for control in control_records]
+        if 'line_ids' in fields_list:
+            defaults['line_ids'] = line_values
+        return defaults
+
+
+class ChecklistControl(models.Model):
+    _name = 'cyber_2matrix.checklist.control'
+    _description = "Control de lista de verificación"
+    _order = 'sequence, id'
+    _rec_name = 'number'
+
+    sequence = fields.Integer(default=10)
+    number = fields.Char('Número')
+    number_compute = fields.Char('Número', compute='_compute_number')
+    description = fields.Char('Descripción')
+    control = fields.Text('Control')
+
+    @api.depends('number')
+    def _compute_number(self):
+        for each in self:
+            each.number_compute = each.number
+
+
+class ChecklistLine(models.Model):
+    _name = 'cyber_2matrix.checklist.line'
+    _description = "Línea de lista de verificación"
+    _rec_name = 'checklist_control_id'
+
+    checklist_id = fields.Many2one('cyber_2matrix.checklist', string='Lista de verificación')
+    checklist_control_id = fields.Many2one('cyber_2matrix.checklist.control', string='Número')
+    checklist_control_number = fields.Char(related='checklist_control_id.number_compute', string='Número')
+    checklist_control_description = fields.Char(related='checklist_control_id.description', string='Descripción')
+    checklist_control_control = fields.Text(related='checklist_control_id.control', string='Control')
+    applies = fields.Boolean('Aplica', default=False)
+    documentary_control_ids = fields.Many2many('documentary.control', string='Documentos')
+    dms_evidence_ids = fields.Many2many('dms.file', string='Evidencia')
+    dms_evidence_count = fields.Integer(compute='_compute_dms_evidence_count', string='Evidencias')
+    comments = fields.Text('Comentario')
+
+    def set_root_directory(self):
+        directory = 'soy_cybersecurity_cybersecurity.directory_soy_cybersecurity'
+        return directory
+
+    @api.depends('dms_evidence_ids')
+    def _compute_dms_evidence_count(self):
+        for each in self:
+            each.dms_evidence_count = len(each.dms_evidence_ids)
+
+
 class Line(models.Model):
     _name = 'cyber_2matrix.block.line'
     _inherit = ['mgmtsystem.version', 'mail.thread',
