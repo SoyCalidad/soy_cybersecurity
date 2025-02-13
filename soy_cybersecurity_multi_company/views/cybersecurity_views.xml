@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cyber_view_2matrix_checklist_tree" model="ir.ui.view">
+        <field name="name">cyber_2matrix.checklist.tree.inherit.multi_company</field>
+        <field name="model">cyber_2matrix.checklist</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_2matrix_checklist_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+              <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_view_2matrix_checklist_form" model="ir.ui.view">
+        <field name="name">cyber_2matrix.checklist.form.inherit.multi_company</field>
+        <field name="model">cyber_2matrix.checklist</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_2matrix_checklist_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                    <group>
+                        <field name="company_id"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_2matrix_checklist_control_tree" model="ir.ui.view">
+        <field name="name">cyber_2matrix.checklist.control.tree.inherit.multi_company</field>
+        <field name="model">cyber_2matrix.checklist.control</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_2matrix_checklist_control_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+              <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_2matrix_checklist_control_form" model="ir.ui.view">
+        <field name="name">cyber_2matrix.checklist.control.form.inherit.multi_company</field>
+        <field name="model">cyber_2matrix.checklist.control</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_2matrix_checklist_control_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//group" position="after">
+                <group>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_view_2matrix_checklist_line_tree" model="ir.ui.view">
+        <field name="name">cyber_2matrix.checklist.line.tree.inherit.multi_company</field>
+        <field name="model">cyber_2matrix.checklist.line</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_2matrix_checklist_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+              <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_view_2matrix_checklist_line_form" model="ir.ui.view">
+        <field name="name">cyber_2matrix.checklist.line.form.inherit.multi_company</field>
+        <field name="model">cyber_2matrix.checklist.line</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_2matrix_checklist_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//group" position="after">
+                <group>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="controls_block_line_tree" model="ir.ui.view">
+        <field name="name">cyber_2matrix.controls.block.line.tree.inherit.multi_company</field>
+        <field name="model">cyber_2matrix.block.line</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.controls_block_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+              <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="controls_block_line_form" model="ir.ui.view">
+        <field name="name">cyber_2matrix.controls.block.line.form.inherit.multi_company</field>
+        <field name="model">cyber_2matrix.block.line</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.controls_block_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                    <group>
+                        <field name="company_id"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="controls_block_line_tree" model="ir.ui.view">
+        <field name="name">cyber_2matrix.controls.block.line.tree.inherit.multi_company</field>
+        <field name="model">cyber_2matrix.block.line</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.controls_block_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+              <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="controls_block_line_form" model="ir.ui.view">
+        <field name="name">cyber_2matrix.controls.block.line.form.inherit.multi_company</field>
+        <field name="model">cyber_2matrix.block.line</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.controls_block_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                    <group>
+                        <field name="company_id"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_matrix_matrix_tree" model="ir.ui.view">
+        <field name="name">cyber_matrix.matrix.tree.inherit.multi_company</field>
+        <field name="model">cyber_matrix.matrix</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_matrix_matrix_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+              <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_matrix_matrix_form" model="ir.ui.view">
+        <field name="name">cyber_matrix.matrix.form.inherit.multi_company</field>
+        <field name="model">cyber_matrix.matrix</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                    <group>
+                        <field name="company_id"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_view_matrix_block_tree" model="ir.ui.view">
+        <field name="name">cyber_matrix.block.tree.inherit.multi_company</field>
+        <field name="model">cyber_matrix.block</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_matrix_block_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+              <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_view_matrix_block_form" model="ir.ui.view">
+        <field name="name">cyber_matrix.block.form.inherit.multi_company</field>
+        <field name="model">cyber_matrix.block</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_matrix_block_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                    <group>
+                        <field name="company_id"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_view_matrix_block_line_tree" model="ir.ui.view">
+        <field name="name">cyber_matrix.block.line.tree.inherit.multi_company</field>
+        <field name="model">cyber_matrix.block.line</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+              <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cyber_view_matrix_block_line_form" model="ir.ui.view">
+        <field name="name">cyber_matrix.block.line.form.inherit.multi_company</field>
+        <field name="model">cyber_matrix.block.line</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                    <group>
+                        <field name="company_id"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_incident_incident_tree" model="ir.ui.view">
+        <field name="name">incident.incident.tree.inherit.multi_company</field>
+        <field name="model">incident.incident</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.view_incident_incident_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+              <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_incident_incident_form" model="ir.ui.view">
+        <field name="name">incident.incident.form.inherit.multi_company</field>
+        <field name="model">incident.incident</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.view_incident_incident_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                    <group>
+                        <field name="company_id"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
