@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="portrait" model="report.paperformat">
+        <field name="name">Soy Cybersecurity Vertical</field>
+        <field name="default" eval="True" />
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">60</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">58</field>
+        <field name="dpi">80</field>
+    </record>
+
+    <template id="report_process_edition_template" inherit_id="mgmtsystem_process.report_process_edition_template">
+        <xpath expr="//div[hasclass('header')]//table" position="replace">
+            <table class="tg">
+                <tbody>
+                    <tr>
+                       <td class="tg-1wig" rowspan="4" width="20%" style="width:15%">
+                          <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-width:100px;vertical-align:middle;" />
+                       </td>
+                       <td class="tg-1wig" rowspan="4" width="80%" style="width:65%;">
+                          <span t-field="o.process_id.name" style="font-size:15px;font-weight:bold;" />
+                       </td>
+                       <td class="tg-0lax" width="20%" style="width:20%">
+                          Código:
+                          <span t-field="o.code" />
+                       </td>
+                    </tr>
+                    <tr>
+                       <td class="tg-0lax">
+                       Versión:
+                          <span t-field="o.version" />
+                       </td>
+                    </tr>
+                    <tr>
+                       <td class="tg-0lax">
+                          Fecha de aprobación:
+                          <span t-if="o.validation_step" t-esc="o.validation_step[0].date.strftime('%d/%m/%Y')"/>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td class="tg-0lax">
+                          Clase:
+                          <span t-field="o.clazz_id.name"/>
+                       </td>
+                    </tr>
+                </tbody>
+            </table>
+        </xpath>
+    </template>
+</odoo>

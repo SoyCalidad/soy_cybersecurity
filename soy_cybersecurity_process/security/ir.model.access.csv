@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_documentary_control_clazz_onlyread,Solo lectura,model_documentary_control_clazz,mgmtsystem_process.group_process_readonly,1,0,0,0
+access_documentary_control_clazz_report,Impresión de reportes,model_documentary_control_clazz,mgmtsystem_process.group_process_readonly_printreport,1,0,0,0
+access_documentary_control_clazz_write,Documentos propios,model_documentary_control_clazz,mgmtsystem_process.group_process_owner,1,1,1,0
+access_documentary_control_clazz_all,Todos los permisos,model_documentary_control_clazz,mgmtsystem_process.group_process_all,1,1,1,1

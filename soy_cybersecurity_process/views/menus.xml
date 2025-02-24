@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="mgmt_process_configuration_menu"
+        name="Configuración"
+        parent="mgmtsystem_process.menu_process_root"
+        sequence="100"
+        groups= "base.group_no_one,mgmtsystem_process.group_process_readonly_printreport,mgmtsystem_process.group_process_owner,mgmtsystem_process.group_process_all"/>
+
+    <menuitem
+        id="documentary_control_clazz_menu_action"
+        name="Clases"
+        parent="mgmt_process_configuration_menu"
+        action="documentary_control_clazz_action"
+        sequence="10"
+        groups= "base.group_no_one,mgmtsystem_process.group_process_readonly_printreport,mgmtsystem_process.group_process_owner,mgmtsystem_process.group_process_all"/>
+</odoo>

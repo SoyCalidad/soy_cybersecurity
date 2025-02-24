@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mgmtsystem_process.report_process_edition" model="ir.actions.report">
+            <field name="paperformat_id" ref="soy_cybersecurity_process.portrait"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_mgmtsystem_infrastructure_tree" model="ir.ui.view">
+        <field name="name">documentary.control.tree.inherit</field>
+        <field name="model">documentary.control</field>
+        <field name="inherit_id" ref="mgmtsystem_process.view_mgmtsystem_infrastructure_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="clazz_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_documentary_control_form" model="ir.ui.view">
+        <field name="name">documentary.control.form.inherit</field>
+        <field name="model">documentary.control</field>
+        <field name="inherit_id" ref="mgmtsystem_process.view_documentary_control_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='diffusion']" position="after">
+                <field name="clazz_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="documentary_control_clazz_view_tree" model="ir.ui.view">
+        <field name="name">documentary.control.clazz.view.tree</field>
+        <field name="model">documentary.control.clazz</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="documentary_control_clazz_view_form" model="ir.ui.view">
+        <field name="name">documentary.control.clazz.view.form</field>
+        <field name="model">documentary.control.clazz</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="documentary_control_clazz_action" model="ir.actions.act_window">
+        <field name="name">Clases</field>
+        <field name="res_model">documentary.control.clazz</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
