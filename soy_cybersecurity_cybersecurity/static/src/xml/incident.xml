@@ -3,6 +3,9 @@
 
     <template id="soy_cybersecurity_cybersecurity.incident" name="inadequacy">
         <t t-call="website.layout">
+            <t t-set="head">
+                <meta name="robots" content="noindex, nofollow"/>
+            </t>
             <div class="center">
                 <form action="/incidente_enviado" method="post" id="msform" enctype="multipart/form-data">
                     <!-- progressbar -->
