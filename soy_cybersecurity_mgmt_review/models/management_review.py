@@ -22,7 +22,13 @@ class ManagementReview(models.Model):
     # G. COMUNICACIONES PERTINENTES CON LAS PARTES INTERESADAS
 
     it_comunication_plan_ids = fields.Many2many(
-        'comunication.plan.line', string='Planes de Comunicación')
+        comodel_name='comunication.plan.line',
+        relation='management_review_com_plan_rel',
+        column1='management_review_id',
+        column2='com_plan_line_id',
+        string='Planes de Comunicación'
+    )
+
     it_comunication_plan = fields.Html('Comunicaciones')
     it_comunication_plan_interpretation = fields.Text(
         'Interpretación de las comunicaciones')
