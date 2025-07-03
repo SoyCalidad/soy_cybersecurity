@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="internal_issue_view_form" model="ir.ui.view">
+    <record id="scs_context_internal_issue_view_form" model="ir.ui.view">
         <field name="name">mgmtsystem.context.internal_issue.view.form</field>
         <field name="model">mgmtsystem.context.internal_issue</field>
         <field name="inherit_id" ref="mgmtsystem_context.context_internal_issue_view_form" />
         <field name="arch" type="xml">
-            <field name="vision" position="after">
-                <field name="cybersecurity_scope" attrs="{'readonly': [('state','in',('validate_ok','cancel'))]}" />
-            </field>
+            <xpath expr="//field[@name='vision']" position="after">
+                <field name="cybersecurity_scope" 
+                readonly="state in ['validate_ok','cancel']"/>
+            </xpath>
+
             <xpath expr="//form/sheet/notebook/page[@name='general_info']/group/field[@name='quality_policy']" position="replace">
-                <field name="quality_policy" widget="many2many_tags" string="Políticas" attrs="{'required': [('state','in',['validate'])]}"/>
+                <field 
+                name="quality_policy" 
+                widget="many2many_tags" 
+                string="Políticas" 
+                required="state in ['validate']"
+                />
             </xpath>
         </field>
-    </record> 
-
+    </record>
 </odoo>

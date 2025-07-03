@@ -80,23 +80,24 @@
         <field name="arch" type="xml">
             <form string="Fuentes" class="o_matrix_block">
                 <header>
-                    <button name="send_in_process"
+                    <button name="send_elaborate"
                             type="object"
                             string="Iniciar"
                             class="btn-primary"
-                            attrs="{'invisible': [('state','!=','draft')]}" />
+                            invisible="state != 'draft'" 
+                            />
                     <button name="send_validate"
                             type="object"
                             string="Validar"
                             class="btn-primary"
-                            attrs="{'invisible': [('state','!=','in_process')]}" />
+                            invisible="state != 'in_process'" />
                     <button name="send_cancel"
                             confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
                             type="object"
                             string="Cancelar"
                             class="btn-second"
-                            attrs="{'invisible': [('state','=','cancel')]}" />
-                    <field name="state" widget="statusbar" statusbar_visible="draft,in_process,validate" />
+                            invisible="state == 'cancel'" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,elaborate,validate" />
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -104,13 +105,18 @@
                         <field name="name" invisible="1" />
                     </div>
                     <group>
-                        <field name="process_id" attrs="{'required': [('other','=',False)],'readonly': [('state','!=','draft')]}" options="{'no_create':True,'no_create_edit':True}" />
-                        <field name="other" attrs="{'readonly': [('state','!=','draft')]}" />
+                        <field name="process_id" 
+                        required="other == False" 
+                        readonly="state !='draft'" 
+                        options="{'no_create':True,'no_create_edit':True}" />
+                        <field name="other" 
+                        readonly="state != 'draft'" />
                         <!--<field name="type" invisible="1" />-->
                     </group>
                     <notebook>
                         <page string="Lineas">
-                            <field name="line_ids" attrs="{'readonly': [('state','not in',('draft','in_process'))]}">
+                            <field name="line_ids" 
+                            readonly="state not in ['draft','in_process']">
                                 <tree>
                                     <field name="department_id" />
                                     <field name="name" />
@@ -155,18 +161,18 @@
                             type="object"
                             string="Validar"
                             class="btn-primary"
-                            attrs="{'invisible': [('state','!=','draft')]}" />
+                            invisible="state != 'draft'" />
                     <button name="send_cancel"
                             confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
                             type="object"
                             string="Cancelar"
                             class="btn-second"
-                            attrs="{'invisible': [('state','=','cancel')]}" />
+                            invisible="state == 'cancel'" />
                     <field name="state" widget="statusbar" statusbar_visible="draft,validate" />
                     <button name="button_new_version"
                             type="object"
                             string="Nueva versión"
-                            attrs="{'invisible':[('state', '!=', 'validate')]}"
+                            invisible="state != 'validate'"
                             class="oe_highlight" />
                 </header>
                 <sheet>
@@ -184,32 +190,44 @@
                     <div class="oe_title">
                         <label for="name" />
                         <h2>
-                            <field name="name" attrs="{'readonly': [('state','!=','draft')]}" class="o_mbline_name" />
+                            <field name="name" 
+                            readonly="state != 'draft'" 
+                            class="o_mbline_name" />
                         </h2>
                     </div>
                     <group col="4">
-                        <field name="process_id" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
-                        <field name="department_id" options="{'no_create':True,'no_create_edit':True,'no_open':True}" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" class="o_mbline_department_id" />
+                        <field name="process_id" 
+                        readonly="state not in ['draft','in_process']" />
+                        <field name="department_id" options="{'no_create':True,'no_create_edit':True,'no_open':True}" 
+                        readonly="state not in ['draft','in_process']" class="o_mbline_department_id" />
                         <field name="system_id" options="{'no_create': True, 'no_edit': True}"  />
                         <field name="resource_id" 
                             widget="many2many_tags" 
-                            attrs="{'readonly': [('state','not in',('draft','in_process'))]}"
+                            readonly="state not in ['draft','in_process']"
                             options="{'no_create': False, 'no_open': False}"
                             
                             
                         />
-                        <field name="asset_contains_personal_data" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
-                        <field name="description" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
+                        <field name="asset_contains_personal_data" 
+                        readonly="state not in ['draft','in_process']" />
+                        <field name="description" 
+                        readonly="state not in ['draft','in_process']" />
                         <!--<field name="type_id" />-->
                         <!--<field name="type" invisible="1" />-->
-                        <field name="asset_susceptible_to_fraud" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
-                        <field name="location_id" widget="many2many_tags" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
-                        <field name="asset_vital_for_organization" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
+                        <field name="asset_susceptible_to_fraud" 
+                        readonly="state not in ['draft','in_process']" />
+                        <field name="location_id" widget="many2many_tags" 
+                        readonly="state not in ['draft','in_process']" />
+                        <field name="asset_vital_for_organization" 
+                        readonly="state not in ['draft','in_process']" />
                         <field name="user_id" />
                         <field name="version" />
-                        <field name="language_id" widget="many2many_tags" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
-                        <field name="storage_medium" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
-                        <field name="asset_type_id" widget="many2many_tags" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
+                        <field name="language_id" widget="many2many_tags" 
+                        readonly="state not in ['draft','in_process']" />
+                        <field name="storage_medium" 
+                        readonly="state not in ['draft','in_process']" />
+                        <field name="asset_type_id" widget="many2many_tags" 
+                        readonly="state not in ['draft','in_process']" />
                     </group>
 
                     <notebook>
@@ -217,10 +235,11 @@
                             <group>
                                 <field name="evaluation_id"
                                        string="Indicador"
-                                       attrs="{'readonly': [('state','not in',('draft','in_process'))]}"
+                                       readonly="state not in ['draft','in_process']"
                                        options="{'no_create':True,'no_create_edit':True}"
                                        class="o_mbline_evaluation_id" /> <!--domain="[('type','=',type)]"-->
-                                <field name="result_ids" widget="one2many" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" class="o_mbline_result_ids">
+                                <field name="result_ids" widget="one2many" 
+                                readonly="state not in ['draft','in_process']" class="o_mbline_result_ids">
                                     <tree create="false" delete="false">
                                         <field name="criterio_id" options="{'no_create':True,'no_create_edit':True}" />
                                         <field name="description" style="max-width: 200px" />
@@ -228,10 +247,12 @@
                                         <field name="value" />
                                     </tree>
                                 </field>
-                                <field name="ntr" string="Valor de riesgo" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" /><!-- attrs="{'invisible': [('type','!=','risk')], -->
+                                <field name="ntr" string="Valor de riesgo" 
+                                readonly="state not in ['draft','in_process']" /><!-- attrs="{'invisible': [('type','!=','risk')], -->
                                 <!--<field name="ntr" string="Valor de oportunidad" attrs="{'invisible': [('type','!=','opportunity')], 'readonly': [('state','not in',('draft','in_process'))]}" />-->
                                 <!--<field name="type" invisible="1" />-->
-                                <field name="interpretation_asset" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" /><!-- attrs="{'invisible': [('type','!=','risk')], -->
+                                <field name="interpretation_asset" 
+                                readonly="state not in ['draft','in_process']" /><!-- attrs="{'invisible': [('type','!=','risk')], -->
                                 <!--<field name="interpretation_opportunity" attrs="{'invisible': [('type','!=','opportunity')], 'readonly': [('state','not in',('draft','in_process'))]}" />-->
                             </group>
                         </page>

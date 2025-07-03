@@ -241,7 +241,7 @@ class Matrix(models.Model):
         self.state = 'elaborate'
 
     def send_elaborate_o(self):
-        self.exec_filter()
+        #self.exec_filter()
         self.state = 'elaborate'
 
     '''
@@ -374,26 +374,26 @@ class LineType(models.Model):
     description = fields.Text(string='Descripción')
 '''
 
-class MatrixBlockLineSystem(models.Model):
+class CyberMatrixBlockLineSystem(models.Model):
     _name = 'cyber_matrix.block.line.system'
     _description = 'Identificador de riesgo'
 
     name = fields.Char(string='Nombre')
 
 
-class MatrixBlockLineSystem(models.Model):
+class CyberMatrixBlockLineResource(models.Model):
     _name = 'cyber_matrix.block.line.resource'
     _description = 'Recurso de activos de información'
 
     name = fields.Char(string='Recurso')
 
-class MatrixBlockLineSystem(models.Model):
+class CyberMatrixBlockLineLocation(models.Model):
     _name = 'cyber_matrix.block.line.location'
     _description = 'Ubicación de activos de información'
 
     name = fields.Char(string='Ubicación')
 
-class MatrixBlockLineSystem(models.Model):
+class CyberMatrixBlockLineLanguage(models.Model):
     _name = 'cyber_matrix.block.line.language'
     _description = 'Idioma de activos de información'
 

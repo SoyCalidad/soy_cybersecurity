@@ -23,7 +23,8 @@
                 'hola_calidad',
                 'mgmtsystem_documentary_control',
                 'mgmtsystem_opportunity',
-                'soycalidad_dms',],
+                'soycalidad_dms',
+                ],
 
 
     'data': [
@@ -36,7 +37,6 @@
         'data/data_others.xml',
         'data/dms.xml',
 
-        'views/web_assets.xml',
         'views/controls.xml',
         'views/incidents.xml',
         'views/asset_management.xml',
@@ -57,5 +57,11 @@
         #'report/matrix_report.xml',
     ],
     'installable': True,
-    'application': True,    
+    'application': True,
+    'assets': {
+        'web.assets_frontend': [
+            '/soy_cybersecurity_cybersecurity/static/src/css/incident.css',
+            '/soy_cybersecurity_cybersecurity/static/src/js/incident.js',
+        ],
+    } 
 }

@@ -43,19 +43,19 @@ class Line(models.Model):
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
 
-class Categ(models.Model):
+class CyberMatrixCateg(models.Model):
     _inherit = 'cyber_matrix.categ'
 
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
 
-class Matrix(models.Model):
+class CyberMatrixMatrix(models.Model):
     _inherit = 'cyber_matrix.matrix'
 
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
 
-class Block(models.Model):
+class CyberMatrixBlock(models.Model):
     _inherit = 'cyber_matrix.block'
 
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
@@ -67,19 +67,19 @@ class LineAgent(models.Model):
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
 
-class MatrixBlockLineSystem(models.Model):
+class CyberMatrixBlockLineSystem(models.Model):
     _inherit = 'cyber_matrix.block.line.system'
 
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
 
-class MatrixBlockLineSystem(models.Model):
+class CyberMatrixBlockLineResource(models.Model):
     _inherit = 'cyber_matrix.block.line.resource'
 
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
 
-class MatrixBlockLineSystem(models.Model):
+class CyberMatrixBlockLineLocation(models.Model):
     _inherit = 'cyber_matrix.block.line.location'
 
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
@@ -91,7 +91,7 @@ class MatrixBlockLineSystem(models.Model):
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
 
-class Line(models.Model):
+class CyberMatrixBlockLine(models.Model):
     _inherit = 'cyber_matrix.block.line'
 
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)

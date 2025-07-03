@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
                 <!-- Reemplaza el contenido de la página "detail" -->
                 <xpath expr="//sheet/notebook/page[@name='detail']" position="replace">
-                    <page name="detail" string="Detalles" col="4">
+                    <page name="detail" string="Detalles" col="1">
                         <div class="main_s">
                             <style type="text/css">
                                 .script {
@@ -18,31 +18,38 @@
                                 text-transform: uppercase;
                                 }
                             </style>
-                            <group>
-                                <div class="plate">
+                            <group >
+                                <div class="plate" colspan="4">
                                     <p class="script">
                                         <h2>a. El estado de las acciones de las revisiones por la dirección previas</h2>
                                     </p>
-                                    <group>
-                                        <field name="record_meeting_ids" widget="many2many_tags" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="record_meeting_actions" />
-                                    </group>
                                 </div>
+                                <div class="spacer"></div>
+                                <group colspan="2">
+                                    <field name="record_meeting_ids" widget="many2many_tags" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="record_meeting_actions" />
+                                </group>
                             </group>
-                            <group>
-                                <div class="plate">
+                            <div class="spacer"></div>
+                            <group >
+                                <div class="plate" colspan="4">
                                     <p class="script">
                                         <h2>b. Los cambios en las cuestiones externas e internas</h2>
                                     </p>
-                                    <group>
-                                        <field name="foda" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="foda_description" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    </group>
-                                    <group>
-                                        <field name="stakeholders_id" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="stakeholders_description" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    </group>
                                 </div>
+                                <group colspan="2">
+                                    <field name="foda" colspan="2" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="foda_description" colspan="2" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                </group>
+                                <group colspan="2">
+                                    <field name="stakeholders_id" colspan="2" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="stakeholders_description" 
+                                    colspan="2" readonly="state in ['validate_ok','closed','cancel']" />
+                                </group>
                             </group>
                             <!--
                             <group id="item_c">
@@ -83,90 +90,123 @@
                                 </div>
                             </group>
                             -->
-                            <group id="item_c_update">
-                                <div class="plate">
+                            <div class="spacer"></div>
+                            <group id="item_c_update" >
+
+                                <div class="plate" colspan="4">
                                     <p class="script">
                                         <h2>c. La información sobre el desempeño</h2>
                                     </p>
                                     <p class="script" style="margin-left:5em">
                                         <h3>c.1. EL DESEMPEÑO DE LOS PROCESOS Y CONFORMIDAD DE LOS PRODUCTOS Y SERVICIOS</h3>
                                     </p>
-                                    <group colspan="3">
-                                        <field name="process" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="process_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    </group>
-                                    <p class="script" style="margin-left:5em">
-                                        <h3>c.2. CUMPLIMIENTO DE REQUISITOS LEGALES Y OTROS REQUISITOS</h3>
-                                    </p>
-                                    <group colspan="3">
-                                        <field name="it_legal_requirements" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="it_legal_requirements_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    </group>                                    
-                                    <p class="script" style="margin-left:5em">
-                                        <h3>c.3. LAS NO CONFORMIDADES Y ACCIONES CORRECTIVAS</h3>
-                                    </p>
-                                    <group>
-                                        <field name="nonconformity_action" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="nonconformity_action_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    </group>
-                                    <p class="script" style="margin-left:5em">
-                                        <h3>c.4. LOS RESULTADOS DE SEGUIMIENTO Y MEDICIÓN</h3>
-                                    </p>
-                                    <group>
-                                        <field name="indicator" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="indicator_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    </group>
-                                    <p class="script" style="margin-left:5em">
-                                        <h3>c.5. LOS RESULTADOS DE LAS AUDITORÍAS</h3>
-                                    </p>
-                                    <group>
-                                        <field name="audit" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="audit_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    </group>
-                                    <p class="script" style="margin-left:5em">
-                                        <h3>c.6. Cumplimiento de los objetivos de la seguridad de la información</h3>
-                                    </p>
-                                    <group colspan="3">
-                                        <field name="it_security_target" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="it_security_target_description" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    </group>
                                 </div>
+                                <div class="spacer"></div>
+                                <group colspan="3">
+                                    <field name="process" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="process_description" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                </group>
+                                <div class="spacer"></div>
+                                <p class="script" style="margin-left:5em" colspan="4">
+                                    <h3>c.2. CUMPLIMIENTO DE REQUISITOS LEGALES Y OTROS REQUISITOS</h3>
+                                </p>
+                                <group colspan="3">
+                                    <field name="it_legal_requirements" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="it_legal_requirements_description" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                </group>
+                                <div class="spacer"></div>     
+                                <p class="script" style="margin-left:5em" colspan="4">
+                                    <h3>c.3. LAS NO CONFORMIDADES Y ACCIONES CORRECTIVAS</h3>
+                                </p>
+                                <group colspan="3">
+                                    <field name="nonconformity_action" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="nonconformity_action_description" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                </group>
+                                <div class="spacer"></div>
+                                <p class="script" style="margin-left:5em">
+                                    <h3>c.4. LOS RESULTADOS DE SEGUIMIENTO Y MEDICIÓN</h3>
+                                </p>
+                                <group colspan="3">
+                                    <field name="indicator" 
+                                    colspan="2"
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="indicator_description" 
+                                    colspan="2"
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                </group>
+                                <div class="spacer"></div>
+                                <p class="script" style="margin-left:5em">
+                                    <h3>c.5. LOS RESULTADOS DE LAS AUDITORÍAS</h3>
+                                </p>
+                                <group colspan="3">
+                                    <field name="audit" colspan="2"
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="audit_description" colspan="2"
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                </group>
+                                <div class="spacer"></div>
+                                <p class="script" style="margin-left:5em" colspan="4">
+                                    <h3>c.6. Cumplimiento de los objetivos de la seguridad de la información</h3>
+                                </p>
+                                <group colspan="3">
+                                    <field name="it_security_target" colspan="2" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="it_security_target_description" colspan="2" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                </group>
                             </group>
-                            <group id="item_e">
+                            <div class="spacer"></div>
+                            <group id="item_e" >
                                 <div class="plate">
                                     <p class="script">
                                         <h2>d. La adecuación de los recursos</h2>
                                     </p>
-                                    <group>
-                                        <field name="resource" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="resource_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    </group>
                                 </div>
+                                <group colspan="2">
+                                    <field name="resource" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="resource_description" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                </group>
                             </group>
+                            <div class="spacer"></div>
                             <group id="item_f">
-                                <div class="plate">
+                                <div class="plate" colspan="4">
                                     <p class="script">
                                         <h2>e. La eficacia de las acciones tomadas para abordar los riesgos y las oportunidades</h2>
                                     </p>
-                                    <group>
-                                        <field name="risk" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                        <field name="risk_description" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    </group>
                                 </div>
+                                <group colspan="2">
+                                    <field name="risk" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="risk_description" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                </group>
                             </group>
+                            <div class="spacer"></div>
                             <group id="it_review_item_f">
-                                <div class="plate">
+                                <div class="plate" colspan="4">
                                     <p class="script">
                                         <h2>F. COMUNICACIONES PERTINENTES CON LAS PARTES INTERESADAS</h2>
                                     </p>
                                 </div>
                                 <br/>
-                                <group colspan="3">
-                                    <field name="it_comunication_plan_ids" widget="many2many_tags" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}"/>
-                                    <field name="it_comunication_plan" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}"/>
-                                    <field name="it_comunication_plan_interpretation" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}"/>
+                                <group colspan="2">
+                                    <field name="it_comunication_plan_ids" widget="many2many_tags" colspan="2" 
+                                    readonly="state in ['validate_ok','closed','cancel']"/>
+                                    <field name="it_comunication_plan" colspan="2" 
+                                    readonly="state in ['validate_ok','closed','cancel']"/>
+                                    <field name="it_comunication_plan_interpretation" colspan="2" 
+                                    readonly="state in ['validate_ok','closed','cancel']"/>
                                 </group>
                             </group>
+                            <div class="spacer"></div>
                             <group id="item_g">
                                 <div class="plate">
                                     <p class="script">
@@ -174,10 +214,13 @@
                                     </p>
                                 </div>
                                 <br />
-                                <group colspan="3">
-                                    <field name="improve_action_ids" widget="many2many_tags" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    <field name="improve_action" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
-                                    <field name="improve_action_des" colspan="3" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}" />
+                                <group colspan="2">
+                                    <field name="improve_action_ids" widget="many2many_tags" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="improve_action" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
+                                    <field name="improve_action_des" colspan="2" 
+                                    readonly="state in ['validate_ok','closed','cancel']" />
                                 </group>
                             </group>
                         </div>

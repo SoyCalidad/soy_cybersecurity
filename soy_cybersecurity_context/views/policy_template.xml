@@ -6,19 +6,43 @@
         <field name="inherit_id" ref="mgmtsystem_context.context_policy_view_form"/>
         <field name="arch" type="xml">
             <page name="document" position="inside">
-                <group attrs="{'invisible': [('system_id', '!=', %(soy_cybersecurity_context.policy_system_cybersecurity)d)]}">
-                    <field name="cyber_organization_context" string="Contexto de la organización" attrs="{'readonly': [('state', 'in', ('validate_ok', 'cancel'))]}"  />
-                    <field name="cyber_direction_help" string="Apoyo para la dirección" attrs="{'readonly': [('state', 'in', ('validate_ok', 'cancel'))]}"  />
+                <group 
+                invisible="system_id != %(soy_cybersecurity_context.policy_system_cybersecurity)d"
+                
+                >
+                    <field name="cyber_organization_context" string="Contexto de la organización" 
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
+                    <field name="cyber_direction_help" string="Apoyo para la dirección" 
+                    readonly="state in ['validate_ok', 'cancel']"
+                    
+                    />
                                 
-                    <field name="cyber_risk_handling" string="Evaluación y tratamiento de riesgos" attrs="{'readonly': [('state', 'in', ('validate_ok', 'cancel'))]}"/>  
-                    <field name="cyber_legal_req" string="Requisitos Legales" attrs="{'readonly': [('state', 'in', ('validate_ok', 'cancel'))]}"  />
-                    <field name="cyber_responsibility_assignment" string="Asignación de responsabilidades" attrs="{'readonly': [('state', 'in', ('validate_ok', 'cancel'))]}"  />
+                    <field name="cyber_risk_handling" string="Evaluación y tratamiento de riesgos" 
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />  
+                    <field name="cyber_legal_req" string="Requisitos Legales" 
+                    readonly="state in ['validate_ok', 'cancel']"  
+                    />
+                    <field name="cyber_responsibility_assignment" string="Asignación de responsabilidades" 
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
 
-                    <field name="cyber_standard_commitment" string="Compromiso para los requisitos de la norma" attrs="{'readonly': [('state', 'in', ('validate_ok', 'cancel'))]}"  />  
-                    <field name="cyber_staff_participation" string="Participación del personal" attrs="{'readonly': [('state', 'in', ('validate_ok', 'cancel'))]}"  />
-                    <field name="cyber_continuous_improvement" string="Mejora continua" attrs="{'readonly': [('state', 'in', ('validate_ok', 'cancel'))]}"  />  
-                    <field name="cyber_control_implementation" string="Implementación de controles" attrs="{'readonly': [('state', 'in', ('validate_ok', 'cancel'))]}"  />  
-                    <field name="cyber_security_goals" string="Objetivos para la seguridad de la información" attrs="{'readonly': [('state', 'in', ('validate_ok', 'cancel'))]}"  />
+                    <field name="cyber_standard_commitment" string="Compromiso para los requisitos de la norma" 
+                    readonly="state in ['validate_ok', 'cancel']" 
+                    
+                    />  
+                    <field name="cyber_staff_participation" string="Participación del personal" 
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
+                    <field name="cyber_continuous_improvement" string="Mejora continua" 
+                    readonly="state in ['validate_ok', 'cancel']" 
+                     />  
+                    <field name="cyber_control_implementation" string="Implementación de controles" 
+                    readonly="state in ['validate_ok', 'cancel']" 
+                     />  
+                    <field name="cyber_security_goals" string="Objetivos para la seguridad de la información" 
+                    readonly="state in ['validate_ok', 'cancel']"  />
 
                 </group>
             </page>

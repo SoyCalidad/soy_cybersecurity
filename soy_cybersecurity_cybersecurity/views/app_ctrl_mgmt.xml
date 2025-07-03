@@ -33,18 +33,21 @@
                             type="object"
                             string="Validar"
                             class="btn-primary"
-                            attrs="{'invisible': [('state','!=','draft')]}" />
+                            invisible="state != 'draft'"
+                            />
                     <button name="send_cancel"
                             confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
                             type="object"
                             string="Cancelar"
                             class="btn-second"
-                            attrs="{'invisible': [('state','=','cancel')]}" />
+                            invisible="state == 'cancel'" 
+                            
+                            />
                     <field name="state" widget="statusbar" statusbar_visible="draft,validate" />
                     <button name="button_new_version"
                             type="object"
                             string="Nueva versión"
-                            attrs="{'invisible':[('state', '!=', 'validate')]}"
+                            invisible="state != 'validate'"
                             class="oe_highlight" />
                 </header>
                 <sheet>
@@ -64,20 +67,29 @@
                     <div class="oe_title">
                         <label for="name" />
                         <h2>
-                            <field name="name" attrs="{'readonly': [('state','!=','draft')]}" class="o_mbline_name" />
+                            <field name="name" 
+                            readonly="state != 'draft'" 
+                            class="o_mbline_name" />
                         </h2>
                     </div>
                     <group col="4">
                         <!--<field name="process_id" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />-->
                         <!--<field name="system_id"  options="{'no_create': True, 'no_edit': True}"   />-->
                         <field name="domain_id" options="{'no_create': True, 'no_open': True, 'no_create_edit':True}"/>
-                        <field name="application" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
+                        <field name="application" 
+                        readonly="state not in ['draft','in_process']" 
+                        />
                         <field name="domain_description" readonly="1"/>
-                        <field name="description_application" attrs="{'invisible': [('application', '=', False)]}"/>
+                        <field name="description_application" 
+                        invisible="application == False"/>
                         <field name="user_id" invisible="1" />       
-                        <field name="implementation_record" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />    
-                        <field name="ctrl_target_id" options="{'no_create': True, 'no_open': True, 'no_create_edit':True}" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
-                        <field name="type" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />
+                        <field name="implementation_record" 
+                        readonly="state not in ['draft','in_process']" />    
+                        <field name="ctrl_target_id" options="{'no_create': True, 'no_open': True, 'no_create_edit':True}" 
+                        readonly="state not in ['draft','in_process']" 
+                        />
+                        <field name="type" 
+                        readonly="state not in ['draft','in_process']" />
                         <field name="version" />
                         <!--<field name="user_id" invisible="1" />-->
                         <!--<field name="description" attrs="{'readonly': [('state','not in',('draft','in_process'))]}" />-->
@@ -148,13 +160,13 @@
                             type="object"
                             string="Validar"
                             class="btn-primary"
-                            attrs="{'invisible': [('state','!=','draft')]}" />
+                            invisible="state != 'draft'" />
                     <button name="action_send_cancel"
                             confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
                             type="object"
                             string="Cancelar"
                             class="btn-second"
-                            attrs="{'invisible': [('state','=','cancel')]}" />
+                            invisible="state == 'cancel'" />
                     <field name="state" widget="statusbar" statusbar_visible="draft,validate" />
                 </header>
                 <sheet>
@@ -166,12 +178,15 @@
                     <div class="oe_title">
                         <label for="name" />
                         <h2>
-                            <field name="name" class="o_mbline_name" required="1" attrs="{'readonly':[('state','in', ('validate','cancel'))]}" />
+                            <field name="name" class="o_mbline_name" required="1" 
+                            readonly="state in ['validate','cancel']" 
+                            />
                         </h2>
                     </div>
                     <notebook>
                         <page string="Líneas">
-                            <field name="line_ids" attrs="{'readonly':[('state','in', ('validate','cancel'))]}" />
+                            <field name="line_ids" 
+                            readonly="state in ['validate','cancel']" />
                         </page>
                     </notebook>
                 </sheet>

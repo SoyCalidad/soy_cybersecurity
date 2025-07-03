@@ -25,33 +25,33 @@
                             type="object"
                             string="Enviar a revisar"
                             class="btn-primary"
-                            attrs="{'invisible': [('state','!=','elaborate')]}" />
+                            invisible="state != 'elaborate'" />
                     <button name="send_validate"
                             type="object"
                             string="Enviar a validar"
                             class="btn-primary"
-                            attrs="{'invisible': [('state','!=','review')]}" />
+                            invisible="state != 'review'" />
                     <button name="send_validate_ok"
                             type="object"
                             string="Validar"
                             class="btn-primary"
-                            attrs="{'invisible': [('state','!=','validate')]}" />
+                            invisible="state != 'validate'" />
                     <button name="send_elaborate"
                             type="object"
                             string="Enviar a elaboración"
                             class="btn-second"
-                            attrs="{'invisible': [('state','!=','validate')]}" />
+                            invisible="state != 'validate'" />
                     <button name="send_cancel"
                             confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
                             type="object"
                             string="Cancelar"
                             class="btn-second"
-                            attrs="{'invisible': [('state','=','cancel')]}" />
+                            invisible="state == 'cancel'" />
                     <field name="state" widget="statusbar" statusbar_visible="draft,elaborate,review,validate,validate_ok" />
                     <button name="button_new_version"
                             type="object"
                             string="Nueva versión"
-                            attrs="{'invisible':[('state', '!=', 'validate_ok')]}"
+                            invisible="state != 'validate_ok'"
                             class="oe_highlight" />
                 </header>
                 <sheet>
@@ -69,7 +69,8 @@
                     <label for="name" />
                     <div class="oe_title">
                         <h3>
-                            <field name="name" attrs="{'readonly':[('state','=','validate_ok')]}" />
+                            <field name="name" 
+                            readonly="state == 'validate_ok'" />
                         </h3>
                     </div>
                     <group>
@@ -82,7 +83,8 @@
                     <notebook>
                         <page string="Detalles de lineas">
                             <!--<field name="line_ids" domain="[('type', '=', type)]" context="{'default_type': type}" attrs="{'readonly':[('state','=','validate_ok')]}">-->
-                            <field name="line_ids" attrs="{'readonly':[('state','=','validate_ok')]}">
+                            <field name="line_ids" 
+                            readonly="state == 'validate_ok'">
                                 <tree>
                                     <field name="name" />
                                     <field name="effect" />
@@ -101,14 +103,14 @@
                                 </group>
                                 <group colspan="4">
                                     <separator string="Elaboración" />
-                                    <field name="elaboration_step" colspan="4" nolabel="1" attrs="{'readonly': [('state','not in',('elaborate'))]}" />
+                                    <field name="elaboration_step" colspan="4" nolabel="1" readonly="state not in ['elaborate']" />
                                     <separator string="Revisión" />
-                                    <field name="review_step" colspan="4" nolabel="1" attrs="{'readonly': [('state','not in',('elaborate', 'review'))]}" />
+                                    <field name="review_step" colspan="4" nolabel="1" readonly="state not in ['elaborate', 'review']" />
                                     <separator string="Validación" />
-                                    <field name="validation_step" colspan="4" nolabel="1" attrs="{'readonly': [('state','not in',('elaborate', 'review', 'validate'))]}" />
+                                    <field name="validation_step" colspan="4" nolabel="1" readonly="state not in ['elaborate', 'review', 'validate']" />
                                 </group>
                                 <group>
-                                    <field name="date_review" attrs="{'readonly':[('state','not in',('elaborate','review'))]}" />
+                                    <field name="date_review" readonly="state not in ['elaborate','review']" />
                                     <field name="date_validate" groups="base.group_no_one,base.user_admin" />
                                     <!--<field name="type" invisible="1" />-->
                                 </group>
