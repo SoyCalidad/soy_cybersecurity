@@ -124,6 +124,13 @@ class Matrix(models.Model):
         if self.categ_id:
             self.name = self.categ_id.name + " " + self.numero
 
+    type = fields.Selection(
+        string='Tipo',
+        selection=[
+            ('risk', 'Riesgo'),
+            ('opportunity', 'Oportunidad')],
+        required=False,
+    )
     '''
     type = fields.Selection(
         string='Tipo',
