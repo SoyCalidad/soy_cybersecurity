@@ -100,6 +100,18 @@ class Matrix(models.Model):
     actions_count = fields.Integer(
         string='Acciones',
     )
+    nonconformities_count = fields.Integer(
+        string='No conformidades',
+    )
+    indicators_count = fields.Integer(
+        string='Indicadores',
+    )
+    # risks_count = fields.Integer(
+    #     string='Riesgos',
+    # )
+    # opps_count = fields.Integer(
+    #     string='Oportunidades',
+    # )
 
     @api.onchange('categ_id')
     def _onchange_categ_id(self):
