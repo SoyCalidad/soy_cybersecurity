@@ -183,7 +183,7 @@ class Matrix(models.Model):
         self.state = 'elaborate'
 
     def send_elaborate_o(self):
-        self.exec_filter()
+        #self.exec_filter()
         self.state = 'elaborate'
 
     '''
@@ -286,8 +286,8 @@ class Block(models.Model):
 
     def send_elaborate(self):
         self.state = 'elaborate'
-        for line in self.line_ids:
-            line.send_elaborate()
+        #for line in self.line_ids:
+            #line.send_elaborate()
 
     def send_validate(self):
         self.state = 'validate'
@@ -334,7 +334,7 @@ class Checklist(models.Model):
         ('cancel', 'Cancelado'),
     ], default='draft', string='Estado')
     line_ids = fields.One2many('cyber_2matrix.checklist.line', 'checklist_id', string='Líneas')
-    dms_lines_evidence_ids = fields.Many2many('dms.file', string='Evidencias')
+    dms_lines_evidence_ids = fields.Many2many('documents.document', string='Evidencias')
     dms_lines_evidence_count = fields.Integer(compute='_compute_dms_lines_evidence_count', string='Evidencias')
 
     @api.depends('line_ids.dms_evidence_ids')
@@ -349,7 +349,7 @@ class Checklist(models.Model):
         return directory
 
     def action_dms_lines_evidence_ids(self):
-        result = self.env.ref('dms.action_dms_file').read()[0]
+        result = self.env.ref('documents.workflow.rule').read()[0]
         directory = self.set_root_directory()
         result['domain'] = [('id', 'in', self.dms_lines_evidence_ids.ids)]
         result['context'] = {'default_directory_id': self.env.ref(directory).id}
@@ -401,7 +401,7 @@ class ChecklistLine(models.Model):
     checklist_control_control = fields.Text(related='checklist_control_id.control', string='Control')
     applies = fields.Boolean('Aplica', default=False)
     documentary_control_ids = fields.Many2many('documentary.control', string='Documentos')
-    dms_evidence_ids = fields.Many2many('dms.file', string='Evidencia')
+    dms_evidence_ids = fields.Many2many('documents.document', string='Evidencia')
     dms_evidence_count = fields.Integer(compute='_compute_dms_evidence_count', string='Evidencias')
     comments = fields.Text('Comentario')
 
@@ -501,8 +501,8 @@ class Line(models.Model):
     )
 
 
-    def send_elaborate(self):
-        self.state = 'elaborate'
+    # def send_elaborate(self):
+    #     self.state = 'elaborate'
 
     def send_validate(self):
         self.state = 'validate'
