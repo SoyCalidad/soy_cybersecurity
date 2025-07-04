@@ -109,6 +109,9 @@ class Matrix(models.Model):
     targets_count = fields.Integer(
         string='Objetivos',
     )
+    change_requests_count = fields.Integer(
+        string='Solicitudes de cambios',
+    )
     # risks_count = fields.Integer(
     #     string='Riesgos',
     # )
