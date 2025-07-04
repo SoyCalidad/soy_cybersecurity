@@ -106,6 +106,9 @@ class Matrix(models.Model):
     indicators_count = fields.Integer(
         string='Indicadores',
     )
+    targets_count = fields.Integer(
+        string='Objetivos',
+    )
     # risks_count = fields.Integer(
     #     string='Riesgos',
     # )
