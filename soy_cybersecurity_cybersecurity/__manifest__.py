@@ -16,15 +16,17 @@
     'version': '0.1',
 
 
-    'depends': ['mgmtsystem_action',
-                'mgmtsystem_nonconformity',
-                'website',
-                'mgmtsystem_process',
-                'hola_calidad',
-                'mgmtsystem_documentary_control',
-                'mgmtsystem_opportunity',
-                'soycalidad_dms',
-                ],
+    'depends': [
+        'dms',
+        'mgmtsystem_action',
+        'mgmtsystem_nonconformity',
+        'website',
+        'mgmtsystem_process',
+        'hola_calidad',
+        'mgmtsystem_documentary_control',
+        'mgmtsystem_opportunity',
+        'soycalidad_dms',
+    ],
 
 
     'data': [
