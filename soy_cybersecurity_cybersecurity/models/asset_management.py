@@ -97,6 +97,9 @@ class Matrix(models.Model):
     )
     system_id = fields.Many2one(
         'mgmtsystem.context.system', string='Identificador de riesgo', default=lambda self: self.env.ref('hola_calidad.policy_system_1'))
+    actions_count = fields.Integer(
+        string='Acciones',
+    )
 
     @api.onchange('categ_id')
     def _onchange_categ_id(self):
