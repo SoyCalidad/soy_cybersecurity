@@ -349,7 +349,7 @@ class Checklist(models.Model):
         return directory
 
     def action_dms_lines_evidence_ids(self):
-        result = self.env.ref('documents.workflow.rule').read()[0]
+        result = self.env.ref('documents.action_dms_file').read()[0]
         directory = self.set_root_directory()
         result['domain'] = [('id', 'in', self.dms_lines_evidence_ids.ids)]
         result['context'] = {'default_directory_id': self.env.ref(directory).id}

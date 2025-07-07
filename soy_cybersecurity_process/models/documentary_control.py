@@ -12,4 +12,4 @@ class DocumentaryControlClazz(models.Model):
 class DocumentaryControl(models.Model):
     _inherit = 'documentary.control'
 
-    clazz_id = fields.Many2one('documentary.control.clazz', string='Clase')
+    clazz_id = fields.Many2one('documentary.control.clazz', string='Clase', ondelete='set null')

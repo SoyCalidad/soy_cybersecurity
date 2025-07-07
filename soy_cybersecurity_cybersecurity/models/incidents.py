@@ -85,9 +85,9 @@ class incidentincidentCauseWhy(models.Model):
     # One2many references
 
     incident_cause_id = fields.Many2one(
-        'incident.incident', string='Reclamo (Causa)')
+        'incident.incident', string='Reclamo (Causa)', ondelete='set null')
     incident_why_id = fields.Many2one(
-        'incident.incident', string='Reclamo (¿Por qué?)')
+        'incident.incident', string='Reclamo (¿Por qué?)', ondelete='set null')
 
 class incident(models.Model):
     _name = 'incident.incident'

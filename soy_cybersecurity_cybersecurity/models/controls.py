@@ -13,9 +13,9 @@ class Line(models.Model):
     )
 
 
-    executor_user_id = fields.Many2one('res.users', string='Responsable de Ejecución')
-    tracking_hr_employee_id = fields.Many2one('hr.employee', string='Responsable de Seguimiento')
-    authorizing_user_id = fields.Many2one('res.users', string='Autoridad Aprobatoria')
+    executor_user_id = fields.Many2one('res.users', string='Responsable de Ejecución', ondelete='set null')
+    tracking_hr_employee_id = fields.Many2one('hr.employee', string='Responsable de Seguimiento',ondelete='set null')
+    authorizing_user_id = fields.Many2one('res.users', string='Autoridad Aprobatoria', ondelete='set null')
 
     opening_date = fields.Datetime(
         string='Fecha de Apertura',

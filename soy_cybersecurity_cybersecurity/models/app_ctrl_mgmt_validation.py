@@ -12,18 +12,25 @@ class MatrixMatrix(models.Model):
         'mgmtsystem.validation.step', 'cyber_2matrix_validation_id', string='Validación')
 
     process_id = fields.Many2one(
-        'process.edition', string='Procedimiento', domain=[('active','=',True)])
+        'process.edition', 
+        string='Procedimiento', 
+        domain=[('active','=',True)],
+        ondelete='set null'    
+    )
 
 
 class MatrixValidation(models.Model):
     _inherit = 'mgmtsystem.validation.step'
 
     cyber_2matrix_elaboration_id = fields.Many2one(
-        'cyber_2matrix.matrix', string='Padre')
+        'cyber_2matrix.matrix', 
+        string='Padre',
+        ondelete='set null'
+        )
     cyber_2matrix_review_id = fields.Many2one(
-        'cyber_2matrix.matrix', string='Padre')
+        'cyber_2matrix.matrix', string='Padre', ondelete='set null')
     cyber_2matrix_validation_id = fields.Many2one(
-        'cyber_2matrix.matrix', string='Padre')
+        'cyber_2matrix.matrix', string='Padre', ondelete='set null')
 
 
 class MatrixBlockLine(models.Model):

@@ -5,4 +5,4 @@ from odoo.exceptions import UserError
 class ProcessEdition(models.Model):
     _inherit = 'process.edition'
 
-    clazz_id = fields.Many2one('documentary.control.clazz', string='Clase')
+    clazz_id = fields.Many2one('documentary.control.clazz', string='Clase', ondelete='set null')
