@@ -15,15 +15,16 @@ class MatrixMatrix(models.Model):
         'process.edition', string='Procedimiento', domain=[('active','=',True)],  ondelete='set null')
 
 
-class MatrixValidation(models.Model):
-    _inherit = 'mgmtsystem.validation.step'
+# This is mgmtsystem_opportunity module
+# class MatrixValidation(models.Model):
+#     _inherit = 'mgmtsystem.validation.step'
 
-    matrix_elaboration_id = fields.Many2one(
-        'cyber_matrix.matrix', string='Padre', ondelete='set null')
-    matrix_review_id = fields.Many2one(
-        'cyber_matrix.matrix', string='Padre', ondelete='set null')
-    matrix_validation_id = fields.Many2one(
-        'cyber_matrix.matrix', string='Padre', ondelete='set null')
+#     matrix_elaboration_id = fields.Many2one(
+#         'cyber_matrix.matrix', string='Padre', ondelete='set null')
+#     matrix_review_id = fields.Many2one(
+#         'cyber_matrix.matrix', string='Padre', ondelete='set null')
+#     matrix_validation_id = fields.Many2one(
+#         'cyber_matrix.matrix', string='Padre', ondelete='set null')
 
 
 class MatrixBlockLine(models.Model):
