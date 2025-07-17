@@ -535,6 +535,8 @@ class Line(models.Model):
     )
     ntr = fields.Integer(
         string='Valor del Activo',
+        compute='_compute_ntr',
+        store=True,
     )
     action_ids = fields.Many2many(
         string='Acciones',
@@ -613,12 +615,23 @@ class Line(models.Model):
         lines = self.create_criterio()
         self.result_ids = lines
 
+    @api.depends('result_ids', 'result_ids.value')
+    def _compute_ntr(self):
+        for record in self:
+            ntr_tmp = 1
+            for result in record.result_ids:
+                if result.value is not None:
+                    ntr_tmp *= result.value
+            record.ntr = ntr_tmp
+
     @api.onchange('result_ids')
     def _onchange_result_ids(self):
-        ntr_tmp = 1
-        for result in self.result_ids:
-            ntr_tmp *= result.value
-        self.ntr = ntr_tmp
+        for record in self:
+            ntr_tmp = 1
+            for result in record.result_ids:
+                if result.value is not None:
+                    ntr_tmp *= result.value
+            record.ntr = ntr_tmp
 
     '''important_review_it
     @api.constrains('state')
