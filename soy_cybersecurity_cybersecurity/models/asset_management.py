@@ -612,8 +612,24 @@ class Line(models.Model):
 
     @api.onchange('evaluation_id')
     def _onchange_evaluation_id(self):
-        lines = self.create_criterio()
-        self.result_ids = lines
+        # lines = self.create_criterio()
+        # self.result_ids = lines
+        if not self.evaluation_id:
+            return
+        # 1) Limpia el M2M  
+        self.result_ids = [(5, 0, 0)]
+        # 2) Crea y asocia resultados únicos
+        new_ids = []
+        for criterio in self.evaluation_id.criterio_ids:
+            # crea un solo registro por criterio
+            result = self.env['cyber_evaluation.result'].create({
+                'criterio_id': criterio.id,
+                'name': criterio.name,
+                'description': criterio.description,
+            })
+            new_ids.append(result.id)
+        # 3) Asocia con el comando (6)
+        self.result_ids = [(6, 0, new_ids)]
 
     @api.depends('result_ids', 'result_ids.value')
     def _compute_ntr(self):

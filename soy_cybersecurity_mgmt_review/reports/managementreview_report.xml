@@ -107,15 +107,15 @@
                         <h5>Interesados internos</h5>
                         <table t-if="o.stakeholders_id" class='table table-bordered'>
                             <tr>
-                                <th>Parte interesada</th>
+                                <!-- <th>Parte interesada</th> -->
                                 <th>Interesado</th>
                                 <th>Calificación</th>
                             </tr>
                             <t t-foreach="o.stakeholders_id.stakeholder_in_ids" t-as="record">
                                 <tr>
-                                    <td>
+                                    <!-- <td>
                                         <span t-field="record.stakeholder_id" />
-                                    </td>
+                                    </td> -->
                                     <td>
                                         <span t-field="record.partner_id" />
                                     </td>
@@ -128,15 +128,15 @@
                         <h5>Interesados externos</h5>
                         <table t-if="o.stakeholders_id" class='table table-bordered'>
                             <tr>
-                                <th>Parte interesada</th>
+                                <!-- <th>Parte interesada</th> -->
                                 <th>Interesado</th>
                                 <th>Calificación</th>
                             </tr>
                             <t t-foreach="o.stakeholders_id.stakeholder_out_ids" t-as="record">
                                 <tr>
-                                    <td>
+                                    <!-- <td>
                                         <span t-field="record.stakeholder_id" />
-                                    </td>
+                                    </td> -->
                                     <td>
                                         <span t-field="record.partner_id" />
                                     </td>

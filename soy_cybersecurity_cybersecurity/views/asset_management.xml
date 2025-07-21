@@ -37,7 +37,7 @@
             <form string="Evaluación">
                 <sheet>
                     <group>
-                        <field name="criterio_id" />
+                        <field name="criterio_id" create="false" no_edit="true"/>
                         <field name="description" />
                         <field name="alternative" />
                         <field name="alternative_description" />
@@ -238,10 +238,12 @@
                                        readonly="state not in ['draft','in_process']"
                                        options="{'no_create':True,'no_create_edit':True}"
                                        class="o_mbline_evaluation_id" /> <!--domain="[('type','=',type)]"-->
-                                <field name="result_ids" widget="one2many" 
-                                readonly="state not in ['draft','in_process']" class="o_mbline_result_ids">
+                                <field name="result_ids" widget="one2many"
+                                readonly="state not in ['draft','in_process']" 
+                                options="{'link': False}"
+                                class="o_mbline_result_ids">
                                     <tree create="false" delete="false">
-                                        <field name="criterio_id" options="{'no_create':True,'no_create_edit':True}" />
+                                        <field name="criterio_id" />
                                         <field name="description" style="max-width: 200px" />
                                         <field name="alternative" />
                                         <field name="value" />
