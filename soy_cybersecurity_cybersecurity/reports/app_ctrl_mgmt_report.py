@@ -7,6 +7,11 @@ from math import ceil
 from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
 from PIL import Image
+import logging
+
+
+
+_logger = logging.getLogger(__name__)
 
 
 class IndividualReport(models.AbstractModel):
@@ -15,7 +20,7 @@ class IndividualReport(models.AbstractModel):
 
     def generate_xlsx_report(self, workbook, data, matrixes):
         try:
-            for matrix in matrixes:
+            for matrix in matrixes.sudo():
                 sheet = workbook.add_worksheet(str(matrix.name))
 
                 format21_c_bold = workbook.add_format(
@@ -173,7 +178,7 @@ class IndividualReport(models.AbstractModel):
                 prod_row += 1
                 count = 1
 
-                lines_order = self.env['cyber_2matrix.block.line'].search(
+                lines_order = self.env['cyber_2matrix.block.line'].sudo().search(
                     [('id', 'in', matrix.line_ids.ids)], order="id")
 
                 block_name = ""
@@ -303,6 +308,6 @@ class IndividualReport(models.AbstractModel):
 
         except Exception as e:
             print(e)
-            raise UserError("Hubo un error al generar el reporte")
+            raise UserError(f"Hubo un error al generar el reporte {e}")
 
 
