@@ -162,7 +162,7 @@
                                 </group>
                             </group>
                             <div class="spacer"></div>
-                            <group id="item_e" >
+                            <group id="item_d" >
                                 <div class="plate">
                                     <p class="script">
                                         <h2>d. La adecuación de los recursos</h2>
@@ -176,7 +176,7 @@
                                 </group>
                             </group>
                             <div class="spacer"></div>
-                            <group id="item_f">
+                            <group id="item_e">
                                 <div class="plate" colspan="4">
                                     <p class="script">
                                         <h2>e. La eficacia de las acciones tomadas para abordar los riesgos y las oportunidades</h2>

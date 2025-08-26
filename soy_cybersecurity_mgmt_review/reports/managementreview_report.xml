@@ -230,13 +230,13 @@
                         </div>
                     </div>
 
-                    <div class="pagebreak e_title">
+                    <div class="pagebreak d_title">
                         <span class="title">D. La adecuación de los recursos</span>
                         <t t-raw="o.resource" />
                         <span t-field="o.resource" />
                     </div>
 
-                    <div class="pagebreak f_title">
+                    <div class="pagebreak e_title">
                         <span class="title">E. La eficacia de las acciones tomadas para abordar los riesgos y las oportunidades</span>
                         <t t-raw="o.risk" />
                         <span t-field="o.risk_description" />
