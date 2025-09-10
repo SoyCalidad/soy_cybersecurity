@@ -5,6 +5,12 @@
         <record id="policy_system_cybersecurity" model="mgmtsystem.context.system">
             <field name="name">Seguridad de la información</field>
         </record>
+        <record id="policy_system_use_ia" model="mgmtsystem.context.system">
+            <field name="name">Uso Responsable de Inteligencia Artificial</field>
+        </record>
+        <record id="policy_system_safe_dev" model="mgmtsystem.context.system">
+            <field name="name">Desarrollo Seguro</field>
+        </record>
     </data>
 
     <!--
@@ -26,5 +32,3 @@
     -->
 
 </odoo>
-
-

@@ -47,6 +47,88 @@
                     <p t-field="doc.cyber_security_goals" />
                 </p>
             </t>
+            <t t-if="doc.is_policy_system_use_ia">
+                <t t-if="doc.introduction">
+                    <p  t-field="doc.introduction" />
+                </t>
+                <h5>Objeto</h5>
+                <t t-if="doc.use_ia_object">
+                    <p  t-field="doc.use_ia_object" />
+                </t>
+                <h5>Alcance</h5>
+                <p>
+                    <p t-if="doc.use_ia_scope" t-field="doc.use_ia_scope" />
+                </p>
+                <h5>Roles y responsabilidades</h5>
+                <p>
+                    <t t-raw="doc.use_ia_role" />
+                </p>
+                <h5>Responsabilidad individual</h5>
+                <p>
+                    <p t-field="doc.use_ia_individual_res" />
+                </p>
+                <h5>Confidencialidad</h5>
+                <p>
+                    <p t-field="doc.use_ia_confidentiality" />
+                </p>                
+                <h5>Uso ético</h5>
+                <p>
+                    <p t-field="doc.use_ia_ethical_use" />
+                </p>
+                <h5>Limitación de casos de uso</h5>
+                <p>
+                    <p t-field="doc.use_ia_luc" />
+                </p>
+                <h5>Consideración de sesgos</h5>
+                <p>
+                    <p t-field="doc.use_ia_cons_biase" />
+                </p>
+                <h5>Respeto a la propiedad intelectual de terceros</h5>
+                <p>
+                    <p t-field="doc.use_ia_riptp" />
+                </p>
+                <h5>Principio de respeto al ser humano y al bienestar social</h5>
+                <p>  
+                    <p t-field="doc.use_ia_respect_human" />
+                </p>
+                <h5>Revisión y mejora continua</h5>
+                <p>  
+                    <p t-field="doc.use_ia_review_ci" />
+                </p>
+            </t>
+            <t t-if="doc.is_policy_system_save_dev">
+                <p>
+                    <p t-field="doc.introduction" />
+                </p>
+                <h5>Objetivo</h5>
+                <p>
+                    <p t-field="doc.save_dev_objective" />
+                </p>
+                <h5>Alcance</h5>
+                <p>
+                    <p t-field="doc.save_dev_scope" />
+                </p>
+                <h5>Roles y responsabilidades</h5>
+                <p>
+                    <t t-raw="doc.save_dev_role" />
+                </p>
+                <h5>Principios de desarrollo seguro</h5>
+                <p>
+                    <t t-raw="doc.save_dev_principle" />
+                </p>
+                <h5>Ciclo de Vida de Desarrollo Seguro</h5>
+                <p>
+                    <t t-raw="doc.save_dev_life_cycle" />
+                </p>                
+                <h5>Capacitación y Concienciación</h5>
+                <p>
+                    <p t-field="doc.save_dev_training" />
+                </p>
+                <h5>Revisión y Cumplimiento</h5>
+                <p>
+                    <p t-field="doc.save_dev_review_compliance" />
+                </p>
+            </t>
         </xpath>
     </template>
 

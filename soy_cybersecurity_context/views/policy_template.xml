@@ -5,6 +5,11 @@
         <field name="model">mgmtsystem.context.policy</field>
         <field name="inherit_id" ref="mgmtsystem_context.context_policy_view_form"/>
         <field name="arch" type="xml">
+            <form position="inside" >
+                <field name="is_policy_system_save_dev" invisible="1" />
+                <field name="is_policy_system_use_ia" invisible="1" />
+            </form>
+           
             <page name="document" position="inside">
                 <group 
                 invisible="system_id != %(soy_cybersecurity_context.policy_system_cybersecurity)d"
@@ -43,6 +48,70 @@
                      />  
                     <field name="cyber_security_goals" string="Objetivos para la seguridad de la información" 
                     readonly="state in ['validate_ok', 'cancel']"  />
+
+                </group>
+                <group 
+                invisible="system_id != %(soy_cybersecurity_context.policy_system_use_ia)d"
+                >
+                    <field name="use_ia_object"
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
+                    <field name="use_ia_scope" 
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
+                    <field name="use_ia_role"
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />  
+                    <field name="use_ia_individual_res" 
+                    readonly="state in ['validate_ok', 'cancel']"  
+                    />
+                    <field name="use_ia_confidentiality"
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
+                    <field name="use_ia_ethical_use" 
+                    readonly="state in ['validate_ok', 'cancel']" 
+                    
+                    />  
+                    <field name="use_ia_luc" 
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
+                    <field name="use_ia_cons_biase"
+                    readonly="state in ['validate_ok', 'cancel']" 
+                     />  
+                    <field name="use_ia_riptp"
+                    readonly="state in ['validate_ok', 'cancel']" 
+                     />  
+                    <field name="use_ia_respect_human" 
+                    readonly="state in ['validate_ok', 'cancel']"  />
+                    <field name="use_ia_review_ci" 
+                    readonly="state in ['validate_ok', 'cancel']"  />
+
+                </group>
+                <group 
+                invisible="system_id != %(soy_cybersecurity_context.policy_system_safe_dev)d"
+                >
+                    <field name="save_dev_objective"
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
+                    <field name="save_dev_scope" 
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
+                    <field name="save_dev_role"
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />  
+                    <field name="save_dev_principle" 
+                    readonly="state in ['validate_ok', 'cancel']"  
+                    />
+                    <field name="save_dev_life_cycle"
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
+                    <field name="save_dev_training" 
+                    readonly="state in ['validate_ok', 'cancel']" 
+                    
+                    />  
+                    <field name="save_dev_review_compliance" 
+                    readonly="state in ['validate_ok', 'cancel']"
+                    />
 
                 </group>
             </page>
