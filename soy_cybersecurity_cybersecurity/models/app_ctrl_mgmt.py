@@ -51,7 +51,7 @@ class Categ(models.Model):
 class Matrix(models.Model):
     _name = 'cyber_2matrix.matrix'
     _inherit = ['mgmtsystem.validation.mail', 'mgmtsystem.code']
-    _description = "Matriz"
+    _description = "Matriz de declaración de aplicabilidad"
 
     parent_edition = fields.Many2one(
         comodel_name='cyber_2matrix.matrix', string='Padre', copy=False)

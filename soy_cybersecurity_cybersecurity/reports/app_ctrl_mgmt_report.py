@@ -128,7 +128,7 @@ class IndividualReport(models.AbstractModel):
 
 
                 sheet.merge_range(prod_row-4, i-1, prod_row-4,
-                                  i, 'Código: '+str(matrix.code), format21_c_bold)
+                                  i, 'Código: '+str(matrix.code if matrix.code else ''), format21_c_bold)
                 sheet.merge_range(prod_row-3, i-1, prod_row-3, i,
                                   'Edición: '+str(matrix.version), format21_c_bold)
                 
@@ -208,7 +208,7 @@ class IndividualReport(models.AbstractModel):
                     i += 1
 
                     sheet.write(
-                        prod_row, i, line.ctrl_target_id.name, format21_left)
+                        prod_row, i, line.ctrl_target_id.name if line.ctrl_target_id.name else '', format21_left)
                     i += 1
 
                     sheet.write(prod_row, i, line.name, format21_left)

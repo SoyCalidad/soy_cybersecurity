@@ -5,11 +5,14 @@ import os
 import time
 from datetime import datetime
 from PIL import Image
+import logging 
 
 from odoo import _, api, models
 from odoo.exceptions import UserError
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 
+
+_logger = logging.getLogger(__name__)
 
 class DocumentaryControlReportXLS(models.AbstractModel):
     _inherit = 'report.mgmtsystem_process.documentary_control_xls'
@@ -51,7 +54,20 @@ class DocumentaryControlReportXLS(models.AbstractModel):
         sheet.set_column('D:D', 20)
         sheet.set_row(4, 25)
 
-        company_id = self.env.user.company_id
+        #company_id = self.env.company
+        company_id = self.env.context.get("company_id")
+        _logger.info(f"company_id by context {company_id}")
+        company_id = self.env["res.company"].browse(company_id) if company_id else self.env.company
+
+        _logger.info(f"Company id : {company_id}")
+        current_master_list = self.env['documentary.control'].search([
+            ('company_id', '=', company_id.id), 
+            ('model_id', '=', 'documentary.control'),
+        ], limit=1)
+        code_master_list = ''
+        _logger.info(f"master list {current_master_list}")
+        if current_master_list:
+            code_master_list = current_master_list.code
 
         buf_image = io.BytesIO(base64.b64decode(company_id.logo))
         im = Image.open(buf_image)
@@ -66,7 +82,9 @@ class DocumentaryControlReportXLS(models.AbstractModel):
         sheet.insert_image('A1', "logo.png", {
             'image_data': buf_image, 'x_scale': x_scale, 'y_scale': y_scale})
         sheet.merge_range('B1:I4', 'Lista maestra', format_title)
-        sheet.merge_range('J1:J4', datetime.today().strftime('%d/%m/%Y'), format_title)
+        sheet.merge_range('J1:J2', datetime.today().strftime('%d/%m/%Y'), format_title)
+        sheet.merge_range('J3:J4', f"Código: {code_master_list}", format_title)
+        
 
         sheet.write(5, 0, 'Código del proceso', format_header)
         sheet.write(5, 1, 'Procedimiento', format_header)
@@ -81,7 +99,8 @@ class DocumentaryControlReportXLS(models.AbstractModel):
 
         entrie_row = 6
         code = ''
-        for doc in records:
+        ids_company = []
+        for doc in records.sudo():
             sheet.write(entrie_row, 0, doc.process_code, format_data)
             sheet.write(entrie_row, 1, doc.process_id.name, format_data)
             sheet.write(entrie_row, 2, doc.process_last_edition, format_data)
@@ -96,5 +115,17 @@ class DocumentaryControlReportXLS(models.AbstractModel):
             if doc.process_last_edition and doc.process_last_edition > code:
                 code = doc.process_last_edition
             entrie_row += 1
+            if doc.company_id and not code_master_list:
+                ids_company.append(doc.company_id.id)
+        _logger.info(f"ids_company {ids_company}")
+        if len(ids_company)>0:
+            current_master_list = self.env['documentary.control'].search([
+                ('company_id', 'in', ids_company), 
+                ('model_id', '=', 'documentary.control'),
+            ], limit=1)
+            _logger.info(f"master list {current_master_list}")
+            if current_master_list:
+                code_master_list = current_master_list.code
+            sheet.merge_range('J3:J4', f"Código: {code_master_list}", format_title)
 
         workbook.close()
