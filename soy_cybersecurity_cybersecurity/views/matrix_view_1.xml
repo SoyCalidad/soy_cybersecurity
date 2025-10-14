@@ -101,13 +101,13 @@
                                 <group>
                                     <field name="version" />
                                 </group>
-                                <group colspan="4">
+                                <group colspan="2">
                                     <separator string="Elaboración" />
-                                    <field name="elaboration_step" colspan="4" nolabel="1" readonly="state not in ['elaborate']" />
+                                    <field name="elaboration_step" colspan="2" nolabel="1" readonly="state not in ['elaborate']" />
                                     <separator string="Revisión" />
-                                    <field name="review_step" colspan="4" nolabel="1" readonly="state not in ['elaborate', 'review']" />
+                                    <field name="review_step" colspan="2" nolabel="1" readonly="state not in ['elaborate', 'review']" />
                                     <separator string="Validación" />
-                                    <field name="validation_step" colspan="4" nolabel="1" readonly="state not in ['elaborate', 'review', 'validate']" />
+                                    <field name="validation_step" colspan="2" nolabel="1" readonly="state not in ['elaborate', 'review', 'validate']" />
                                 </group>
                                 <group>
                                     <field name="date_review" readonly="state not in ['elaborate','review']" />

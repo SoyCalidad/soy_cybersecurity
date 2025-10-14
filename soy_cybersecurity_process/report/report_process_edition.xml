@@ -19,7 +19,7 @@
                 <tbody>
                     <tr>
                        <td class="tg-1wig" rowspan="4" width="20%" style="width:15%">
-                          <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-width:100px;vertical-align:middle;" />
+                          <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-width:100px;vertical-align:middle;" />
                        </td>
                        <td class="tg-1wig" rowspan="4" width="80%" style="width:65%;">
                           <span t-field="o.process_id.name" style="font-size:15px;font-weight:bold;" />

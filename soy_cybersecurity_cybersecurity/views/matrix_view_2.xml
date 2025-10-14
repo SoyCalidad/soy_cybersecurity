@@ -47,7 +47,7 @@
                             string="Cancelar"
                             class="btn-second"
                             invisible="state == 'cancel'" />
-                    <field name="state" widget="statusbar" statusbar_visible="draft,elaborate,review,validate,validate_ok" />
+                    <field name="state" widget="statusbar" statusbar_visible="elaborate,review,validate,validate_ok,cancel" />
                     <button name="button_new_version"
                             type="object"
                             string="Nueva versión"
@@ -100,14 +100,14 @@
                                 <group>
                                     <field name="version" />
                                 </group>
-                                <group colspan="4">
+                                <group colspan="2">
                                     <separator string="Elaboración" />
-                                    <field name="elaboration_step" colspan="4" nolabel="1" 
+                                    <field name="elaboration_step" colspan="2" nolabel="1" 
                                     readonly="state not in ['elaborate']" />
                                     <separator string="Revisión" />
-                                    <field name="review_step" colspan="4" nolabel="1" readonly="state not in ['elaborate', 'review']" />
+                                    <field name="review_step" colspan="2" nolabel="1" readonly="state not in ['elaborate', 'review']" />
                                     <separator string="Validación" />
-                                    <field name="validation_step" colspan="4" nolabel="1" readonly="state not in ['elaborate', 'review', 'validate']" />
+                                    <field name="validation_step" colspan="2" nolabel="1" readonly="state not in ['elaborate', 'review', 'validate']" />
                                 </group>
                                 <group>
                                     <field name="date_review" 

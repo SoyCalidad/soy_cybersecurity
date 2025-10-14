@@ -12,13 +12,21 @@
             />
             -->
     <!-- # model="cyber_2matrix.matrix" name = "cyber_2matrix_matrix.report"  //  "cyber_2matrix.block.line" name = "cyber_2matrix_blockline.report"-->
-    <report id="cyber_2blockline_xlsx"
-            model="cyber_2matrix.matrix"  
-            string="Reporte de Matriz de Declaración de Aplicabilidad"
-            report_type="xlsx"
-            name="cyber_2matrix_matrix.report"
-            file="Matriz de Declaración de Aplicabilidad"
-            print_report_name="'%s' % object.name"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-            />        
+       
+    <record id="cyber_2blockline_xlsx" model="ir.actions.report">
+        <field name="name">Reporte de Matriz de Declaración de Aplicabilidad</field>
+        <field name="report_type">xlsx</field>
+        <field name="model">cyber_2matrix.matrix</field>
+        <field name="report_name">cyber_2matrix_matrix.report</field>
+        <field name="report_file">Matriz de Declaración de Aplicabilidad</field>
+        <field name="print_report_name">'%s' % object.name</field>
+        <field name="groups_id" eval="[(6,0,[
+                ref('base.group_no_one'),
+                ref('soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread'),
+                ref('soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport'),
+                ref('soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario'),
+                ref('soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport'),
+        ])]" />
+        <field name="binding_model_id" ref="model_cyber_2matrix_matrix"></field>
+    </record>
 </odoo>

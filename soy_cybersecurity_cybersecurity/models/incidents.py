@@ -124,11 +124,12 @@ class incident(models.Model):
     reason_other = fields.Text('Otro motivo')
 
     
-    analisis_id = fields.Many2one(
-        string='Analisis',
-        comodel_name='incident.analisis',
-        ondelete='restrict',
-    )
+    # no existe esta relación
+    # analisis_id = fields.Many2one(
+    #     string='Analisis',
+    #     comodel_name='incident.analisis',
+    #     ondelete='restrict',
+    # )
 
     
     categ_id = fields.Many2one(

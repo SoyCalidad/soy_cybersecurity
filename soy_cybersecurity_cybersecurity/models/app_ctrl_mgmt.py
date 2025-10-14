@@ -182,9 +182,6 @@ class Matrix(models.Model):
     def send_elaborate(self):
         self.state = 'elaborate'
 
-    def send_elaborate_o(self):
-        self.exec_filter()
-        self.state = 'elaborate'
 
     '''
     def exec_filter(self):
@@ -351,8 +348,11 @@ class Checklist(models.Model):
     def action_dms_lines_evidence_ids(self):
         result = self.env.ref('dms.action_dms_file').read()[0]
         directory = self.set_root_directory()
+        directory_ref = self.env.ref(directory, raise_if_not_found=False)
         result['domain'] = [('id', 'in', self.dms_lines_evidence_ids.ids)]
-        result['context'] = {'default_directory_id': self.env.ref(directory).id}
+        result['context'] = {
+            'default_directory_id': directory_ref.id if directory_ref else None
+        }
         return result
 
     def action_send_validate(self):
@@ -502,7 +502,7 @@ class Line(models.Model):
 
 
     def send_elaborate(self):
-        self.state = 'elaborate'
+        self.state = 'draft'
 
     def send_validate(self):
         self.state = 'validate'
