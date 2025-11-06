@@ -48,6 +48,7 @@
 
         'views/configuration_views_2.xml',
         'views/menus.xml',
+        'views/res_users_views.xml',
         
         'reports/matrix_report.xml',
         'reports/app_ctrl_mgmt_report.xml',

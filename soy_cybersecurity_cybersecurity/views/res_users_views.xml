@@ -1,0 +1,16 @@
+<odoo>
+    <record id="users_view_form" model="ir.ui.view">
+        <field name="name">res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='access_rights']//group" position="after">
+                <group name="g_notification_soycyber" string="Notificaciones SCS" groups="soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread">
+                    <newline/>
+                    <field name="scc_report_incident" groups="soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
