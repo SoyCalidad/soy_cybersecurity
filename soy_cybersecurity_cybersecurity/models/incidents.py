@@ -278,6 +278,16 @@ class incident(models.Model):
     def _onchange_satisfied(self):
         if self.satisfied:
             self.state = 'close'
+            
+    def action_send_close(self):
+        for record in self:
+            record.state = 'close'
+            record.date_fin = fields.Datetime.now(self)
+            
+    def action_back_in_process(self):
+        for record in self:
+            record.state = 'in_process'
+            record.date_fin = False
 
     @api.onchange('quick_action_id')
     def onchange_quick_action_id(self):

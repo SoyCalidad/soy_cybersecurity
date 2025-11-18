@@ -21,9 +21,21 @@
             <form>
                 <header>
                     <field name="state" widget="statusbar" statusbar_visible="open,in_process,close" clickable="True" />
+                    <button name="action_send_close"
+                            type="object"
+                            string="Cerrar incidente"
+                            confirm="¿Estás seguro?"
+                            class="btn-primary"
+                            attrs="{'invisible': [('state','!=','in_process')]}" />
+                    <button name="action_back_in_process"
+                        type="object"
+                        string="Volver a 'En proceso'"
+                        class="oe_highlight ml-3"
+                        confirm="¿Estás seguro?"
+                        attrs="{'invisible': [('state','!=','close')]}" 
+                        groups="base.group_system"/>
                 </header>
                 <sheet>
-
                     <div class="oe_title">
                         <h1>
                             <field name="code" />
