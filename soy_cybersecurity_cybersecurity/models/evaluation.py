@@ -27,14 +27,20 @@ class Result(models.Model):
     alternative_description = fields.Text(related='alternative.description', string='Descripción de la alternativa')
     
     text_values = fields.Char(compute='_compute_text_values', string='Valores')
+    line_id = fields.Many2one(
+        comodel_name='cyber_matrix.block.line',
+        string='Línea',
+        ondelete='cascade',
+    )
     
     @api.depends('alternative')
     def _compute_text_values(self):
         text_values = ''
-        alternative = self.alternative
-        if alternative:
-            text_values = 'El valor mínimo es %s y el máximo es %s' % (alternative.value_less, alternative.value_high)
-        self.text_values = text_values
+        for record in self:
+            alternative = record.alternative
+            if alternative:
+                text_values = 'El valor mínimo es %s y el máximo es %s' % (alternative.value_less, alternative.value_high)
+            record.text_values = text_values
 
     @api.onchange('value')
     def _onchange_value(self):

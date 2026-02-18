@@ -525,12 +525,18 @@ class Line(models.Model):
         comodel_name='cyber_evaluation.evaluation',
         ondelete='restrict',
     )
-    result_ids = fields.Many2many(
-        string='Resultados',
+    # result_ids = fields.Many2many(
+    #     string='Resultados',
+    #     comodel_name='cyber_evaluation.result',
+    #     relation='cyber_block_line_evaluation_result_rel',
+    #     column1='result_id',
+    #     column2='line_id',
+    #     copy=True,
+    # )
+    result_ids = fields.One2many(
         comodel_name='cyber_evaluation.result',
-        relation='cyber_block_line_evaluation_result_rel',
-        column1='result_id',
-        column2='line_id',
+        inverse_name='line_id',
+        string='Resultados',
         copy=True,
     )
     ntr = fields.Integer(
@@ -597,21 +603,25 @@ class Line(models.Model):
     def send_cancel(self):
         self.state = 'cancel'
 
-    def create_criterio(self):
+    def _create_criterio(self):
         lines = [(5, 0, 0)]
-        for criterio in self.evaluation_id.criterio_ids:
-            data = {
-                'criterio_id': criterio,
-                'name': criterio.name,
-                'description': criterio.description,
-            }
-            lines.append((0, 0, data))
-        return lines
+        for record in self:
+            for criterio in record.evaluation_id.criterio_ids:
+                data = {
+                    'criterio_id': criterio,
+                    'name': criterio.name,
+                    'description': criterio.description,
+                }
+                lines.append((0, 0, data))
+            record.result_ids = lines
 
     @api.onchange('evaluation_id')
     def _onchange_evaluation_id(self):
-        lines = self.create_criterio()
-        self.result_ids = lines
+        for record in self:
+            if record.evaluation_id:
+                record._create_criterio()
+            else:
+                record.result_ids = [(5,0,0)]
 
     @api.onchange('result_ids')
     def _onchange_result_ids(self):
