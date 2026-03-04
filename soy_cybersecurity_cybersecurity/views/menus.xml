@@ -1,158 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <menuitem
+        <menuitem
             id="menu_cybersecurity_root"
             name="Seguridad de la Información"
             web_icon="soy_cybersecurity_cybersecurity,static/description/icon.png"
             groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
             sequence="4"
-    />
+        />
+    
+        <!-- Assets Management-->
+        <!-- <menuitem
+                id="menu_information_asset_management"
+                name="Inventario de activos"
+                parent="menu_cybersecurity_root"
+                sequence="10"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        /> -->
+    
+        <!-- Applicability Control Management-->
+        <!-- <menuitem
+                id="menu_app_ctrl_mgmt"
+                name="Declaración de Aplicabilidad"
+                parent="menu_cybersecurity_root"
+                sequence="11"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        /> -->
+    
+        <!-- Controls Management-->
+        <!-- <menuitem
+                id="menu_controls"
+                name="Controles"
+                parent="menu_cybersecurity_root"
+                sequence="70"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        />
+    
+        <menuitem
+                id="menu_controls_mgmt"
+                name="Controles"
+                parent="menu_controls"
+                sequence="12"
+                action="controls_block_line_action"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        />
+    
+        <menuitem
+                id="menu_controls_checklist"
+                name="Lista de verificación"
+                parent="menu_controls"
+                sequence="15"
+                action="cyber_2matrix_checklist_action"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        />
+    
+        <menuitem
+                id="menu_report"
+                name="Reportes"
+                parent="menu_cybersecurity_root"
+                sequence="70"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        />
+    
+        <menuitem
+                id="menu_configuration"
+                name="Configuración"
+                parent="menu_cybersecurity_root"
+                sequence="150"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
+        />
+    
+        <menuitem
+                name="Controles de Lista de verificación"
+                id="mitem_cyber_2matrix_checklist_control"
+                parent="menu_configuration"
+                sequence="20"
+                action="cyber_2matrix_checklist_control_action"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
+    
+    
+        <menuitem name="Declaración de Aplicabilidad"
+                  id="mitem_block_line_app_ctrl_mgmt"
+                  parent="menu_app_ctrl_mgmt"
+                  sequence="2"
+                  action="matrix_block_line_app_ctrl_mgmt_action"
+        groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
+    
+        <menuitem name="Inventario de Activos de Información"
+                  id="mitem_block_line_information_asset"
+                  parent="menu_information_asset_management"
+                  sequence="2"
+                  action="matrix_block_line_information_asset_action"
+        groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/> -->
+    
+        <!-- Menus -->
+        <!-- <menuitem
+                name="Recursos"
+                id="mitem_cyber_matrix_block_line_resource"
+                parent="menu_configuration"
+                sequence="11"
+                action="cyber_matrix_block_line_resource_action"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
+    
+        <menuitem
+                name="Ubicaciones"
+                id="mitem_cyber_matrix_block_line_location"
+                parent="menu_configuration"
+                sequence="12"
+                action="cyber_matrix_block_line_location_action"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
+    
+        <menuitem
+                name="Idiomas"
+                id="mitem_cyber_matrix_block_line_language"
+                parent="menu_configuration"
+                sequence="13"
+                action="cyber_matrix_block_line_language_action"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
+    
+        <menuitem
+                name="Tipos de Activos"
+                id="mitem_cyber_matrix_block_line_asset_type"
+                parent="menu_configuration"
+                sequence="14"
+                action="cyber_matrix_block_line_asset_type_action"
+        groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
+    
+        <menuitem name="Incidentes"
+                  id="indicent_menu"
+                  parent="menu_cybersecurity_root"
+                  sequence="15"/>
+    
+        <menuitem name="Incidentes internos"
+                  id="indicent_menu_int"
+                  parent="indicent_menu"
+                  sequence="1"
+                  action="incident_incident_int_action"/>
+    
+        <menuitem name="Incidentes externos"
+                  id="indicent_menu_ext"
+                  parent="indicent_menu"
+                  sequence="2"
+                  action="incident_incident_ext_action"/>
+    
+        <menuitem name="Matriz de inventario de activos de la información"
+                  id="mitem_matrix_matrix_information_asset"
+                  parent="menu_information_asset_management"
+                  sequence="4"
+                  action="matrix_matrix_information_asset_action"
+        groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
+    
+        <menuitem name="Matriz de declaración de aplicabilidad"
+                  id="mitem_matrix_matrix_app_ctrl_mgmt"
+                  parent="menu_app_ctrl_mgmt"
+                  sequence="5"
+                  action="matrix_matrix_app_ctrl_mgmt_action"
+        groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/> -->
+    
+        <menuitem
+          id="menu_diagnosis_main"
+          name="Diagnóstico"
+          parent="menu_cybersecurity_root"
+          sequence="10" />
+    
+        <menuitem
+          id="menu_plan_main"
+          name="Planificar"
+          parent="menu_cybersecurity_root"
+          sequence="20" />
+    
+        <menuitem
+          id="menu_do_main"
+          name="Hacer"
+          parent="menu_cybersecurity_root"
+          sequence="30" />
+    
+        <menuitem
+          id="menu_check_main"
+          name="Verificar"
+          parent="menu_cybersecurity_root"
+          sequence="40" />
+    
+        <menuitem
+          id="menu_act_main"
+          name="Actuar"
+          parent="menu_cybersecurity_root"
+          sequence="50" />
+    
+        <!-- Planificar -->
+        <menuitem id="context_menu"
+            name="Contexto Organizacional"
+            parent="menu_plan_main"
+            groups="mgmtsystem_context.group_context_onlyread,mgmtsystem_context.group_context_onlyread_printreport,mgmtsystem_context.group_context_write_printreport,mgmtsystem_context.group_context_all"
+            sequence="30" >
+    
+        </menuitem>
+        <menuitem id="context_context_internal_issue_menu"
+            name="Contexto interno"
+            action="mgmtsystem_context.context_internal_issue_action"
+            sequence="0" 
+            parent="context_menu"
+            />
+        <menuitem id="context_stakeholder_menu"
+            name="Partes interesadas"
+            action="mgmtsystem_context.stakeholder_action"
+            parent="context_menu"
+            sequence="2" />
+        
+        <menuitem id="context_internal_factors_menu"
+            name="Factores internos"
+            parent="context_menu"
+            action="mgmtsystem_context.context_internal_issue_action"
+            sequence="5" />
+        <menuitem id="context_external_factors_menu"
+            name="Factores externos"
+            parent="context_menu"
+            action="mgmtsystem_context.context_external_issue_action"
+            sequence="6" />
+    
+         <menuitem id="policy_menu"
+            name="Políticas"
+            parent="menu_plan_main"
+            groups="mgmtsystem_legal.group_legal_onlyread,mgmtsystem_legal.group_legal_onlyread_printreport,mgmtsystem_legal.group_legal_write_printreport,mgmtsystem_legal.group_legal_all"
+            sequence="40" >
+            <menuitem id="policy_real_menu"
+                name="Política"
+                action="mgmtsystem_context.context_policy_action_action"
+                sequence="1" />
+        </menuitem>
+    
+       
+        <menuitem id="process_menu"
+            name="Procesos"
+            parent="menu_plan_main"
+            groups="mgmtsystem_process.group_process_all,mgmtsystem_process.group_process_readonly,mgmtsystem_process.group_process_readonly_printreport,mgmtsystem_process.group_process_owner"
+            sequence="50" >
+            <menuitem id="mgmtsystem_process_categ_menu"
+                name="Mapa de procesos"
+                action="mgmtsystem_process.action_mgmt_categ_procedures"
+                sequence="1" />
+    
+            <menuitem id="mgmtsystem_process_process_menu"
+                name="Procedimientos"
+                action="mgmtsystem_process.action_mgmt_procedures"
+                sequence="2" />
+    
+            <menuitem id="mgmtsystem_process_documentary_menu"
+                name="Lista Maestra"
+                action="mgmtsystem_process.documentary_control_action"
+                sequence="2"
+                groups="base.group_no_one,mgmtsystem_process.group_process_readonly,mgmtsystem_process.group_process_readonly_printreport,mgmtsystem_process.group_process_owner,mgmtsystem_process.group_process_all" />
+    
+        </menuitem>
+    
+         
+        <menuitem id="employees_menu"
+            name="Empleados"
+            parent="menu_plan_main"
+            groups="mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
+            sequence="60" >
+            <menuitem id="employee_employee_menu"
+                name="Empleados"
+                action="hr.open_view_employee_list_my"
+                sequence="10" />
+    
+            <menuitem id="employee_job_menu"
+                name="Puestos"
+                action="hr.action_hr_job"
+                sequence="20" />
+        </menuitem>
+    
+        <menuitem id="opp_menu"
+            name="Riesgos y Oportunidades"
+            parent="menu_plan_main"
+            groups="mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"
+            sequence="70" >
+            <menuitem id="opp_risk_menu"
+                      name="Matriz de Riesgos"
+                      action="mgmtsystem_opportunity.matrix_block_line_risk_action"
+                      sequence="10" />
+    
+            <menuitem id="opp_opp_menu"
+                      name="Matriz de Oportunidades"
+                      action="mgmtsystem_opportunity.matrix_block_line_opportunity_action"
+                      sequence="20" />
+        </menuitem>
+    
+        <menuitem id="legal_menu"
+            name="Requisitos Legales"
+            parent="menu_plan_main"
+            groups="mgmtsystem_legal.group_legal_onlyread,mgmtsystem_legal.group_legal_onlyread_printreport,mgmtsystem_legal.group_legal_write_printreport,mgmtsystem_legal.group_legal_all"
+            sequence="80" >
+            <menuitem id="mgmtsystem_legal_menu"
+                name="Requisitos Legales"
+                action="mgmtsystem_legal.legal_plan_action"
+                sequence="1" />
+        </menuitem>
+        
+        <menuitem id="goal_menu"
+            name="Objetivos"
+            parent="menu_plan_main"
+            sequence="90" >
+            <menuitem id="mgmtsystem_target_menu"
+                name="Objetivos"
+                action="mgmtsystem_target.target_action"
+                sequence="2" />
+        </menuitem>
+    
+        <menuitem id="report_change_request_menu"
+            name="Planificación de cambios"
+            parent="menu_plan_main"
+            sequence="100" >
+            <menuitem id="report_improve_plan_matrix_menu"
+                name="Matriz de Planificación de cambios"
+                action="soycalidad_improve.improve_plan_matrix_report_wizard_action"
+                sequence="11" />
+                
+        </menuitem> 
+    
+    
+        <!-- hacer -->
+        <menuitem id="comunication_menu"
+            name="Comunicaciones"
+            parent="menu_do_main"
+            groups="mgmtsystem_comunication.group_comunication_onlyread,mgmtsystem_comunication.group_comunication_onlyread_printreport,mgmtsystem_comunication.group_comunication_write_printreport,mgmtsystem_comunication.group_comunication_all"
+            sequence="20" >
+            <menuitem id="mgmtsystem_comunication_comunication_plan_menu"
+                name="Programa de comunicaciones"
+                action="mgmtsystem_comunication.comunication_plan_action"
+                sequence="1" />
+    
+            <menuitem id="mgmtsystem_comunication_record_meeting_menu"
+                name="Actas de reunión"
+                action="mgmtsystem_comunication.record_meeting_action"
+                sequence="2" />
+        </menuitem>
+    
+        <menuitem id="training_menu"
+            name="Capacitaciones"
+            parent="menu_do_main"
+            groups="mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
+            sequence="30" >
+            <menuitem id="program_training_plan_menu"
+                name="Programa anual de capacitaciones"
+                action="mgmtsystem_employees.hr_item_plan_action"
+                groups="base.group_no_one,mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
+                sequence="1" />
+    
+            <menuitem id="plan_training_menu"
+                name="Plan de Capacitaciones"
+                action="mgmtsystem_employees.hr_item_training_action"
+                sequence="2" />
+        </menuitem>
+    
+        <menuitem id="si_menu"
+            name="Seguridad de la información"
+            parent="menu_do_main"
+            groups="mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
+            sequence="40" >
+            <menuitem name="Matriz de inventario de activos de la información"
+                id="matrix_matrix_information_asset_menu"
+                sequence="10"
+                action="matrix_matrix_information_asset_action"
+                groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
+    
+            <menuitem name="Matriz de declaración de aplicabilidad"
+                id="matrix_matrix_app_ctrl_mgmt_menu"
+                sequence="20"
+                action="matrix_matrix_app_ctrl_mgmt_action"
+                groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
+        </menuitem>
+    
+        <!--  verificar -->
+        <menuitem id="target_menu"
+            name="Objetivos y medición"
+            parent="menu_check_main"
+            groups="mgmtsystem_target.group_target_onlyread,mgmtsystem_target.group_target_user_interno,mgmtsystem_target.group_target_write_printreport,mgmtsystem_target.group_target_all"
+            sequence="10" >
+            <menuitem id="target_indicator_action_menu"
+                name="Indicadores"
+                action="mgmtsystem_target.indicator_action_2"
+                sequence="10" />
+    
+            <menuitem id="mgmtsystem_target_target_action_menu"
+                name="Objetivos"
+                action="mgmtsystem_target.target_action"
+                sequence="20" />
+        </menuitem>
+    
+        <menuitem id="audit_menu"
+            name="Auditorías"
+            parent="menu_check_main"
+            groups="mgmtsystem_audit.group_audit_onlyread,mgmtsystem_audit.group_audit_onlyread_printreport,mgmtsystem_audit.group_audit_write_printreport,mgmtsystem_audit.group_audit_all"
+            sequence="20" >
+            <menuitem id="mgmtsystem_audit_plan_menu"
+                name="Programa de auditorías"
+                action="mgmtsystem_audit.audit_plan_action"
+                sequence="1" />
+    
+            <menuitem id="mgmtsystem_audit_audit_menu"
+                name="Auditorías"
+                action="mgmtsystem_audit.audit_audit_action"
+                sequence="2" />
+        </menuitem>
+    
+        <menuitem id="review_menu"
+            name="Revisión por la dirección"
+            parent="menu_check_main"
+            groups="mgmtsystem_management_review.group_management_review_onlyread,mgmtsystem_management_review.group_management_review_write_printreport,mgmtsystem_management_review.group_management_review_all"
+            sequence="30" >
+            <menuitem id="mgmtsystem_review_plan_menu"
+                name="Programa de revisiones"
+                action="mgmtsystem_management_review.mgmtsystem_review_plan_action1"
+                sequence="10" />
+    
+            <menuitem id="mgmtsystem_review_review_menu"
+                name="Revisión por la dirección"
+                action="mgmtsystem_management_review.action_management_review"
+                sequence="20" />
+    
+            <menuitem id="mgmtsystem_review_act_menu"
+                name="Actas"
+                action="mgmtsystem_comunication.record_meeting_action"
+                sequence="30" />
+        </menuitem>
+    
+        <!-- actuar -->
+        <menuitem id="nc_menu"
+            name="No conformidades"
+            parent="menu_act_main"
+            groups="mgmtsystem_nonconformity.group_nonconformity_onlyread,mgmtsystem_nonconformity.group_nonconformity_user_secundario,mgmtsystem_nonconformity.group_nonconformity_write_printreport"
+            sequence="10" >
+            <menuitem id="mgmtsystem_nc_nc_menu"
+                name="No conformidades"
+                action="mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list"
+                sequence="10" />
+    
+            <menuitem id="mgmtsystem_nc_cause_menu"
+                name="Causas"
+                action="mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_cause_list"
+                sequence="30" />
+        </menuitem>
+    
+        <menuitem id="actions_menu"
+            name="Acciones"
+            parent="menu_act_main"
+            groups="mgmtsystem_action.group_action_readonly,mgmtsystem_action.group_action_owner,mgmtsystem_action.group_action_readonly_printreport"
+            sequence="20" >
+            <menuitem id="mgmtsystem_action_action_menu"
+                name="Acciones"
+                action="mgmtsystem_action.open_mgmtsystem_action_list"
+                sequence="1" />
+        </menuitem> 
 
-    <!-- Assets Management-->
-    <menuitem
-            id="menu_information_asset_management"
-            name="Inventario de activos"
-            parent="menu_cybersecurity_root"
-            sequence="10"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-    />
-
-    <!-- Applicability Control Management-->
-    <menuitem
-            id="menu_app_ctrl_mgmt"
-            name="Declaración de Aplicabilidad"
-            parent="menu_cybersecurity_root"
-            sequence="11"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-    />
-
-    <!-- Controls Management-->
-    <menuitem
-            id="menu_controls"
-            name="Controles"
-            parent="menu_cybersecurity_root"
-            sequence="70"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-    />
-
-    <menuitem
-            id="menu_controls_mgmt"
-            name="Controles"
-            parent="menu_controls"
-            sequence="12"
-            action="controls_block_line_action"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-    />
-
-    <menuitem
-            id="menu_controls_checklist"
-            name="Lista de verificación"
-            parent="menu_controls"
-            sequence="15"
-            action="cyber_2matrix_checklist_action"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-    />
-
-    <menuitem
-            id="menu_report"
-            name="Reportes"
-            parent="menu_cybersecurity_root"
-            sequence="70"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-    />
-
-    <menuitem
-            id="menu_configuration"
-            name="Configuración"
-            parent="menu_cybersecurity_root"
-            sequence="150"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-    />
-
-    <menuitem
-            name="Controles de Lista de verificación"
-            id="mitem_cyber_2matrix_checklist_control"
-            parent="menu_configuration"
-            sequence="20"
-            action="cyber_2matrix_checklist_control_action"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
-
-
-    <menuitem name="Declaración de Aplicabilidad"
-              id="mitem_block_line_app_ctrl_mgmt"
-              parent="menu_app_ctrl_mgmt"
-              sequence="2"
-              action="matrix_block_line_app_ctrl_mgmt_action"
-              groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
-
-    <menuitem name="Inventario de Activos de Información"
-              id="mitem_block_line_information_asset"
-              parent="menu_information_asset_management"
-              sequence="2"
-              action="matrix_block_line_information_asset_action"
-              groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
-
-    <!-- Menus -->
-    <menuitem
-            name="Recursos"
-            id="mitem_cyber_matrix_block_line_resource"
-            parent="menu_configuration"
-            sequence="11"
-            action="cyber_matrix_block_line_resource_action"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
-
-    <menuitem
-            name="Ubicaciones"
-            id="mitem_cyber_matrix_block_line_location"
-            parent="menu_configuration"
-            sequence="12"
-            action="cyber_matrix_block_line_location_action"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
-
-    <menuitem
-            name="Idiomas"
-            id="mitem_cyber_matrix_block_line_language"
-            parent="menu_configuration"
-            sequence="13"
-            action="cyber_matrix_block_line_language_action"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
-
-    <menuitem
-            name="Tipos de Activos"
-            id="mitem_cyber_matrix_block_line_asset_type"
-            parent="menu_configuration"
-            sequence="14"
-            action="cyber_matrix_block_line_asset_type_action"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
-
-    <menuitem name="Incidentes"
-              id="indicent_menu"
-              parent="menu_cybersecurity_root"
-              sequence="15"/>
-
-    <menuitem name="Incidentes internos"
-              id="indicent_menu_int"
-              parent="indicent_menu"
-              sequence="1"
-              action="incident_incident_int_action"/>
-
-    <menuitem name="Incidentes externos"
-              id="indicent_menu_ext"
-              parent="indicent_menu"
-              sequence="2"
-              action="incident_incident_ext_action"/>
-
-    <menuitem name="Matriz de inventario de activos de la información"
-              id="mitem_matrix_matrix_information_asset"
-              parent="menu_information_asset_management"
-              sequence="4"
-              action="matrix_matrix_information_asset_action"
-              groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
-
-    <menuitem name="Matriz de declaración de aplicabilidad"
-              id="mitem_matrix_matrix_app_ctrl_mgmt"
-              parent="menu_app_ctrl_mgmt"
-              sequence="5"
-              action="matrix_matrix_app_ctrl_mgmt_action"
-              groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
 </odoo>
