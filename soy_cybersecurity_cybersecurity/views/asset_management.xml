@@ -17,16 +17,16 @@
         </field>
     </record>
 
-    <record id="evaluation_criterio_line_view_tree" model="ir.ui.view">
-        <field name="name">cyber_evaluation.criterio.line.view.tree</field>
+    <record id="evaluation_criterio_line_view_list" model="ir.ui.view">
+        <field name="name">cyber_evaluation.criterio.line.view.list</field>
         <field name="model">cyber_evaluation.criterio.line</field>
         <field name="arch" type="xml">
-            <tree string="Criterio">
+            <list string="Criterio">
                 <field name="name" />
                 <field name="description" />
                 <field name="value_less" />
                 <field name="value_high" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -37,7 +37,7 @@
             <form string="Evaluación">
                 <sheet>
                     <group>
-                        <field name="criterio_id" create="false" no_edit="true"/>
+                        <field name="criterio_id" create="false" no_edit="true" />
                         <field name="description" />
                         <field name="alternative" />
                         <field name="alternative_description" />
@@ -62,15 +62,17 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="cyber_view_matrix_block_tree">
-        <field name="name">cyber_matrix.block.tree</field>
+    <record model="ir.ui.view" id="cyber_view_matrix_block_list">
+        <field name="name">cyber_matrix.block.list</field>
         <field name="model">cyber_matrix.block</field>
         <field name="arch" type="xml">
-            <tree string="Fuentes" class="o_matrix_block" decoration-muted="state=='cancel'">
+            <list string="Fuentes" class="o_matrix_block" decoration-muted="state=='cancel'">
                 <field name="name" />
                 <field name="line_ids" />
                 <field name="state" />
-            </tree>
+                <field name="company_id" groups="base.group_multi_company" />
+
+            </list>
         </field>
     </record>
 
@@ -81,23 +83,24 @@
             <form string="Fuentes" class="o_matrix_block">
                 <header>
                     <button name="send_elaborate"
-                            type="object"
-                            string="Iniciar"
-                            class="btn-primary"
-                            invisible="state != 'draft'" 
-                            />
+                        type="object"
+                        string="Iniciar"
+                        class="btn-primary"
+                        invisible="state != 'draft'"
+                    />
                     <button name="send_validate"
-                            type="object"
-                            string="Validar"
-                            class="btn-primary"
-                            invisible="state != 'in_process'" />
+                        type="object"
+                        string="Validar"
+                        class="btn-primary"
+                        invisible="state != 'in_process'" />
                     <button name="send_cancel"
-                            confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
-                            type="object"
-                            string="Cancelar"
-                            class="btn-second"
-                            invisible="state == 'cancel'" />
-                    <field name="state" widget="statusbar" statusbar_visible="draft,elaborate,validate" />
+                        confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
+                        type="object"
+                        string="Cancelar"
+                        class="btn-second"
+                        invisible="state == 'cancel'" />
+                    <field name="state" widget="statusbar"
+                        statusbar_visible="draft,elaborate,validate" />
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -105,31 +108,42 @@
                         <field name="name" invisible="1" />
                     </div>
                     <group>
-                        <field name="process_id" 
-                        required="other == False" 
-                        readonly="state !='draft'" 
-                        options="{'no_create':True,'no_create_edit':True}" />
-                        <field name="other" 
-                        readonly="state != 'draft'" />
-                        <!--<field name="type" invisible="1" />-->
+                        <field name="process_id"
+                            required="other == False"
+                            readonly="state !='draft'"
+                            options="{'no_create':True,'no_create_edit':True}" />
+                        <field name="other"
+                            readonly="state != 'draft'" />
+                        <!--<field
+                        name="type" invisible="1" />-->
                     </group>
                     <notebook>
                         <page string="Lineas">
-                            <field name="line_ids" 
-                            readonly="state not in ['draft','in_process']">
-                                <tree>
+                            <field name="line_ids"
+                                readonly="state not in ['draft','in_process']">
+                                <list>
                                     <field name="department_id" />
                                     <field name="name" />
                                     <field name="effect" />
                                     <field name="cause" />
-                                    <!--<field name="ntr" string="Valor de riesgo" attrs="{'invisible': [('type','!=','risk')]}" />-->
+                                    <!--<field
+                                    name="ntr" string="Valor de riesgo" attrs="{'invisible':
+                                    [('type','!=','risk')]}" />-->
                                     <field name="ntr" string="Valor de riesgo" />
-                                    <!--<field name="ntr" string="Valor de oportunidad"/>-->
+                                    <!--<field
+                                    name="ntr" string="Valor de oportunidad"/>-->
                                     <field name="action_ids" />
                                     <field name="state" />
-                                    <!--<field name="type" invisible="1" />-->
-                                </tree>
+                                    <!--<field
+                                    name="type" invisible="1" />-->
+                                </list>
                             </field>
+                        </page>
+                        <page string="Multi-Compañía" name="multi_company"
+                            groups="base.group_multi_company">
+                            <group>
+                                <field name="company_id" />
+                            </group>
                         </page>
                     </notebook>
                 </sheet>
@@ -137,17 +151,19 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="cyber_view_matrix_block_line_tree">
-        <field name="name">cyber_matrix.block.line.tree</field>
+    <record model="ir.ui.view" id="cyber_view_matrix_block_line_list">
+        <field name="name">cyber_matrix.block.line.list</field>
         <field name="model">cyber_matrix.block.line</field>
         <field name="arch" type="xml">
-            <tree class="o_matrix_block_line" > <!-- banner_route="/opportunity/opportunity_onboarding" -->
+            <list class="o_matrix_block_line">
                 <field name="name" />
                 <field name="process_id" />
                 <field name="storage_medium" />
                 <field name="version" />
                 <field name="user_id" />
-            </tree>
+                <field name="company_id" groups="base.group_multi_company" />
+
+            </list>
         </field>
     </record>
 
@@ -158,31 +174,31 @@
             <form class="o_matrix_block_line">
                 <header>
                     <button name="send_validate"
-                            type="object"
-                            string="Validar"
-                            class="btn-primary"
-                            invisible="state != 'draft'" />
+                        type="object"
+                        string="Validar"
+                        class="btn-primary"
+                        invisible="state != 'draft'" />
                     <button name="send_cancel"
-                            confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
-                            type="object"
-                            string="Cancelar"
-                            class="btn-second"
-                            invisible="state == 'cancel'" />
+                        confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
+                        type="object"
+                        string="Cancelar"
+                        class="btn-second"
+                        invisible="state == 'cancel'" />
                     <field name="state" widget="statusbar" statusbar_visible="draft,validate" />
                     <button name="button_new_version"
-                            type="object"
-                            string="Nueva versión"
-                            invisible="state != 'validate'"
-                            class="oe_highlight" />
+                        type="object"
+                        string="Nueva versión"
+                        invisible="state != 'validate'"
+                        class="oe_highlight" />
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button type="object"
-                                name="action_open_older_versions"
-                                class="oe_stat_button"
-                                icon="fa-archive"
-                                style="white-space: nowrap;"
-                                string="Versiones antiguas" />
+                            name="action_open_older_versions"
+                            class="oe_stat_button"
+                            icon="fa-archive"
+                            style="white-space: nowrap;"
+                            string="Versiones antiguas" />
                     </div>
                     <h1>
                         <field name="code" />
@@ -190,90 +206,103 @@
                     <div class="oe_title">
                         <label for="name" />
                         <h2>
-                            <field name="name" 
-                            readonly="state != 'draft'" 
-                            class="o_mbline_name" />
+                            <field name="name"
+                                readonly="state != 'draft'"
+                                class="o_mbline_name" />
                         </h2>
                     </div>
                     <group col="4">
-                        <field name="process_id" 
-                        readonly="state not in ['draft','in_process']" />
-                        <field name="department_id" options="{'no_create':True,'no_create_edit':True,'no_open':True}" 
-                        readonly="state not in ['draft','in_process']" class="o_mbline_department_id" />
-                        <field name="system_id" options="{'no_create': True, 'no_edit': True}"  />
-                        <field name="resource_id" 
-                            widget="many2many_tags" 
+                        <field name="process_id"
+                            readonly="state not in ['draft','in_process']" />
+                        <field name="department_id"
+                            options="{'no_create':True,'no_create_edit':True,'no_open':True}"
+                            readonly="state not in ['draft','in_process']"
+                            class="o_mbline_department_id" />
+                        <field name="system_id" options="{'no_create': True, 'no_edit': True}" />
+                        <field name="resource_id"
+                            widget="many2many_tags"
                             readonly="state not in ['draft','in_process']"
                             options="{'no_create': False, 'no_open': False}"
-                            
-                            
                         />
-                        <field name="asset_contains_personal_data" 
-                        readonly="state not in ['draft','in_process']" />
-                        <field name="description" 
-                        readonly="state not in ['draft','in_process']" />
-                        <!--<field name="type_id" />-->
-                        <!--<field name="type" invisible="1" />-->
-                        <field name="asset_susceptible_to_fraud" 
-                        readonly="state not in ['draft','in_process']" />
-                        <field name="location_id" widget="many2many_tags" 
-                        readonly="state not in ['draft','in_process']" />
-                        <field name="asset_vital_for_organization" 
-                        readonly="state not in ['draft','in_process']" />
+                        <field name="asset_contains_personal_data"
+                            readonly="state not in ['draft','in_process']" />
+                        <field name="description"
+                            readonly="state not in ['draft','in_process']" />
+                        <!--<field
+                        name="type_id" />-->
+                        <!--<field
+                        name="type" invisible="1" />-->
+                        <field name="asset_susceptible_to_fraud"
+                            readonly="state not in ['draft','in_process']" />
+                        <field name="location_id" widget="many2many_tags"
+                            readonly="state not in ['draft','in_process']" />
+                        <field name="asset_vital_for_organization"
+                            readonly="state not in ['draft','in_process']" />
                         <field name="user_id" />
                         <field name="version" />
-                        <field name="language_id" widget="many2many_tags" 
-                        readonly="state not in ['draft','in_process']" />
-                        <field name="storage_medium" 
-                        readonly="state not in ['draft','in_process']" />
-                        <field name="asset_type_id" widget="many2many_tags" 
-                        readonly="state not in ['draft','in_process']" />
+                        <field name="language_id" widget="many2many_tags"
+                            readonly="state not in ['draft','in_process']" />
+                        <field name="storage_medium"
+                            readonly="state not in ['draft','in_process']" />
+                        <field name="asset_type_id" widget="many2many_tags"
+                            readonly="state not in ['draft','in_process']" />
                     </group>
 
                     <notebook>
                         <page string="Evaluación">
                             <group>
                                 <field name="evaluation_id"
-                                       string="Indicador"
-                                       readonly="state not in ['draft','in_process']"
-                                       options="{'no_create':True,'no_create_edit':True}"
-                                       class="o_mbline_evaluation_id" /> <!--domain="[('type','=',type)]"-->
+                                    string="Indicador"
+                                    readonly="state not in ['draft','in_process']"
+                                    options="{'no_create':True,'no_create_edit':True}"
+                                    class="o_mbline_evaluation_id" /> <!--domain="[('type','=',type)]"-->
                                 <field name="result_ids" widget="one2many"
-                                readonly="state not in ['draft','in_process']" 
-                                options="{'link': False}"
-                                class="o_mbline_result_ids">
-                                    <tree create="false" delete="false">
+                                    readonly="state not in ['draft','in_process']"
+                                    options="{'link': False}"
+                                    class="o_mbline_result_ids">
+                                    <list create="false" delete="false">
                                         <field name="criterio_id" />
                                         <field name="description" style="max-width: 200px" />
                                         <field name="alternative" />
                                         <field name="value" />
-                                    </tree>
+                                    </list>
                                 </field>
-                                <field name="ntr" string="Valor de riesgo" 
-                                readonly="state not in ['draft','in_process']" /><!-- attrs="{'invisible': [('type','!=','risk')], -->
-                                <!--<field name="ntr" string="Valor de oportunidad" attrs="{'invisible': [('type','!=','opportunity')], 'readonly': [('state','not in',('draft','in_process'))]}" />-->
-                                <!--<field name="type" invisible="1" />-->
-                                <field name="interpretation_asset" 
-                                readonly="state not in ['draft','in_process']" /><!-- attrs="{'invisible': [('type','!=','risk')], -->
-                                <!--<field name="interpretation_opportunity" attrs="{'invisible': [('type','!=','opportunity')], 'readonly': [('state','not in',('draft','in_process'))]}" />-->
+                                <field name="ntr" string="Valor de riesgo"
+                                    readonly="state not in ['draft','in_process']" /><!--
+                                attrs="{'invisible': [('type','!=','risk')], -->
+                                <!--<field
+                                name="ntr" string="Valor de oportunidad" attrs="{'invisible':
+                                [('type','!=','opportunity')], 'readonly': [('state','not
+                                in',('draft','in_process'))]}" />-->
+                                <!--<field
+                                name="type" invisible="1" />-->
+                                <field name="interpretation_asset"
+                                    readonly="state not in ['draft','in_process']" /><!--
+                                attrs="{'invisible': [('type','!=','risk')], -->
+                                <!--<field
+                                name="interpretation_opportunity" attrs="{'invisible':
+                                [('type','!=','opportunity')], 'readonly': [('state','not
+                                in',('draft','in_process'))]}" />-->
                             </group>
                         </page>
                         <page string="Acciones">
                             <field name="action_ids" />
                         </page>
                         <page name="risk_opp" string="Riesgos y oportunidades">
-                            <separator string="Riesgos"/>
-                            <field name="risk_ids" context="{'default_type': 'risk'}"/>
-                            <separator string="Oportunidades"/>
-                            <field name="opp_ids" context="{'default_type': 'opportunity'}"/>
+                            <separator string="Riesgos" />
+                            <field name="risk_ids" context="{'default_type': 'risk'}" />
+                            <separator string="Oportunidades" />
+                            <field name="opp_ids" context="{'default_type': 'opportunity'}" />
+                        </page>
+                        <page string="Multi-Compañía" name="multi_company"
+                            groups="base.group_multi_company">
+                            <group>
+                                <field name="company_id" />
+                            </group>
                         </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" />
-                    <field name="activity_ids" widget="mail_activity" />
-                    <field name="message_ids" widget="mail_thread" />
-                </div>
+                <chatter />
             </form>
         </field>
     </record>
@@ -281,7 +310,7 @@
     <record model="ir.actions.act_window" id="matrix_block_risk_action">
         <field name="name">Fuentes</field>
         <field name="res_model">cyber_matrix.block</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <!--
         <field name="domain">[('type','=','risk')]</field>
         <field name="context">{'default_type':'risk'}</field>
@@ -294,26 +323,28 @@
         parent="menu_information_asset_management"
         sequence="8"
         action="matrix_block_risk_action"
-        groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" /> -->
+    groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"
+    /> -->
 
 
     <record model="ir.actions.act_window" id="matrix_block_line_information_asset_action">
         <field name="name">Inventario de Activos de Información</field>
         <field name="res_model">cyber_matrix.block.line</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <!--
         <field name="domain">[('type','=','risk')]</field>
         <field name="context">{'default_type':'risk'}</field>
         -->
     </record>
 
-<!--
+    <!--
     <menuitem name="Inventario de Activos de Información"
               id="mitem_block_line_information_asset"
               parent="menu_information_asset_management"
               sequence="2"
               action="matrix_block_line_information_asset_action"
-              groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
+    groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"
+    />
 -->
 
     <!--Oportunidades-->
@@ -321,7 +352,7 @@
     <record model="ir.actions.act_window" id="matrix_block_opportunity_action">
         <field name="name">Fuentes</field>
         <field name="res_model">cyber_matrix.block</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="domain">[('type','=','opportunity')]</field>
         <field name="context">{'default_type':'opportunity'}</field>
     </record>
@@ -330,7 +361,7 @@
     <record model="ir.actions.act_window" id="matrix_block_line_opportunity_action">
         <field name="name">Oportunidades</field>
         <field name="res_model">cyber_matrix.block.line</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="domain">[('type','=','opportunity')]</field>
         <field name="context">{'default_type':'opportunity'}</field>
     </record>
@@ -340,7 +371,8 @@
               parent="menu_opportunity"
               sequence="2"
               action="matrix_block_line_opportunity_action"
-              groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
+    groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"
+    />
     -->
 
     <!-- <menuitem
@@ -348,6 +380,8 @@
         id="mitem_block_opportunity"
         parent="menu_opportunity"
         sequence="8"
-        action="matrix_block_opportunity_action" groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" /> -->
+        action="matrix_block_opportunity_action"
+    groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"
+    /> -->
 
 </odoo>

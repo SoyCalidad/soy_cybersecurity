@@ -13,15 +13,17 @@
     -->
 
 
-    <record model="ir.ui.view" id="controls_block_line_tree">
-        <field name="name">cyber_2matrix.controls.block.line.tree</field>
+    <record model="ir.ui.view" id="controls_block_line_list">
+        <field name="name">cyber_2matrix.controls.block.line.list</field>
         <field name="model">cyber_2matrix.block.line</field>
         <field name="arch" type="xml">
-            <tree class="o_matrix_block_line" > <!-- banner_route="/opportunity/opportunity_onboarding" -->
+            <list class="o_matrix_block_line" >
                 <field name="name" />
                 <field name="process_id" />
                 <field name="state" />
-            </tree>
+              <field name="company_id" groups="base.group_multi_company"/>
+
+            </list>
         </field>
     </record>
 
@@ -124,13 +126,15 @@
                             readonly="state not in 'draft'"/>
                             <!--<field name="action_ids" />-->
                         </page>
+                        <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                            <group>
+                                <field name="company_id"/>
+                            </group>
+                        </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" />
-                    <field name="activity_ids" widget="mail_activity" />
-                    <field name="message_ids" widget="mail_thread" />
-                </div>
+                <chatter />
+                
             </form>
         </field>
     </record>
@@ -139,11 +143,11 @@
     <record model="ir.actions.act_window" id="controls_block_line_action">
         <field name="name">Controles</field>
         <field name="res_model">cyber_2matrix.block.line</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <!--<field name="domain">[('type_ctrl', '=', 'controls')]</field>-->
         <field name="context">{'default_type_ctrl': 'controls'}</field>
         <field name="view_ids" eval="[(5, 0, 0),
-                                  (0, 0, {'view_mode': 'tree', 'view_id': ref('soy_cybersecurity_cybersecurity.controls_block_line_tree')}),
+                                  (0, 0, {'view_mode': 'list', 'view_id': ref('soy_cybersecurity_cybersecurity.controls_block_line_list')}),
                                   (0, 0, {'view_mode': 'form', 'view_id': ref('soy_cybersecurity_cybersecurity.controls_block_line_form')})]"/>
 
         <!--

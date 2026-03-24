@@ -13,13 +13,13 @@
     -->
 
 
-    <record model="ir.ui.view" id="cyber_view_2matrix_block_line_tree">
-        <field name="name">cyber_2matrix.block.line.tree</field>
+    <record model="ir.ui.view" id="cyber_view_2matrix_block_line_list">
+        <field name="name">cyber_2matrix.block.line.list</field>
         <field name="model">cyber_2matrix.block.line</field>
         <field name="arch" type="xml">
-            <tree class="o_matrix_block_line" > <!-- banner_route="/opportunity/opportunity_onboarding" -->
+            <list class="o_matrix_block_line" > <!-- banner_route="/opportunity/opportunity_onboarding" -->
                 <field name="name" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -105,11 +105,7 @@
                         </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" />
-                    <field name="activity_ids" widget="mail_activity" />
-                    <field name="message_ids" widget="mail_thread" />
-                </div>
+                <chatter />
             </form>
         </field>
     </record>
@@ -118,11 +114,11 @@
     <record model="ir.actions.act_window" id="matrix_block_line_app_ctrl_mgmt_action">
         <field name="name">Declaración de aplicabilidad</field>
         <field name="res_model">cyber_2matrix.block.line</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="domain">[('type_ctrl', '=', 'app_ctrl')]</field>
         <field name="context">{'default_type_ctrl': 'app_ctrl'}</field>
         <field name="view_ids" eval="[(5, 0, 0),
-                                (0, 0, {'view_mode': 'tree', 'view_id': ref('soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_tree')}),
+                                (0, 0, {'view_mode': 'list', 'view_id': ref('soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_list')}),
                                 (0, 0, {'view_mode': 'form', 'view_id': ref('soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_form')})]"/>
         <!--
         <field name="domain">[('type','=','risk')]</field>
@@ -139,14 +135,15 @@
               groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
 -->
 
-    <record model="ir.ui.view" id="cyber_view_2matrix_checklist_tree">
-        <field name="name">cyber_2matrix.checklist.tree</field>
+    <record model="ir.ui.view" id="cyber_view_2matrix_checklist_list">
+        <field name="name">cyber_2matrix.checklist.list</field>
         <field name="model">cyber_2matrix.checklist</field>
         <field name="arch" type="xml">
-            <tree class="o_matrix_block_line" >
+            <list class="o_matrix_block_line" >
                 <field name="name" />
                 <field name="state" />
-            </tree>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
         </field>
     </record>
 
@@ -188,6 +185,11 @@
                             <field name="line_ids" 
                             readonly="state in ['validate','cancel']" />
                         </page>
+                        <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                    <group>
+                        <field name="company_id"/>
+                    </group>
+                </page>
                     </notebook>
                 </sheet>
             </form>
@@ -197,14 +199,14 @@
     <record model="ir.actions.act_window" id="cyber_2matrix_checklist_action">
         <field name="name">Lista de verificación</field>
         <field name="res_model">cyber_2matrix.checklist</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
-    <record model="ir.ui.view" id="cyber_view_2matrix_checklist_line_tree">
-        <field name="name">cyber_2matrix.checklist.line.tree</field>
+    <record model="ir.ui.view" id="cyber_view_2matrix_checklist_line_list">
+        <field name="name">cyber_2matrix.checklist.line.list</field>
         <field name="model">cyber_2matrix.checklist.line</field>
         <field name="arch" type="xml">
-            <tree editable="bottom" create="false" limit="100">
+            <list editable="bottom" create="false" limit="100">
                 <field name="checklist_id" invisible="1"/>
                 <field name="checklist_control_id" invisible="1"/>
                 <field name="checklist_control_number" />
@@ -214,7 +216,8 @@
                 <field name="documentary_control_ids" widget="many2many_tags" options="{'no_create': True, 'no_edit': True}" />
                 <field name="dms_evidence_ids" widget="many2many_tags" />
                 <field name="comments" />
-            </tree>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
         </field>
     </record>
 
@@ -235,21 +238,25 @@
                         <field name="dms_evidence_ids" />
                         <field name="comments" />
                     </group>
+                    <group>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="cyber_2matrix_checklist_control_tree">
-        <field name="name">cyber_2matrix.checklist.control.tree</field>
+    <record model="ir.ui.view" id="cyber_2matrix_checklist_control_list">
+        <field name="name">cyber_2matrix.checklist.control.list</field>
         <field name="model">cyber_2matrix.checklist.control</field>
         <field name="arch" type="xml">
-            <tree class="o_matrix_block_line" >
+            <list class="o_matrix_block_line" >
                 <field name="sequence" widget="handle" />
                 <field name="number" />
                 <field name="description" />
                 <field name="control" />
-            </tree>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
         </field>
     </record>
 
@@ -264,6 +271,9 @@
                         <field name="description" />
                         <field name="control" />
                     </group>
+                    <group>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -272,6 +282,6 @@
     <record model="ir.actions.act_window" id="cyber_2matrix_checklist_control_action">
         <field name="name">Controles de Lista de verificación</field>
         <field name="res_model">cyber_2matrix.checklist.control</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>

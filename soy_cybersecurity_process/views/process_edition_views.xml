@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_wiki_tree_view_inherit" model="ir.ui.view">
-        <field name="name">view.wiki.tree.view.inherit</field>
+    <record id="view_wiki_list_view_inherit" model="ir.ui.view">
+        <field name="name">view.wiki.list.view.inherit</field>
         <field name="model">process.edition</field>
         <field name="inherit_id" ref="mgmtsystem_process.view_wiki_tree_view_inherit"/>
         <field name="arch" type="xml">
-            <xpath expr="//tree/field[@name='categ_id']" position="after">
+            <xpath expr="//list/field[@name='categ_id']" position="after">
                 <field name="clazz_id"/>
             </xpath>
         </field>

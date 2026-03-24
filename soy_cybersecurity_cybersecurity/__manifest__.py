@@ -32,6 +32,7 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+        "security/ir_rule_data.xml",
         'security/rules.xml',
         'data/evaluation_main_data.xml',
         'data/app_ctrl_data.xml',

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <record id="directory_soy_cybersecurity" model="documents.folder">
+        <record id="directory_soy_cybersecurity" model="documents.document">
             <field name="name">Seguridad de la información</field>
+            <field name="type">folder</field>
         </record>
     </data>
 </odoo>

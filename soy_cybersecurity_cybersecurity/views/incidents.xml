@@ -1,16 +1,18 @@
 <odoo>
-    <record model="ir.ui.view" id="view_incident_incident_tree">
-        <field name="name">incident.incident.tree</field>
+    <record model="ir.ui.view" id="view_incident_incident_list">
+        <field name="name">incident.incident.list</field>
         <field name="model">incident.incident</field>
         <field name="arch" type="xml">
-            <tree > <!--banner_route="/incidents/incidents_onboarding"-->
+            <list > <!--banner_route="/incidents/incidents_onboarding"-->
                 <field name="date_incident" />
                 <field name="employee_id" />
                 <field name="name" />
                 <field name="elaborate_ids" />
                 <!--<field name="categ_id" />-->
                 <field name="state" />
-            </tree>
+                <field name="company_id" groups="base.group_multi_company"/>
+
+            </list>
         </field>
     </record>
 
@@ -77,7 +79,7 @@
                             <group 
                             invisible="investigation_method != 'cause'">
                                 <field name="cause_ids" context="{'default_cause_why_type': 'cause'}">
-                                    <tree editable="bottom">
+                                    <list editable="bottom">
                                         <field name="cause_id" />
                                         <field name="description" />
                                         <field name="subcause_ids" widget="many2many_tags" context="{'default_parent_id': cause_id}">
@@ -87,17 +89,17 @@
                                             </form>
                                         </field>
                                         <field name="attachment_ids" widget="many2many_binary" />
-                                    </tree>
+                                    </list>
                                 </field>
                                 <field name="conclusions" />
                             </group>
                             <group 
                             invisible="investigation_method != 'why'">
                                 <field name="why_ids" context="{'default_cause_why_type': 'why'}">
-                                    <tree editable="bottom">
+                                    <list editable="bottom">
                                         <field name="why_id" />
                                         <field name="description" />
-                                    </tree>
+                                    </list>
                                 </field>
                                 <field name="root_cause" />
                             </group>
@@ -128,13 +130,15 @@
                         invisible="is_open == False">
                             <field name="action_ids" />
                         </page>
+                        <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                    <group>
+                        <field name="company_id"/>
+                    </group>
+                </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" />
-                    <field name="activity_ids" widget="mail_activity" />
-                    <field name="message_ids" widget="mail_thread" />
-                </div>
+                <chatter />
+                
             </form>
         </field>
     </record>
@@ -147,7 +151,7 @@
     <record model="ir.actions.act_window" id="incident_incident_int_action">
         <field name="name">Incidentes internos</field>
         <field name="res_model">incident.incident</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <!--<field name="search_view_id" ref="view_incident_incident_search" />-->
         <field name="domain">[('type','=','internal')]</field>
         <field name="context">{"default_type":'internal'}</field>
@@ -163,7 +167,7 @@
     <record model="ir.actions.act_window" id="incident_incident_ext_action">
         <field name="name">Incidentes externos</field>
         <field name="res_model">incident.incident</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <!--<field name="search_view_id" ref="view_incident_incident_search" />-->
         <field name="domain">[('type','=','ext')]</field>
         <field name="context">{"default_type":'ext'}</field>

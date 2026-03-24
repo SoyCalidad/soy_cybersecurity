@@ -16,6 +16,11 @@ class Categ(models.Model):
         string=u'Nombre',
         required=True,
     )
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     sequence_id = fields.Many2one(
         string=u'Secuencia de ediciones',
         comodel_name='ir.sequence',
@@ -65,6 +70,11 @@ class Matrix(models.Model):
     _inherit = ['mgmtsystem.validation.mail', 'mgmtsystem.code']
     _description = "Matriz"
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     parent_edition = fields.Many2one(
         comodel_name='cyber_matrix.matrix', string='Padre', copy=False)
     old_versions = fields.One2many(
@@ -295,6 +305,11 @@ class Block(models.Model):
     _name = 'cyber_matrix.block'
     _description = "Fuente"
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     name = fields.Char(
         string='Fuente',
     )
@@ -362,6 +377,11 @@ class LineAgent(models.Model):
     _name = 'cyber_matrix.block.line.agent'
     _description = 'Agente Riesgo/Oportunidad'
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     name = fields.Char(string='Nombre')
     description = fields.Text(string='Descripción')
 
@@ -379,6 +399,11 @@ class CyberMatrixBlockLineSystem(models.Model):
     _description = 'Identificador de riesgo'
 
     name = fields.Char(string='Nombre')
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
 
 
 class CyberMatrixBlockLineResource(models.Model):
@@ -386,18 +411,33 @@ class CyberMatrixBlockLineResource(models.Model):
     _description = 'Recurso de activos de información'
 
     name = fields.Char(string='Recurso')
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
 
 class CyberMatrixBlockLineLocation(models.Model):
     _name = 'cyber_matrix.block.line.location'
     _description = 'Ubicación de activos de información'
 
     name = fields.Char(string='Ubicación')
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
 
 class CyberMatrixBlockLineLanguage(models.Model):
     _name = 'cyber_matrix.block.line.language'
     _description = 'Idioma de activos de información'
 
     name = fields.Char(string='Idioma')
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
 
 class MatrixBlockLineSystem(models.Model):
     _name = 'cyber_matrix.block.line.asset_type'
@@ -412,6 +452,11 @@ class Line(models.Model):
                 'mail.activity.mixin', 'mgmtsystem.code']
     _description = "Inventario de activos de información"
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     parent_edition = fields.Many2one(
         comodel_name='cyber_matrix.block.line', string='Padre', copy=False)
     old_versions = fields.One2many(

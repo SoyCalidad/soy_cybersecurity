@@ -62,10 +62,10 @@
                                     </p>
                                     <group>
                                         <field name="survey_ids" attrs="{'readonly': [('state','in',('validate_ok','closed','cancel'))]}">
-                                            <tree>
+                                            <list>
                                                 <field name="title" />
                                                 <field name="title_complete" />
-                                            </tree>
+                                            </list>
                                         </field>
                                         <field name="survey_description" />
                                     </group>

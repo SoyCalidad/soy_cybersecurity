@@ -6,6 +6,11 @@ from odoo.exceptions import UserError
 class Result(models.Model):
     _name = 'cyber_evaluation.result'
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     criterio_id = fields.Many2one(
         string='Criterio',
         comodel_name='cyber_evaluation.criterio',

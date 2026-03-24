@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_mgmtsystem_infrastructure_tree" model="ir.ui.view">
-        <field name="name">documentary.control.tree.inherit</field>
+    <record id="view_mgmtsystem_infrastructure_list" model="ir.ui.view">
+        <field name="name">documentary.control.list.inherit</field>
         <field name="model">documentary.control</field>
         <field name="inherit_id" ref="mgmtsystem_process.view_mgmtsystem_infrastructure_tree"/>
         <field name="arch" type="xml">
@@ -22,8 +22,8 @@
         </field>
     </record>
 
-    <record id="documentary_control_clazz_view_tree" model="ir.ui.view">
-        <field name="name">documentary.control.clazz.view.tree</field>
+    <record id="documentary_control_clazz_view_list" model="ir.ui.view">
+        <field name="name">documentary.control.clazz.view.list</field>
         <field name="model">documentary.control.clazz</field>
         <field name="arch" type="xml">
             <form>
@@ -40,15 +40,15 @@
         <field name="name">documentary.control.clazz.view.form</field>
         <field name="model">documentary.control.clazz</field>
         <field name="arch" type="xml">
-            <tree editable="bottom">
+            <list editable="bottom">
                 <field name="name"/>
-            </tree>
+            </list>
         </field>
     </record>
 
     <record id="documentary_control_clazz_action" model="ir.actions.act_window">
         <field name="name">Clases</field>
         <field name="res_model">documentary.control.clazz</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>

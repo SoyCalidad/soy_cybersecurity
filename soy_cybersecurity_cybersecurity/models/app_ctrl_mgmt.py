@@ -11,6 +11,12 @@ class Categ(models.Model):
         string=u'Nombre',
         required=True,
     )
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
+    
     sequence_id = fields.Many2one(
         string=u'Secuencia de ediciones',
         comodel_name='ir.sequence',
@@ -69,6 +75,7 @@ class Matrix(models.Model):
     name = fields.Char(
         string='Nombre de matriz',
     )
+    company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
     numero = fields.Char(
         string="Numero de secuencia",
@@ -240,6 +247,11 @@ class Block(models.Model):
     name = fields.Char(
         string='Fuente',
     )
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
 
     '''
     type = fields.Selection(
@@ -328,6 +340,11 @@ class Checklist(models.Model):
     _description = "Lista de verificación"
 
     name = fields.Char('Nombre')
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     state = fields.Selection([
         ('draft', 'Borrador'),
         ('validate', 'Validado'),
@@ -377,6 +394,11 @@ class ChecklistControl(models.Model):
     _order = 'sequence, id'
     _rec_name = 'number'
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     sequence = fields.Integer(default=10)
     number = fields.Char('Número')
     number_compute = fields.Char('Número', compute='_compute_number')
@@ -394,6 +416,11 @@ class ChecklistLine(models.Model):
     _description = "Línea de lista de verificación"
     _rec_name = 'checklist_control_id'
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     checklist_id = fields.Many2one('cyber_2matrix.checklist', string='Lista de verificación')
     checklist_control_id = fields.Many2one('cyber_2matrix.checklist.control', string='Número')
     checklist_control_number = fields.Char(related='checklist_control_id.number_compute', string='Número')
@@ -421,6 +448,11 @@ class Line(models.Model):
                 'mail.activity.mixin', 'mgmtsystem.code']
     _description = "Declaración de aplicabilidad"
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     parent_edition = fields.Many2one(
         comodel_name='cyber_2matrix.block.line', string='Padre', copy=False)
     old_versions = fields.One2many(

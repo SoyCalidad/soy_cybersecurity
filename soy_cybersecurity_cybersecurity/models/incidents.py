@@ -6,6 +6,11 @@ class incidentCateg(models.Model):
     _name = 'incident.categ'
     _order = 'sequence asc'
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     elaborate_ids = fields.Many2one(
         string=u'Abierto por',
         comodel_name='res.users',
@@ -29,6 +34,11 @@ class incidentVia(models.Model):
     _name = 'incident.via'
     _description = 'Vía de reclamo'
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     elaborate_ids = fields.Many2one(
         string=u'Elaborado',
         comodel_name='res.users',
@@ -48,6 +58,11 @@ class incidentQuickAction(models.Model):
     _order = 'sequence asc'
     _description = 'Acción rápida para reclamo'
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     elaborate_ids = fields.Many2one(
         string=u'Elaborado por',
         comodel_name='res.users',
@@ -95,6 +110,11 @@ class incident(models.Model):
     _order = 'date_incident desc'
     _description = 'Reclamo'
 
+    company_id = fields.Many2one(
+        'res.company', 
+        string='Compañia', 
+        default=lambda self: self.env.company,
+    )
     elaborate_ids = fields.Many2one(
         string=u'Elaborado',
         comodel_name='res.users',
