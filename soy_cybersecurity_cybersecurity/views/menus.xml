@@ -369,7 +369,25 @@
                 sequence="20"
                 action="matrix_matrix_app_ctrl_mgmt_action"
                 groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
+
+            
         </menuitem>
+        <menuitem name="Incidentes"
+                id="indicent_menu"
+                parent="menu_do_main"
+                sequence="50">
+                
+            <menuitem name="Incidentes internos"
+                    id="indicent_menu_int"
+                    sequence="1"
+                    action="incident_incident_int_action"/>
+        
+            <menuitem name="Incidentes externos"
+                    id="indicent_menu_ext"
+                    sequence="2"
+                    action="incident_incident_ext_action"/>
+        </menuitem>
+    
     
         <!--  verificar -->
         <menuitem id="target_menu"
