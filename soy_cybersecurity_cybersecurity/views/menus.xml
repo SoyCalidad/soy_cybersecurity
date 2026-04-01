@@ -217,15 +217,19 @@
             parent="context_menu"
             action="mgmtsystem_context.context_external_issue_action"
             sequence="6" />
+        <menuitem id="context_external_swot_menu"
+        name="Foda"
+        parent="context_menu"
+        action="mgmtsystem_context.context_swot_action" />
     
-         <menuitem id="policy_menu"
+        <menuitem id="policy_menu"
             name="Políticas"
             parent="menu_plan_main"
             groups="mgmtsystem_legal.group_legal_onlyread,mgmtsystem_legal.group_legal_onlyread_printreport,mgmtsystem_legal.group_legal_write_printreport,mgmtsystem_legal.group_legal_all"
             sequence="40" >
             <menuitem id="policy_real_menu"
                 name="Política"
-                action="mgmtsystem_context.context_policy_action_action"
+                action="mgmtsystem_context.policies_action"
                 sequence="1" />
         </menuitem>
     
@@ -313,7 +317,7 @@
             sequence="100" >
             <menuitem id="report_improve_plan_matrix_menu"
                 name="Matriz de Planificación de cambios"
-                action="soycalidad_improve.improve_plan_matrix_report_wizard_action"
+                action="soycalidad_improve.improve_plan_matrix_action"
                 sequence="11" />
                 
         </menuitem> 
