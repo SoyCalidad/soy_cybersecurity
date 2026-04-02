@@ -189,9 +189,9 @@
 
     <menuitem id="diagnosis_evaluation_menu"
         name="Evaluación"
-        action="cyber_evaluation_action"
+        action="cybersecurity_diagnostic_list_action"
         parent="menu_diagnosis_main"
-        groups="mgmtsystem_context.group_context_onlyread,mgmtsystem_context.group_context_onlyread_printreport,mgmtsystem_context.group_context_write_printreport,mgmtsystem_context.group_context_all"
+        groups="group_cybersecurity_user_secundario"
         sequence="20" />
 
     <!-- Planificar -->
