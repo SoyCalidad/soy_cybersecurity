@@ -34,19 +34,21 @@ class Categ(models.Model):
         if self.sequence_id:
             self.sequence_id.name = 'Secuencia de '+self.name
 
-    @api.model
-    def create(self, values):
-        sequence = self.env['ir.sequence'].create({
-            'name': 'Secuencia de '+values.get('name'),
-            'active': True,
-            'prefix': 'Edición-nro.',
-            'padding': 4,
-            'number_next': 1,
-            'number_increment': 1,
-        })
-        values['sequence_id'] = sequence.id
-        result = super(Categ, self).create(values)
-        return result
+    @api.model_create_multi
+    def create(self, values_list):
+        for values in values_list:
+            sequence = self.env['ir.sequence'].sudo().create({
+                'name': 'Secuencia de '+values.get('name'),
+                'active': True,
+                'prefix': 'Edición-nro.',
+                'padding': 4,
+                'number_next': 1,
+                'number_increment': 1,
+            })
+            
+            values['sequence_id'] = sequence.id
+        results = super(Categ, self).create(values_list)
+        return results
 
     def unlink(self):
         for categ in self:
