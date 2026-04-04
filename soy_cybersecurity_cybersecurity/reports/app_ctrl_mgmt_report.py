@@ -20,33 +20,33 @@ class IndividualReport(models.AbstractModel):
 
     def generate_xlsx_report(self, workbook, data, matrixes):
         try:
+            format21_c_bold = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#A0A0A0', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
+            format21_left = workbook.add_format(
+                {'font_size': 10, 'align': 'center', 'valign': 'vcenter', 'bold': False, 'text_wrap': True})
+            format21_gray = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#EEEEEE', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'border': True})
+            format21_red = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#FF0000', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'border': True})
+            format21_gray_bold = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#EEEEEE', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'bold': True, 'border': True })
+            format21_red_bold = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#FF0000', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'bold': True, 'border': True })
+            format26_c_bold = workbook.add_format(
+                {'font_size': 26, 'bg_color': '#A0A0A0', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
+            
+            date_format = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#A0A0A0','num_format': 'dd/mm/yyyy', 'bold': True, 'align': 'center', 'valign': 'vcenter', 'text_wrap': True})
+
+            format26_c_bold.set_border()
+            format21_c_bold.set_border()
+            format21_left.set_border()
+            format21_gray.set_border()
+            format21_gray_bold.set_border()
+            
             for matrix in matrixes.sudo():
                 sheet = workbook.add_worksheet(str(matrix.name))
 
-                format21_c_bold = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#A0A0A0', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
-                format21_left = workbook.add_format(
-                    {'font_size': 10, 'align': 'center', 'valign': 'vcenter', 'bold': False, 'text_wrap': True})
-                format21_gray = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#EEEEEE', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'border': True})
-                format21_red = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#FF0000', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'border': True})
-                format21_gray_bold = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#EEEEEE', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'bold': True, 'border': True })
-                format21_red_bold = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#FF0000', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'bold': True, 'border': True })
-                format26_c_bold = workbook.add_format(
-                    {'font_size': 26, 'bg_color': '#A0A0A0', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
-                
-                date_format = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#A0A0A0','num_format': 'dd/mm/yyyy', 'bold': True, 'align': 'center', 'valign': 'vcenter', 'text_wrap': True})
-
-
-                format26_c_bold.set_border()
-                format21_c_bold.set_border()
-                format21_left.set_border()
-                format21_gray.set_border()
-                format21_gray_bold.set_border()
 
                 prod_row = 4
                 i = 0
@@ -91,12 +91,12 @@ class IndividualReport(models.AbstractModel):
                                   'Evidencia o registro de implementación', format21_c_bold)
 
 
+                company = matrix.company_id if matrix.company_id else self.env.company
                 sheet.merge_range(
-                    'C1:C3', self.env.company.name, format21_c_bold)
+                    'C1:C3', company.name, format21_c_bold)
 
-                company_id = self.env.user.company_id
 
-                buf_image = io.BytesIO(base64.b64decode(company_id.logo))
+                buf_image = io.BytesIO(base64.b64decode(company.logo))
                 im = Image.open(buf_image)
                 width, height = im.size
                 image_width = width
@@ -204,17 +204,17 @@ class IndividualReport(models.AbstractModel):
                     sheet.write(prod_row, i,line.domain_id.name, format21_left)
                     i += 1
 
-                    sheet.write(prod_row, i, line.domain_id.description, format21_left)
+                    sheet.write(prod_row, i, line.domain_id.description or "", format21_left)
                     i += 1
 
                     sheet.write(
                         prod_row, i, line.ctrl_target_id.name if line.ctrl_target_id.name else '', format21_left)
                     i += 1
 
-                    sheet.write(prod_row, i, line.name, format21_left)
+                    sheet.write(prod_row, i, line.name or "", format21_left)
                     i += 1
 
-                    sheet.write(prod_row, i, line.application, format21_left)
+                    sheet.write(prod_row, i, line.application or "", format21_left)
                     i += 1
 
                     sheet.write(prod_row, i, line.description_application, format21_left)

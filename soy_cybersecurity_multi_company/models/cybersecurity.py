@@ -7,7 +7,7 @@ class Categ(models.Model):
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
 
-class Matrix(models.Model):
+class Cyber2MatrizMatrix(models.Model):
     _inherit = 'cyber_2matrix.matrix'
 
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
@@ -73,13 +73,13 @@ class MatrixBlockLineSystem(models.Model):
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
 
-class MatrixBlockLineSystem(models.Model):
+class MatrixBlockLineResource(models.Model):
     _inherit = 'cyber_matrix.block.line.resource'
 
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
 
 
-class MatrixBlockLineSystem(models.Model):
+class MatrixBlockLineLocation(models.Model):
     _inherit = 'cyber_matrix.block.line.location'
 
     company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
