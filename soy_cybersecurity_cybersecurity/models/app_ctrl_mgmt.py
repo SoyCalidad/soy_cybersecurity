@@ -229,6 +229,21 @@ class Matrix(models.Model):
                     _('Solo se permite eliminar registros en borrador y en elaboración'))
         return super(Matrix, self).unlink()
 
+    def clone_childs(self, childs):
+        old_ids = []
+        for child in childs:
+            if hasattr(child, '_copy_edition') and callable(getattr(child, '_copy_edition')):
+                old_child = child._copy_edition()
+                old_ids.append(old_child.id)
+            else:
+                old_child = child.copy()
+                old_ids.append(old_child.id)
+
+        
+        for child in childs:
+            child.state = "draft"
+
+        return old_ids
 
 class Block(models.Model):
     _name = 'cyber_2matrix.block'
