@@ -178,6 +178,9 @@ class incident(models.Model):
     nonconformity_ids = fields.Many2many(
         string=u'No conformidades',
         comodel_name='mgmtsystem.nonconformity',
+        relation='incident_incident_nonconformity_rel',
+        column1='incident_id',
+        column2='nonconformity_id',
     )
 
     state = fields.Selection(
