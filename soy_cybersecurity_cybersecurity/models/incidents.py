@@ -175,13 +175,13 @@ class incident(models.Model):
         column1='action_id',
         column2='incident_id',
     )
-    nonconformity_ids = fields.Many2many(
-        string=u'No conformidades',
-        comodel_name='mgmtsystem.nonconformity',
-        relation='incident_incident_nonconformity_rel',
-        column1='incident_id',
-        column2='nonconformity_id',
-    )
+    # nonconformity_ids = fields.Many2many(
+    #     string=u'No conformidades',
+    #     comodel_name='mgmtsystem.nonconformity',
+    #     relation='incident_incident_nonconformity_rel',
+    #     column1='incident_id',
+    #     column2='nonconformity_id',
+    # )
 
     state = fields.Selection(
         string='Estado',
@@ -311,7 +311,7 @@ class incident(models.Model):
         else:
             self.date_fin = False
 
-    @api.onchange('nonconformity_ids')
-    def _onchange_nonconformity_ids(self):
-        self.action_ids = self.env['mgmtsystem.action'].search(
-            [('nonconformity_ids', 'in', self.nonconformity_ids.ids)])
+    # @api.onchange('nonconformity_ids')
+    # def _onchange_nonconformity_ids(self):
+    #     self.action_ids = self.env['mgmtsystem.action'].search(
+    #         [('nonconformity_ids', 'in', self.nonconformity_ids.ids)])

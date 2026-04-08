@@ -120,10 +120,10 @@
                             </group>
                             -->
                         </page>
-                        <page string="No conformidades" 
+                        <!-- <page string="No conformidades" 
                         invisible="is_open == False">
                             <field name="nonconformity_ids" />
-                        </page>
+                        </page> -->
                         <page name="action_ids" string="Acciones" 
                         invisible="is_open == False">
                             <field name="action_ids" />
