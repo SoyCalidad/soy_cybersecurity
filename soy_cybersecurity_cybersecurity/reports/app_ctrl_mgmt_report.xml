@@ -1,24 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
 <odoo>
 
-    <!-- Matrix App Ctrl Report
-    <report id="cyber_2matrix_individual_xlsx"
-            model="cyber_2matrix.matrix"
-            string="Reporte de Declaración de Aplicabilidad"
-            report_type="xlsx"
-            name="cyber_2matrix.report"
-            file="Declaración de Aplicabilidad"
-            print_report_name="'%s' % object.name"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-            />
-            -->
-    <!-- # model="cyber_2matrix.matrix" name = "cyber_2matrix_matrix.report"  //  "cyber_2matrix.block.line" name = "cyber_2matrix_blockline.report"-->
-    <report id="cyber_2blockline_xlsx"
-            model="cyber_2matrix.matrix"  
-            string="Reporte de Matriz de Declaración de Aplicabilidad"
-            report_type="xlsx"
-            name="cyber_2matrix_matrix.report"
-            file="Matriz de Declaración de Aplicabilidad"
-            print_report_name="'%s' % object.name"
-            groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-            />        
+
+    <data>
+        <record id="cyber_2blockline_xlsx" model="ir.actions.report">
+            <field name="model">cyber_2matrix.matrix</field>
+            <field name="name">Reporte de Matriz de Declaración de Aplicabilidad</field>
+            <field name="report_name">cyber_2matrix_matrix.report</field>
+            <field name="report_file">Matriz de Declaración de Aplicabilidad</field>
+            <field name="print_report_name">'%s' % object.name</field>
+            <field name="report_type">xlsx</field>
+            <field name="groups_id"
+                eval="[(4, ref('base.group_no_one')),(4, ref('soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread')),(4, ref('soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport')),(4, ref('soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario')),(4, ref('soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport'))]" />
+        </record>
+    </data>
 </odoo>
