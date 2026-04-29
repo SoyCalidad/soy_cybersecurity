@@ -38,6 +38,8 @@
         'data/incidents_data.xml',
         'data/data_others.xml',
         'data/dms.xml',
+        'data/cybersecurity.clause.csv',
+        'data/cybersecurity.diagnostic.requirement.csv',
 
         'views/controls.xml',
         'views/incidents.xml',
@@ -47,6 +49,7 @@
         'views/matrix_view_2.xml',
 
         'views/configuration_views_2.xml',
+        'views/diagnostic_views.xml',
         'views/menus.xml',
         
         'reports/matrix_report.xml',

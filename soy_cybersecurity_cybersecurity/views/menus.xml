@@ -161,7 +161,13 @@
           id="menu_diagnosis_main"
           name="Diagnóstico"
           parent="menu_cybersecurity_root"
-          sequence="10" />
+          sequence="10" >
+            <menuitem id="diagnosis_evaluation_menu"
+            name="Evaluación"
+            action="cybersecurity_diagnostic_list_action"
+            groups="group_cybersecurity_user_secundario"
+            sequence="20" />
+        </menuitem>
     
         <menuitem
           id="menu_plan_main"

@@ -12,4 +12,4 @@ from . import app_ctrl_mgmt_validation
 
 from . import controls
 from . import incidents
-
+from . import diagnostic
