@@ -9,6 +9,7 @@ from tempfile import NamedTemporaryFile
 from odoo import api, fields, models
 from openpyxl import Workbook, load_workbook
 from openpyxl.cell.cell import MergedCell
+from openpyxl.styles import Alignment
 from odoo.exceptions import UserError
 import logging 
 
@@ -500,6 +501,47 @@ class Diagnostic(models.Model):
 
         sheets = workbook.sheetnames
         sheet = workbook[sheets[1]]
+        # Limpiar área de encabezado
+        for row in range(2, 8):
+            for col in ['B', 'C', 'D', 'E', 'F', 'G', 'H']:
+                cell = sheet[f'{col}{row}']
+                if not isinstance(cell, MergedCell):
+                    cell.value = None
+
+        # Fusionar celdas para encabezados
+        merge_ranges = ['B2:H3', 'B4:H5', 'B6:H7']
+
+        for merge_range in merge_ranges:
+            try:
+                sheet.unmerge_cells(merge_range)
+            except Exception:
+                pass
+            sheet.merge_cells(merge_range)
+
+        # Alineación centrada
+        center_alignment = Alignment(
+            horizontal='center',
+            vertical='center',
+            wrap_text=True
+        )
+
+        # Llenar encabezados
+        sheet['B2'] = self.company_id.name or ''
+
+        application_date = self.date_validate or self.date_diagnostic
+        sheet['B4'] = (
+            fields.Datetime.to_datetime(application_date).strftime('%d/%m/%Y')
+            if application_date else ''
+        )
+
+        responsible_name = self.user_id.name or ''
+        responsible_name = responsible_name.replace('X', '').strip()
+        sheet['B6'] = responsible_name
+
+        # Aplicar alineación
+        sheet['B2'].alignment = center_alignment
+        sheet['B4'].alignment = center_alignment
+        sheet['B6'].alignment = center_alignment
         cont = 15
         cont_relle = 0
         MAX_ROW_EXCEL = 126
@@ -509,41 +551,50 @@ class Diagnostic(models.Model):
                 p_excel = diagnostic_line.requirement_id.position_excel
                 print("p_excel------>", p_excel)
                 if p_excel and cont < MAX_ROW_EXCEL:
-                    number = p_excel[1:]
-                    if number != str(cont):
-                        # for i=number; in diagnostics: cell1 = sheet['B'+str(cont)]
-                        # if cont+1 in [17, 18,22,23] 31
-                        i = cont
-                        tmp = 1
-                        tmpfinal = True
-                        tmp1 = 1
-                        while tmpfinal == True and cont < MAX_ROW_EXCEL and i < MAX_ROW_EXCEL:
-                            if i not in [19, 18, 24, 23, 27, 28, 32, 31, 33, 37, 38, 43, 47, 48,49, 55, 56, 61, 62, 63, 65, 66, 70, 71, 74, 75, 78, 79, 86, 85, 84, 91, 92, 94, 95, 100, 101, 102, 106, 107, 111, 112, 116, 117, 118, 122, 123, ] and i != int(number):
-                                if cont < MAX_ROW_EXCEL and i < MAX_ROW_EXCEL:
-                                    # comvertir a string
-                                    cell1 = sheet['B'+str(i)]
-                                    if not isinstance(cell1, MergedCell):
-                                        cell1.value = 'X'
-                                    tmp = 0
-                                    i = i+1
-                                    tmp1 = 0
-                            else:
-                                if tmp == 0:
-                                    print("vista tmp y i------>", i)
-                                    tmpfinal = False
-                                    i = int(number)
-                                    break
+                    # Extraer solo el número de fila desde position_excel
+                    number = ''.join(filter(str.isdigit, p_excel))
+                    # Nunca tocar encabezados fusionados
+                    if int(number) <= 7:
+                        continue
+                    # if number != str(cont):
+                    #     # for i=number; in diagnostics: cell1 = sheet['B'+str(cont)]
+                    #     # if cont+1 in [17, 18,22,23] 31
+                    #     i = cont
+                    #     tmp = 1
+                    #     tmpfinal = True
+                    #     tmp1 = 1
+                    #     while tmpfinal == True and cont < MAX_ROW_EXCEL and i < MAX_ROW_EXCEL:
+                    #         if i not in [19, 18, 24, 23, 27, 28, 32, 31, 33, 37, 38, 43, 47, 48,49, 55, 56, 61, 62, 63, 65, 66, 70, 71, 74, 75, 78, 79, 86, 85, 84, 91, 92, 94, 95, 100, 101, 102, 106, 107, 111, 112, 116, 117, 118, 122, 123, ] and i != int(number):
+                    #             if cont < MAX_ROW_EXCEL and i < MAX_ROW_EXCEL:
+                    #                 # comvertir a string
+                    #                 cell1 = sheet['B'+str(i)]
+                    #                 if not isinstance(cell1, MergedCell):
+                    #                     cell1.value = 'X'
+                    #                 tmp = 0
+                    #                 i = i+1
+                    #                 tmp1 = 0
+                    #         else:
+                    #             if tmp == 0:
+                    #                 print("vista tmp y i------>", i)
+                    #                 tmpfinal = False
+                    #                 i = int(number)
+                    #                 break
 
-                            if number == str(i):  # 31
-                                tmpfinal = False
-                                i = int(number)
-                                break
-                            else:
-                                if tmp1 != 0:
-                                    i = i+1
-                        cont = i
-                    if number == str(cont):
-                        number = p_excel[1:]
+                    #         if number == str(i):  # 31
+                    #             tmpfinal = False
+                    #             i = int(number)
+                    #             break
+                    #         else:
+                    #             if tmp1 != 0:
+                    #                 i = i+1
+                    #     cont = i
+                    # if number == str(cont):
+                    if p_excel:
+                        # Extraer solo el número de fila desde position_excel
+                        number = ''.join(filter(str.isdigit, p_excel))
+                        # Nunca tocar encabezados fusionados
+                        if int(number) <= 7:
+                            continue
                         print("number------>", number)
                         if diagnostic_line.qualification == 'na':
                             letter = 'G'
@@ -558,15 +609,38 @@ class Diagnostic(models.Model):
                         elif diagnostic_line.qualification == '100_porcent':
                             letter = 'F'
 
-                        cell = sheet[letter+number]
+                        cell_ref = letter + number
+                        cell = sheet[cell_ref]
                         _logger.info(f"Letter {letter} - number {number}")
-                        if not isinstance(cell, MergedCell):
+
+                        # Escribir incluso si la celda pertenece a un merge
+                        if isinstance(cell, MergedCell):
+                            for merged_range in sheet.merged_cells.ranges:
+                                if cell.coordinate in merged_range:
+                                    master_cell = sheet[merged_range.start_cell.coordinate]
+                                    master_cell.value = 'X'
+                                    break
+                        else:
                             cell.value = 'X'
                         # cont=int(number) #comvertir a entero
                         cont = cont+1
+                    # Extraer solo el número de fila desde position_excel
+                    number = ''.join(filter(str.isdigit, p_excel))
+                    # Nunca tocar encabezados fusionados
+                    if int(number) <= 7:
+                        continue
                     if diagnostic_line.observation:
-                        cell2 = sheet['H'+number]
-                        if not isinstance(cell2, MergedCell):
+                        obs_ref = 'H' + number
+                        cell2 = sheet[obs_ref]
+
+                        # Escribir observación incluso si la celda pertenece a un merge
+                        if isinstance(cell2, MergedCell):
+                            for merged_range in sheet.merged_cells.ranges:
+                                if cell2.coordinate in merged_range:
+                                    master_cell = sheet[merged_range.start_cell.coordinate]
+                                    master_cell.value = diagnostic_line.observation
+                                    break
+                        else:
                             cell2.value = diagnostic_line.observation
 
         workbook.close()
