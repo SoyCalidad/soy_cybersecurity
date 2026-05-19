@@ -421,6 +421,7 @@ class Line(models.Model):
                 'mail.activity.mixin', 'mgmtsystem.code']
     _description = "Declaración de aplicabilidad"
 
+    active = fields.Boolean(string="Activo", default=True)
     parent_edition = fields.Many2one(
         comodel_name='cyber_2matrix.block.line', string='Padre', copy=False)
     old_versions = fields.One2many(
@@ -456,7 +457,10 @@ class Line(models.Model):
     domain_id = fields.Many2one('cyber_2matrix.block.line.domain', string='Dominio')
     domain_description = fields.Text(related='domain_id.description', readonly=True, string='Descripción del Dominio')
 
-    ctrl_target_id = fields.Many2one('cyber_2matrix.block.line.ctrl_target', string='Objetivo de control')
+    ctrl_target_id = fields.Many2one(
+        'cyber_2matrix.block.line.ctrl_target', 
+        string='Objetivo de control',
+    )
 
 
     @api.onchange('domain_id')

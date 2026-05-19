@@ -9,7 +9,9 @@ class Line(models.Model):
         string='Tipo de control',
         selection=[
             ('app_ctrl', 'Declaración de Aplicabilidad'),
-            ('controls', 'Controles')]   
+            ('controls', 'Controles')
+        ],
+        default='app_ctrl',
     )
 
 

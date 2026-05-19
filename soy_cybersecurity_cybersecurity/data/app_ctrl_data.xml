@@ -27,387 +27,468 @@
         <!-- Objetivos de control -->
         
         <!-- 5. -->
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_51">
+        <record id="app_ctrl_line_51" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.1: Políticas de seguridad de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_52">
-            <field name="name">5.2: Funciones y responsabilidades en materia de seguridad de la información</field>
+
+
+        <record id="app_ctrl_line_52" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.2: Roles y responsabilidades en la Seguridad de la Información</field>
+        </record>
+
+        <record id="app_ctrl_line_53" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.3: Segregación de deberes</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_53">
-            <field name="name">5.3: Segregación de funciones</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
-        </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_54">
+
+        <record id="app_ctrl_line_54" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.4: Responsabilidades de la dirección</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_55">
+        <record id="app_ctrl_line_55" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.5: Contacto con las autoridades</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_56">
+ 
+        <record id="app_ctrl_line_56" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.6: Contacto con grupos de interés especial</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_57">
+ 
+        <record id="app_ctrl_line_57" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.7: Inteligencia de amenazas</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_58">
-            <field name="name">5.8: Seguridad de la información en la gestión de proyectos</field>
+
+        <record id="app_ctrl_line_58" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.8: Seguridad de la Información en la gestión de proyectos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_59">
-            <field name="name">5.9: Inventario de la información y otros activos asociados</field>
+         
+        <record id="app_ctrl_line_59" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.9: Inventario de información y otros activos asociados</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_510">
+ 
+        <record id="app_ctrl_line_510" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.10: Uso aceptable de la información y otros activos asociados</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_511">
+ 
+        <record id="app_ctrl_line_511" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.11: Devolución de activos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_512">
+ 
+        <record id="app_ctrl_line_512" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.12: Clasificación de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_513">
+ 
+        <record id="app_ctrl_line_513" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.13: Etiquetado de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_514">
+ 
+        <record id="app_ctrl_line_514" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.14: Transferencia de información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_515">
+         
+        <record id="app_ctrl_line_515" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.15: Control de acceso</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_516">
-            <field name="name">5.16: Gestión de la identidad</field>
+         
+        <record id="app_ctrl_line_516" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.16: Gestión de identidades</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_517">
+ 
+        <record id="app_ctrl_line_517" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.17: Información de autenticación</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_518">
+     
+        <record id="app_ctrl_line_518" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.18: Derechos de acceso</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_519">
-            <field name="name">5.19: Seguridad de la información en las relaciones con los proveedores</field>
+         
+        <record id="app_ctrl_line_519" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.19: Seguridad de la información en las relaciones con proveedores</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_520">
-            <field name="name">5.20: Gestión de la seguridad de la información en los acuerdos con los proveedores</field>
+         
+        <record id="app_ctrl_line_520" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.20: Abordar la seguridad de la información dentro de los acuerdos con proveedores</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_521">
-            <field name="name">5.21: Gestión de la seguridad de la información en la cadena de suministro de las TIC</field>
+        
+        <record id="app_ctrl_line_521" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.21: Gestión de seguridad de la información en la cadena de suministro de la tecnología de la información y las telecomunicaciones (TIC)</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_522">
-            <field name="name">5.22: Monitoreo, revisión y gestión de cambios de los servicios de los proveedores</field>
+         
+        <record id="app_ctrl_line_522" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.22: Seguimiento, revisión y gestión del cambio de los servicios de los proveedores</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_523">
+        
+        <record id="app_ctrl_line_523" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.23: Seguridad de la información para el uso de servicios en la nube</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_524">
+         
+        <record id="app_ctrl_line_524" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.24: Planificación y preparación de la gestión de incidentes de seguridad de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_525">
+         
+        <record id="app_ctrl_line_525" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.25: Evaluación y decisión sobre eventos de seguridad de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_526">
+         
+        <record id="app_ctrl_line_526" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.26: Respuesta a incidentes de seguridad de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_527">
-            <field name="name">5.27: Aprendizaje de los incidentes de seguridad de la información</field>
+         
+        <record id="app_ctrl_line_527" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.27: Aprender de los incidentes de seguridad de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_528">
-            <field name="name">5.28: Recogida de pruebas</field>
+        
+        <record id="app_ctrl_line_528" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.28: Recopilación de evidencias</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_529">
-            <field name="name">5.29: Seguridad de la información durante la interrupción</field>
+         
+        <record id="app_ctrl_line_529" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.29: Seguridad de la información durante una interrupción</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_530">
-            <field name="name">5.30: Preparación de las TIC para la continuidad del negocio</field>
+         
+        <record id="app_ctrl_line_530" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.30: Preparación de las TIC para la continuidad de negocio</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_531">
-            <field name="name">5.31: Identificación de los requisitos legales, reglamentarios y contractuales</field>
+         
+        <record id="app_ctrl_line_531" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.31: Requisitos legales, legales, reglamentarios y contractuales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_532">
+       
+        <record id="app_ctrl_line_532" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.32: Derechos de propiedad intelectual</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_533">
+         
+        <record id="app_ctrl_line_533" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.33: Protección de registros</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_534">
-            <field name="name">5.34: Privacidad y protección de la información personal</field>
+         
+        <record id="app_ctrl_line_534" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.34: Privacidad y protección de la información de identificación personal (PII, por sus siglas en ingles)</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_535">
+         
+        <record id="app_ctrl_line_535" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.35: Revisión independiente de la seguridad de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_536">
-            <field name="name">5.36: Cumplimiento de políticas y normas de seguridad de la información</field>
+         
+        <record id="app_ctrl_line_536" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">5.36: Cumplimiento de políticas, reglas y estándares de seguridad de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_537">
+         
+        <record id="app_ctrl_line_537" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">5.37: Procedimientos operativos documentados</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
         </record>
-
-
+        
         <!-- 6. -->
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_61">
-            <field name="name">6.1: Selección de personal</field>
+        <record id="app_ctrl_line_61" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">6.1: RESPONSABILIDAD DE LA DIRECCIÓN</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_62">
+         
+        <record id="app_ctrl_line_62" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">6.2: Términos y condiciones de empleo</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
         </record>
-
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_63">
-            <field name="name">6.3: Concienciación, educación y formación en materia de seguridad de la información</field>
+        
+        <record id="app_ctrl_line_63" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">6.3: Conciencia de seguridad de la información, educación y formación</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_64">
+        
+        <record id="app_ctrl_line_64" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">6.4: Proceso disciplinario</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_65">
+         
+        <record id="app_ctrl_line_65" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">6.5: Responsabilidades después de la terminación o cambio de empleo</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_66">
+         
+        <record id="app_ctrl_line_66" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">6.6: Acuerdos de confidencialidad o no divulgación</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
         </record>
-
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_67">
-            <field name="name">6.7: Trabajo a distancia</field>
+        
+        <record id="app_ctrl_line_67" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">6.7: Trabajo remoto</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2"/>
+        </record>
+        
+        <record id="app_ctrl_line_68" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">6.8: Informes de eventos de seguridad de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_68">
-            <field name="name">6.8: Reporte de eventos de seguridad de la información</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
-        </record>
-
+         
         <!-- 7. -->
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_71">
-            <field name="name">7.1: Perímetro de seguridad física</field>
+        <record id="app_ctrl_line_71" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">7.1: Perímetros de seguridad física</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_72">
-            <field name="name">7.2: Controles físicos de entrada</field>
+         
+        <record id="app_ctrl_line_72" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">7.2: Entrada física</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_73">
-            <field name="name">7.3: Seguridad de oficinas, salas e instalaciones</field>
+         
+        <record id="app_ctrl_line_73" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">7.3: Asegurar oficinas, habitaciones e instalaciones</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_74">
-            <field name="name">7.4: Supervisión de la seguridad física</field>
+         
+        <record id="app_ctrl_line_74" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">7.4: Monitoreo de la seguridad física</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_75">
+         
+        <record id="app_ctrl_line_75" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">7.5: Protección contra amenazas físicas y ambientales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_76">
+        
+        <record id="app_ctrl_line_76" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">7.6: Trabajar en áreas seguras</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_77">
-            <field name="name">7.7: Escritorio y pantalla despejados</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+        
+        <record id="app_ctrl_line_77" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">7.7: Escritorio y pantalla limpios</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_78">
-            <field name="name">7.8: Ubicación y protección de los equipos</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+         
+        <record id="app_ctrl_line_78" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">7.8: Emplazamiento y protección de equipos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_79">
+         
+        <record id="app_ctrl_line_79" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">7.9: Seguridad de los activos fuera de las instalaciones</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_710">
+         
+        <record id="app_ctrl_line_710" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">7.10: Medios de almacenamiento</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_711">
-            <field name="name">7.11: Servicios de apoyo</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+         
+        <record id="app_ctrl_line_711" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">7.11: Servicios públicos de apoyo</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_712">
+        
+        <record id="app_ctrl_line_712" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">7.12: Seguridad del cableado</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_713">
+         
+        <record id="app_ctrl_line_713" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">7.13: Mantenimiento de equipos</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_714">
-            <field name="name">7.14: Seguridad en la eliminación o reutilización de equipos</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+         
+        <record id="app_ctrl_line_714" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">7.14: Disposición o reutilización segura de los equipos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3"/>
         </record>
-
-
+         
         <!-- 8. -->
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_81">
-            <field name="name">8.1: Dispositivos de punto final del usuario</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+        <record id="app_ctrl_line_81" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.1: Dispositivos de punto final de usuario</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_82">
-            <field name="name">8.2: Derechos de acceso con privilegios</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+         
+        <record id="app_ctrl_line_82" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.2: Derechos de acceso privilegiado</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_83">
+         
+        <record id="app_ctrl_line_83" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.3: Restricción de acceso a la información</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_84">
+         
+        <record id="app_ctrl_line_84" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.4: Acceso al código fuente</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />         
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_85">
+         
+        <record id="app_ctrl_line_85" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.5: Autenticación segura</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_86">
+         
+        <record id="app_ctrl_line_86" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.6: Gestión de la capacidad</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_87">
-            <field name="name">8.7: Protección contra el malware</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+         
+        <record id="app_ctrl_line_87" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.7: Protección contra malware</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_88">
-            <field name="name">8.8: Gestión de las vulnerabilidades técnicas</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+         
+        <record id="app_ctrl_line_88" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.8: Gestión de vulnerabilidades técnicas</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_89">
+         
+        <record id="app_ctrl_line_89" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.9: Gestión de la configuración</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_810">
+        
+        <record id="app_ctrl_line_810" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.10: Eliminación de información</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_811">
+        
+        <record id="app_ctrl_line_811" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.11: Enmascaramiento de datos</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_812">
-            <field name="name">8.12: Prevención de la fuga de datos</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+         
+        <record id="app_ctrl_line_812" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.12: Prevención de fugas de datos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_813">
+         
+        <record id="app_ctrl_line_813" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.13: Copia de seguridad de la información</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_814">
-            <field name="name">8.14: Redundancia de las instalaciones de procesamiento de la información</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+         
+        <record id="app_ctrl_line_814" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.14: Redundancia de las instalaciones de procesamiento de información</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_815">
-            <field name="name">8.15: Registro de datos</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+         
+        <record id="app_ctrl_line_815" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.15: Registro</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_816">
-            <field name="name">8.16: Actividades de supervisión</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+        
+        <record id="app_ctrl_line_816" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.16: Actividades de seguimiento</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_817">
-            <field name="name">8.17: Sincronización de relojes</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+         
+        <record id="app_ctrl_line_817" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.17: Sincronización de reloj</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_818">
+         
+        <record id="app_ctrl_line_818" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.18: Uso de programas de utilidad privilegiados</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_819">
+         
+        <record id="app_ctrl_line_819" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.19: Instalación de software en sistemas operativos</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_820">
-            <field name="name">8.20: Controles de red</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+         
+        <record id="app_ctrl_line_820" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.20: Seguridad de redes</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_821">
+         
+        <record id="app_ctrl_line_821" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.21: Seguridad de los servicios de red</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_822">
-            <field name="name">8.22: Filtrado web</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+        
+        <record id="app_ctrl_line_822" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.22: Segregación de redes</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_823">
-            <field name="name">8.23: Segregación en redes</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+        
+        <record id="app_ctrl_line_823" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.23: Filtrado web</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_824">
-            <field name="name">8.24: Uso de criptografía</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+        
+        <record id="app_ctrl_line_824" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.24: Uso de la criptografía</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_825">
+         
+        <record id="app_ctrl_line_825" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.25: Ciclo de vida de desarrollo seguro</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_826">
+         
+        <record id="app_ctrl_line_826" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.26: Requisitos de seguridad de las aplicaciones</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_827">
+        <record id="app_ctrl_line_827" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.27: Arquitectura de sistemas seguros y principios de ingeniería</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_828">
+         
+        <record id="app_ctrl_line_828" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.28: Codificación segura</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_829">
-            <field name="name">8.29: Pruebas de seguridad en el desarrollo y la aceptación</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+         
+        <record id="app_ctrl_line_829" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.29: Pruebas de seguridad en el desarrollo y aceptación</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_830">
+         
+        <record id="app_ctrl_line_830" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.30: Desarrollo externalizado</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_831">
-            <field name="name">8.31: Separación de los entornos de desarrollo, prueba y producción</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+        <record id="app_ctrl_line_831" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.31: Separación de entornos de desarrollo, evidencia y producción</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_832">
+        
+        <record id="app_ctrl_line_832" model="cyber_2matrix.block.line.ctrl_target">
             <field name="name">8.32: Gestión del cambio</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_833">
-            <field name="name">8.33: Información de pruebas</field>
-            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+         
+        <record id="app_ctrl_line_833" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.33: Información de las pruebas</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4"/>
         </record>
-        <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_834">
-            <field name="name">8.34: Protección de los sistemas de información durante la auditoría y las pruebas</field>
+         
+        <record id="app_ctrl_line_834" model="cyber_2matrix.block.line.ctrl_target">
+            <field name="name">8.34: Protección de los sistemas de información durante las pruebas de auditoría</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
         </record>
 

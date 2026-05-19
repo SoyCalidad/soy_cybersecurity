@@ -35,6 +35,7 @@
         'security/rules.xml',
         'data/evaluation_main_data.xml',
         'data/app_ctrl_data.xml',
+        'data/cyber_2matrix_block_line.xml',
         'data/incidents_data.xml',
         'data/data_others.xml',
         'data/dms.xml',
