@@ -38,6 +38,7 @@
         'data/incidents_data.xml',
         'data/data_others.xml',
         'data/dms.xml',
+        'data/mail_template.xml',
 
         'views/controls.xml',
         'views/incidents.xml',

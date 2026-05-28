@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <record id="mail_template_incident_created" model="mail.template">
+            <field name="name">
+                Incident Notification
+            </field>
+            <field name="model_id"  ref="model_incident_incident" />
+            <field name="subject">
+                Nuevo Incidente - {{ object.name }}
+            </field>
+            <field name="email_from">
+                {{ user.company_id.email_formatted or ''}}
+            </field> 
+        
+            <field name="body_html" type="html">
+
+                <div>
+                    <p>Hola,</p>
+                    <p>
+                        Se ha registrado un nuevo incidente.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Incidente:</strong>
+                            <t t-out="object.name" />
+                        </li>
+    
+                        <li>
+                            <strong>Creado el :</strong>
+                            <t t-out="object.create_date" />
+                        </li>
+                    </ul>
+    
+                    <p>
+                        <t t-out="object.description or ''" />
+                    </p>
+
+                    <t t-set="base_url"
+                    t-value="object.get_base_url()"/>
+
+                    <p>
+                        <a t-att-href="base_url + '/web#id=%s&amp;model=indicent.indicent&amp;view_type=form' % object.id">
+                            Ver Incidente
+                        </a>
+                    </p>
+                </div>
+            </field> 
+        </record>
+    </data>
+
+</odoo>

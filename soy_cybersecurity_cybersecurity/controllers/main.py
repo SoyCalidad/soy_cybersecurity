@@ -86,6 +86,7 @@ class incident(http.Controller):
         res_id.reason_ids = [(6, 0, reason_arr)]
         
         self._send_email_notify(res_id.id, res_id._name, request.env.company.ids)
+        self._send_notification(res_id)
         response = request.render('soy_cybersecurity_cybersecurity.incident_done', {})
         return response
     
@@ -106,11 +107,49 @@ class incident(http.Controller):
             users = []
             
         _logger.info(f"users email: {users}")
+        template = request.env.ref(
+            'soy_cybersecurity_cybersecurity.mail_template_incident_created',
+            raise_if_not_found=False
+        )
         for user in users:
-            mail_values = {
-                    "subject": f"Tiene un incidente por revisar",
-                    "body_html": f"<p>Hola {user.display_name},</p><p>Tiene un incidente por revisar</p> <p>Puedes verlo aquí: <a href={record_url}>Ver registro</a></p>",
-                    "email_to": user.email,
-                }
-            request.env["mail.mail"].sudo().create(mail_values).send()
-    
+            template.send_mail(
+                record_id,
+                email_values={
+                    'email_to': ','.join([user.email_formatted]),
+                },
+                force_send=True,
+            )
+
+    def _send_notification(self, incident):
+        param = request.env['ir.config_parameter'].sudo()
+
+        emails = param.get_param(
+            'incident.notification.emails', ''
+        )
+
+        if not emails:
+            return
+
+        template = request.env.ref(
+            'soy_cybersecurity_cybersecurity.mail_template_incident_created',
+            raise_if_not_found=False
+        )
+
+        if not template:
+            _logger.warning(f"No template")
+            return
+
+        email_list = [
+            email.strip()
+            for email in emails.split(',')
+            if email.strip()
+        ]
+        for email_f in email_list:
+            template.send_mail(
+                incident.id,
+                email_values={
+                    'email_to': ','.join([email_f]),
+                },
+                force_send=True,
+            )
+
