@@ -288,12 +288,12 @@
         sequence="70">
         <menuitem id="opp_risk_menu"
             name="Matriz de Riesgos"
-            action="mgmtsystem_opportunity.matrix_block_line_risk_action"
+            action="mgmtsystem_opportunity.matrix_matrix_risk_action"
             sequence="10" />
 
         <menuitem id="opp_opp_menu"
             name="Matriz de Oportunidades"
-            action="mgmtsystem_opportunity.matrix_block_line_opportunity_action"
+            action="mgmtsystem_opportunity.matrix_matrix_opportunity_action"
             sequence="20" />
     </menuitem>
 
@@ -331,6 +331,23 @@
 
 
     <!-- hacer -->
+     <menuitem id="recruitment_menu"
+                  name="Reclutamiento"
+                  parent="menu_do_main"
+                  groups="hr.group_hr_manager,hr.group_hr_user,base.group_user"
+                  sequence="10" />
+
+    <menuitem id="recruitment_hr_job_menu"
+                name="Puestos"
+                parent="recruitment_menu"
+                action="hr.action_hr_job"
+                sequence="10" />
+
+    <menuitem id="recruitment_act_job_menu"
+                name="Solicitudes"
+                parent="recruitment_menu"
+                action="hr_recruitment.crm_case_categ0_act_job"
+                sequence="20" />
     <menuitem id="comunication_menu"
         name="Comunicaciones"
         parent="menu_do_main"
@@ -398,6 +415,25 @@
             sequence="2"
             action="incident_incident_ext_action" />
     </menuitem>
+
+    <menuitem id="maintance_menu"
+            name="Mantenimiento"
+            parent="menu_do_main"
+            groups="mgmtsystem_infrastructure.group_infrastructure_onlyread,mgmtsystem_infrastructure.group_infrastructure_onlyread_printreport,mgmtsystem_infrastructure.group_infrastructure_write_printreport,mgmtsystem_infrastructure.group_infrastructure_all"
+            sequence="50" />
+
+    <menuitem id="hola_calidad_mgmtsystem_maintance_plan"
+            name="Programa de mantenimientos"
+            parent="maintance_menu"
+            groups="base.group_no_one,mgmtsystem_infrastructure.group_infrastructure_onlyread,mgmtsystem_infrastructure.group_infrastructure_onlyread_printreport,mgmtsystem_infrastructure.group_infrastructure_write_printreport,mgmtsystem_infrastructure.group_infrastructure_all"
+            action="mgmtsystem_infrastructure.mgmtsystem_maintenance_plan_action"
+            sequence="10" />
+
+        <menuitem id="hola_calidad_mgmtsystem_maintance_maintance"
+            name="Plan de Mantenimiento"
+            parent="maintance_menu"
+            action="mgmtsystem_infrastructure.mgmtsystem_maintenance_action"
+            sequence="20" />
 
 
     <!--  verificar -->

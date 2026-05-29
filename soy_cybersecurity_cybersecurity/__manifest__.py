@@ -18,6 +18,9 @@
 
     'depends': [
         'documents',
+        'hr_recruitment',
+
+
         'mgmtsystem_action',
         'mgmtsystem_nonconformity',
         'website',
@@ -25,6 +28,8 @@
         'hola_calidad',
         'mgmtsystem_documentary_control',
         'mgmtsystem_opportunity',
+        'mgmtsystem_infrastructure',
+
         #'soycalidad_dms',
     ],
 

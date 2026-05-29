@@ -7,7 +7,9 @@ from math import ceil
 from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
 from PIL import Image
+import logging 
 
+_logger = logging.getLogger(__name__)
 
 class IndividualReport(models.AbstractModel):
     _name = 'report.cyber_2matrix_matrix.report'
@@ -15,26 +17,26 @@ class IndividualReport(models.AbstractModel):
 
     def generate_xlsx_report(self, workbook, data, matrixes):
         try:
+            format21_c_bold = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#A0A0A0', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
+            format21_left = workbook.add_format(
+                {'font_size': 10, 'align': 'center', 'valign': 'vcenter', 'bold': False, 'text_wrap': True})
+            format21_gray = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#EEEEEE', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'border': True})
+            format21_red = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#FF0000', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'border': True})
+            format21_gray_bold = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#EEEEEE', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'bold': True, 'border': True })
+            format21_red_bold = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#FF0000', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'bold': True, 'border': True })
+            format26_c_bold = workbook.add_format(
+                {'font_size': 26, 'bg_color': '#A0A0A0', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
+            
+            date_format = workbook.add_format(
+                {'font_size': 10, 'bg_color': '#A0A0A0','num_format': 'dd/mm/yyyy', 'bold': True, 'align': 'center', 'valign': 'vcenter', 'text_wrap': True})
             for matrix in matrixes:
                 sheet = workbook.add_worksheet(str(matrix.name))
 
-                format21_c_bold = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#A0A0A0', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
-                format21_left = workbook.add_format(
-                    {'font_size': 10, 'align': 'center', 'valign': 'vcenter', 'bold': False, 'text_wrap': True})
-                format21_gray = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#EEEEEE', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'border': True})
-                format21_red = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#FF0000', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'border': True})
-                format21_gray_bold = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#EEEEEE', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'bold': True, 'border': True })
-                format21_red_bold = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#FF0000', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'bold': True, 'border': True })
-                format26_c_bold = workbook.add_format(
-                    {'font_size': 26, 'bg_color': '#A0A0A0', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
-                
-                date_format = workbook.add_format(
-                    {'font_size': 10, 'bg_color': '#A0A0A0','num_format': 'dd/mm/yyyy', 'bold': True, 'align': 'center', 'valign': 'vcenter', 'text_wrap': True})
 
 
                 format26_c_bold.set_border()
@@ -302,7 +304,7 @@ class IndividualReport(models.AbstractModel):
                     
 
         except Exception as e:
-            print(e)
+            _logger.warning(str(e))
             raise UserError("Hubo un error al generar el reporte")
 
 
