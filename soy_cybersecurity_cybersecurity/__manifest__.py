@@ -75,5 +75,8 @@
             '/soy_cybersecurity_cybersecurity/static/src/css/incident.css',
             '/soy_cybersecurity_cybersecurity/static/src/js/incident.js',
         ],
+        'web.assets_backend': [
+            "soy_cybersecurity_cybersecurity/static/src/login_popup/**/*",
+        ]
     } 
 }

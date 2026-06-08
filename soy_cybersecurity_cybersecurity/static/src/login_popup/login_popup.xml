@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="soy_cybersecurity_cybersecurity.LoginPopup" t-inherit="menus_hola_calidad.LoginPopup" t-inherit-mode="extension" >
+        <button id="sc-button-soy-information-security" position="replace"
+            >
+            <button  class="btn btn-sm btn-warning text-white sc-fw-bold" type="button"
+            id="sc-button-soy-information-security"
+            t-on-click="() => this.openIS()">
+                Ir al sistema
+            </button>
+        </button>
+    </t>
+
+</templates>
