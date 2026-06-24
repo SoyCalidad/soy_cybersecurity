@@ -386,15 +386,26 @@
         parent="menu_do_main"
         groups="mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
         sequence="40">
+        <menuitem name="Inventario de Activos de Información"
+            id="mitem_block_line_information_asset"
+            sequence="10"
+            action="matrix_block_line_information_asset_action"
+            groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
         <menuitem name="Matriz de inventario de activos de la información"
             id="matrix_matrix_information_asset_menu"
-            sequence="10"
+            sequence="20"
             action="matrix_matrix_information_asset_action"
             groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
 
+        <menuitem name="Declaración de Aplicabilidad"
+                id="mitem_block_line_app_ctrl_mgmt"
+                sequence="30"
+                action="matrix_block_line_app_ctrl_mgmt_action"
+                groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"/>
+
         <menuitem name="Matriz de declaración de aplicabilidad"
             id="matrix_matrix_app_ctrl_mgmt_menu"
-            sequence="20"
+            sequence="40"
             action="matrix_matrix_app_ctrl_mgmt_action"
             groups="base.group_no_one,mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport" />
 
