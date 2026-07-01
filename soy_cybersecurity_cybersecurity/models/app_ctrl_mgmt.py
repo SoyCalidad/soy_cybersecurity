@@ -55,11 +55,51 @@ class Categ(models.Model):
             categ.sequence_id.unlink()
         return super(Categ, self).unlink()
 
+class MatrixLine(models.Model):
+    _name = 'cyber_2matrix.matrix.line'
+    _description = "Lineas de la Matrix de declaración de aplicabilidad"
+
+    applicability_id = fields.Many2one(
+        comodel_name='cyber_2matrix.block.line',
+        string="Aplicabilidad",
+        required=True,
+    )
+    justification  = fields.Text(string="Justificación de la aplicabilidad / no aplicabilidad")
+    reference  = fields.Text(string="Referencia de la implementación del control")
+    is_implemented = fields.Boolean(default=False, string="¿Control implementado?")
+
+    applicability_id_name = fields.Char(
+        related='applicability_id.name',
+        string="Nombre del control",
+    )
+    applicability_id_domain_id = fields.Many2one(
+        related='applicability_id.domain_id',
+    )
+    applicability_id_description_application = fields.Text(
+        related='applicability_id.description_application',
+        string="Descripción del control",
+    )
+    applicability_id_application = fields.Boolean(
+        related='applicability_id.application',
+        string="Aplicabilidad",
+    )
+
+    action_ids = fields.Many2many(
+        comodel_name='mgmtsystem.action',
+        string="Acciones",
+    )
+
+    matrix_id = fields.Many2one(
+        'cyber_2matrix.matrix',
+        required=True,
+        ondelete='cascade',
+    )
+
 
 class Matrix(models.Model):
     _name = 'cyber_2matrix.matrix'
     _inherit = ['mgmtsystem.validation.mail', 'mgmtsystem.code']
-    _description = "Matriz"
+    _description = "Matriz de declaración de aplicabilidad"
 
     parent_edition = fields.Many2one(
         comodel_name='cyber_2matrix.matrix', string='Padre', copy=False)
@@ -180,12 +220,16 @@ class Matrix(models.Model):
             ('cancel', 'Cancelado')],
     )
 
-    line_ids = fields.Many2many(
-        string='line',
-        comodel_name='cyber_2matrix.block.line',
-        relation='cyber_2matrix_m_block_line_rel',
-        column1='line_id',
-        column2='matrix_id',
+    # line_ids = fields.Many2many(
+    #     string='line',
+    #     comodel_name='cyber_2matrix.matrix.line',
+    #     relation='cyber_2matrix_m_block_line_rel',
+    #     column1='line_id',
+    #     column2='matrix_id',
+    # )
+    line_ids = fields.One2many(
+        'cyber_2matrix.matrix.line',
+        'matrix_id',
     )
 
     def send_elaborate(self):
@@ -240,6 +284,42 @@ class Matrix(models.Model):
                 raise exceptions.ValidationError(
                     _('Solo se permite eliminar registros en borrador y en elaboración'))
         return super(Matrix, self).unlink()
+
+    @api.model
+    def default_get(self, fields_list):
+        res = super().default_get(fields_list)
+
+        if 'line_ids' in fields_list:
+            applicability_ids = self.env['cyber_2matrix.block.line'].search([]).ids
+            res['line_ids'] = [
+                (0, 0, {
+                    'applicability_id': applicability_id,
+                    'is_implemented': False,
+                })
+                for applicability_id in applicability_ids
+            ]
+
+        return res
+
+    # @api.model_create_multi
+    # def create(self, vals_list): 
+    #     applicability_ids = self.env['cyber_2matrix.block.line'].search([]).ids
+
+    #     commands = [
+    #         (0, 0, {
+    #             'applicability_id': applicability_id,
+    #             'is_implemented': False,
+    #         })
+    #         for applicability_id in applicability_ids
+    #     ]
+
+    #     for vals in vals_list:
+    #         vals.setdefault('line_ids', list(commands))
+    #     res = super().create(vals_list)
+
+    #     return res
+
+
 
 
 class Block(models.Model):

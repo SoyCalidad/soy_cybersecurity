@@ -8,6 +8,7 @@ from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
 from PIL import Image
 import logging 
+import re
 
 _logger = logging.getLogger(__name__)
 
@@ -18,9 +19,11 @@ class IndividualReport(models.AbstractModel):
     def generate_xlsx_report(self, workbook, data, matrixes):
         try:
             format21_c_bold = workbook.add_format(
-                {'font_size': 10, 'bg_color': '#A0A0A0', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
+                {'font_size': 10, 'bg_color': '#595959', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True, 'font_color': 'white'})
+            format10_c_bold = workbook.add_format(
+                {'font_size': 10,  'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True, })
             format21_left = workbook.add_format(
-                {'font_size': 10, 'align': 'center', 'valign': 'vcenter', 'bold': False, 'text_wrap': True})
+                {'font_size': 10, 'align': 'left', 'valign': 'vcenter', 'bold': False, 'text_wrap': True})
             format21_gray = workbook.add_format(
                 {'font_size': 10, 'bg_color': '#EEEEEE', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'border': True})
             format21_red = workbook.add_format(
@@ -30,17 +33,21 @@ class IndividualReport(models.AbstractModel):
             format21_red_bold = workbook.add_format(
                 {'font_size': 10, 'bg_color': '#FF0000', 'align': 'center', 'valign': 'vcenter', 'text_wrap': True, 'bold': True, 'border': True })
             format26_c_bold = workbook.add_format(
-                {'font_size': 26, 'bg_color': '#A0A0A0', 'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
+                {'font_size': 22,  'align': 'center', 'valign': 'vcenter', 'bold': True, 'text_wrap': True})
+
+            format11_bg_dark_blue= workbook.add_format(
+                {'font_size': 11, 'bg_color': '#1F4E78',  'valign': 'vcenter', 'bold': False, 'text_wrap': True, 'font_color': 'white'})
             
             date_format = workbook.add_format(
                 {'font_size': 10, 'bg_color': '#A0A0A0','num_format': 'dd/mm/yyyy', 'bold': True, 'align': 'center', 'valign': 'vcenter', 'text_wrap': True})
             for matrix in matrixes:
-                sheet = workbook.add_worksheet(str(matrix.name))
+                sheet = workbook.add_worksheet(str(matrix.name or 'Sin nombre'))
 
 
 
                 format26_c_bold.set_border()
                 format21_c_bold.set_border()
+                format10_c_bold.set_border()
                 format21_left.set_border()
                 format21_gray.set_border()
                 format21_gray_bold.set_border()
@@ -49,47 +56,49 @@ class IndividualReport(models.AbstractModel):
                 i = 0
 
                 # Set column width (ANCHO DE COLUMNAS)
-                sheet.set_column(0, 0, 10) # Domain
-                sheet.set_column(1, 1, 16)  
-                sheet.set_column(2, 2, 25) # Control target
-                sheet.set_column(3, 3, 20)
-                sheet.set_column(4, 4, 12) 
+                sheet.set_column(0, 0, 15) # numero
+                sheet.set_column(1, 1, 35)  # nombre del control
+                sheet.set_column(2, 2, 70) # description
+                sheet.set_column(3, 3, 20) #aplicab
+                sheet.set_column(4, 4, 50) 
                 sheet.set_column(5, 5, 25) # app description
                 sheet.set_column(6, 6, 25) # app evidence
-                sheet.set_column(7, 8, 14) # Type
+                sheet.set_column(7, 8, 30) # Type
 
                 # Set row height (ALTO DE FILAS)
-                sheet.set_row(3, 25)
+                sheet.set_row(0, 25)
+                sheet.set_row(1, 25)
+                sheet.set_row(2, 25)
                 sheet.set_row(4, 25)
 
-                sheet.merge_range(prod_row-1, i, prod_row,
-                                  i, 'Dominio', format21_c_bold)
+                sheet.write(prod_row, i, 'N°', format21_c_bold)
                 i += 1
-                sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'Descripción', format21_c_bold)
+                sheet.write(prod_row, i,
+                                  'Nombre del control', format21_c_bold)
                 i += 1
-                sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'Objetivo de Control', format21_c_bold)
-                i += 1
-                sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'Control', format21_c_bold)
+                sheet.write(prod_row, i, 'Descripción del control', format21_c_bold)
+                sheet.merge_range(0, i, 2, i+2, matrix.name, format26_c_bold)       
 
-                sheet.merge_range(prod_row-4, i, prod_row-2,
-                                  i+3, matrix.name, format26_c_bold)       
+                i += 1
+                sheet.write(prod_row, i,'Aplicabilidad (SÍ/NO)', format21_c_bold)
+
                  
                 i += 1
-                sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'Aplica', format21_c_bold)
+                sheet.write(prod_row, i,
+                                  'Justificación de la aplicabilidad / no aplicabilidad', format21_c_bold)
                 i += 1
-                sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'Descripción de Aplicación', format21_c_bold)
+                sheet.write(prod_row, i,
+                                  '¿Control Implementado? (SÍ/NO)', format21_c_bold)
                 i += 1
-                sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'Evidencia o registro de implementación', format21_c_bold)
+                sheet.write(prod_row, i, 'Referencia de la implementación del control', format21_c_bold)
+
+                i += 1
+                sheet.write(prod_row, i, 'Acciones', format21_c_bold)
+
+                #xlsxwriter.exceptions.OverlappingRange: Merge range 'C1:C3' overlaps previous merge range 'C1:F3'.
 
 
-                sheet.merge_range(
-                    'C1:C3', self.env.company.name, format21_c_bold)
+                #sheet.merge_range('C1:C3', self.env.company.name, format21_c_bold)
 
                 company_id = self.env.user.company_id
 
@@ -108,199 +117,77 @@ class IndividualReport(models.AbstractModel):
 
                 i += 1
 
-                #Title 
-                #var_type = "Riesgo" if matrix.type == "risk" else "Oportunidad"
-                #var_type += ' ' + matrix.system_id.name if matrix.system_id else ''
+                MAX_COL = 7 #CELL H
 
 
-                # TYPE
-                sheet.merge_range(prod_row-1, i, prod_row-1, i+1,
-                                  'TIPO', format21_c_bold)
+                sheet.merge_range(0, MAX_COL -2, 0,
+                                  MAX_COL, f'Código: {matrix.code or ""}', format10_c_bold)
+                sheet.merge_range(1, MAX_COL -2, 1, MAX_COL,
+                                  'Versión: '+str(matrix.version), format10_c_bold)
                 
-
-                sheet.write(prod_row, i, 'Nacional', format21_gray_bold)
-                i += 1
-                sheet.write(prod_row, i, 'Internacional', format21_gray_bold)
-
-
-
-                sheet.merge_range(prod_row-4, i-1, prod_row-4,
-                                  i, 'Código: '+str(matrix.code), format21_c_bold)
-                sheet.merge_range(prod_row-3, i-1, prod_row-3, i,
-                                  'Edición: '+str(matrix.version), format21_c_bold)
-                
-                sheet.merge_range(prod_row-2, i-1, prod_row-2, i, 'Fecha de aprobación: '+str(
-                    matrix.date_validate or "Sin definir"), format21_c_bold) # old date_validate
-                
-                       
-                '''
-                if matrix.validation_step.date:
-                    fecha_de_aprobacion = matrix.validation_step.date
-                    # Escribe la fecha con el formato adecuado
-                    sheet.write_datetime(prod_row-2, i-2, fecha_de_aprobacion, date_format)
-                else:
-                    # Manejar el caso cuando la fecha no está definida
-                    sheet.merge_range(prod_row-2, i-2, prod_row-2, i, 'Fecha de aprobación: Sin definir', format21_c_bold)
-                '''
-                i += 1 
-                '''
-                count_cri = 0
-                if matrix.line_ids:
-                    if matrix.line_ids[0].evaluation_id:
-                        for criterio in matrix.line_ids[0].evaluation_id.criterio_ids:
-                            count_cri += 1
-                            sheet.write(prod_row, i, criterio.name,
-                                        format21_gray_bold)
-                            i += 1
-                sheet.write(prod_row, i, 'Resultado', format21_gray_bold)
-                i += 1
-                sheet.merge_range(prod_row-1, i-count_cri-1,
-                                  prod_row-1, i-1, 'Valoración', format21_c_bold)
-
-                sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'Acciones abordadas', format21_c_bold)
-
-                                  
-                var_type = "Riesgo" if matrix.type == "risk" else "Oportunidad"
-                var_type += ' ' + matrix.system_id.name if matrix.system_id else ''
-                sheet.merge_range(prod_row-4, i-count_cri-4, prod_row-2,
-                                  i, 'Matriz de ' + var_type, format26_c_bold)
-                i += 1
-
-                '''
-
+                sheet.merge_range(2, MAX_COL -2, 2, MAX_COL, 'Fecha de validación: '+str(
+                    matrix.date_validate or "Sin definir"), format10_c_bold) # old date_validate
+            
                 
                 # REPORT DATA CONTENT
                 
                 prod_row += 1
-                count = 1
 
-                lines_order = self.env['cyber_2matrix.block.line'].search(
-                    [('id', 'in', matrix.line_ids.ids)], order="id")
+                lines = matrix.line_ids
 
-                block_name = ""
                 row_count = 1
                 row_a = 0
-                line_actual = 0
-                last_line = len(lines_order)
                 max_height = 20
 
-                for line in lines_order:
-                    line_actual += 1
-                    i = 0
+                from collections import defaultdict
+                group_lines = defaultdict(list)
 
-                    if block_name == "":
-                        block_name = line.name or ""
-                        row_a = prod_row
-                    else:
-                        row_count += 1
+                for line in lines:
+                    group_lines[line.applicability_id_domain_id].append(line)
 
-                    #sheet.write(prod_row, i, count, format21_left)
-                    #i += 1
+                for domain, lines in group_lines.items():
+                    sheet.merge_range(prod_row, 0, prod_row, MAX_COL, f"{domain.name.upper()} {domain.description.upper() if domain.description else ''}", format11_bg_dark_blue)
+                    sheet.set_row(prod_row, 25)
+                    prod_row += 1 
+                    for line in lines:
+                        # sheet.set_row(prod_row, 25)
 
-                    sheet.write(prod_row, i,line.domain_id.name, format21_left)
-                    i += 1
+                        i = 0
 
-                    sheet.write(prod_row, i, line.domain_id.description, format21_left)
-                    i += 1
+                        numero = ""
+                        nombre = ""
+                        match = re.match(r'^(\d+(?:\.\d+)?)\s+(.*)$', line.applicability_id_name or '')
+                        if match:
+                            numero = match.group(1)   # "5.1"
+                            nombre = match.group(2)
 
-                    sheet.write(
-                        prod_row, i, line.ctrl_target_id.name, format21_left)
-                    i += 1
-
-                    sheet.write(prod_row, i, line.name, format21_left)
-                    i += 1
-
-                    sheet.write(prod_row, i, line.application, format21_left)
-                    i += 1
-
-                    sheet.write(prod_row, i, line.description_application, format21_left)
-                    i += 1
-
-                    sheet.write(prod_row, i, line.implementation_record, format21_left)
-                    i += 1
-
-                    
-                    # Selection field
-
-                    # TYPE OF CONTROL
-                    # 1st option "national"
-                    if line.type == 'national':
-                        sheet.write(prod_row, i, "X", format21_left)
-                    else:
-                        sheet.write(prod_row, i, "", format21_left)
-                    i += 1                    
-
-                    # 2nd option "international" 
-                    if line.type == 'international':
-                        sheet.write(prod_row, i, "X", format21_left)
-                    else:
-                        sheet.write(prod_row, i, "", format21_left)
-                    
-
-                    '''
-                    for result in line.result_ids:
-                        if result.value >= 6:
-                            sheet.write(prod_row, i, result.value,
-                                        format21_gray_bold)
-                        else:    
-                            sheet.write(prod_row, i, result.value, format21_left)
+                        sheet.write(prod_row, i, numero, format21_left)
                         i += 1
-                    ntr = line.ntr or 0
-                    if int(ntr) > 100:
-                        sheet.write(prod_row, i, line.ntr, format21_gray_bold)
-                    else:
-                        sheet.write(prod_row, i, line.ntr, format21_gray_bold)
-                    i += 1
-                    '''
 
-                    '''
-                    
-                    len_action_ids = len(
-                        '\n'.join([x.name for x in line.action_ids]))
-                    len_name = len(line.name)
-                    len_effect = len(line.effect) if line.effect else 0
-                    len_cause = len(line.cause) if line.cause else 0
-
-                    max_height = max(len_action_ids, len_name,
-                                     len_effect, len_cause)
-
-                    if max_height > 25:
-                        max_height = ceil(max_height/25)*10
-                    else:
-                        max_height = 20
-
-                    sheet.set_row(prod_row, max_height)
-
-                    for result in line.result_ids:
-                        if result.value <= 5:
-                            sheet.write(prod_row, i, result.value,
-                                        format21_red_bold)
-                        sheet.write(prod_row, i, result.value, format21_left)
+                        sheet.write(prod_row, i, nombre, format21_left)
                         i += 1
-                    ntr = line.ntr or 0
-                    if int(ntr) > 100:
-                        sheet.write(prod_row, i, line.ntr, format21_red)
-                    else:
-                        sheet.write(prod_row, i, line.ntr, format21_gray)
-                    i += 1
 
-                    sheet.write(prod_row, i, '\n '.join(
-                        x.name for x in line.action_ids), format21_left)
-                    i += 1
-                    sheet.write(prod_row, i, '\n '.join(
-                        x.user_id.name for x in line.action_ids), format21_left)
-                    i += 1
-                    sheet.write(prod_row, i, '\n '.join(
-                        str(x.date_open) for x in line.action_ids), format21_left)
-                    i += 1
-                    date_deadline = '\n '.join(x.date_deadline.strftime(
-                        '%d/%m/%Y') if x.date_deadline else '' for x in line.action_ids)
-                    sheet.write(prod_row, i, date_deadline, format21_left)
-                    i += 1
-                    '''
-                    prod_row += 1
-                    count += 1
+                        sheet.write(prod_row, i, line.applicability_id_description_application or '', format21_left)
+                        i += 1
+
+                        sheet.write(prod_row, i, "SÍ" if line.applicability_id_application else "NO", format21_left)
+                        i += 1
+
+                        sheet.write(prod_row, i, line.justification or '', format21_left)
+                        i += 1
+
+                        sheet.write(prod_row, i, "SÍ" if line.is_implemented else "NO", format21_left)
+                        i += 1
+
+
+                        sheet.write(prod_row, i, line.reference or '', format21_left)
+                        i += 1                    
+
+                        actions_name = "\n".join([action.display_name for action in line.action_ids])
+                        sheet.write(prod_row, i, actions_name, format21_left)
+                        
+
+                        prod_row += 1
                     
 
         except Exception as e:

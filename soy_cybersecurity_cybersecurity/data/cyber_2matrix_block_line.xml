@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Dominio 5 -->
+        <record id="block_line_001" model="cyber_2matrix.block.line">
+            <field name="name">5.1 Políticas para la seguridad de la información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_51" />
+            <field name="description_application">La política de seguridad de la información y políticas específicas deben ser definidas, aprobadas por la dirección, publicadas, comunicadas y conocidas tanto por el personal como por las partes interesadas pertinentes, además revisadas en intervalos planificados y cuando ocurran cambios significativos</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_002" model="cyber_2matrix.block.line">
+            <field name="name">5.2 Roles y responsabilidades en seguridad de la información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_52" />
+            <field name="description_application">Los roles y responsabilidades de seguridad de la información deben definirse y asignarse de acuerdo con las necesidades de la organización.</field>
+            <field name="type_ctrl">app_ctrl</field>
+
+        </record>
+        <record id="block_line_003" model="cyber_2matrix.block.line">
+            <field name="name">5.3 Segregación de funciones</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_53" />
+            <field name="description_application">Funciones en conflicto y áreas de responsabilidad en conflicto deben ser segregadas.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_004" model="cyber_2matrix.block.line">
+            <field name="name">5.4 Responsabilidades de la dirección</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_54" />
+            <field name="description_application">La dirección debe requerir a todo el personal que aplique la seguridad de la información de acuerdo con la política de seguridad de la información establecida, las políticas y procedimientos específicos de la organización.</field>
+            <field name="type_ctrl">app_ctrl</field>
+
+        </record>
+        <record id="block_line_005" model="cyber_2matrix.block.line">
+            <field name="name">5.5 Contacto con autoridades</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_55" />
+            <field name="description_application">La organización debe establecer y mantener contacto con las autoridades pertinentes.</field>
+            <field name="type_ctrl">app_ctrl</field>
+
+        </record>
+        <record id="block_line_006" model="cyber_2matrix.block.line">
+            <field name="name">5.6 Contacto con grupos especiales de interés</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_56" />
+            <field name="description_application">La organización debe establecer y mantener contacto con grupos especiales de interés u otros foros y asociaciones profesionales especializados en seguridad.</field>
+            <field name="type_ctrl">app_ctrl</field>
+
+        </record>
+        <record id="block_line_007" model="cyber_2matrix.block.line">
+            <field name="name">5.7 Inteligencia de amenazas</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_57" />
+            <field name="description_application">La información relacionada con las amenazas a la seguridad de la información debe ser recopilada y analizada para producir inteligencia sobre las amenazas.</field>
+            <field name="type_ctrl">app_ctrl</field>
+
+        </record>
+        <record id="block_line_008" model="cyber_2matrix.block.line">
+            <field name="name">5.8 Seguridad de la información en la gestión de proyectos</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_58" />
+            <field name="description_application">La seguridad de la información debe estar integrada en la gestión de proyectos.</field>
+            <field name="type_ctrl">app_ctrl</field>
+
+        </record>
+        <record id="block_line_009" model="cyber_2matrix.block.line">
+            <field name="name">5.9 Inventario de información y otros activos asociados</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_59" />
+            <field name="description_application">Un inventario de información y otros activos asociados, incluidos los propietarios, debe ser desarrollado y mantenido</field>
+            <field name="type_ctrl">app_ctrl</field>
+
+        </record>
+        <record id="block_line_010" model="cyber_2matrix.block.line">
+            <field name="name">5.10 Uso aceptable de la información y otros activos asociados</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_510" />
+            <field name="description_application">Reglas para el uso aceptable y procedimientos para el manejo de la información y otros activos asociados debe ser identificada, documentada e implementada.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_011" model="cyber_2matrix.block.line">
+            <field name="name">5.11 Devolución de activos</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_511" />
+            <field name="description_application">El personal y otras partes interesadas, según sea apropiado, deben devolver todos los activos de la organización en su posesión cuando cambien o terminen su empleo, contrato o acuerdo.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_012" model="cyber_2matrix.block.line">
+            <field name="name">5.12 Clasificación de la información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_512" />
+            <field name="description_application">La información debe ser clasificada de acuerdo con las necesidades de seguridad de la información de la organización en función de la confidencialidad, la integridad, la disponibilidad y los requisitos de las partes interesadas pertinentes.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_013" model="cyber_2matrix.block.line">
+            <field name="name">5.13 Etiquetado de la información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_513" />
+            <field name="description_application">Un conjunto de procedimientos apropiado para el etiquetado de información debe ser desarrollado e implementado en concordancia con el esquema de clasificación de la información adoptado por la organización.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_014" model="cyber_2matrix.block.line">
+            <field name="name">5.14 Transferencia de información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_514" />
+            <field name="description_application">Deben existir reglas, procedimientos o acuerdos de transferencia de información para todos los tipos de instalaciones para transferencia, dentro de la organización y entre la organización y otras partes.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_015" model="cyber_2matrix.block.line">
+            <field name="name">5.15 Control de acceso</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_515" />
+            <field name="description_application">Las reglas para controlar el acceso físico y lógico a la información y otros activos asociados deben establecerse e implementarse en función de los requisitos del negocio y de seguridad de la información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_016" model="cyber_2matrix.block.line">
+            <field name="name">5.16 Gestión de identidades</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_516" />
+            <field name="description_application">El ciclo de vida completo de identidades debe ser gestionado.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_017" model="cyber_2matrix.block.line">
+            <field name="name">5.17 Información de autenticación</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_517" />
+            <field name="description_application">La asignación y gestión de la información de autenticación debe ser controlada por un proceso de gestión, incluyendo el asesoramiento al personal sobre el manejo adecuado de la información de autenticación.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_018" model="cyber_2matrix.block.line">
+            <field name="name">5.18 Derechos de acceso</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_518" />
+            <field name="description_application">Los derechos de acceso a la información y otros activos asociados deben ser aprovisionados, revisados, modificados y removidos en concordancia con la política específica de la organización y las reglas para el control de acceso.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_019" model="cyber_2matrix.block.line">
+            <field name="name">5.19 Seguridad de la información en las relaciones con los proveedores</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_519" />
+            <field name="description_application">Deben definirse e implementarse procesos y procedimientos para gestionar los riesgos de seguridad de la información asociados con el uso de productos o servicios del proveedor.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_020" model="cyber_2matrix.block.line">
+            <field name="name">5.20 Abordar la seguridad de la información dentro de los acuerdos con proveedores</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_520" />
+            <field name="description_application">Los requisitos de seguridad de la información pertinentes deben establecerse y acordarse con cada proveedor en función del tipo de relación con el proveedor.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_021" model="cyber_2matrix.block.line">
+            <field name="name">5.21 Gestión de la seguridad de la información en la cadena de suministro de las tecnologías de la información y comunicación (TIC)</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_521" />
+            <field name="description_application">Deben definirse e implementarse procesos y procedimientos para gestionar los riesgos de seguridad de la información asociados con la cadena de suministro de productos y servicios de las TIC.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_022" model="cyber_2matrix.block.line">
+            <field name="name">5.22 Seguimiento, revisión y gestión de cambios de los servicios de proveedores</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_522" />
+            <field name="description_application">La organización debe hacer seguimiento, revisar,  evaluar y gestionar periódicamente los cambios en las prácticas de seguridad de la información del proveedor y la prestación de servicios.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_023" model="cyber_2matrix.block.line">
+            <field name="name">5.23 Seguridad de la información para el uso de servicios en la nube</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_523" />
+            <field name="description_application">Los procesos de adquisición, uso, gestión y salida de los servicios en la nube deben establecerse de acuerdo con los requisitos de  seguridad de la información de la organización.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_024" model="cyber_2matrix.block.line">
+            <field name="name">5.24 Planificación y preparación de la gestión de incidentes de seguridad de la información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_524" />
+            <field name="description_application">La organización debe planificar y preparar la gestión de los incidentes de seguridad de la información definiendo, estableciendo y comunicando los procesos, las funciones y las responsabilidades de gestión de incidentes de seguridad de la información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_025" model="cyber_2matrix.block.line">
+            <field name="name">5.25 Evaluación y decisión sobre eventos de seguridad de la información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_525" />
+            <field name="description_application">La organización debe evaluar los eventos de seguridad de la información y decidir si se categorizan como incidentes de seguridad de la información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_026" model="cyber_2matrix.block.line">
+            <field name="name">5.26 Respuesta a los incidentes de seguridad de la información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_526" />
+            <field name="description_application">Se debe responder a los incidentes de seguridad de la información de acuerdo con los procedimientos documentados.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_027" model="cyber_2matrix.block.line">
+            <field name="name">5.27 Aprendizaje de los incidentes de seguridad de la información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_527" />
+            <field name="description_application">El conocimiento obtenido de los incidentes de seguridad de la información debe utilizarse para fortalecer y mejorar los controles de seguridad de la información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_028" model="cyber_2matrix.block.line">
+            <field name="name">5.28 Recolección de evidencia</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_528" />
+            <field name="description_application">La organización debe establecer e implementar procedimientos para la identificación, recolección, adquisición y preservación de evidencia relacionada con eventos de seguridad de la información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_029" model="cyber_2matrix.block.line">
+            <field name="name">5.29 Seguridad de la información durante la interrupción</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_529" />
+            <field name="description_application">La organización debe planificar cómo mantener la seguridad de la información en un nivel apropiado durante una interrupción.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_030" model="cyber_2matrix.block.line">
+            <field name="name">5.30 Preparación de las TIC para la continuidad del negocio</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_530" />
+            <field name="description_application">La preparación de las TIC debe planificarse,  implementarse, mantenerse y probarse en función de los objetivos de continuidad del negocio y los requisitos de continuidad de las TIC.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_031" model="cyber_2matrix.block.line">
+            <field name="name">5.31 Requisitos legales, estatutarios, regulatorios y contractuales</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_531" />
+            <field name="description_application">Los requisitos legales, estatutarios, regulatorios y contractuales pertinentes para la seguridad de la información y el enfoque de la organización para cumplir con estos requisitos deben identificarse, documentarse y mantenerse actualizados.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_032" model="cyber_2matrix.block.line">
+            <field name="name">5.32 Derechos de propiedad intelectual</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_532" />
+            <field name="description_application">La organización debe implementar procedimientos apropiados para proteger los derechos de propiedad intelectual.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_033" model="cyber_2matrix.block.line">
+            <field name="name">5.33 Protección de registros</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_533" />
+            <field name="description_application">Los registros deben protegerse contra pérdida, destrucción, falsificación, acceso no autorizado y liberación no autorizada.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_034" model="cyber_2matrix.block.line">
+            <field name="name">5.34 Privacidad y protección de la información de identificación personal (PII)</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_534" />
+            <field name="description_application">La organización debe identificar y cumplir los requisitos relacionados con la preservación de la privacidad y la protección de la IIP de acuerdo con las leyes y regulaciones aplicables y los requisitos contractuales.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_035" model="cyber_2matrix.block.line">
+            <field name="name">5.35 Revisión independiente de la seguridad de la información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_535" />
+            <field name="description_application">El enfoque de la organización para gestionar la seguridad de la información y su implementación, incluidas las personas, procesos y tecnologías, debe revisarse de forma independiente en intervalos planificados o cuando se produzcan cambios significativos.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_036" model="cyber_2matrix.block.line">
+            <field name="name">5.36 Cumplimiento de las políticas, reglas y normas de seguridad de la información</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_536" />
+            <field name="description_application">Se debe revisar periódicamente el cumplimiento de la política de seguridad de la información de la organización, las políticas específicas, las reglas y las normas.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_037" model="cyber_2matrix.block.line">
+            <field name="name">5.37 Procedimientos operativos documentados</field>
+            <field name="domain_description">Controles organizacionales</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_537" />
+            <field name="description_application">Los procedimientos operativos para las instalaciones de procesamiento de información deben documentarse y ponerse a disposición del personal que los necesite.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <!-- Dominio 6 -->
+        <record id="block_line_038" model="cyber_2matrix.block.line">
+            <field name="name">6.1 Selección</field>
+            <field name="domain_description">Controles de personal</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_61" />
+            <field name="description_application">Los controles de verificación de antecedentes de todos los candidatos para convertirse en personal deben llevarse a cabo antes de unirse a la organización y de manera continua, teniendo en cuenta las leyes, regulaciones y ética aplicables, y ser proporcionales a los requisitos del negocio, la clasificación de la información a la que se accede y a los riesgos percibidos.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_039" model="cyber_2matrix.block.line">
+            <field name="name">6.2 Términos y Condiciones de empleo</field>
+            <field name="domain_description">Controles de personal</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_62" />
+            <field name="description_application">Los acuerdos contractuales de empleo deben establecer las responsabilidades del personal y de la organización con respecto a la seguridad de la información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_040" model="cyber_2matrix.block.line">
+            <field name="name">6.3 Toma de conciencia, educación y entrenamiento sobre la seguridad de la información</field>
+            <field name="domain_description">Controles de personal</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_63" />
+            <field name="description_application">El personal de la organización y las partes interesadas pertinentes deben recibir una adecuada concientización, educación y capacitación en seguridad de la información, así como actualizaciones periódicas de la política de seguridad de la información de la organización, políticas y procedimientos específicos, según sea pertinente para su función laboral.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_041" model="cyber_2matrix.block.line">
+            <field name="name">6.4 Proceso disciplinario</field>
+            <field name="domain_description">Controles de personal</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_64" />
+            <field name="description_application">Se debe formalizar y comunicar un proceso disciplinario para tomar acciones contra el personal y otras partes interesadas pertinentes que hayan cometido una violación de la política de seguridad de la información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_042" model="cyber_2matrix.block.line">
+            <field name="name">6.5 Responsabilidades después del cese o cambio de empleo</field>
+            <field name="domain_description">Controles de personal</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_65" />
+            <field name="description_application">Las responsabilidades y obligaciones en materia de seguridad de la información que siguen siendo válidos después del cese o cambio de empleo deben definirse, aplicarse y comunicarse al personal pertinente y otras partes interesadas.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_043" model="cyber_2matrix.block.line">
+            <field name="name">6.6 Acuerdos de confidencialidad o no divulgación</field>
+            <field name="domain_description">Controles de personal</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_66" />
+            <field name="description_application">Los acuerdos de confidencialidad o no divulgación que reflejen las necesidades de la organización para la protección de la información deben ser identificados, documentados, revisados regularmente y firmados por el personal y otras partes interesadas pertinentes.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_044" model="cyber_2matrix.block.line">
+            <field name="name">6.7 Trabajo remoto</field>
+            <field name="domain_description">Controles de personal</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_67" />
+            <field name="description_application">Se debe implementar medidas de seguridad cuando el personal trabaja de forma remota para proteger la información accedida, procesada o almacenada fuera de las instalaciones de la organización.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_045" model="cyber_2matrix.block.line">
+            <field name="name">6.8 Reporte de eventos de seguridad de la información</field>
+            <field name="domain_description">Controles de personal</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_68" />
+            <field name="description_application">La organización debe proporcionar un mecanismo para que el personal informe eventos de seguridad de la información observados o bajo sospecha a través de los canales apropiados de manera oportuna.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <!-- Dominio 7 -->
+        <record id="block_line_046" model="cyber_2matrix.block.line">
+            <field name="name">7.1 Perímetros de seguridad física</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_71" />
+            <field name="description_application">Los perímetros de seguridad deben definirse y utilizarse para proteger las áreas que contienen información y otros activos asociados.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_047" model="cyber_2matrix.block.line">
+            <field name="name">7.2 Ingreso físico</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_72" />
+            <field name="description_application">Las áreas seguras deben estar protegidas por controles de entrada y puntos de acceso adecuados.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_048" model="cyber_2matrix.block.line">
+            <field name="name">7.3 Asegurar oficinas, salas e instalaciones</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_73" />
+            <field name="description_application">Se debe diseñar e implementar la seguridad física para oficinas, salas e instalaciones.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_049" model="cyber_2matrix.block.line">
+            <field name="name">7.4 Supervisión de la seguridad física</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_74" />
+            <field name="description_application">Las instalaciones deben ser monitoreadas continuamente para detectar accesos físicos no autorizados.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_050" model="cyber_2matrix.block.line">
+            <field name="name">7.5 Protección contra las amenazas físicas y ambientales</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_75" />
+            <field name="description_application">Se debe diseñar e implementar protección contra amenazas físicas y ambientales, como desastres naturales y otras amenazas físicas intencionales o no intencionales a la infraestructura.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_051" model="cyber_2matrix.block.line">
+            <field name="name">7.6 Trabajo en áreas seguras</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_76" />
+            <field name="description_application">Deben diseñarse e implementarse medidas de seguridad para trabajar en áreas seguras.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_052" model="cyber_2matrix.block.line">
+            <field name="name">7.7 Escritorio y pantalla limpios</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_77" />
+            <field name="description_application">Deben definirse y aplicarse adecuadamente reglas, de papeles y medios de almacenamiento extraíbles y reglas de pantalla limpia en las instalaciones de procesamiento de información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_053" model="cyber_2matrix.block.line">
+            <field name="name">7.8 Ubicación y protección de los equipos</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_78" />
+            <field name="description_application">Los equipos deben estar ubicados de forma segura y protegidos.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_054" model="cyber_2matrix.block.line">
+            <field name="name">7.9 Seguridad de los activos fuera de las instalaciones</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_79" />
+            <field name="description_application">Los activos fuera del sitio deben protegerse.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_055" model="cyber_2matrix.block.line">
+            <field name="name">7.10 Medios de almacenamiento</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_710" />
+            <field name="description_application">Los medios de almacenamiento deben gestionarse a lo largo de su ciclo de vida de adquisición, uso, transporte y eliminación de acuerdo con el esquema de clasificación de la organización y los requisitos de manipulación.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_056" model="cyber_2matrix.block.line">
+            <field name="name">7.11 Servicios de suministro de apoyo</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_711" />
+            <field name="description_application">Las instalaciones de procesamiento de información deben protegerse de cortes de energía y otras interrupciones causadas por fallas en los servicios de suministro de apoyo.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_057" model="cyber_2matrix.block.line">
+            <field name="name">7.12 Seguridad del cableado</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_712" />
+            <field name="description_application">Los cables que transportan energía, datos o servicios de información de apoyo deben protegerse contra interceptaciones, interferencias o daños.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_058" model="cyber_2matrix.block.line">
+            <field name="name">7.13 Mantenimiento de equipos</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_713" />
+            <field name="description_application">El equipo debe mantenerse correctamente para asegurar la disponibilidad, integridad y confidencialidad de la información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_059" model="cyber_2matrix.block.line">
+            <field name="name">7.14 Eliminación segura o reutilización de equipos</field>
+            <field name="domain_description">Controles físicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_714" />
+            <field name="description_application">Los elementos del equipo que contienen medios de almacenamiento deben verificarse para asegurar que los datos sensibles y el software con licencia se hayan eliminado o sobrescrito de forma segura antes de su eliminación o reutilización.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <!-- Dominio 8 -->
+        <record id="block_line_060" model="cyber_2matrix.block.line">
+            <field name="name">8.1 Dispositivos terminales del usuario</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_81" />
+            <field name="description_application">La información almacenada, procesada o accesible a través de dispositivos terminales de usuario debe protegerse.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_061" model="cyber_2matrix.block.line">
+            <field name="name">8.2 Derechos de acceso privilegiados</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_82" />
+            <field name="description_application">La asignación y el uso de derechos de acceso privilegiado deben restringirse y administrarse.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_062" model="cyber_2matrix.block.line">
+            <field name="name">8.3 Restricción del acceso a la información</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_83" />
+            <field name="description_application">El acceso a la información y otros activos asociados debe restringirse de acuerdo con la política específica establecida sobre control de acceso.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_063" model="cyber_2matrix.block.line">
+            <field name="name">8.4 Acceso al código fuente</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_84" />
+            <field name="description_application">El acceso de lectura y escritura al código fuente, las herramientas de desarrollo y las librerías de software debe administrarse adecuadamente.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_064" model="cyber_2matrix.block.line">
+            <field name="name">8.5 Autenticación segura</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_85" />
+            <field name="description_application">Se deben implementar tecnologías y procedimientos de autenticación seguros en función de las restricciones de acceso a la información y la política específica sobre el control de acceso.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_065" model="cyber_2matrix.block.line">
+            <field name="name">8.6 Gestión de capacidad</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_86" />
+            <field name="description_application">El uso de recursos debe monitorearse y ajustarse de acuerdo con los requisitos de capacidad actuales y esperados.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_066" model="cyber_2matrix.block.line">
+            <field name="name">8.7 Protección contra programas maliciosos (malware)</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_87" />
+            <field name="description_application">La protección contra programas maliciosos (malware) debe implementarse y respaldarse mediante la toma de conciencia adecuada del usuario.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_067" model="cyber_2matrix.block.line">
+            <field name="name">8.8 Gestión de vulnerabilidades técnicas</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_88" />
+            <field name="description_application">Se debe obtener información sobre las vulnerabilidades técnicas de los sistemas de información en uso, se debe evaluar la exposición de la organización a tales vulnerabilidades y se deben tomar las medidas apropiadas.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_068" model="cyber_2matrix.block.line">
+            <field name="name">8.9 Gestión de la configuración</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_89" />
+            <field name="description_application">Las configuraciones, incluidas las configuraciones de seguridad, de hardware, software, servicios y redes deben establecerse, documentarse, implementarse, monitorearse y revisarse.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_069" model="cyber_2matrix.block.line">
+            <field name="name">8.10 Eliminación de información</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_810" />
+            <field name="description_application">La información almacenada en sistemas de información, dispositivos o cualquier otro medio de almacenamiento debe eliminarse cuando ya no sea necesaria.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_070" model="cyber_2matrix.block.line">
+            <field name="name">8.11 Enmascaramiento de datos</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_811" />
+            <field name="description_application">El enmascaramiento de datos debe utilizarse de acuerdo con la política específica de la organización sobre control de acceso, otras políticas específicas relacionadas y los requisitos del negocio, teniendo en cuenta la legislación aplicable.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_071" model="cyber_2matrix.block.line">
+            <field name="name">8.12 Prevención de la fuga de datos</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_812" />
+            <field name="description_application">Las medidas de prevención de fuga de datos deben aplicarse a los sistemas, redes y otros dispositivos que procesan, almacenan o transmiten información sensible.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_072" model="cyber_2matrix.block.line">
+            <field name="name">8.13 Copia de seguridad de la información</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_813" />
+            <field name="description_application">Las copias de respaldo de la información, el software y los sistemas deben mantenerse y probarse regularmente de acuerdo con la política específica establecida sobre copias de seguridad.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_073" model="cyber_2matrix.block.line">
+            <field name="name">8.14 Redundancia de las instalaciones de procesamiento de la información</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_814" />
+            <field name="description_application">Las instalaciones de procesamiento de información deben implementarse con suficiente redundancia para cumplir con los requisitos de disponibilidad.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_074" model="cyber_2matrix.block.line">
+            <field name="name">8.15 Registro</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_815" />
+            <field name="description_application">Se deben producir, almacenar, proteger y analizar los registros que guarden actividades, excepciones, fallas y otros eventos relevantes.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_075" model="cyber_2matrix.block.line">
+            <field name="name">8.16 Actividades de monitoreo</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_816" />
+            <field name="description_application">Las redes, los sistemas y las aplicaciones deben monitorearse para detectar comportamientos anómalos y tomar acciones para evaluar posibles incidentes de seguridad de la información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_076" model="cyber_2matrix.block.line">
+            <field name="name">8.17 Sincronización de reloj</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_817" />
+            <field name="description_application">Los relojes de los sistemas de procesamiento de información utilizados por la organización deben sincronizarse para fuentes de tiempo aprobadas.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_077" model="cyber_2matrix.block.line">
+            <field name="name">8.18 Uso de programas de utilidad privilegiados</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_818" />
+            <field name="description_application">Se debe restringir y controlar estrictamente el uso de programas de utilidad que puedan anular los controles del sistema y de las aplicaciones.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_078" model="cyber_2matrix.block.line">
+            <field name="name">8.19 Instalación de software en sistemas operativos</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_819" />
+            <field name="description_application">Deben implementarse procedimientos y medidas para gestionar de forma segura la instalación de software en sistemas operativos.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_079" model="cyber_2matrix.block.line">
+            <field name="name">8.20 Seguridad de redes</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_820" />
+            <field name="description_application">Las redes y los dispositivos de red deben protegerse, administrarse y controlarse para proteger la información en sistemas y aplicaciones.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_080" model="cyber_2matrix.block.line">
+            <field name="name">8.21 Seguridad de los servicios de red</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_821" />
+            <field name="description_application">Deben identificarse, implementarse y monitorearse los mecanismos de seguridad, los niveles de servicio y los requisitos de servicio de los servicios de red.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_081" model="cyber_2matrix.block.line">
+            <field name="name">8.22 Segregación de redes</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_822" />
+            <field name="description_application">Los grupos de servicios de información, usuarios y sistemas de información deben estar segregados en las redes de la organización.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_082" model="cyber_2matrix.block.line">
+            <field name="name">8.23 Filtro de la web</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_823" />
+            <field name="description_application">El acceso a sitios web externos debe administrarse para reducir la exposición a contenido malicioso.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_083" model="cyber_2matrix.block.line">
+            <field name="name">8.24 Uso de criptografía</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_824" />
+            <field name="description_application">Deben definirse e implementarse reglas para el uso eficaz de la criptografía, incluida la gestión de claves criptográficas.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_084" model="cyber_2matrix.block.line">
+            <field name="name">8.25 Ciclo de vida de desarrollo seguro</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_825" />
+            <field name="description_application">Deben establecerse y aplicarse reglas para el desarrollo seguro de software y sistemas.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_085" model="cyber_2matrix.block.line">
+            <field name="name">8.26 Requisitos de seguridad de la aplicación</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_826" />
+            <field name="description_application">Los requisitos de seguridad de la información deben identificarse, especificarse y aprobarse al desarrollar o adquirir aplicaciones.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_086" model="cyber_2matrix.block.line">
+            <field name="name">8.27 Arquitectura de sistemas seguros y principios de ingeniería</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_827" />
+            <field name="description_application">Los principios de ingeniería de sistemas seguros deben establecerse, documentarse, mantenerse y aplicarse a cualquier actividad de desarrollo de sistema de información.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_087" model="cyber_2matrix.block.line">
+            <field name="name">8.28 Codificación segura</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_828" />
+            <field name="description_application">Los principios de codificación segura deben aplicarse al desarrollo de software.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_088" model="cyber_2matrix.block.line">
+            <field name="name">8.29 Pruebas de seguridad en desarrollo y aceptación</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_829" />
+            <field name="description_application">Los procesos de pruebas de seguridad deben definirse e implementarse en el ciclo de vida del desarrollo.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_089" model="cyber_2matrix.block.line">
+            <field name="name">8.30 Desarrollo subcontratado</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_830" />
+            <field name="description_application">La organización debe dirigir, monitorear y revisar las actividades relacionadas con el desarrollo de sistemas subcontratados.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_090" model="cyber_2matrix.block.line">
+            <field name="name">8.31 Separación de los entornos de desarrollo, prueba y producción</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_831" />
+            <field name="description_application">Los entornos de desarrollo, prueba y producción deben estar separados y protegidos.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_091" model="cyber_2matrix.block.line">
+            <field name="name">8.32 Gestión de cambios</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_832" />
+            <field name="description_application">Los cambios en las instalaciones de procesamiento de información y los sistemas de información deben estar sujetos a procedimientos de
+gestión de cambios.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_092" model="cyber_2matrix.block.line">
+            <field name="name">8.33 Información de las pruebas</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_833" />
+            <field name="description_application">La información de las pruebas debe seleccionarse, protegerse y gestionarse adecuadamente.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+        <record id="block_line_093" model="cyber_2matrix.block.line">
+            <field name="name">8.34 Protección de los sistemas de información durante las pruebas de auditoría</field>
+            <field name="domain_description">Controles tecnológicos</field>
+            <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
+            <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_834" />
+            <field name="description_application">Las pruebas de auditoría y otras actividades de aseguramiento que involucren la evaluación de los sistemas operativos deben planificarse y acordarse entre el evaluador y la gerencia correspondiente.</field>
+            <field name="type_ctrl">app_ctrl</field>
+        </record>
+    </data>
+</odoo>

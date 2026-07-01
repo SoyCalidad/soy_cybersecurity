@@ -46,6 +46,7 @@
         'data/dms.xml',
         'data/cybersecurity.clause.csv',
         'data/cybersecurity.diagnostic.requirement.csv',
+        'data/cyber_2matrix_block_line.xml',
 
         'views/controls.xml',
         'views/incidents.xml',

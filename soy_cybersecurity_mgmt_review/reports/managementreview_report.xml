@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="report_mgmtreview_document_custom" inherit_id="mgmtsystem_management_review.report_mgmtreview_document">
+    <template id="mgmtreview_document_template" inherit_id="mgmtsystem_management_review.report_mgmtreview_document">
         <xpath expr="//t[@t-call='web.external_layout']" position="replace">
             <t t-call="web.external_layout">
                 <style t-if="o.state=='cancel'">
@@ -101,7 +101,6 @@
                         <br />
                         <span t-field="o.foda_description" />
                         <br />
-                        <t t-raw="o.foda" />
                         <br />
                         <h4>Resumen de las partes interesadas</h4>
                         <h5>Interesados internos</h5>

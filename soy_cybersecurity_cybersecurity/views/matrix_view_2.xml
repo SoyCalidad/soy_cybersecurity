@@ -14,6 +14,34 @@
         </field>
     </record>
 
+    <record id="cyber_2matrix_matrix_line" model="ir.ui.view">
+        <field name="name">cyber_2matrix.matrix.line.form</field>
+        <field name="model">cyber_2matrix.matrix.line</field>
+        <field name="arch" type="xml">
+            <form class="" >
+                <sheet>
+                    <group >
+                        <field name="applicability_id_domain_id" />
+                        <field name="applicability_id_name" />
+                        <field name="applicability_id_description_application" />
+                        <field name="applicability_id_application" />
+                        <field name="justification" />
+                        <field name="is_implemented" />
+                        <field name="reference" />
+                    </group>
+                    <notebook>
+                        <page name="actions" string="Acciones">
+                            <group>
+                                <label for="action_ids" />
+                                <field name="action_ids"  nolabel="1" />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 
     <record model="ir.ui.view" id="cyber_2matrix_matrix_form">
         <field name="name">cyber_2matrix.matrix.form</field>
@@ -86,12 +114,12 @@
                         <page string="Detalles de lineas">
                             <!--<field name="line_ids" domain="[('type', '=', type)]" context="{'default_type': type}" attrs="{'readonly':[('state','=','validate_ok')]}">-->
                             <field name="line_ids" 
-                            readonly="state == 'validate_ok'">
-                                <list>
-                                    <field name="name" />
-                                    <!--<field name="type" />-->
-                                    <field name="action_ids" />
-                                    <field name="state" />
+
+                            readonly="state == 'validate_ok'" force_save="1">
+                                <list delete="0" create="0">
+                                    <field name="applicability_id" />
+                                    <field name="justification" />
+                                    <field name="is_implemented" />
                                 </list>
                             </field>
                         </page>
