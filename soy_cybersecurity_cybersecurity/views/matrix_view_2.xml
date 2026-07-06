@@ -24,7 +24,7 @@
                         <field name="applicability_id_domain_id" />
                         <field name="applicability_id_name" />
                         <field name="applicability_id_description_application" />
-                        <field name="applicability_id_application" />
+                        <field name="application" />
                         <field name="justification" />
                         <field name="is_implemented" />
                         <field name="reference" />

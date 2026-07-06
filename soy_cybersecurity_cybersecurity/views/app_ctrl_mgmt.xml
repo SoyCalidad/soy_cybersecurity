@@ -19,6 +19,7 @@
         <field name="arch" type="xml">
             <list class="o_matrix_block_line" > <!-- banner_route="/opportunity/opportunity_onboarding" -->
                 <field name="name" />
+                <field name="active" column_invisible="1" />
             </list>
         </field>
     </record>
@@ -51,6 +52,8 @@
                             class="oe_highlight" />
                 </header>
                 <sheet>
+                    <field name="active" invisible="1" column_invisible="1" />
+
                     <div class="oe_button_box" name="button_box">
                         <button type="object"
                                 name="action_open_older_versions"

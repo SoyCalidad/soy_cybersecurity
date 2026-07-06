@@ -79,10 +79,11 @@ class MatrixLine(models.Model):
         related='applicability_id.description_application',
         string="Descripción del control",
     )
-    applicability_id_application = fields.Boolean(
-        related='applicability_id.application',
-        string="Aplicabilidad",
-    )
+    # applicability_id_application = fields.Boolean(
+    #     related='applicability_id.application',
+    #     string="Aplicabilidad",
+    # )
+    application = fields.Boolean(string='Aplicabilidad', default=False)
 
     action_ids = fields.Many2many(
         comodel_name='mgmtsystem.action',
@@ -548,6 +549,7 @@ class Line(models.Model):
         #result['context'] = {'active_version': False, 'type': self.type}
         return result
 
+    active = fields.Boolean(default=True, string="Activo")
     name = fields.Char(
         string='Nombre',
         required=True,

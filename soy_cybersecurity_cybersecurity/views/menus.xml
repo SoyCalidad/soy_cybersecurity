@@ -224,10 +224,23 @@
         parent="context_menu"
         action="mgmtsystem_context.context_external_issue_action"
         sequence="6" />
-    <menuitem id="context_external_swot_menu"
-        name="Foda"
-        parent="context_menu"
-        action="mgmtsystem_context.context_swot_action" />
+    <menuitem id="external_factors_menu"
+                name="Factores externos"
+                parent="context_menu"
+                sequence="6" >
+        <menuitem id="external_factor_foda_menu"
+                name="Foda"
+                action="mgmtsystem_context.context_swot_action"
+                sequence="10" />   
+        <menuitem id="exter_factor_porter_menu"
+                name="Porter"
+                action="mgmtsystem_context.context_external_issue_action"
+                sequence="20" />
+        <menuitem id="exter_factor_amofhit_menu"
+                name="Amofhit"
+                action="mgmtsystem_context.pest_analysis_action"
+                sequence="30" />  
+    </menuitem>
 
     <menuitem id="policy_menu"
         name="Políticas"
