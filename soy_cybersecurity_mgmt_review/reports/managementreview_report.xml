@@ -114,7 +114,7 @@
                             <t t-foreach="o.stakeholders_id.stakeholder_in_ids" t-as="record">
                                 <tr>
                                     <td>
-                                        <span t-field="record.stakeholder_id" />
+                                        <span t-field="record.name" />
                                     </td>
                                     <td>
                                         <span t-field="record.partner_id" />
@@ -135,7 +135,7 @@
                             <t t-foreach="o.stakeholders_id.stakeholder_out_ids" t-as="record">
                                 <tr>
                                     <td>
-                                        <span t-field="record.stakeholder_id" />
+                                        <span t-field="record.name" />
                                     </td>
                                     <td>
                                         <span t-field="record.partner_id" />
