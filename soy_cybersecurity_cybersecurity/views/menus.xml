@@ -3,7 +3,7 @@
 
     <menuitem
         id="menu_cybersecurity_root"
-        name="Seguridad de la Información"
+        name="ISO 27001"
         web_icon="soy_cybersecurity_cybersecurity,static/description/icon.png"
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
         sequence="4"

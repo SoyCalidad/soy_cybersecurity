@@ -29,6 +29,9 @@
         'mgmtsystem_documentary_control',
         'mgmtsystem_opportunity',
         'mgmtsystem_infrastructure',
+        'mgmtsystem_employees',
+
+        'soycalidad_improve',
 
         #'soycalidad_dms',
     ],
