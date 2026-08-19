@@ -5,8 +5,9 @@
         <field name="model">mgmtsystem.context.internal_issue</field>
         <field name="inherit_id" ref="mgmtsystem_context.context_internal_issue_view_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='vision']" position="after">
+            <xpath expr="//field[@name='show_scope_integrated']" position="after">
                 <field name="cybersecurity_scope" 
+                invisible="show_scope_integrated"
                 readonly="state in ['validate_ok','cancel']"/>
             </xpath>
 

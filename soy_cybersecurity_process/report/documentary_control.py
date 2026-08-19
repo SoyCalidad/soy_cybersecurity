@@ -53,20 +53,34 @@ class DocumentaryControlReportXLS(models.AbstractModel):
 
         company_id = self.env.user.company_id
 
-        buf_image = io.BytesIO(base64.b64decode(company_id.logo))
-        im = Image.open(buf_image)
-        width, height = im.size
-        image_width = width
-        image_height = height
-        cell_width = 48.0
-        cell_height = 48.0
+        dc = self.env['documentary.control'].search([
+            ('model_id.model', '=', 'documentary.control')
+        ], limit=1)
+        code = ''
+        version = '1'
+        date_approval = ''
+        if dc:
+            code = dc.code 
+            version = dc.version
+            date_approval = dc.approval_date
 
-        x_scale = cell_width / image_width
-        y_scale = cell_height / image_height
-        sheet.insert_image('A1', "logo.png", {
-            'image_data': buf_image, 'x_scale': x_scale, 'y_scale': y_scale})
-        sheet.merge_range('B1:I4', 'Lista maestra', format_title)
-        sheet.merge_range('J1:J4', datetime.today().strftime('%d/%m/%Y'), format_title)
+        # buf_image = io.BytesIO(base64.b64decode(company_id.logo))
+        # im = Image.open(buf_image)
+        # width, height = im.size
+        # image_width = width
+        # image_height = height
+        # cell_width = 48.0
+        # cell_height = 48.0
+
+        # x_scale = cell_width / image_width
+        # y_scale = cell_height / image_height
+        # sheet.insert_image('A1', "logo.png", {
+        #     'image_data': buf_image, 'x_scale': x_scale, 'y_scale': y_scale})
+        self._insert_centered_image(sheet, 'A1', company_id.logo, )
+        sheet.merge_range('B1:H4', 'Lista maestra', format_title)
+        sheet.merge_range('I1:J1', f"Código: {code}", format_data)
+        sheet.merge_range('I2:J2', f"Versión: {version}", format_data)
+        sheet.merge_range('I3:J3', f"Fecha de aprobación: {date_approval}", format_data)
 
         sheet.write(5, 0, 'Código del proceso', format_header)
         sheet.write(5, 1, 'Procedimiento', format_header)
