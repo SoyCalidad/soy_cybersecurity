@@ -1,0 +1,365 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sc27k_risk_treatment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 21:30+0000\n"
+"PO-Revision-Date: 2026-08-21 21:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model,name:sc27k_risk_treatment.model_mgmtsystem_action
+msgid "Acción"
+msgstr "Acción"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Aceptación del riesgo"
+msgstr "Aceptación del riesgo"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Aceptación del riesgo residual"
+msgstr "Aceptación del riesgo residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_acceptance_state__accepted
+msgid "Aceptado"
+msgstr "Aceptado"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_accepted_by_id
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Aceptado por"
+msgstr "Aceptado por"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_option__accept
+msgid "Aceptar"
+msgstr "Aceptar"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_decision__accept
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Aceptar riesgo residual"
+msgstr "Aceptar riesgo residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_asset_id
+msgid "Activo"
+msgstr "Activo"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_threat_agent
+msgid "Agente de la amenaza"
+msgstr "Agente de la amenaza"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_risk_level__high
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_risk_level__high
+msgid "Alto"
+msgstr "Alto"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_threat
+msgid "Amenaza"
+msgstr "Amenaza"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Aprobación del plan de tratamiento"
+msgstr "Aprobación del plan de tratamiento"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_approval_state__approved
+msgid "Aprobado"
+msgstr "Aprobado"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_approved_by_id
+msgid "Aprobado por"
+msgstr "Aprobado por"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Aprobar tratamiento"
+msgstr "Aprobar tratamiento"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_risk_level__low
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_risk_level__low
+msgid "Bajo"
+msgstr "Bajo"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Comentario"
+msgstr "Comentario"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_acceptance_comment
+msgid "Comentario de aceptación del riesgo residual"
+msgstr "Comentario de aceptación del riesgo residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_approval_comment
+msgid "Comentario de aprobación del tratamiento"
+msgstr "Comentario de aprobación del tratamiento"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_option__share_transfer
+msgid "Compartir / Transferir"
+msgstr "Compartir / Transferir"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Control"
+msgstr "Control"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_risk_level__critical
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_risk_level__critical
+msgid "Crítico"
+msgstr "Crítico"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Decisión"
+msgstr "Decisión"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_decision
+msgid "Decisión sobre el riesgo residual"
+msgstr "Decisión sobre el riesgo residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_description
+msgid "Descripción del tratamiento"
+msgstr "Descripción del tratamiento"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_state__in_process
+msgid "En proceso"
+msgstr "En proceso"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_acceptance_state
+msgid "Estado de aceptación del riesgo residual"
+msgstr "Estado de aceptación del riesgo residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_approval_state
+msgid "Estado de aprobación del tratamiento"
+msgstr "Estado de aprobación del tratamiento"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_state
+msgid "Estado del tratamiento"
+msgstr "Estado del tratamiento"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Evaluación inicial"
+msgstr "Evaluación inicial"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Evaluación residual"
+msgstr "Evaluación residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_option__avoid
+msgid "Evitar"
+msgstr "Evitar"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_acceptance_date
+msgid "Fecha de aceptación del riesgo residual"
+msgstr "Fecha de aceptación del riesgo residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_approval_date
+msgid "Fecha de aprobación del tratamiento"
+msgstr "Fecha de aprobación del tratamiento"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_start_date
+msgid "Fecha de inicio"
+msgstr "Fecha de inicio"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_target_date
+msgid "Fecha objetivo"
+msgstr "Fecha objetivo"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_state__implemented
+msgid "Implementado"
+msgstr "Implementado"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Indicador"
+msgstr "Indicador"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_evaluation_id
+msgid "Indicador (evaluación residual)"
+msgstr "Indicador (evaluación residual)"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_interpretation
+msgid "Interpretación"
+msgstr "Interpretación"
+
+#. module: sc27k_risk_treatment
+#: model:ir.actions.report,name:sc27k_risk_treatment.sc27k_risk_treatment_report_xlsx
+msgid "Matriz de Riesgos de Seguridad de la Información (Excel)"
+msgstr "Matriz de Riesgos de Seguridad de la Información (Excel)"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_risk_level__medium
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_risk_level__medium
+msgid "Medio"
+msgstr "Medio"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_approval_state__rework
+msgid "Modificación solicitada"
+msgstr "Modificación solicitada"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_risk_level
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Nivel de riesgo inicial"
+msgstr "Nivel de riesgo inicial"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_risk_level
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Nivel de riesgo residual"
+msgstr "Nivel de riesgo residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_option
+msgid "Opción de tratamiento"
+msgstr "Opción de tratamiento"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_acceptance_state__pending
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_approval_state__pending
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_state__pending
+msgid "Pendiente"
+msgstr "Pendiente"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_is_security_profile
+msgid "Perfil de seguridad de la información"
+msgstr "Perfil de seguridad de la información"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_owner_id
+msgid "Propietario del riesgo"
+msgstr "Propietario del riesgo"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_option__reduce
+msgid "Reducir"
+msgstr "Reducir"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_mgmtsystem_action__sc27k_implementation_record
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Registro de implementación"
+msgstr "Registro de implementación"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_evaluation_result__sc27k_residual_matrix_block_line_id
+msgid "Registro de matriz (evaluación residual)"
+msgstr "Registro de matriz (evaluación residual)"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model,name:sc27k_risk_treatment.model_report_sc27k_risk_treatment_report_risk_xlsx
+msgid "Reporte Excel de Matriz de Riesgos de Seguridad de la Información"
+msgstr "Reporte Excel de Matriz de Riesgos de Seguridad de la Información"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Responsable"
+msgstr "Responsable"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_responsible_id
+msgid "Responsable del tratamiento"
+msgstr "Responsable del tratamiento"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_result_ids
+msgid "Resultados (evaluación residual)"
+msgstr "Resultados (evaluación residual)"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Riesgo residual"
+msgstr "Riesgo residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model,name:sc27k_risk_treatment.model_matrix_block_line
+msgid "Riesgo/Oportunidad"
+msgstr "Riesgo/Oportunidad"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Solicitar modificación"
+msgstr "Solicitar modificación"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_decision__additional_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Solicitar tratamiento adicional"
+msgstr "Solicitar tratamiento adicional"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Tratamiento / Controles"
+msgstr "Tratamiento / Controles"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_acceptance_state__additional_treatment
+msgid "Tratamiento adicional solicitado"
+msgstr "Tratamiento adicional solicitado"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_initial_ntr
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Valor de riesgo inicial"
+msgstr "Valor de riesgo inicial"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_ntr
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Valor de riesgo residual"
+msgstr "Valor de riesgo residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_state__verified
+msgid "Verificado"
+msgstr "Verificado"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model,name:sc27k_risk_treatment.model_evaluation_result
+msgid "evaluation.result"
+msgstr "evaluation.result"

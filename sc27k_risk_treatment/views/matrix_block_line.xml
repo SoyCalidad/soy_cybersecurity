@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="matrix_block_line_form_view_sc27k_risk_treatment" model="ir.ui.view">
+        <field name="name">matrix.block.line.form.view.sc27k.risk.treatment</field>
+        <field name="model">matrix.block.line</field>
+        <field name="inherit_id" ref="mgmtsystem_opportunity.view_matrix_block_line_form" />
+        <field name="arch" type="xml">
+
+            <field name="system_id" position="after">
+                <field name="sc27k_asset_id"
+                    options="{'no_create': True}"
+                    readonly="state not in ['draft','in_process']" />
+            </field>
+
+            <field name="version" position="after">
+                <field name="sc27k_threat"
+                    invisible="not sc27k_is_security_profile"
+                    readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_threat_agent"
+                    invisible="not sc27k_is_security_profile"
+                    readonly="state not in ['draft','in_process']" />
+            </field>
+
+            <xpath expr="//page[.//field[@name='evaluation_id']]/group" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile</attribute>
+            </xpath>
+
+            <xpath expr="//page[.//field[@name='evaluation_id']]/group" position="after">
+                <notebook invisible="not sc27k_is_security_profile">
+
+                    <page string="Evaluación inicial">
+                        <group>
+                            <field name="evaluation_id"
+                                string="Indicador"
+                                readonly="state not in ['draft','in_process']"
+                                options="{'no_create':True,'no_create_edit':True}" />
+                            <field name="result_ids" widget="one2many" readonly="state not in ['draft','in_process']">
+                                <list create="false" delete="false">
+                                    <field name="criterio_id" options="{'no_create':True,'no_create_edit':True}" />
+                                    <field name="description" style="max-width: 200px" />
+                                    <field name="alternative" />
+                                    <field name="value" />
+                                </list>
+                            </field>
+                            <field name="sc27k_initial_ntr" string="Valor de riesgo inicial" readonly="1" />
+                            <field name="sc27k_risk_level" string="Nivel de riesgo inicial" />
+                            <field name="sc27k_interpretation" readonly="state not in ['draft','in_process']" />
+                        </group>
+                    </page>
+
+                    <page string="Tratamiento / Controles">
+                        <group>
+                            <field name="sc27k_treatment_option" readonly="state not in ['draft','in_process']" />
+                            <field name="sc27k_treatment_description" readonly="state not in ['draft','in_process']" />
+                            <field name="sc27k_treatment_responsible_id" readonly="state not in ['draft','in_process']" />
+                            <field name="sc27k_treatment_start_date" readonly="state not in ['draft','in_process']" />
+                            <field name="sc27k_treatment_target_date" readonly="state not in ['draft','in_process']" />
+                            <field name="sc27k_treatment_state" readonly="state not in ['draft','in_process']" />
+                        </group>
+                        <field name="action_ids" readonly="state not in ['draft','in_process']">
+                            <list editable="bottom">
+                                <field name="name" string="Control" />
+                                <field name="user_id" string="Responsable" />
+                                <field name="date_deadline" string="Fecha" />
+                                <field name="sc27k_implementation_record" string="Registro de implementación" />
+                            </list>
+                        </field>
+                    </page>
+
+                    <page string="Evaluación residual">
+                        <group>
+                            <field name="sc27k_residual_evaluation_id"
+                                string="Indicador"
+                                readonly="state not in ['draft','in_process']"
+                                options="{'no_create':True,'no_create_edit':True}" />
+                            <field name="sc27k_residual_result_ids" widget="one2many" readonly="state not in ['draft','in_process']">
+                                <list create="false" delete="false">
+                                    <field name="criterio_id" options="{'no_create':True,'no_create_edit':True}" />
+                                    <field name="description" style="max-width: 200px" />
+                                    <field name="alternative" />
+                                    <field name="value" />
+                                </list>
+                            </field>
+                            <field name="sc27k_residual_ntr" string="Valor de riesgo residual" readonly="1" />
+                            <field name="sc27k_residual_risk_level" string="Nivel de riesgo residual" />
+                            <field name="sc27k_interpretation" readonly="state not in ['draft','in_process']" />
+                        </group>
+                    </page>
+
+                    <page string="Aceptación del riesgo">
+                        <group string="Aprobación del plan de tratamiento">
+                            <field name="sc27k_treatment_owner_id" />
+                            <field name="sc27k_treatment_approval_date" />
+                            <field name="sc27k_treatment_approval_comment" />
+                            <field name="sc27k_treatment_approved_by_id" />
+                            <field name="sc27k_treatment_approval_state" />
+                        </group>
+                        <div class="oe_button_box">
+                            <button name="sc27k_action_approve_treatment"
+                                type="object"
+                                string="Aprobar tratamiento"
+                                class="btn-primary"
+                                invisible="sc27k_treatment_approval_state == 'approved'" />
+                            <button name="sc27k_action_request_treatment_rework"
+                                type="object"
+                                string="Solicitar modificación"
+                                class="btn-secondary"
+                                invisible="sc27k_treatment_approval_state == 'rework'" />
+                        </div>
+
+                        <group string="Aceptación del riesgo residual">
+                            <field name="sc27k_residual_risk_level" string="Riesgo residual" />
+                            <field name="sc27k_residual_decision" string="Decisión" />
+                            <field name="sc27k_residual_accepted_by_id" string="Aceptado por" />
+                            <field name="sc27k_residual_acceptance_date" string="Fecha" />
+                            <field name="sc27k_residual_acceptance_comment" string="Comentario" />
+                            <field name="sc27k_residual_acceptance_state" />
+                        </group>
+                        <div class="oe_button_box">
+                            <button name="sc27k_action_accept_residual_risk"
+                                type="object"
+                                string="Aceptar riesgo residual"
+                                class="btn-primary"
+                                invisible="sc27k_residual_acceptance_state == 'accepted'" />
+                            <button name="sc27k_action_request_additional_treatment"
+                                type="object"
+                                string="Solicitar tratamiento adicional"
+                                class="btn-secondary"
+                                invisible="sc27k_residual_acceptance_state == 'additional_treatment'" />
+                        </div>
+                    </page>
+
+                </notebook>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

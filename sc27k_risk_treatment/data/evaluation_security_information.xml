@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="evaluation_security_information" model="evaluation.evaluation">
+        <field name="name">Evaluación de Riesgos de Seguridad de la Información</field>
+        <field name="type">risk</field>
+    </record>
+
+    <!-- Impacto = MAX(Confidencialidad, Integridad, Disponibilidad, Trazabilidad,
+         Autenticidad); Valor de riesgo = Probabilidad x Impacto. Criterio names must
+         match _SC27K_PROBABILITY_CRITERIA_NAME / _SC27K_IMPACT_CRITERIA_NAMES in
+         models/matrix_block_line.py exactly, and the report column headers. -->
+    <record id="criterio_security_probability" model="evaluation.criterio">
+        <field name="name">Probabilidad</field>
+        <field name="description">Evalúa la posibilidad realista de que el riesgo de seguridad de la información se materialice, considerando antecedentes, exposición, amenazas, vulnerabilidades existentes y controles actualmente implementados.</field>
+        <field name="evaluation_id" ref="evaluation_security_information" />
+    </record>
+    <record id="criterio_security_confidentiality" model="evaluation.criterio">
+        <field name="name">Confidencialidad</field>
+        <field name="description">Evalúa el impacto sobre la confidencialidad de la información si el riesgo se materializa: acceso, divulgación, copia o modificación no autorizados.</field>
+        <field name="evaluation_id" ref="evaluation_security_information" />
+    </record>
+    <record id="criterio_security_integrity" model="evaluation.criterio">
+        <field name="name">Integridad</field>
+        <field name="description">Evalúa el impacto sobre la integridad de la información si el riesgo se materializa: modificación, destrucción o corrupción no autorizada.</field>
+        <field name="evaluation_id" ref="evaluation_security_information" />
+    </record>
+    <record id="criterio_security_availability" model="evaluation.criterio">
+        <field name="name">Disponibilidad</field>
+        <field name="description">Evalúa el impacto sobre la disponibilidad de la información si el riesgo se materializa: pérdida, daño o interrupción del acceso.</field>
+        <field name="evaluation_id" ref="evaluation_security_information" />
+    </record>
+    <record id="criterio_security_traceability" model="evaluation.criterio">
+        <field name="name">Trazabilidad</field>
+        <field name="description">Evalúa el impacto sobre la trazabilidad si el riesgo se materializa: pérdida de la capacidad de reconstruir quién hizo qué y cuándo.</field>
+        <field name="evaluation_id" ref="evaluation_security_information" />
+    </record>
+    <record id="criterio_security_authenticity" model="evaluation.criterio">
+        <field name="name">Autenticidad</field>
+        <field name="description">Evalúa el impacto sobre la autenticidad si el riesgo se materializa: pérdida de la capacidad de verificar la identidad de usuarios, sistemas o el origen de la información.</field>
+        <field name="evaluation_id" ref="evaluation_security_information" />
+    </record>
+
+    <!-- Probabilidad: 1-5 -->
+    <record id="criterio_line_security_probability_1" model="evaluation.criterio.line">
+        <field name="name">1 (Muy Rara)</field>
+        <field name="criterio_id" ref="criterio_security_probability" />
+        <field name="value_less">1</field>
+        <field name="value_high">1</field>
+    </record>
+    <record id="criterio_line_security_probability_2" model="evaluation.criterio.line">
+        <field name="name">2 (Poco Probable)</field>
+        <field name="criterio_id" ref="criterio_security_probability" />
+        <field name="value_less">2</field>
+        <field name="value_high">2</field>
+    </record>
+    <record id="criterio_line_security_probability_3" model="evaluation.criterio.line">
+        <field name="name">3 (Posible)</field>
+        <field name="criterio_id" ref="criterio_security_probability" />
+        <field name="value_less">3</field>
+        <field name="value_high">3</field>
+    </record>
+    <record id="criterio_line_security_probability_4" model="evaluation.criterio.line">
+        <field name="name">4 (Probable)</field>
+        <field name="criterio_id" ref="criterio_security_probability" />
+        <field name="value_less">4</field>
+        <field name="value_high">4</field>
+    </record>
+    <record id="criterio_line_security_probability_5" model="evaluation.criterio.line">
+        <field name="name">5 (Casi Segura)</field>
+        <field name="criterio_id" ref="criterio_security_probability" />
+        <field name="value_less">5</field>
+        <field name="value_high">5</field>
+    </record>
+
+    <!-- Confidencialidad: 1-5 -->
+    <record id="criterio_line_security_confidentiality_1" model="evaluation.criterio.line">
+        <field name="name">1 (Muy Bajo)</field>
+        <field name="criterio_id" ref="criterio_security_confidentiality" />
+        <field name="value_less">1</field>
+        <field name="value_high">1</field>
+    </record>
+    <record id="criterio_line_security_confidentiality_2" model="evaluation.criterio.line">
+        <field name="name">2 (Bajo)</field>
+        <field name="criterio_id" ref="criterio_security_confidentiality" />
+        <field name="value_less">2</field>
+        <field name="value_high">2</field>
+    </record>
+    <record id="criterio_line_security_confidentiality_3" model="evaluation.criterio.line">
+        <field name="name">3 (Medio)</field>
+        <field name="criterio_id" ref="criterio_security_confidentiality" />
+        <field name="value_less">3</field>
+        <field name="value_high">3</field>
+    </record>
+    <record id="criterio_line_security_confidentiality_4" model="evaluation.criterio.line">
+        <field name="name">4 (Alto)</field>
+        <field name="criterio_id" ref="criterio_security_confidentiality" />
+        <field name="value_less">4</field>
+        <field name="value_high">4</field>
+    </record>
+    <record id="criterio_line_security_confidentiality_5" model="evaluation.criterio.line">
+        <field name="name">5 (Muy Alto)</field>
+        <field name="criterio_id" ref="criterio_security_confidentiality" />
+        <field name="value_less">5</field>
+        <field name="value_high">5</field>
+    </record>
+
+    <!-- Integridad: 1-5 -->
+    <record id="criterio_line_security_integrity_1" model="evaluation.criterio.line">
+        <field name="name">1 (Muy Bajo)</field>
+        <field name="criterio_id" ref="criterio_security_integrity" />
+        <field name="value_less">1</field>
+        <field name="value_high">1</field>
+    </record>
+    <record id="criterio_line_security_integrity_2" model="evaluation.criterio.line">
+        <field name="name">2 (Bajo)</field>
+        <field name="criterio_id" ref="criterio_security_integrity" />
+        <field name="value_less">2</field>
+        <field name="value_high">2</field>
+    </record>
+    <record id="criterio_line_security_integrity_3" model="evaluation.criterio.line">
+        <field name="name">3 (Medio)</field>
+        <field name="criterio_id" ref="criterio_security_integrity" />
+        <field name="value_less">3</field>
+        <field name="value_high">3</field>
+    </record>
+    <record id="criterio_line_security_integrity_4" model="evaluation.criterio.line">
+        <field name="name">4 (Alto)</field>
+        <field name="criterio_id" ref="criterio_security_integrity" />
+        <field name="value_less">4</field>
+        <field name="value_high">4</field>
+    </record>
+    <record id="criterio_line_security_integrity_5" model="evaluation.criterio.line">
+        <field name="name">5 (Muy Alto)</field>
+        <field name="criterio_id" ref="criterio_security_integrity" />
+        <field name="value_less">5</field>
+        <field name="value_high">5</field>
+    </record>
+
+    <!-- Disponibilidad: 1-5 -->
+    <record id="criterio_line_security_availability_1" model="evaluation.criterio.line">
+        <field name="name">1 (Muy Bajo)</field>
+        <field name="criterio_id" ref="criterio_security_availability" />
+        <field name="value_less">1</field>
+        <field name="value_high">1</field>
+    </record>
+    <record id="criterio_line_security_availability_2" model="evaluation.criterio.line">
+        <field name="name">2 (Bajo)</field>
+        <field name="criterio_id" ref="criterio_security_availability" />
+        <field name="value_less">2</field>
+        <field name="value_high">2</field>
+    </record>
+    <record id="criterio_line_security_availability_3" model="evaluation.criterio.line">
+        <field name="name">3 (Medio)</field>
+        <field name="criterio_id" ref="criterio_security_availability" />
+        <field name="value_less">3</field>
+        <field name="value_high">3</field>
+    </record>
+    <record id="criterio_line_security_availability_4" model="evaluation.criterio.line">
+        <field name="name">4 (Alto)</field>
+        <field name="criterio_id" ref="criterio_security_availability" />
+        <field name="value_less">4</field>
+        <field name="value_high">4</field>
+    </record>
+    <record id="criterio_line_security_availability_5" model="evaluation.criterio.line">
+        <field name="name">5 (Muy Alto)</field>
+        <field name="criterio_id" ref="criterio_security_availability" />
+        <field name="value_less">5</field>
+        <field name="value_high">5</field>
+    </record>
+
+    <!-- Trazabilidad: 1-5 -->
+    <record id="criterio_line_security_traceability_1" model="evaluation.criterio.line">
+        <field name="name">1 (Muy Bajo)</field>
+        <field name="criterio_id" ref="criterio_security_traceability" />
+        <field name="value_less">1</field>
+        <field name="value_high">1</field>
+    </record>
+    <record id="criterio_line_security_traceability_2" model="evaluation.criterio.line">
+        <field name="name">2 (Bajo)</field>
+        <field name="criterio_id" ref="criterio_security_traceability" />
+        <field name="value_less">2</field>
+        <field name="value_high">2</field>
+    </record>
+    <record id="criterio_line_security_traceability_3" model="evaluation.criterio.line">
+        <field name="name">3 (Medio)</field>
+        <field name="criterio_id" ref="criterio_security_traceability" />
+        <field name="value_less">3</field>
+        <field name="value_high">3</field>
+    </record>
+    <record id="criterio_line_security_traceability_4" model="evaluation.criterio.line">
+        <field name="name">4 (Alto)</field>
+        <field name="criterio_id" ref="criterio_security_traceability" />
+        <field name="value_less">4</field>
+        <field name="value_high">4</field>
+    </record>
+    <record id="criterio_line_security_traceability_5" model="evaluation.criterio.line">
+        <field name="name">5 (Muy Alto)</field>
+        <field name="criterio_id" ref="criterio_security_traceability" />
+        <field name="value_less">5</field>
+        <field name="value_high">5</field>
+    </record>
+
+    <!-- Autenticidad: 1-5 -->
+    <record id="criterio_line_security_authenticity_1" model="evaluation.criterio.line">
+        <field name="name">1 (Muy Bajo)</field>
+        <field name="criterio_id" ref="criterio_security_authenticity" />
+        <field name="value_less">1</field>
+        <field name="value_high">1</field>
+    </record>
+    <record id="criterio_line_security_authenticity_2" model="evaluation.criterio.line">
+        <field name="name">2 (Bajo)</field>
+        <field name="criterio_id" ref="criterio_security_authenticity" />
+        <field name="value_less">2</field>
+        <field name="value_high">2</field>
+    </record>
+    <record id="criterio_line_security_authenticity_3" model="evaluation.criterio.line">
+        <field name="name">3 (Medio)</field>
+        <field name="criterio_id" ref="criterio_security_authenticity" />
+        <field name="value_less">3</field>
+        <field name="value_high">3</field>
+    </record>
+    <record id="criterio_line_security_authenticity_4" model="evaluation.criterio.line">
+        <field name="name">4 (Alto)</field>
+        <field name="criterio_id" ref="criterio_security_authenticity" />
+        <field name="value_less">4</field>
+        <field name="value_high">4</field>
+    </record>
+    <record id="criterio_line_security_authenticity_5" model="evaluation.criterio.line">
+        <field name="name">5 (Muy Alto)</field>
+        <field name="criterio_id" ref="criterio_security_authenticity" />
+        <field name="value_less">5</field>
+        <field name="value_high">5</field>
+    </record>
+
+</odoo>
