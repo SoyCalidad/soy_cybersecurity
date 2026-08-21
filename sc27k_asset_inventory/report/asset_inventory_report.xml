@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sc27k_asset_inventory_report_xlsx" model="ir.actions.report">
+        <field name="name">Inventario de Activos de Información (Excel)</field>
+        <field name="model">cyber_matrix.block.line</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">sc27k_asset_inventory.report_asset_inventory_xlsx</field>
+        <field name="report_file">sc27k_asset_inventory.report_asset_inventory_xlsx</field>
+        <field name="binding_model_id" ref="soy_cybersecurity_cybersecurity.model_cyber_matrix_block_line" />
+        <field name="binding_type">report</field>
+        <field name="attachment_use" eval="False" />
+    </record>
+
+</odoo>

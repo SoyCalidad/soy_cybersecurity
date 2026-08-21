@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cyber_matrix_block_line_form_view_sc27k_asset_inventory" model="ir.ui.view">
+        <field name="name">cyber.matrix.block.line.form.view.sc27k.asset.inventory</field>
+        <field name="model">cyber_matrix.block.line</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form" />
+        <field name="arch" type="xml">
+            <field name="process_id" position="after">
+                <field name="sc27k_owner_job_id"
+                    readonly="state not in ['draft','in_process']" />
+            </field>
+            <field name="user_id" position="after">
+                <field name="sc27k_custodian_id"
+                    readonly="state not in ['draft','in_process']" />
+            </field>
+            <field name="asset_type_id" position="after">
+                <field name="sc27k_asset_code"
+                    required="1"
+                    readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_ownership"
+                    readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_information_classification"
+                    readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_personal_data_level"
+                    readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_asset_state"
+                    readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_last_review_date"
+                    readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_next_review_date"
+                    readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_criticality" />
+            </field>
+        </field>
+    </record>
+
+    <record id="cyber_matrix_block_line_list_view_sc27k_asset_inventory" model="ir.ui.view">
+        <field name="name">cyber.matrix.block.line.list.view.sc27k.asset.inventory</field>
+        <field name="model">cyber_matrix.block.line</field>
+        <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_list" />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="sc27k_asset_code" />
+            </field>
+            <field name="user_id" position="after">
+                <field name="sc27k_criticality" />
+                <field name="sc27k_asset_state" />
+            </field>
+        </field>
+    </record>
+
+</odoo>

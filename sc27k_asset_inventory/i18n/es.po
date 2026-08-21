@@ -1,0 +1,171 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sc27k_asset_inventory
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 21:29+0000\n"
+"PO-Revision-Date: 2026-08-21 21:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_state__active
+msgid "Activo"
+msgstr "Activo"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_criticality__high
+msgid "Alta"
+msgstr "Alta"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_criticality__low
+msgid "Baja"
+msgstr "Baja"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_information_classification
+msgid "Clasificación de la información"
+msgstr "Clasificación de la información"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_information_classification__confidential
+msgid "Confidencial"
+msgstr "Confidencial"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_ownership__corporate
+msgid "Corporativo"
+msgstr "Corporativo"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_criticality
+msgid "Criticidad"
+msgstr "Criticidad"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_asset_code
+msgid "Código"
+msgstr "Código"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_state__decommissioned
+msgid "Dado de baja"
+msgstr "Dado de baja"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.constraint,message:sc27k_asset_inventory.constraint_cyber_matrix_block_line_sc27k_asset_code_company_uniq
+msgid "El código del activo ya existe para esta compañía."
+msgstr "El código del activo ya existe para esta compañía."
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_asset_state
+msgid "Estado del activo"
+msgstr "Estado del activo"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_state__inactive
+msgid "Inactivo"
+msgstr "Inactivo"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_information_classification__internal
+msgid "Interna"
+msgstr "Interna"
+
+#. module: sc27k_asset_inventory
+#: model:ir.actions.report,name:sc27k_asset_inventory.sc27k_asset_inventory_report_xlsx
+msgid "Inventario de Activos de Información (Excel)"
+msgstr "Inventario de Activos de Información (Excel)"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model,name:sc27k_asset_inventory.model_cyber_matrix_block_line
+msgid "Inventario de activos de información"
+msgstr "Inventario de activos de información"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_criticality__medium
+msgid "Media"
+msgstr "Media"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_personal_data_level__no
+msgid "No"
+msgstr "No"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_information_classification__not_applicable
+msgid "No aplica"
+msgstr "No aplica"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_ownership__personal_byod
+msgid "Personal / BYOD"
+msgstr "Personal / BYOD"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_owner_job_id
+msgid "Propietario del activo"
+msgstr "Propietario del activo"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_next_review_date
+msgid "Próxima revisión"
+msgstr "Próxima revisión"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_personal_data_level__may_contain
+msgid "Puede contener"
+msgstr "Puede contener"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_personal_data_level__may_process
+msgid "Puede procesar"
+msgstr "Puede procesar"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model,name:sc27k_asset_inventory.model_report_sc27k_asset_inventory_report_asset_inventory_xlsx
+msgid "Reporte Excel de Inventario de Activos de Información"
+msgstr "Reporte Excel de Inventario de Activos de Información"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_information_classification__restricted
+msgid "Restringida"
+msgstr "Restringida"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_personal_data_level__yes
+msgid "Sí"
+msgstr "Sí"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_ownership__third_party
+msgid "Tercero"
+msgstr "Tercero"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_ownership
+msgid "Titularidad"
+msgstr "Titularidad"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_custodian_id
+msgid "Usuario asignado / Custodio"
+msgstr "Usuario asignado / Custodio"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_personal_data_level
+msgid "¿Contiene o procesa datos personales?"
+msgstr "¿Contiene o procesa datos personales?"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_last_review_date
+msgid "Última revisión"
+msgstr "Última revisión"
