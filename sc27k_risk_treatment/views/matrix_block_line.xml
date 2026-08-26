@@ -4,8 +4,17 @@
     <record id="matrix_block_line_form_view_sc27k_risk_treatment" model="ir.ui.view">
         <field name="name">matrix.block.line.form.view.sc27k.risk.treatment</field>
         <field name="model">matrix.block.line</field>
-        <field name="inherit_id" ref="mgmtsystem_opportunity.view_matrix_block_line_form" />
+        <field name="inherit_id" ref="mgmtsystem_process_integration.opportunity_view_form" />
         <field name="arch" type="xml">
+
+            <!-- Matched before the pages below are inserted, while "Acciones" (base
+                 module) is still the only page holding an action_ids field. -->
+            <xpath expr="//page[.//field[@name='action_ids']]" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile</attribute>
+            </xpath>
+            <xpath expr="//page[@name='origin_ids']" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile</attribute>
+            </xpath>
 
             <field name="system_id" position="after">
                 <field name="sc27k_asset_id"

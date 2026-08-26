@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
-
-    <record id="policy_system_seguridad_informacion" model="mgmtsystem.context.system">
-        <field name="name">Seguridad de la información</field>
-    </record>
-
-</odoo>

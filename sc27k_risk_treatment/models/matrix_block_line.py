@@ -5,7 +5,7 @@ from odoo import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 
-_SC27K_SECURITY_SYSTEM_XMLID = 'sc27k_risk_treatment.policy_system_seguridad_informacion'
+_SC27K_SECURITY_SYSTEM_XMLID = 'sc27k_asset_inventory.policy_system_seguridad_informacion'
 
 # The risk value is Probabilidad x Impacto, where Impacto is the MAX across these five
 # dimensions (not their product) — confirmed by the "Formato reporte de riesgos de SI"
@@ -211,6 +211,20 @@ class MatrixBlockLine(models.Model):
     # -------------------------------------------------------------------------
     # 3. Onchange Methods
     # -------------------------------------------------------------------------
+
+    @api.onchange('sc27k_residual_evaluation_id')
+    def _sc27k_onchange_residual_evaluation_id(self):
+        # Mirrors the base module's create_criterio()/_onchange_evaluation_id(): picking
+        # an indicator seeds one empty result line per criterio, ready for the user to
+        # fill in a value.
+        lines = [(5, 0, 0)]
+        for criterio in self.sc27k_residual_evaluation_id.criterio_ids:
+            lines.append((0, 0, {
+                'criterio_id': criterio.id,
+                'name': criterio.name,
+                'description': criterio.description,
+            }))
+        self.sc27k_residual_result_ids = lines
 
     # -------------------------------------------------------------------------
     # 4. Action Methods

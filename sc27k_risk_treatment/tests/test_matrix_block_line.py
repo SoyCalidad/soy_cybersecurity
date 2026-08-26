@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
+from lxml import etree
+
 from .common import TestRiskTreatmentBase
+
+_SIX_CRITERIA_NAMES = {
+    'Probabilidad', 'Confidencialidad', 'Integridad', 'Disponibilidad', 'Trazabilidad', 'Autenticidad',
+}
 
 
 class TestMatrixBlockLine(TestRiskTreatmentBase):
@@ -109,6 +115,42 @@ class TestMatrixBlockLine(TestRiskTreatmentBase):
         self.risk.sc27k_action_request_additional_treatment()
         self.assertEqual(self.risk.sc27k_residual_acceptance_state, 'additional_treatment')
         self.assertEqual(self.risk.sc27k_residual_decision, 'additional_treatment')
+
+    def test_residual_evaluation_onchange_seeds_result_lines(self):
+        self.risk.sc27k_residual_evaluation_id = self.security_evaluation.id
+        self.risk._sc27k_onchange_residual_evaluation_id()
+        self.assertEqual(len(self.risk.sc27k_residual_result_ids), 6)
+        self.assertEqual(
+            set(self.risk.sc27k_residual_result_ids.mapped('criterio_id.name')),
+            _SIX_CRITERIA_NAMES,
+        )
+
+    def test_residual_evaluation_onchange_replaces_previous_lines(self):
+        self.risk.sc27k_residual_evaluation_id = self.security_evaluation.id
+        self.risk._sc27k_onchange_residual_evaluation_id()
+        first_line_ids = self.risk.sc27k_residual_result_ids.ids
+
+        self.risk._sc27k_onchange_residual_evaluation_id()
+        self.assertEqual(len(self.risk.sc27k_residual_result_ids), 6)
+        self.assertFalse(set(first_line_ids) & set(self.risk.sc27k_residual_result_ids.ids))
+
+    def test_acciones_and_origenes_tabs_hidden_for_security_profile(self):
+        # Querying the already-fetched arch by @string is fine here: the "no @string
+        # selector" rule only applies to <xpath> elements Odoo evaluates while
+        # composing inherited views, not to plain lxml queries over the result.
+        arch = etree.fromstring(self.line_obj.get_view(view_type='form')['arch'])
+
+        origin_pages = arch.xpath("//page[@name='origin_ids']")
+        self.assertEqual(len(origin_pages), 1)
+        self.assertEqual(origin_pages[0].get('invisible'), 'sc27k_is_security_profile')
+
+        acciones_pages = arch.xpath("//page[@string='Acciones']")
+        self.assertEqual(len(acciones_pages), 1)
+        self.assertEqual(acciones_pages[0].get('invisible'), 'sc27k_is_security_profile')
+
+        treatment_pages = arch.xpath("//page[@string='Tratamiento / Controles']")
+        self.assertEqual(len(treatment_pages), 1)
+        self.assertNotEqual(treatment_pages[0].get('invisible'), 'sc27k_is_security_profile')
 
     def test_mgmtsystem_action_implementation_record_field(self):
         action = self.env['mgmtsystem.action'].create({

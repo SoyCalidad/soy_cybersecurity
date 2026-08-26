@@ -2,12 +2,23 @@
 <odoo>
 
     <record id="sc27k_risk_treatment_report_xlsx" model="ir.actions.report">
-        <field name="name">Matriz de Riesgos de Seguridad de la Información (Excel)</field>
+        <field name="name">Reporte de riesgo de Seguridad de la Información (Excel)</field>
         <field name="model">matrix.block.line</field>
         <field name="report_type">xlsx</field>
         <field name="report_name">sc27k_risk_treatment.report_risk_xlsx</field>
         <field name="report_file">sc27k_risk_treatment.report_risk_xlsx</field>
         <field name="binding_model_id" ref="mgmtsystem_opportunity.model_matrix_block_line" />
+        <field name="binding_type">report</field>
+        <field name="attachment_use" eval="False" />
+    </record>
+
+    <record id="sc27k_risk_treatment_matrix_report_xlsx" model="ir.actions.report">
+        <field name="name">Reporte de matriz de seguridad de la información</field>
+        <field name="model">matrix.matrix</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">sc27k_risk_treatment.report_risk_matrix_xlsx</field>
+        <field name="report_file">sc27k_risk_treatment.report_risk_matrix_xlsx</field>
+        <field name="binding_model_id" ref="mgmtsystem_opportunity.model_matrix_matrix" />
         <field name="binding_type">report</field>
         <field name="attachment_use" eval="False" />
     </record>

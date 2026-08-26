@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e-20260817\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-21 21:30+0000\n"
-"PO-Revision-Date: 2026-08-21 21:30+0000\n"
+"POT-Creation-Date: 2026-08-26 20:16+0000\n"
+"PO-Revision-Date: 2026-08-26 20:16+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -226,9 +226,14 @@ msgid "Interpretación"
 msgstr "Interpretación"
 
 #. module: sc27k_risk_treatment
-#: model:ir.actions.report,name:sc27k_risk_treatment.sc27k_risk_treatment_report_xlsx
-msgid "Matriz de Riesgos de Seguridad de la Información (Excel)"
-msgstr "Matriz de Riesgos de Seguridad de la Información (Excel)"
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid ""
+"La matriz \"%(matrix_name)s\" no tiene riesgos con el Identificador "
+"\"Seguridad de la información\"; no hay nada que reportar."
+msgstr ""
+"La matriz \"%(matrix_name)s\" no tiene riesgos con el Identificador "
+"\"Seguridad de la información\"; no hay nada que reportar."
 
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_risk_level__medium
@@ -292,9 +297,24 @@ msgid "Registro de matriz (evaluación residual)"
 msgstr "Registro de matriz (evaluación residual)"
 
 #. module: sc27k_risk_treatment
-#: model:ir.model,name:sc27k_risk_treatment.model_report_sc27k_risk_treatment_report_risk_xlsx
+#: model:ir.model,name:sc27k_risk_treatment.model_report_sc27k_risk_treatment_report_risk_matrix_xlsx
 msgid "Reporte Excel de Matriz de Riesgos de Seguridad de la Información"
 msgstr "Reporte Excel de Matriz de Riesgos de Seguridad de la Información"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model,name:sc27k_risk_treatment.model_report_sc27k_risk_treatment_report_risk_xlsx
+msgid "Reporte Excel de Riesgos de Seguridad de la Información"
+msgstr "Reporte Excel de Matriz de Riesgos de Seguridad de la Información"
+
+#. module: sc27k_risk_treatment
+#: model:ir.actions.report,name:sc27k_risk_treatment.sc27k_risk_treatment_matrix_report_xlsx
+msgid "Reporte de matriz de seguridad de la información"
+msgstr "Reporte de matriz de seguridad de la información"
+
+#. module: sc27k_risk_treatment
+#: model:ir.actions.report,name:sc27k_risk_treatment.sc27k_risk_treatment_report_xlsx
+msgid "Reporte de riesgo de Seguridad de la Información (Excel)"
+msgstr "Matriz de Riesgos de Seguridad de la Información (Excel)"
 
 #. module: sc27k_risk_treatment
 #: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment

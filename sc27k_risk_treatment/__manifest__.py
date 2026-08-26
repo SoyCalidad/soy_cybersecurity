@@ -15,11 +15,11 @@
     'version': '18.0.1.0.0',
     'depends': [
         'mgmtsystem_opportunity',
+        'mgmtsystem_process_integration',
         'sc27k_asset_inventory',
         'report_xlsx',
     ],
     'data': [
-        'data/mgmtsystem_context_system.xml',
         'data/evaluation_security_information.xml',
         'views/matrix_block_line.xml',
         'report/risk_report.xml',
