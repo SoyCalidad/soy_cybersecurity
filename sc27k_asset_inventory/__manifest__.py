@@ -16,6 +16,7 @@
         'report_xlsx',
     ],
     'data': [
+        'data/mgmtsystem_context_system.xml',
         'views/cyber_matrix_block_line.xml',
         'report/asset_inventory_report.xml',
     ],

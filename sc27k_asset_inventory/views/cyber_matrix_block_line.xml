@@ -6,6 +6,32 @@
         <field name="model">cyber_matrix.block.line</field>
         <field name="inherit_id" ref="soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form" />
         <field name="arch" type="xml">
+            <!-- Fields not part of the ISO 27001 security profile maqueta. -->
+            <field name="department_id" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile</attribute>
+            </field>
+            <field name="resource_id" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile</attribute>
+            </field>
+            <field name="asset_susceptible_to_fraud" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile</attribute>
+            </field>
+            <field name="asset_vital_for_organization" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile</attribute>
+            </field>
+            <field name="language_id" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile</attribute>
+            </field>
+            <field name="storage_medium" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile</attribute>
+            </field>
+
+            <!-- The generic free-form "Tipo" is replaced by the fixed MAGERIT list
+                 (sc27k_asset_type) for the security profile. -->
+            <field name="asset_type_id" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile</attribute>
+            </field>
+
             <field name="process_id" position="after">
                 <field name="sc27k_owner_job_id"
                     readonly="state not in ['draft','in_process']" />
@@ -15,6 +41,9 @@
                     readonly="state not in ['draft','in_process']" />
             </field>
             <field name="asset_type_id" position="after">
+                <field name="sc27k_asset_type"
+                    invisible="not sc27k_is_security_profile"
+                    readonly="state not in ['draft','in_process']" />
                 <field name="sc27k_asset_code"
                     required="1"
                     readonly="state not in ['draft','in_process']" />

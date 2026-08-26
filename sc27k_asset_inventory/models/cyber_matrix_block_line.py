@@ -10,6 +10,24 @@ _logger = logging.getLogger(__name__)
 _CRITICALITY_HIGH_THRESHOLD = 100
 _CRITICALITY_MEDIUM_THRESHOLD = 50
 
+_SC27K_SECURITY_SYSTEM_XMLID = 'sc27k_asset_inventory.policy_system_seguridad_informacion'
+
+# MAGERIT asset type taxonomy, requested verbatim (code + label) for the ISO 27001
+# security profile — a fixed list, distinct from the generic free-form asset_type_id
+# used by non-security clients of this inventory.
+_SC27K_ASSET_TYPES = [
+    ('D', '[D] Datos / Información'),
+    ('K', '[K] Claves criptográficas'),
+    ('S', '[S] Servicios'),
+    ('SW', '[SW] Software'),
+    ('HW', '[HW] Hardware'),
+    ('COM', '[COM] Redes de comunicaciones'),
+    ('MEDIA', '[Media] Soportes de información'),
+    ('AUX', '[AUX] Equipamiento auxiliar'),
+    ('L', '[L] Instalaciones'),
+    ('P', '[P] Personal'),
+]
+
 
 class CyberMatrixBlockLine(models.Model):
     _inherit = 'cyber_matrix.block.line'
@@ -18,9 +36,18 @@ class CyberMatrixBlockLine(models.Model):
     # 1. Fields Definition
     # -------------------------------------------------------------------------
 
+    sc27k_is_security_profile = fields.Boolean(
+        string='Perfil de seguridad de la información',
+        compute='_sc27k_compute_is_security_profile',
+        store=True,
+    )
     sc27k_asset_code = fields.Char(
         string='Código',
         copy=False,
+    )
+    sc27k_asset_type = fields.Selection(
+        selection=_SC27K_ASSET_TYPES,
+        string='Tipo de activo',
     )
     sc27k_owner_job_id = fields.Many2one(
         'hr.job',
@@ -81,6 +108,14 @@ class CyberMatrixBlockLine(models.Model):
     # -------------------------------------------------------------------------
     # 2. Constraints and Compute Methods
     # -------------------------------------------------------------------------
+
+    @api.depends('system_id')
+    def _sc27k_compute_is_security_profile(self):
+        security_system = self.env.ref(_SC27K_SECURITY_SYSTEM_XMLID, raise_if_not_found=False)
+        for record in self:
+            record.sc27k_is_security_profile = bool(
+                security_system and record.system_id == security_system
+            )
 
     @api.depends('ntr')
     def _sc27k_compute_criticality(self):

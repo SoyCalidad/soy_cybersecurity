@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e-20260817\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-21 21:29+0000\n"
-"PO-Revision-Date: 2026-08-21 21:29+0000\n"
+"POT-Creation-Date: 2026-08-26 21:26+0000\n"
+"PO-Revision-Date: 2026-08-26 21:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -106,6 +106,11 @@ msgid "No aplica"
 msgstr "No aplica"
 
 #. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_is_security_profile
+msgid "Perfil de seguridad de la información"
+msgstr "Perfil de seguridad de la información"
+
+#. module: sc27k_asset_inventory
 #: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_ownership__personal_byod
 msgid "Personal / BYOD"
 msgstr "Personal / BYOD"
@@ -151,6 +156,11 @@ msgid "Tercero"
 msgstr "Tercero"
 
 #. module: sc27k_asset_inventory
+#: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_asset_type
+msgid "Tipo de activo"
+msgstr "Tipo de activo"
+
+#. module: sc27k_asset_inventory
 #: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_ownership
 msgid "Titularidad"
 msgstr "Titularidad"
@@ -159,6 +169,56 @@ msgstr "Titularidad"
 #: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_custodian_id
 msgid "Usuario asignado / Custodio"
 msgstr "Usuario asignado / Custodio"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__aux
+msgid "[AUX] Equipamiento auxiliar"
+msgstr "[AUX] Equipamiento auxiliar"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__com
+msgid "[COM] Redes de comunicaciones"
+msgstr "[COM] Redes de comunicaciones"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__d
+msgid "[D] Datos / Información"
+msgstr "[D] Datos / Información"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__hw
+msgid "[HW] Hardware"
+msgstr "[HW] Hardware"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__k
+msgid "[K] Claves criptográficas"
+msgstr "[K] Claves criptográficas"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__l
+msgid "[L] Instalaciones"
+msgstr "[L] Instalaciones"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__media
+msgid "[Media] Soportes de información"
+msgstr "[Media] Soportes de información"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__p
+msgid "[P] Personal"
+msgstr "[P] Personal"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__sw
+msgid "[SW] Software"
+msgstr "[SW] Software"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__s
+msgid "[S] Servicios"
+msgstr "[S] Servicios"
 
 #. module: sc27k_asset_inventory
 #: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_personal_data_level

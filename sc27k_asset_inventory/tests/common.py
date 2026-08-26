@@ -34,6 +34,9 @@ class TestAssetInventoryBase(BaseCommon):
         cls.job_cto = cls.env['hr.job'].create({'name': 'CTO'})
         cls.employee = cls.env['hr.employee'].create({'name': 'Juan Perez'})
 
+        cls.security_system = cls.env.ref('sc27k_asset_inventory.policy_system_seguridad_informacion')
+        cls.other_system = cls.env.ref('hola_calidad.policy_system_1')
+
         cls.asset = cls.line_obj.create({
             'name': 'Laptop corporativa de desarrollo',
             'sc27k_asset_code': 'ACT-HW-TEST-001',
@@ -45,6 +48,12 @@ class TestAssetInventoryBase(BaseCommon):
             'sc27k_last_review_date': '2026-08-12',
             'sc27k_next_review_date': '2027-08-12',
             'evaluation_id': cls.evaluation.id,
+        })
+        cls.security_asset = cls.line_obj.create({
+            'name': 'Servidor de aplicaciones',
+            'sc27k_asset_code': 'ACT-SEC-TEST-001',
+            'system_id': cls.security_system.id,
+            'sc27k_asset_type': 'SW',
         })
 
     def _set_evaluation_results(self, line, alternatives, value):
