@@ -17,7 +17,6 @@
 
 
     'depends': [
-        'documents',
         'hr_recruitment',
 
 
@@ -46,7 +45,6 @@
         'data/app_ctrl_data.xml',
         'data/incidents_data.xml',
         'data/data_others.xml',
-        'data/dms.xml',
         'data/cybersecurity.clause.csv',
         'data/cybersecurity.diagnostic.requirement.csv',
         'data/cyber_2matrix_block_line.xml',

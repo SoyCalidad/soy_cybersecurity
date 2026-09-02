@@ -434,7 +434,7 @@ class Checklist(models.Model):
         ('cancel', 'Cancelado'),
     ], default='draft', string='Estado')
     line_ids = fields.One2many('cyber_2matrix.checklist.line', 'checklist_id', string='Líneas')
-    dms_lines_evidence_ids = fields.Many2many('documents.document', string='Evidencias')
+    dms_lines_evidence_ids = fields.Many2many('ir.attachment', string='Evidencias')
     dms_lines_evidence_count = fields.Integer(compute='_compute_dms_lines_evidence_count', string='Evidencias')
 
     @api.depends('line_ids.dms_evidence_ids')
@@ -444,16 +444,14 @@ class Checklist(models.Model):
             checklist.dms_lines_evidence_ids = [(6, 0, all_evidence.ids)]
             checklist.dms_lines_evidence_count = len(all_evidence)
 
-    def set_root_directory(self):
-        directory = 'soy_cybersecurity_cybersecurity.directory_soy_cybersecurity'
-        return directory
-
     def action_dms_lines_evidence_ids(self):
-        result = self.env.ref('documents.action_dms_file').read()[0]
-        directory = self.set_root_directory()
-        result['domain'] = [('id', 'in', self.dms_lines_evidence_ids.ids)]
-        result['context'] = {'default_directory_id': self.env.ref(directory).id}
-        return result
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Evidencias',
+            'res_model': 'ir.attachment',
+            'view_mode': 'kanban,list,form',
+            'domain': [('id', 'in', self.dms_lines_evidence_ids.ids)],
+        }
 
     def action_send_validate(self):
         self.state = 'validate'
@@ -511,7 +509,7 @@ class ChecklistLine(models.Model):
     checklist_control_control = fields.Text(related='checklist_control_id.control', string='Control')
     applies = fields.Boolean('Aplica', default=False)
     documentary_control_ids = fields.Many2many('documentary.control', string='Documentos')
-    dms_evidence_ids = fields.Many2many('documents.document', string='Evidencia')
+    dms_evidence_ids = fields.Many2many('ir.attachment', string='Evidencia')
     dms_evidence_count = fields.Integer(compute='_compute_dms_evidence_count', string='Evidencias')
     comments = fields.Text('Comentario')
 
