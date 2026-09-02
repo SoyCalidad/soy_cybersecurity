@@ -188,77 +188,58 @@
         sequence="50" />
 
     <menuitem id="diagnosis_evaluation_menu"
-        name="Evaluación"
+        name="Analisís"
         action="cybersecurity_diagnostic_list_action"
         parent="menu_diagnosis_main"
         groups="group_cybersecurity_user_secundario"
         sequence="20" />
+    <menuitem id="diagnosis_data_menu"
+        name="Datos" 
+        parent="menu_diagnosis_main"
+        groups="group_cybersecurity_user_secundario"
+        sequence="30" >
+        <menuitem id="clause_menu_action"
+              name="Clausulas"
+              sequence="10"
+              action="cybersecurity_clause__action"/>
+
+        <menuitem id="requirement_menu_action"
+              name="Requisitos"
+              sequence="20"
+              action="requirement_list_action"/>
+    </menuitem>
 
     <!-- Planificar -->
-    <menuitem id="context_menu"
-        name="Contexto Organizacional"
+      <menuitem id="employees_menu"
+        name="Empleados"
         parent="menu_plan_main"
-        groups="mgmtsystem_context.group_context_onlyread,mgmtsystem_context.group_context_onlyread_printreport,mgmtsystem_context.group_context_write_printreport,mgmtsystem_context.group_context_all"
-        sequence="30">
+        groups="mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
+        sequence="10">
+        <menuitem id="employee_employee_menu"
+            name="Empleados"
+            action="hr.open_view_employee_list_my"
+            sequence="10" />
 
+        <menuitem id="employee_job_menu"
+            name="Puestos"
+            action="hr.action_hr_job"
+            sequence="20" />
+        <menuitem id="hr_org_chart_menu"
+            name="Organigrama"
+            action="hr_org_chart.action_hr_employee_org_chart"
+            sequence="30" />
+
+      <menuitem id="employee_department_menu_action"
+            name="Departamentos"
+            action="hr.hr_department_tree_action"
+            sequence="40" />
     </menuitem>
-    <menuitem id="context_context_internal_issue_menu"
-        name="Contexto interno"
-        action="mgmtsystem_context.context_internal_issue_action"
-        sequence="0"
-        parent="context_menu"
-    />
-    <menuitem id="context_stakeholder_menu"
-        name="Partes interesadas"
-        action="mgmtsystem_context.stakeholder_action"
-        parent="context_menu"
-        sequence="2" />
-
-    <menuitem id="context_internal_factors_menu"
-        name="Factores internos"
-        parent="context_menu"
-        action="mgmtsystem_context.context_internal_issue_action"
-        sequence="5" />
-    <menuitem id="context_external_factors_menu"
-        name="Factores externos"
-        parent="context_menu"
-        action="mgmtsystem_context.context_external_issue_action"
-        sequence="6" />
-    <menuitem id="external_factors_menu"
-                name="Factores externos"
-                parent="context_menu"
-                sequence="6" >
-        <menuitem id="external_factor_foda_menu"
-                name="Foda"
-                action="mgmtsystem_context.context_swot_action"
-                sequence="10" />   
-        <menuitem id="exter_factor_porter_menu"
-                name="Porter"
-                action="mgmtsystem_context.context_external_issue_action"
-                sequence="20" />
-        <menuitem id="exter_factor_amofhit_menu"
-                name="Amofhit"
-                action="mgmtsystem_context.pest_analysis_action"
-                sequence="30" />  
-    </menuitem>
-
-    <menuitem id="policy_menu"
-        name="Políticas"
-        parent="menu_plan_main"
-        groups="mgmtsystem_legal.group_legal_onlyread,mgmtsystem_legal.group_legal_onlyread_printreport,mgmtsystem_legal.group_legal_write_printreport,mgmtsystem_legal.group_legal_all"
-        sequence="40">
-    <menuitem id="policy_real_menu"
-        name="Política"
-        action="mgmtsystem_context.policies_action"
-        sequence="1" />
-    </menuitem>
-
 
     <menuitem id="process_menu"
         name="Procesos"
         parent="menu_plan_main"
         groups="mgmtsystem_process.group_process_all,mgmtsystem_process.group_process_readonly,mgmtsystem_process.group_process_readonly_printreport,mgmtsystem_process.group_process_owner"
-        sequence="50">
+        sequence="20">
         <menuitem id="mgmtsystem_process_categ_menu"
             name="Mapa de procesos"
             action="mgmtsystem_process.action_mgmt_categ_procedures"
@@ -266,7 +247,7 @@
 
         <menuitem id="mgmtsystem_process_process_menu"
             name="Procedimientos"
-            action="mgmtsystem_process.action_mgmt_procedures"
+            action="mgmtsystem_process.action_mgmt_process_edition"
             sequence="2" />
 
         <menuitem id="mgmtsystem_process_documentary_menu"
@@ -277,37 +258,68 @@
 
     </menuitem>
 
-
-    <menuitem id="employees_menu"
-        name="Empleados"
+    <menuitem id="context_menu"
+        name="Contexto Organizacional"
         parent="menu_plan_main"
-        groups="mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
-        sequence="60">
-        <menuitem id="employee_employee_menu"
-            name="Empleados"
-            action="hr.open_view_employee_list_my"
-            sequence="10" />
+        groups="mgmtsystem_context.group_context_onlyread,mgmtsystem_context.group_context_onlyread_printreport,mgmtsystem_context.group_context_write_printreport,mgmtsystem_context.group_context_all"
+        sequence="30">
 
-        <menuitem id="employee_job_menu"
-            name="Puestos"
-            action="hr.action_hr_job"
-            sequence="20" />
     </menuitem>
+    <menuitem id="context_context_internal_issue_menu"
+        name="Contexto interno"
+        action="mgmtsystem_context.context_internal_issue_action"
+        sequence="10"
+        parent="context_menu"
+    />
+    <menuitem id="factor_foda_menu"
+                name="Foda"
+                action="mgmtsystem_context.context_swot_action"
+                sequence="20" />   
+
+    <menuitem id="policy_real_menu"
+        name="Política"
+        action="mgmtsystem_context.policies_action"
+        sequence="30" />
+    <menuitem id="context_stakeholder_menu"
+        name="Partes interesadas"
+        action="mgmtsystem_context.stakeholder_action"
+        parent="context_menu"
+        sequence="40" />
+
+    <menuitem id="mgmtsystem_context_stakeholder_matrix_menu"
+            name="Matriz de Partes interesadas"
+            action="mgmtsystem_context.stakeholders_action"
+            parent="context_menu"
+            sequence="50" />
+
+
+    
+
+
+   
 
     <menuitem id="opp_menu"
         name="Riesgos y Oportunidades"
         parent="menu_plan_main"
         groups="mgmtsystem_opportunity.group_opportunity_onlyread,mgmtsystem_opportunity.group_opportunity_onlyread_printreport,mgmtsystem_opportunity.group_opportunity_user_secundario,mgmtsystem_opportunity.group_opportunity_write_printreport"
         sequence="70">
+        <menuitem id="mgmtsystem_risk_action"
+            name="Riesgos"
+            action="mgmtsystem_opportunity.matrix_block_line_risk_action"
+            sequence="10" />
         <menuitem id="opp_risk_menu"
             name="Matriz de Riesgos"
             action="mgmtsystem_opportunity.matrix_matrix_risk_action"
-            sequence="10" />
+            sequence="20" />
 
+        <menuitem id="mgmtsystem_opp_action"
+            name=" Oportunidades"
+            action="mgmtsystem_opportunity.matrix_block_line_opportunity_action"
+            sequence="30" />
         <menuitem id="opp_opp_menu"
             name="Matriz de Oportunidades"
             action="mgmtsystem_opportunity.matrix_matrix_opportunity_action"
-            sequence="20" />
+            sequence="40" />
     </menuitem>
 
     <menuitem id="legal_menu"
@@ -315,15 +327,20 @@
         parent="menu_plan_main"
         groups="mgmtsystem_legal.group_legal_onlyread,mgmtsystem_legal.group_legal_onlyread_printreport,mgmtsystem_legal.group_legal_write_printreport,mgmtsystem_legal.group_legal_all"
         sequence="80">
-        <menuitem id="mgmtsystem_legal_menu"
+        <menuitem id="mgmtsystem_legal_legal_menu"
             name="Requisitos Legales"
+            action="mgmtsystem_legal.legal_legal_action"
+            sequence="10" />
+        <menuitem id="mgmtsystem_legal_menu"
+            name="Matriz de Requisitos Legales"
             action="mgmtsystem_legal.legal_plan_action"
-            sequence="1" />
+            sequence="20" />
     </menuitem>
 
-    <menuitem id="goal_menu"
+
+    <!-- <menuitem id="goal_menu"
         name="Objetivos"
-        parent="menu_plan_main"
+        parent="menu_do_main"
         sequence="90">
         <menuitem id="mgmtsystem_target_menu"
             name="Objetivos"
@@ -340,41 +357,29 @@
             action="soycalidad_improve.improve_plan_matrix_action"
             sequence="11" />
 
-    </menuitem>
+    </menuitem> -->
 
 
     <!-- hacer -->
-     <menuitem id="recruitment_menu"
-                  name="Reclutamiento"
-                  parent="menu_do_main"
-                  groups="hr.group_hr_manager,hr.group_hr_user,base.group_user"
-                  sequence="10" />
 
-    <menuitem id="recruitment_hr_job_menu"
-                name="Puestos"
-                parent="recruitment_menu"
-                action="hr.action_hr_job"
-                sequence="10" />
-
-    <menuitem id="recruitment_act_job_menu"
-                name="Solicitudes"
-                parent="recruitment_menu"
-                action="hr_recruitment.crm_case_categ0_act_job"
-                sequence="20" />
     <menuitem id="comunication_menu"
         name="Comunicaciones"
         parent="menu_do_main"
         groups="mgmtsystem_comunication.group_comunication_onlyread,mgmtsystem_comunication.group_comunication_onlyread_printreport,mgmtsystem_comunication.group_comunication_write_printreport,mgmtsystem_comunication.group_comunication_all"
         sequence="20">
+        <menuitem id="mgmtsystem_comunication_comunication_plan_line_menu"
+            name="Plan de comunicaciones"
+            action="mgmtsystem_comunication.plan_line_action"
+            sequence="10" />
         <menuitem id="mgmtsystem_comunication_comunication_plan_menu"
             name="Programa de comunicaciones"
             action="mgmtsystem_comunication.comunication_plan_action"
-            sequence="1" />
+            sequence="20" />
 
         <menuitem id="mgmtsystem_comunication_record_meeting_menu"
             name="Actas de reunión"
             action="mgmtsystem_comunication.record_meeting_action"
-            sequence="2" />
+            sequence="30" />
     </menuitem>
 
     <menuitem id="training_menu"
@@ -382,23 +387,69 @@
         parent="menu_do_main"
         groups="mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
         sequence="30">
-        <menuitem id="program_training_plan_menu"
-            name="Programa anual de capacitaciones"
-            action="mgmtsystem_employees.hr_item_plan_action"
-            groups="base.group_no_one,mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
-            sequence="1" />
-
         <menuitem id="plan_training_menu"
             name="Plan de Capacitaciones"
             action="mgmtsystem_employees.hr_item_training_action"
-            sequence="2" />
+            sequence="10" />
+        <menuitem id="program_training_plan_menu"
+            name="Programa de capacitaciones"
+            action="mgmtsystem_employees.hr_item_plan_action"
+            groups="base.group_no_one,mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
+            sequence="20" />
+
     </menuitem>
+    <menuitem id="maintance_menu"
+            name="Mantenimiento"
+            parent="menu_do_main"
+            groups="mgmtsystem_infrastructure.group_infrastructure_onlyread,mgmtsystem_infrastructure.group_infrastructure_onlyread_printreport,mgmtsystem_infrastructure.group_infrastructure_write_printreport,mgmtsystem_infrastructure.group_infrastructure_all"
+            sequence="40" />
+
+    <menuitem id="hr_equipment_menu"
+                  name="Equipos"
+                  parent="maintance_menu"
+                  action="maintenance.hr_equipment_action"
+                  sequence="10" />
+
+    <menuitem id="hola_calidad_mgmtsystem_maintance_maintance"
+        name="Plan de Mantenimiento"
+        parent="maintance_menu"
+        action="mgmtsystem_infrastructure.mgmtsystem_maintenance_action"
+        sequence="20" />
+
+    <menuitem id="hola_calidad_mgmtsystem_maintance_plan"
+            name="Programa de mantenimientos"
+            parent="maintance_menu"
+            groups="base.group_no_one,mgmtsystem_infrastructure.group_infrastructure_onlyread,mgmtsystem_infrastructure.group_infrastructure_onlyread_printreport,mgmtsystem_infrastructure.group_infrastructure_write_printreport,mgmtsystem_infrastructure.group_infrastructure_all"
+            action="mgmtsystem_infrastructure.mgmtsystem_maintenance_plan_action"
+            sequence="30" />
+
+    <menuitem 
+            id="partner_menu"
+            name="Contacto"
+            sequence="50"
+            parent="menu_do_main"
+            >
+                <menuitem
+                 id="res_partner_menu"
+                  name="Proveedores"
+                  action="mgmtsystem_partner_qualification.initial_evaluation_action"
+                  sequence="10" />
+                <menuitem
+                 id="partner_initial_evaluation_menu"
+                  name="Evaluación inicial"
+                  action="mgmtsystem_partner_qualification.initial_evaluation_action"
+                  sequence="20" />
+                <menuitem id="partner_followup_evaluation_menu"
+                  name="Reevaluación"
+                  action="mgmtsystem_partner_qualification.action_res_partner_evaluation"
+                  sequence="30" />
+      </menuitem>
 
     <menuitem id="si_menu"
         name="Seguridad de la información"
         parent="menu_do_main"
         groups="mgmtsystem_employees.group_employees_onlyread,mgmtsystem_employees.group_employees_onlyread_printreport,mgmtsystem_employees.group_employees_write_printreport,mgmtsystem_employees.group_employees_all"
-        sequence="40">
+        sequence="60">
         <menuitem name="Inventario de Activos de Información"
             id="mitem_block_line_information_asset"
             sequence="10"
@@ -427,7 +478,7 @@
     <menuitem name="Incidentes"
         id="indicent_menu"
         parent="menu_do_main"
-        sequence="50">
+        sequence="70">
 
         <menuitem name="Incidentes internos"
             id="indicent_menu_int"
@@ -440,24 +491,7 @@
             action="incident_incident_ext_action" />
     </menuitem>
 
-    <menuitem id="maintance_menu"
-            name="Mantenimiento"
-            parent="menu_do_main"
-            groups="mgmtsystem_infrastructure.group_infrastructure_onlyread,mgmtsystem_infrastructure.group_infrastructure_onlyread_printreport,mgmtsystem_infrastructure.group_infrastructure_write_printreport,mgmtsystem_infrastructure.group_infrastructure_all"
-            sequence="50" />
-
-    <menuitem id="hola_calidad_mgmtsystem_maintance_plan"
-            name="Programa de mantenimientos"
-            parent="maintance_menu"
-            groups="base.group_no_one,mgmtsystem_infrastructure.group_infrastructure_onlyread,mgmtsystem_infrastructure.group_infrastructure_onlyread_printreport,mgmtsystem_infrastructure.group_infrastructure_write_printreport,mgmtsystem_infrastructure.group_infrastructure_all"
-            action="mgmtsystem_infrastructure.mgmtsystem_maintenance_plan_action"
-            sequence="10" />
-
-        <menuitem id="hola_calidad_mgmtsystem_maintance_maintance"
-            name="Plan de Mantenimiento"
-            parent="maintance_menu"
-            action="mgmtsystem_infrastructure.mgmtsystem_maintenance_action"
-            sequence="20" />
+    
 
 
     <!--  verificar -->
@@ -466,15 +500,15 @@
         parent="menu_check_main"
         groups="mgmtsystem_target.group_target_onlyread,mgmtsystem_target.group_target_user_interno,mgmtsystem_target.group_target_write_printreport,mgmtsystem_target.group_target_all"
         sequence="10">
-        <menuitem id="target_indicator_action_menu"
-            name="Indicadores"
-            action="mgmtsystem_target.indicator_action_2"
-            sequence="10" />
-
         <menuitem id="mgmtsystem_target_target_action_menu"
             name="Objetivos"
             action="mgmtsystem_target.target_action"
+            sequence="10" />
+        <menuitem id="target_indicator_action_menu"
+            name="Indicadores"
+            action="mgmtsystem_target.indicator_action_2"
             sequence="20" />
+
     </menuitem>
 
     <menuitem id="audit_menu"
@@ -482,15 +516,18 @@
         parent="menu_check_main"
         groups="mgmtsystem_audit.group_audit_onlyread,mgmtsystem_audit.group_audit_onlyread_printreport,mgmtsystem_audit.group_audit_write_printreport,mgmtsystem_audit.group_audit_all"
         sequence="20">
-        <menuitem id="mgmtsystem_audit_plan_menu"
-            name="Programa de auditorías"
-            action="mgmtsystem_audit.audit_plan_action"
-            sequence="1" />
-
         <menuitem id="mgmtsystem_audit_audit_menu"
-            name="Auditorías"
+            name="Plan de Auditoría"
             action="mgmtsystem_audit.audit_audit_action"
             sequence="2" />
+        <menuitem id="mgmtsystem_audit_plan_menu"
+            name="Programa de auditoría"
+            action="mgmtsystem_audit.audit_plan_action"
+            sequence="1" />
+        <menuitem id="mgmtsystem_audit_audit_report_menu"
+            name="Informe de auditoría"
+            action="mgmtsystem_audit.audit_report_action"
+            sequence="30" />
     </menuitem>
 
     <menuitem id="review_menu"
@@ -498,21 +535,44 @@
         parent="menu_check_main"
         groups="mgmtsystem_management_review.group_management_review_onlyread,mgmtsystem_management_review.group_management_review_write_printreport,mgmtsystem_management_review.group_management_review_all"
         sequence="30">
-        <menuitem id="mgmtsystem_review_plan_menu"
-            name="Programa de revisiones"
-            action="mgmtsystem_management_review.mgmtsystem_review_plan_action1"
-            sequence="10" />
-
         <menuitem id="mgmtsystem_review_review_menu"
             name="Revisión por la dirección"
             action="mgmtsystem_management_review.action_management_review"
+            sequence="10" />
+
+        <menuitem id="mgmtsystem_review_plan_menu"
+            name="Programa de revisión por la dirección"
+            action="mgmtsystem_management_review.mgmtsystem_review_plan_action1"
             sequence="20" />
 
+
         <menuitem id="mgmtsystem_review_act_menu"
-            name="Actas"
+            name="Acta de reunión"
             action="mgmtsystem_comunication.record_meeting_action"
             sequence="30" />
     </menuitem>
+    <menuitem id="survey_item_menu"
+                  name="Encuestas"
+                  parent="menu_check_main"
+                  sequence="40" >
+            <menuitem id="survey_survey_menu"
+            name="Encuestas" 
+            action="survey.action_survey_form" 
+            sequence="10" />
+        </menuitem>
+    <menuitem id="improve_item_menu"
+                name="Mejora"
+                parent="menu_check_main"
+                sequence="50" >
+            <menuitem id="improve_menu"
+            name="Cambios" 
+            action="soycalidad_improve.soycalidad_change_request_action" 
+            sequence="10" />
+        <menuitem id="matrix_improve_menu"
+                name="Programa de gestión de cambios " 
+                action="soycalidad_improve.improve_plan_matrix_action" 
+                sequence="20" />
+      </menuitem>
 
     <!-- actuar -->
     <menuitem id="nc_menu"
@@ -525,10 +585,10 @@
             action="mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list"
             sequence="10" />
 
-        <menuitem id="mgmtsystem_nc_cause_menu"
+        <!-- <menuitem id="mgmtsystem_nc_cause_menu"
             name="Causas"
             action="mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_cause_list"
-            sequence="30" />
+            sequence="30" /> -->
     </menuitem>
 
     <menuitem id="actions_menu"
@@ -541,5 +601,16 @@
             action="mgmtsystem_action.open_mgmtsystem_action_list"
             sequence="1" />
     </menuitem>
+
+    <menuitem id="configuration_menu"
+            name="Configuración"
+            parent="menu_cybersecurity_root"
+            sequence="100" />
+
+      <menuitem id="mgmtsystem_settings_menu"
+            name="Ajustes"
+            parent="configuration_menu"
+            action="hola_calidad.action_mgmtsystem_configuration"
+            sequence="10" />
 
 </odoo>

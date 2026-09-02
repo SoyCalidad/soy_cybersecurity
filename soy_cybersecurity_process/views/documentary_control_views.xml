@@ -16,7 +16,7 @@
         <field name="model">documentary.control</field>
         <field name="inherit_id" ref="mgmtsystem_process.view_documentary_control_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='diffusion']" position="after">
+            <xpath expr="//field[@name='diffusion']" position="before">
                 <field name="clazz_id"/>
             </xpath>
         </field>

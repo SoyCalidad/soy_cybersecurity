@@ -13,7 +13,7 @@
         <field name="dpi">80</field>
     </record>
 
-    <!-- <template id="report_process_edition_template" inherit_id="mgmtsystem_process.report_process_edition_template">
+    <template id="report_process_edition_template" inherit_id="mgmtsystem_process.report_process_edition_template">
         <xpath expr="//div[hasclass('header')]//table" position="replace">
             <table class="tg">
                 <tbody>
@@ -50,5 +50,5 @@
                 </tbody>
             </table>
         </xpath>
-    </template> -->
+    </template>
 </odoo>

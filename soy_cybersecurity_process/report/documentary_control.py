@@ -10,6 +10,10 @@ from odoo import _, api, models
 from odoo.exceptions import UserError
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 
+import logging 
+
+_logger = logging.getLogger(__name__)
+
 
 class DocumentaryControlReportXLS(models.AbstractModel):
     _inherit = 'report.mgmtsystem_process.documentary_control_xls'
@@ -63,6 +67,9 @@ class DocumentaryControlReportXLS(models.AbstractModel):
             code = dc.code 
             version = dc.version
             date_approval = dc.approval_date
+            
+        _logger.info(f"DC {dc}")
+        _logger.info(f"Aproval date {date_approval}")
 
         # buf_image = io.BytesIO(base64.b64decode(company_id.logo))
         # im = Image.open(buf_image)
@@ -82,33 +89,35 @@ class DocumentaryControlReportXLS(models.AbstractModel):
         sheet.merge_range('I2:J2', f"Versión: {version}", format_data)
         sheet.merge_range('I3:J3', f"Fecha de aprobación: {date_approval}", format_data)
 
-        sheet.write(5, 0, 'Código del proceso', format_header)
-        sheet.write(5, 1, 'Procedimiento', format_header)
-        sheet.write(5, 2, 'Edición vigente', format_header)
-        sheet.write(5, 3, 'Registro', format_header)
-        sheet.write(5, 4, 'Edición', format_header)
-        sheet.write(5, 5, 'Código', format_header)
-        sheet.write(5, 6, 'Área responsable', format_header)
-        sheet.write(5, 7, 'Tipo de almacenamiento', format_header)
-        sheet.write(5, 8, 'Tipo', format_header)
-        sheet.write(5, 9, 'Clase', format_header)
+        sheet.write(4, 0, "Código del procedimiento", format_header)
+        sheet.write(4, 1, "Versión", format_header)
+        sheet.write(4, 2, "Nombre del procedimiento", format_header)
+        sheet.write(4, 3, "Fecha de aprobación", format_header)
+        sheet.write(4, 4, "Código del formato", format_header)
+        sheet.write(4, 5, "Versión", format_header)
+        sheet.write(4, 6, "Nombre del formato", format_header)
+        sheet.write(4, 7, "Fecha de aprobación", format_header)
+        sheet.write(4, 8, "Área Responsable", format_header)
+        sheet.write(4, 9, "Tipo De Almacenamiento", format_header)
+        sheet.write(4, 10, "Tipo", format_header)
+        sheet.write(4, 11, "Clase", format_header)
 
-        entrie_row = 6
-        code = ''
+        entrie_row = 5
+        code = ""
         for doc in records:
             sheet.write(entrie_row, 0, doc.process_code, format_data)
-            sheet.write(entrie_row, 1, doc.process_id.name, format_data)
-            sheet.write(entrie_row, 2, doc.process_last_edition, format_data)
-            sheet.write(entrie_row, 3, doc.name, format_data)
-            sheet.write(entrie_row, 4, doc.process_last_edition, format_data)
-            sheet.write(entrie_row, 5, doc.code, format_data)
-            sheet.write(entrie_row, 6, doc.department_id.name, format_data)
-            sheet.write(entrie_row, 7, doc.type_storage, format_data)
-            sheet.write(entrie_row, 8, doc.type, format_data)
-            sheet.write(entrie_row, 9, doc.clazz_id.name or '', format_data)
+            sheet.write(entrie_row, 1, doc.process_last_edition, format_data)
+            sheet.write(entrie_row, 2, doc.process_id.name, format_data)
+            sheet.write(entrie_row, 3, doc.process_approval_date, format_data)
+            sheet.write(entrie_row, 4, doc.code, format_data)
+            sheet.write(entrie_row, 5, doc.version, format_data)
+            sheet.write(entrie_row, 6, doc.name, format_data)
+            sheet.write(entrie_row, 7, doc.approval_date, format_data)
+            sheet.write(entrie_row, 8, doc.department_id.name if doc.department_id else "", format_data)
+            sheet.write(entrie_row, 9, doc.type_storage, format_data)
+            sheet.write(entrie_row, 10, doc.type, format_data)
+            sheet.write(entrie_row, 11, doc.clazz_id.display_name or '', format_data)
             sheet.set_row(entrie_row, 30)
             if doc.process_last_edition and doc.process_last_edition > code:
                 code = doc.process_last_edition
             entrie_row += 1
-
-        workbook.close()
