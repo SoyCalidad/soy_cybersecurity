@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <!-- Incluir en manifest.py, mientras emulemos el mismo record id el contenido se SOBREESCRIBIRÁ -->
-        <record id="policy_system_cybersecurity" model="mgmtsystem.context.system">
-            <field name="name">Seguridad de la información</field>
-        </record>
+        
     </data>
 
     <!--
@@ -26,5 +23,3 @@
     -->
 
 </odoo>
-
-

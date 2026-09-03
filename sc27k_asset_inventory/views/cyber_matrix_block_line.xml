@@ -44,6 +44,8 @@
                 <field name="sc27k_asset_type"
                     invisible="not sc27k_is_security_profile"
                     readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_security_certification" />
+                
                 <field name="sc27k_asset_code"
                     required="1"
                     readonly="state not in ['draft','in_process']" />
@@ -59,6 +61,7 @@
                     readonly="state not in ['draft','in_process']" />
                 <field name="sc27k_next_review_date"
                     readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_category_ids" widget="many2many_tags" />
                 <field name="sc27k_criticality" />
             </field>
         </field>

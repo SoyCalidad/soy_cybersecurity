@@ -272,12 +272,14 @@
         parent="context_menu"
     />
     <menuitem id="factor_foda_menu"
-                name="Foda"
-                action="mgmtsystem_context.context_swot_action"
-                sequence="20" />   
+        name="Foda"
+        parent="context_menu"
+        action="mgmtsystem_context.context_swot_action"
+        sequence="20" />   
 
     <menuitem id="policy_real_menu"
         name="Política"
+        parent="context_menu"
         action="mgmtsystem_context.policies_action"
         sequence="30" />
     <menuitem id="context_stakeholder_menu"

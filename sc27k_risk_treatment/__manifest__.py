@@ -14,6 +14,7 @@
     'category': 'iso27001',
     'version': '18.0.1.0.0',
     'depends': [
+        'sc27k_base',
         'mgmtsystem_opportunity',
         'mgmtsystem_process_integration',
         'sc27k_asset_inventory',

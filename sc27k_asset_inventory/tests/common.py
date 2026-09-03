@@ -34,7 +34,7 @@ class TestAssetInventoryBase(BaseCommon):
         cls.job_cto = cls.env['hr.job'].create({'name': 'CTO'})
         cls.employee = cls.env['hr.employee'].create({'name': 'Juan Perez'})
 
-        cls.security_system = cls.env.ref('sc27k_asset_inventory.policy_system_seguridad_informacion')
+        cls.security_system = cls.env.ref('sc27k_base.system_cybersecurity')
         cls.other_system = cls.env.ref('hola_calidad.policy_system_1')
 
         cls.asset = cls.line_obj.create({

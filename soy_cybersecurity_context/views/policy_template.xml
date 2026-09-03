@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <page name="document" position="inside">
                 <group 
-                invisible="system_id != %(soy_cybersecurity_context.policy_system_cybersecurity)d"
+                invisible="system_id != %(sc27_base.system_cybersecurity)d"
                 
                 >
                     <field name="cyber_organization_context" string="Contexto de la organización" 

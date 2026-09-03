@@ -4,7 +4,7 @@
     <record id="matrix_block_line_form_view_sc27k_risk_treatment" model="ir.ui.view">
         <field name="name">matrix.block.line.form.view.sc27k.risk.treatment</field>
         <field name="model">matrix.block.line</field>
-        <field name="inherit_id" ref="mgmtsystem_process_integration.opportunity_view_form" />
+        <field name="inherit_id" ref="mgmtsystem_opportunity.view_matrix_block_line_form" />
         <field name="arch" type="xml">
 
             <!-- Matched before the pages below are inserted, while "Acciones" (base
@@ -142,6 +142,16 @@
 
                 </notebook>
             </xpath>
+
+            <page name="nonconformity_ids" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile==True</attribute>
+            </page>
+            <page name="target_ids" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile==True</attribute>
+            </page>
+            <page name="change_request_ids" position="attributes">
+                <attribute name="invisible">sc27k_is_security_profile==True</attribute>
+            </page>
 
         </field>
     </record>
