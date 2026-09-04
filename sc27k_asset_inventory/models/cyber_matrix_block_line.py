@@ -10,7 +10,7 @@ _logger = logging.getLogger(__name__)
 _CRITICALITY_HIGH_THRESHOLD = 100
 _CRITICALITY_MEDIUM_THRESHOLD = 50
 
-_SC27K_SECURITY_SYSTEM_XMLID = 'sc27k_asset_inventory.policy_system_seguridad_informacion'
+_SC27K_SECURITY_SYSTEM_XMLID = 'sc27k_base.system_cybersecurity'
 
 # MAGERIT asset type taxonomy, requested verbatim (code + label) for the ISO 27001
 # security profile — a fixed list, distinct from the generic free-form asset_type_id
@@ -28,6 +28,21 @@ _SC27K_ASSET_TYPES = [
     ('P', '[P] Personal'),
 ]
 
+
+class Sc27kCategory(models.Model):
+    _name = 'sc27k.asset.inventory.category'
+    _description = 'Categoría de inventario de activo'
+    _order = 'name'
+
+    name = fields.Char(
+        string='Nombre',
+        required=True,
+    )
+
+    active = fields.Boolean(
+        string='Activo',
+        default=True,
+    )
 
 class CyberMatrixBlockLine(models.Model):
     _inherit = 'cyber_matrix.block.line'
@@ -103,6 +118,19 @@ class CyberMatrixBlockLine(models.Model):
         string='Criticidad',
         compute='_sc27k_compute_criticality',
         store=True,
+    )
+    sc27k_security_certification = fields.Selection(
+        selection=[
+            ('yes', 'Sí'),
+            ('no', 'No'),
+            ('not_applicable', 'No aplica'),
+        ],
+        string='¿Cuenta con certificación de seguridad?',
+    )
+
+    sc27k_category_ids = fields.Many2many(
+        'sc27k.asset.inventory.category',
+        string='Categoría',
     )
 
     # -------------------------------------------------------------------------

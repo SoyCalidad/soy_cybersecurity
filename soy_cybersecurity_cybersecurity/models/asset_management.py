@@ -489,7 +489,7 @@ class Line(models.Model):
         comodel_name='cyber_matrix.block.line.type', string='Tipo')
     '''
     system_id = fields.Many2one(
-        'mgmtsystem.context.system', string='Identificador', default=lambda self: self.env.ref('hola_calidad.policy_system_1'))
+        'mgmtsystem.context.system', string='Identificador', default=lambda self: self.env.ref('sc27k_base.system_cybersecurity'))
     process_id = fields.Many2one('mgmt.categ', string='Proceso')
 
     '''

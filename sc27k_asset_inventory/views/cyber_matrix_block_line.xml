@@ -32,33 +32,42 @@
                 <attribute name="invisible">sc27k_is_security_profile</attribute>
             </field>
 
-            <field name="process_id" position="after">
+            <field name="description" position="after">
                 <field name="sc27k_owner_job_id"
                     readonly="state not in ['draft','in_process']" />
             </field>
-            <field name="user_id" position="after">
-                <field name="sc27k_custodian_id"
-                    readonly="state not in ['draft','in_process']" />
-            </field>
-            <field name="asset_type_id" position="after">
-                <field name="sc27k_asset_type"
-                    invisible="not sc27k_is_security_profile"
+            <field name="location_id" position="after">
+                <field name="sc27k_information_classification"
                     readonly="state not in ['draft','in_process']" />
                 <field name="sc27k_asset_code"
                     required="1"
                     readonly="state not in ['draft','in_process']" />
-                <field name="sc27k_ownership"
+                <field name="sc27k_next_review_date"
                     readonly="state not in ['draft','in_process']" />
-                <field name="sc27k_information_classification"
+                <field name="sc27k_category_ids" widget="many2many_tags" />
+            </field>
+            
+            <field name="code" position="after">
+                <field name="sc27k_asset_type"
+                    invisible="not sc27k_is_security_profile"
+                    readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_security_certification" readonly="state not in ['draft','in_process']" />
+            </field>
+            <field name="process_id" position="after">
+                <field name="sc27k_custodian_id"
+                    readonly="state not in ['draft','in_process']" />
+                <field name="sc27k_ownership"
                     readonly="state not in ['draft','in_process']" />
                 <field name="sc27k_personal_data_level"
                     readonly="state not in ['draft','in_process']" />
-                <field name="sc27k_asset_state"
-                    readonly="state not in ['draft','in_process']" />
                 <field name="sc27k_last_review_date"
                     readonly="state not in ['draft','in_process']" />
-                <field name="sc27k_next_review_date"
+            </field>
+            <field name="asset_type_id" position="after">
+                
+                <field name="sc27k_asset_state"
                     readonly="state not in ['draft','in_process']" />
+                
                 <field name="sc27k_criticality" />
             </field>
         </field>

@@ -6,7 +6,7 @@
         name="ISO 27001"
         web_icon="soy_cybersecurity_cybersecurity,static/description/icon.png"
         groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"
-        sequence="4"
+        sequence="-20"
     />
 
     <!-- Assets Management-->
@@ -272,12 +272,14 @@
         parent="context_menu"
     />
     <menuitem id="factor_foda_menu"
-                name="Foda"
-                action="mgmtsystem_context.context_swot_action"
-                sequence="20" />   
+        name="Foda"
+        parent="context_menu"
+        action="mgmtsystem_context.context_swot_action"
+        sequence="20" />   
 
     <menuitem id="policy_real_menu"
         name="Política"
+        parent="context_menu"
         action="mgmtsystem_context.policies_action"
         sequence="30" />
     <menuitem id="context_stakeholder_menu"

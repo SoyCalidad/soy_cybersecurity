@@ -8,6 +8,7 @@
     'license': 'Other proprietary',
     'category': 'iso27001',
     'depends': [
+        'sc27k_base',
         'mgmtsystem_process',
         'mgmtsystem_context',
         'mgmtsystem_process_integration',

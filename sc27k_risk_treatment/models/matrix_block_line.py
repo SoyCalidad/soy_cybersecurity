@@ -5,7 +5,7 @@ from odoo import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 
-_SC27K_SECURITY_SYSTEM_XMLID = 'sc27k_asset_inventory.policy_system_seguridad_informacion'
+_SC27K_SECURITY_SYSTEM_XMLID = 'sc27k_base.system_cybersecurity'
 
 # The risk value is Probabilidad x Impacto, where Impacto is the MAX across these five
 # dimensions (not their product) — confirmed by the "Formato reporte de riesgos de SI"

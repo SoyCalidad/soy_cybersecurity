@@ -11,11 +11,14 @@
     'category': 'iso27001',
     'version': '18.0.1.0.0',
     'depends': [
+        'sc27k_base',
         'soy_cybersecurity_cybersecurity',
         'hr',
         'report_xlsx',
     ],
     'data': [
+        'security/ir.model.access.csv',
+        
         'data/mgmtsystem_context_system.xml',
         'views/cyber_matrix_block_line.xml',
         'report/asset_inventory_report.xml',

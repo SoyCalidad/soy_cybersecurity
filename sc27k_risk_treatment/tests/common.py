@@ -17,7 +17,7 @@ class TestRiskTreatmentBase(BaseCommon):
         cls.result_obj = cls.env['evaluation.result']
 
         cls.security_system = cls.env.ref(
-            'sc27k_asset_inventory.policy_system_seguridad_informacion')
+            'sc27k_base.system_cybersecurity')
         cls.other_system = cls.env.ref('hola_calidad.policy_system_1')
         cls.security_evaluation = cls.env.ref(
             'sc27k_risk_treatment.evaluation_security_information')
