@@ -32,6 +32,7 @@
         'mgmtsystem_employees',
 
         'soycalidad_improve',
+        'sc27k_base',
 
         #'soycalidad_dms',
     ],
