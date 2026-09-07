@@ -24,13 +24,13 @@
                         <field name="applicability_id_domain_id" />
                         <field name="applicability_id_name" />
                         <field name="applicability_id_description_application" />
-                        <field name="application" />
+                        <field name="application" widget="radio" />
                         <field name="justification" />
-                        <field name="is_implemented" />
-                        <field name="reference" />
+                        <field name="is_implemented" invisible="application=='no'" />
+                        <field name="reference"  invisible="application=='no'"/>
                     </group>
-                    <notebook>
-                        <page name="actions" string="Acciones">
+                    <notebook >
+                        <page invisible="application=='no'" name="actions" string="Acciones">
                             <group>
                                 <label for="action_ids" />
                                 <field name="action_ids"  nolabel="1" />
@@ -111,15 +111,15 @@
                         -->
                     </group>
                     <notebook>
-                        <page string="Detalles de lineas">
+                        <page string="DECLARACIÓN DE APLICABILIDAD">
                             <!--<field name="line_ids" domain="[('type', '=', type)]" context="{'default_type': type}" attrs="{'readonly':[('state','=','validate_ok')]}">-->
                             <field name="line_ids" 
 
                             readonly="state == 'validate_ok'" force_save="1">
                                 <list delete="0" create="0">
-                                    <field name="applicability_id" />
+                                    <field name="applicability_id" string="NOMBRE DEL CONTROL" width="300" />
                                     <field name="justification" />
-                                    <field name="is_implemented" />
+                                    <field name="is_implemented" string="ESTADO" />
                                 </list>
                             </field>
                         </page>

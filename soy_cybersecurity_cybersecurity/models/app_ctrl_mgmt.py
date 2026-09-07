@@ -83,7 +83,12 @@ class MatrixLine(models.Model):
     #     related='applicability_id.application',
     #     string="Aplicabilidad",
     # )
-    application = fields.Boolean(string='Aplicabilidad', default=False)
+    application = fields.Selection(
+        selection=[
+            ('no', 'No'),
+            ('yes', 'Si'),
+        ],
+        string='Aplicabilidad', default='no')
 
     action_ids = fields.Many2many(
         comodel_name='mgmtsystem.action',
@@ -268,6 +273,7 @@ class Matrix(models.Model):
         self.env.cr.execute("""SELECT id FROM ir_model 
                           WHERE model = %s""", (str(self._name),))
         info = self.env.cr.dictfetchall()
+        model_id=False
         if info:
             model_id = info[0]['id']
         action['context'] = {
@@ -291,7 +297,7 @@ class Matrix(models.Model):
         res = super().default_get(fields_list)
 
         if 'line_ids' in fields_list:
-            applicability_ids = self.env['cyber_2matrix.block.line'].search([]).ids
+            applicability_ids = self.env['cyber_2matrix.block.line'].search([], order='sequence').ids
             res['line_ids'] = [
                 (0, 0, {
                     'applicability_id': applicability_id,
@@ -550,6 +556,7 @@ class Line(models.Model):
         return result
 
     active = fields.Boolean(default=True, string="Activo")
+    sequence = fields.Integer(default=1, string="#")
     name = fields.Char(
         string='Nombre',
         required=True,

@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data  >
         <!-- Dominio 5 -->
         <record id="block_line_001" model="cyber_2matrix.block.line">
             <field name="name">5.1 Políticas para la seguridad de la información</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
             <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_51" />
+            <field name="sequence">1</field>
             <field name="description_application">La política de seguridad de la información y políticas específicas deben ser definidas, aprobadas por la dirección, publicadas, comunicadas y conocidas tanto por el personal como por las partes interesadas pertinentes, además revisadas en intervalos planificados y cuando ocurran cambios significativos</field>
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_002" model="cyber_2matrix.block.line">
             <field name="name">5.2 Roles y responsabilidades en seguridad de la información</field>
+            <field name="sequence">2</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
             <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_52" />
@@ -20,6 +22,7 @@
 
         </record>
         <record id="block_line_003" model="cyber_2matrix.block.line">
+            <field name="sequence">3</field>
             <field name="name">5.3 Segregación de funciones</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -28,6 +31,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_004" model="cyber_2matrix.block.line">
+            <field name="sequence">4</field>
             <field name="name">5.4 Responsabilidades de la dirección</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -37,6 +41,7 @@
 
         </record>
         <record id="block_line_005" model="cyber_2matrix.block.line">
+            <field name="sequence">5</field>
             <field name="name">5.5 Contacto con autoridades</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -46,6 +51,7 @@
 
         </record>
         <record id="block_line_006" model="cyber_2matrix.block.line">
+            <field name="sequence">6</field>
             <field name="name">5.6 Contacto con grupos especiales de interés</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -55,6 +61,7 @@
 
         </record>
         <record id="block_line_007" model="cyber_2matrix.block.line">
+            <field name="sequence">7</field>
             <field name="name">5.7 Inteligencia de amenazas</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -63,7 +70,8 @@
             <field name="type_ctrl">app_ctrl</field>
 
         </record>
-        <record id="block_line_008" model="cyber_2matrix.block.line">
+	<record id="block_line_008" model="cyber_2matrix.block.line">
+            <field name="sequence">8</field>
             <field name="name">5.8 Seguridad de la información en la gestión de proyectos</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -73,6 +81,7 @@
 
         </record>
         <record id="block_line_009" model="cyber_2matrix.block.line">
+            <field name="sequence">9</field>
             <field name="name">5.9 Inventario de información y otros activos asociados</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -82,6 +91,7 @@
 
         </record>
         <record id="block_line_010" model="cyber_2matrix.block.line">
+            <field name="sequence">10</field>
             <field name="name">5.10 Uso aceptable de la información y otros activos asociados</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -90,6 +100,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_011" model="cyber_2matrix.block.line">
+            <field name="sequence">11</field>
             <field name="name">5.11 Devolución de activos</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -98,6 +109,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_012" model="cyber_2matrix.block.line">
+            <field name="sequence">12</field>
             <field name="name">5.12 Clasificación de la información</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -106,6 +118,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_013" model="cyber_2matrix.block.line">
+            <field name="sequence">13</field>
             <field name="name">5.13 Etiquetado de la información</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -114,6 +127,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_014" model="cyber_2matrix.block.line">
+            <field name="sequence">14</field>
             <field name="name">5.14 Transferencia de información</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -122,6 +136,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_015" model="cyber_2matrix.block.line">
+            <field name="sequence">15</field>
             <field name="name">5.15 Control de acceso</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -130,6 +145,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_016" model="cyber_2matrix.block.line">
+            <field name="sequence">16</field>
             <field name="name">5.16 Gestión de identidades</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -138,6 +154,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_017" model="cyber_2matrix.block.line">
+            <field name="sequence">17</field>
             <field name="name">5.17 Información de autenticación</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -146,6 +163,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_018" model="cyber_2matrix.block.line">
+            <field name="sequence">18</field>
             <field name="name">5.18 Derechos de acceso</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -154,6 +172,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_019" model="cyber_2matrix.block.line">
+            <field name="sequence">19</field>
             <field name="name">5.19 Seguridad de la información en las relaciones con los proveedores</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -162,6 +181,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_020" model="cyber_2matrix.block.line">
+            <field name="sequence">20</field>
             <field name="name">5.20 Abordar la seguridad de la información dentro de los acuerdos con proveedores</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -170,6 +190,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_021" model="cyber_2matrix.block.line">
+            <field name="sequence">21</field>
             <field name="name">5.21 Gestión de la seguridad de la información en la cadena de suministro de las tecnologías de la información y comunicación (TIC)</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -178,6 +199,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_022" model="cyber_2matrix.block.line">
+            <field name="sequence">22</field>
             <field name="name">5.22 Seguimiento, revisión y gestión de cambios de los servicios de proveedores</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -186,6 +208,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_023" model="cyber_2matrix.block.line">
+            <field name="sequence">23</field>
             <field name="name">5.23 Seguridad de la información para el uso de servicios en la nube</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -194,6 +217,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_024" model="cyber_2matrix.block.line">
+            <field name="sequence">24</field>
             <field name="name">5.24 Planificación y preparación de la gestión de incidentes de seguridad de la información</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -202,6 +226,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_025" model="cyber_2matrix.block.line">
+            <field name="sequence">25</field>
             <field name="name">5.25 Evaluación y decisión sobre eventos de seguridad de la información</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -210,6 +235,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_026" model="cyber_2matrix.block.line">
+            <field name="sequence">26</field>
             <field name="name">5.26 Respuesta a los incidentes de seguridad de la información</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -218,6 +244,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_027" model="cyber_2matrix.block.line">
+            <field name="sequence">27</field>
             <field name="name">5.27 Aprendizaje de los incidentes de seguridad de la información</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -226,6 +253,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_028" model="cyber_2matrix.block.line">
+            <field name="sequence">28</field>
             <field name="name">5.28 Recolección de evidencia</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -234,6 +262,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_029" model="cyber_2matrix.block.line">
+	    <field name="sequence">29</field>
             <field name="name">5.29 Seguridad de la información durante la interrupción</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -242,6 +271,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_030" model="cyber_2matrix.block.line">
+	    <field name="sequence">30</field>
             <field name="name">5.30 Preparación de las TIC para la continuidad del negocio</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -250,6 +280,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_031" model="cyber_2matrix.block.line">
+	    <field name="sequence">31</field>
             <field name="name">5.31 Requisitos legales, estatutarios, regulatorios y contractuales</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -258,6 +289,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_032" model="cyber_2matrix.block.line">
+		<field name="sequence">32</field>
             <field name="name">5.32 Derechos de propiedad intelectual</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -266,6 +298,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_033" model="cyber_2matrix.block.line">
+	    <field name="sequence">33</field>
             <field name="name">5.33 Protección de registros</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -274,6 +307,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_034" model="cyber_2matrix.block.line">
+	    <field name="sequence">34</field>
             <field name="name">5.34 Privacidad y protección de la información de identificación personal (PII)</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -282,6 +316,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_035" model="cyber_2matrix.block.line">
+	    <field name="sequence">35</field>
             <field name="name">5.35 Revisión independiente de la seguridad de la información</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -290,6 +325,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_036" model="cyber_2matrix.block.line">
+	    <field name="sequence">36</field>
             <field name="name">5.36 Cumplimiento de las políticas, reglas y normas de seguridad de la información</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -298,6 +334,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_037" model="cyber_2matrix.block.line">
+	    <field name="sequence">37</field>
             <field name="name">5.37 Procedimientos operativos documentados</field>
             <field name="domain_description">Controles organizacionales</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
@@ -307,6 +344,7 @@
         </record>
         <!-- Dominio 6 -->
         <record id="block_line_038" model="cyber_2matrix.block.line">
+	    <field name="sequence">38</field>
             <field name="name">6.1 Selección</field>
             <field name="domain_description">Controles de personal</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
@@ -315,6 +353,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_039" model="cyber_2matrix.block.line">
+	    <field name="sequence">39</field>
             <field name="name">6.2 Términos y Condiciones de empleo</field>
             <field name="domain_description">Controles de personal</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
@@ -323,6 +362,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_040" model="cyber_2matrix.block.line">
+	    <field name="sequence">40</field>
             <field name="name">6.3 Toma de conciencia, educación y entrenamiento sobre la seguridad de la información</field>
             <field name="domain_description">Controles de personal</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
@@ -331,6 +371,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_041" model="cyber_2matrix.block.line">
+	    <field name="sequence">41</field>
             <field name="name">6.4 Proceso disciplinario</field>
             <field name="domain_description">Controles de personal</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
@@ -339,6 +380,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_042" model="cyber_2matrix.block.line">
+	    <field name="sequence">42</field>
             <field name="name">6.5 Responsabilidades después del cese o cambio de empleo</field>
             <field name="domain_description">Controles de personal</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
@@ -347,6 +389,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_043" model="cyber_2matrix.block.line">
+	    <field name="sequence">43</field>
             <field name="name">6.6 Acuerdos de confidencialidad o no divulgación</field>
             <field name="domain_description">Controles de personal</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
@@ -355,6 +398,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_044" model="cyber_2matrix.block.line">
+	    <field name="sequence">44</field>
             <field name="name">6.7 Trabajo remoto</field>
             <field name="domain_description">Controles de personal</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
@@ -363,6 +407,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_045" model="cyber_2matrix.block.line">
+	    <field name="sequence">45</field>
             <field name="name">6.8 Reporte de eventos de seguridad de la información</field>
             <field name="domain_description">Controles de personal</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_2" />
@@ -372,6 +417,7 @@
         </record>
         <!-- Dominio 7 -->
         <record id="block_line_046" model="cyber_2matrix.block.line">
+	    <field name="sequence">46</field>
             <field name="name">7.1 Perímetros de seguridad física</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -380,6 +426,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_047" model="cyber_2matrix.block.line">
+	    <field name="sequence">47</field>
             <field name="name">7.2 Ingreso físico</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -388,6 +435,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_048" model="cyber_2matrix.block.line">
+	    <field name="sequence">48</field>
             <field name="name">7.3 Asegurar oficinas, salas e instalaciones</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -396,6 +444,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_049" model="cyber_2matrix.block.line">
+	    <field name="sequence">49</field>
             <field name="name">7.4 Supervisión de la seguridad física</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -404,6 +453,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_050" model="cyber_2matrix.block.line">
+	    <field name="sequence">50</field>
             <field name="name">7.5 Protección contra las amenazas físicas y ambientales</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -412,6 +462,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_051" model="cyber_2matrix.block.line">
+	    <field name="sequence">51</field>
             <field name="name">7.6 Trabajo en áreas seguras</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -420,6 +471,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_052" model="cyber_2matrix.block.line">
+	    <field name="sequence">52</field>
             <field name="name">7.7 Escritorio y pantalla limpios</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -428,6 +480,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_053" model="cyber_2matrix.block.line">
+	    <field name="sequence">53</field>
             <field name="name">7.8 Ubicación y protección de los equipos</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -436,6 +489,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_054" model="cyber_2matrix.block.line">
+	    <field name="sequence">54</field>
             <field name="name">7.9 Seguridad de los activos fuera de las instalaciones</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -444,6 +498,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_055" model="cyber_2matrix.block.line">
+	    <field name="sequence">55</field>
             <field name="name">7.10 Medios de almacenamiento</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -452,6 +507,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_056" model="cyber_2matrix.block.line">
+	    <field name="sequence">56</field>
             <field name="name">7.11 Servicios de suministro de apoyo</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -460,6 +516,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_057" model="cyber_2matrix.block.line">
+	    <field name="sequence">57</field>
             <field name="name">7.12 Seguridad del cableado</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -468,6 +525,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_058" model="cyber_2matrix.block.line">
+	    <field name="sequence">58</field>
             <field name="name">7.13 Mantenimiento de equipos</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -476,6 +534,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_059" model="cyber_2matrix.block.line">
+	    <field name="sequence">59</field>
             <field name="name">7.14 Eliminación segura o reutilización de equipos</field>
             <field name="domain_description">Controles físicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_3" />
@@ -485,6 +544,7 @@
         </record>
         <!-- Dominio 8 -->
         <record id="block_line_060" model="cyber_2matrix.block.line">
+	    <field name="sequence">60</field>
             <field name="name">8.1 Dispositivos terminales del usuario</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -493,6 +553,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_061" model="cyber_2matrix.block.line">
+	    <field name="sequence">61</field>
             <field name="name">8.2 Derechos de acceso privilegiados</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -501,6 +562,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_062" model="cyber_2matrix.block.line">
+	    <field name="sequence">62</field>
             <field name="name">8.3 Restricción del acceso a la información</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -509,6 +571,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_063" model="cyber_2matrix.block.line">
+	    <field name="sequence">63</field>
             <field name="name">8.4 Acceso al código fuente</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -517,6 +580,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_064" model="cyber_2matrix.block.line">
+	    <field name="sequence">64</field>
             <field name="name">8.5 Autenticación segura</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -525,6 +589,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_065" model="cyber_2matrix.block.line">
+	    <field name="sequence">65</field>
             <field name="name">8.6 Gestión de capacidad</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -533,6 +598,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_066" model="cyber_2matrix.block.line">
+	    <field name="sequence">66</field>
             <field name="name">8.7 Protección contra programas maliciosos (malware)</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -541,6 +607,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_067" model="cyber_2matrix.block.line">
+	    <field name="sequence">67</field>
             <field name="name">8.8 Gestión de vulnerabilidades técnicas</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -549,6 +616,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_068" model="cyber_2matrix.block.line">
+	    <field name="sequence">68</field>
             <field name="name">8.9 Gestión de la configuración</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -557,6 +625,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_069" model="cyber_2matrix.block.line">
+	    <field name="sequence">69</field>
             <field name="name">8.10 Eliminación de información</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -565,6 +634,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_070" model="cyber_2matrix.block.line">
+	    <field name="sequence">70</field>
             <field name="name">8.11 Enmascaramiento de datos</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -573,6 +643,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_071" model="cyber_2matrix.block.line">
+	    <field name="sequence">71</field>
             <field name="name">8.12 Prevención de la fuga de datos</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -581,6 +652,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_072" model="cyber_2matrix.block.line">
+            <field name="sequence">72</field>
             <field name="name">8.13 Copia de seguridad de la información</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -589,6 +661,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_073" model="cyber_2matrix.block.line">
+            <field name="sequence">73</field>
             <field name="name">8.14 Redundancia de las instalaciones de procesamiento de la información</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -597,6 +670,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_074" model="cyber_2matrix.block.line">
+            <field name="sequence">74</field>
             <field name="name">8.15 Registro</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -605,6 +679,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_075" model="cyber_2matrix.block.line">
+            <field name="sequence">75</field>
             <field name="name">8.16 Actividades de monitoreo</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -613,6 +688,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_076" model="cyber_2matrix.block.line">
+            <field name="sequence">76</field>
             <field name="name">8.17 Sincronización de reloj</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -621,6 +697,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_077" model="cyber_2matrix.block.line">
+            <field name="sequence">77</field>
             <field name="name">8.18 Uso de programas de utilidad privilegiados</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -629,6 +706,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_078" model="cyber_2matrix.block.line">
+            <field name="sequence">78</field>
             <field name="name">8.19 Instalación de software en sistemas operativos</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -637,6 +715,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_079" model="cyber_2matrix.block.line">
+            <field name="sequence">79</field>
             <field name="name">8.20 Seguridad de redes</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -645,6 +724,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_080" model="cyber_2matrix.block.line">
+            <field name="sequence">80</field>
             <field name="name">8.21 Seguridad de los servicios de red</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -653,6 +733,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_081" model="cyber_2matrix.block.line">
+            <field name="sequence">81</field>
             <field name="name">8.22 Segregación de redes</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -661,6 +742,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_082" model="cyber_2matrix.block.line">
+            <field name="sequence">82</field>
             <field name="name">8.23 Filtro de la web</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -669,6 +751,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_083" model="cyber_2matrix.block.line">
+            <field name="sequence">83</field>
             <field name="name">8.24 Uso de criptografía</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -677,6 +760,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_084" model="cyber_2matrix.block.line">
+            <field name="sequence">84</field>
             <field name="name">8.25 Ciclo de vida de desarrollo seguro</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -685,6 +769,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_085" model="cyber_2matrix.block.line">
+            <field name="sequence">85</field>
             <field name="name">8.26 Requisitos de seguridad de la aplicación</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -693,6 +778,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_086" model="cyber_2matrix.block.line">
+            <field name="sequence">86</field>
             <field name="name">8.27 Arquitectura de sistemas seguros y principios de ingeniería</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -702,6 +788,7 @@
         </record>
         <record id="block_line_087" model="cyber_2matrix.block.line">
             <field name="name">8.28 Codificación segura</field>
+            <field name="sequence">87</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
             <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_828" />
@@ -709,6 +796,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_088" model="cyber_2matrix.block.line">
+            <field name="sequence">88</field>
             <field name="name">8.29 Pruebas de seguridad en desarrollo y aceptación</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -717,6 +805,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_089" model="cyber_2matrix.block.line">
+            <field name="sequence">89</field>
             <field name="name">8.30 Desarrollo subcontratado</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -725,6 +814,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_090" model="cyber_2matrix.block.line">
+            <field name="sequence">90</field>
             <field name="name">8.31 Separación de los entornos de desarrollo, prueba y producción</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -733,6 +823,7 @@
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_091" model="cyber_2matrix.block.line">
+            <field name="sequence">91</field>
             <field name="name">8.32 Gestión de cambios</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -742,6 +833,7 @@ gestión de cambios.</field>
             <field name="type_ctrl">app_ctrl</field>
         </record>
         <record id="block_line_092" model="cyber_2matrix.block.line">
+            <field name="sequence">92</field>
             <field name="name">8.33 Información de las pruebas</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
@@ -751,6 +843,7 @@ gestión de cambios.</field>
         </record>
         <record id="block_line_093" model="cyber_2matrix.block.line">
             <field name="name">8.34 Protección de los sistemas de información durante las pruebas de auditoría</field>
+            <field name="sequence">93</field>
             <field name="domain_description">Controles tecnológicos</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_4" />
             <field name="ctrl_target_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_line_834" />

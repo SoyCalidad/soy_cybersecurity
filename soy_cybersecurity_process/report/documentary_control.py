@@ -31,7 +31,7 @@ class DocumentaryControlReportXLS(models.AbstractModel):
             UserError: When the user choose a initial balance but no a initial date
         """
         format_title = workbook.add_format(
-            {'font_size': 13, 'font_name': 'Arial', 'valign': 'vcenter', 'bold': True, 'align': 'center',
+            {'font_size': 14, 'font_name': 'Arial', 'valign': 'vcenter', 'bold': True, 'align': 'center',
              'border': True, 'bg_color': '#EEEEEE'})
         format_data = workbook.add_format(
             {'font_size': 9, 'font_name': 'Arial', 'valign': 'vcenter', 'align': 'center', 'border': True,
@@ -83,11 +83,12 @@ class DocumentaryControlReportXLS(models.AbstractModel):
         # y_scale = cell_height / image_height
         # sheet.insert_image('A1', "logo.png", {
         #     'image_data': buf_image, 'x_scale': x_scale, 'y_scale': y_scale})
+        sheet.merge_range('A1:A3', '', format_title)
         self._insert_centered_image(sheet, 'A1', company_id.logo, )
-        sheet.merge_range('B1:H4', 'Lista maestra', format_title)
-        sheet.merge_range('I1:J1', f"Código: {code}", format_data)
-        sheet.merge_range('I2:J2', f"Versión: {version}", format_data)
-        sheet.merge_range('I3:J3', f"Fecha de aprobación: {date_approval}", format_data)
+        sheet.merge_range('B1:I3', 'Lista maestra', format_title)
+        sheet.merge_range('J1:L1', f"Código: {code}", format_data)
+        sheet.merge_range('J2:L2', f"Versión: {version}", format_data)
+        sheet.merge_range('J3:L3', f"Fecha de aprobación: {date_approval}", format_data)
 
         sheet.write(4, 0, "Código del procedimiento", format_header)
         sheet.write(4, 1, "Versión", format_header)

@@ -9,12 +9,75 @@ from odoo.exceptions import UserError, ValidationError
 from PIL import Image
 import logging 
 import re
+from collections import defaultdict
 
 _logger = logging.getLogger(__name__)
 
 class IndividualReport(models.AbstractModel):
     _name = 'report.cyber_2matrix_matrix.report'
     _inherit = 'report.report_xlsx.abstract'
+    
+    def _insert_centered_image(
+            self,
+            worksheet,
+            cell,
+            image_data,
+            container_width=48,
+            container_height=48,
+            filename="image.png",
+        ): 
+    
+        if not image_data:
+            return
+
+        image_buffer = io.BytesIO(base64.b64decode(image_data))
+
+        with Image.open(image_buffer) as image:
+            image_width, image_height = image.size
+
+        if not image_width or not image_height:
+            return
+
+        # Un único factor de escala para mantener la proporción.
+        scale = min(
+            container_width / image_width,
+            container_height / image_height,
+        )
+
+        rendered_width = image_width * scale
+        rendered_height = image_height * scale
+
+        # Centrar la imagen dentro del área disponible.
+        x_offset = (container_width - rendered_width) / 2
+        y_offset = (container_height - rendered_height) / 2
+
+        # El buffer debe estar al inicio antes de que XlsxWriter lo lea.
+        image_buffer.seek(0)
+
+        worksheet.insert_image(
+            cell,
+            filename,
+            {
+                "image_data": image_buffer,
+                "x_scale": scale,
+                "y_scale": scale,
+                "x_offset": x_offset,
+                "y_offset": y_offset,
+                'object_position': 1,
+            },
+        )
+        
+    @staticmethod
+    def _col_width_to_px(width):
+        """Conversión aproximada de ancho de columna (caracteres) a píxeles."""
+        return width * 7 + 5
+ 
+    @staticmethod
+    def _row_height_to_px(height_pt):
+        """Conversión de alto de fila (puntos) a píxeles (96 dpi)."""
+        return height_pt * 96 / 72
+
+
 
     def generate_xlsx_report(self, workbook, data, matrixes):
         try:
@@ -70,64 +133,45 @@ class IndividualReport(models.AbstractModel):
                 sheet.set_row(1, 25)
                 sheet.set_row(2, 25)
                 sheet.set_row(4, 25)
+                
+                #HEADER 
+                company = self.env.user.company_id
+                
+                self._insert_centered_image(sheet, 'A1', company.logo, self._col_width_to_px(15+35), self._row_height_to_px(70))
+
+
+                MAX_COL = 7 #CELL H
+
+
+                sheet.merge_range(
+                    0, MAX_COL -2, 0,
+                    MAX_COL, f'Código: {matrix.code or ""}', format10_c_bold)
+                sheet.merge_range(1, MAX_COL -2, 1, MAX_COL,
+                                    'Versión: '+str(matrix.version), format10_c_bold)
+                
+                sheet.merge_range(2, MAX_COL -2, 2, MAX_COL, 'Fecha de validación: '+str(
+                    matrix.date_validate or "Sin definir"), format10_c_bold) # old date_validate
 
                 sheet.write(prod_row, i, 'N°', format21_c_bold)
                 i += 1
-                sheet.write(prod_row, i,
-                                  'Nombre del control', format21_c_bold)
+                sheet.write(prod_row, i, 'Nombre del control', format21_c_bold)
                 i += 1
                 sheet.write(prod_row, i, 'Descripción del control', format21_c_bold)
+                sheet.merge_range(0, 0, 2, 1, "", format26_c_bold)       
                 sheet.merge_range(0, i, 2, i+2, matrix.name, format26_c_bold)       
 
                 i += 1
                 sheet.write(prod_row, i,'Aplicabilidad (SÍ/NO)', format21_c_bold)
-
-                 
                 i += 1
-                sheet.write(prod_row, i,
-                                  'Justificación de la aplicabilidad / no aplicabilidad', format21_c_bold)
+                sheet.write(prod_row, i, 'Justificación de la aplicabilidad / no aplicabilidad', format21_c_bold)
                 i += 1
-                sheet.write(prod_row, i,
-                                  '¿Control Implementado? (SÍ/NO)', format21_c_bold)
+                sheet.write(prod_row, i, '¿Control Implementado? (SÍ/NO)', format21_c_bold)
                 i += 1
                 sheet.write(prod_row, i, 'Referencia de la implementación del control', format21_c_bold)
 
                 i += 1
                 sheet.write(prod_row, i, 'Acciones', format21_c_bold)
 
-                #xlsxwriter.exceptions.OverlappingRange: Merge range 'C1:C3' overlaps previous merge range 'C1:F3'.
-
-
-                #sheet.merge_range('C1:C3', self.env.company.name, format21_c_bold)
-
-                company_id = self.env.user.company_id
-
-                buf_image = io.BytesIO(base64.b64decode(company_id.logo))
-                im = Image.open(buf_image)
-                width, height = im.size
-                image_width = width
-                image_height = height
-                cell_width = 191.0
-                cell_height = 58.0
-
-                x_scale = cell_width/image_width
-                y_scale = cell_height/image_height
-                sheet.insert_image('A1', "logo.png", {
-                    'image_data': buf_image, 'x_scale': x_scale, 'y_scale': y_scale})
-
-                i += 1
-
-                MAX_COL = 7 #CELL H
-
-
-                sheet.merge_range(0, MAX_COL -2, 0,
-                                  MAX_COL, f'Código: {matrix.code or ""}', format10_c_bold)
-                sheet.merge_range(1, MAX_COL -2, 1, MAX_COL,
-                                  'Versión: '+str(matrix.version), format10_c_bold)
-                
-                sheet.merge_range(2, MAX_COL -2, 2, MAX_COL, 'Fecha de validación: '+str(
-                    matrix.date_validate or "Sin definir"), format10_c_bold) # old date_validate
-            
                 
                 # REPORT DATA CONTENT
                 
@@ -139,8 +183,9 @@ class IndividualReport(models.AbstractModel):
                 row_a = 0
                 max_height = 20
 
-                from collections import defaultdict
+                
                 group_lines = defaultdict(list)
+                application_lbl = dict(self.env['cyber_2matrix.matrix.line']._fields['application'].selection)
 
                 for line in lines:
                     group_lines[line.applicability_id_domain_id].append(line)
@@ -170,7 +215,7 @@ class IndividualReport(models.AbstractModel):
                         sheet.write(prod_row, i, line.applicability_id_description_application or '', format21_left)
                         i += 1
 
-                        sheet.write(prod_row, i, "SÍ" if line.application else "NO", format21_left)
+                        sheet.write(prod_row, i, application_lbl.get(line.application, ''), format21_left)
                         i += 1
 
                         sheet.write(prod_row, i, line.justification or '', format21_left)

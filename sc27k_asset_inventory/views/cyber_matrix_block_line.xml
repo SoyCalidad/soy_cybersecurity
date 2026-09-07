@@ -39,12 +39,14 @@
             <field name="location_id" position="after">
                 <field name="sc27k_information_classification"
                     readonly="state not in ['draft','in_process']" />
-            </field>
-            <field name="state" position="after">
+                <field name="sc27k_asset_code"
+                    required="1"
+                    readonly="state not in ['draft','in_process']" />
                 <field name="sc27k_next_review_date"
                     readonly="state not in ['draft','in_process']" />
                 <field name="sc27k_category_ids" widget="many2many_tags" />
             </field>
+            
             <field name="code" position="after">
                 <field name="sc27k_asset_type"
                     invisible="not sc27k_is_security_profile"
@@ -63,17 +65,8 @@
             </field>
             <field name="asset_type_id" position="after">
                 
-                
-                <field name="sc27k_asset_code"
-                    required="1"
-                    readonly="state not in ['draft','in_process']" />
-                
-                
-                
                 <field name="sc27k_asset_state"
                     readonly="state not in ['draft','in_process']" />
-                
-                
                 
                 <field name="sc27k_criticality" />
             </field>

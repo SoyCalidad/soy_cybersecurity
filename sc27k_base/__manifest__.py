@@ -9,6 +9,7 @@
     'category': 'iso27001',
     'version': '18.0.1.0.0',
     'depends': [ 
+        'hola_calidad',
     ],
     'data': [
         'data/mgmtsystem_context_system.xml',

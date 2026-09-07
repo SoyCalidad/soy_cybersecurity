@@ -17,7 +17,8 @@
         <field name="name">cyber_2matrix.block.line.list</field>
         <field name="model">cyber_2matrix.block.line</field>
         <field name="arch" type="xml">
-            <list class="o_matrix_block_line" > <!-- banner_route="/opportunity/opportunity_onboarding" -->
+            <list class="o_matrix_block_line" > 
+                <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="active" column_invisible="1" />
             </list>

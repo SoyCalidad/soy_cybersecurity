@@ -19,6 +19,7 @@
             <field name="system_id" position="after">
                 <field name="sc27k_asset_id"
                     options="{'no_create': True}"
+                    invisible="not sc27k_is_security_profile"
                     readonly="state not in ['draft','in_process']" />
             </field>
 
@@ -99,7 +100,7 @@
 
                     <page string="Aceptación del riesgo">
                         <group string="Aprobación del plan de tratamiento">
-                            <field name="sc27k_treatment_owner_id" />
+                            <field name="sc27k_treatment_owner_id" invisible="1" />
                             <field name="sc27k_treatment_approval_date" />
                             <field name="sc27k_treatment_approval_comment" />
                             <field name="sc27k_treatment_approved_by_id" />

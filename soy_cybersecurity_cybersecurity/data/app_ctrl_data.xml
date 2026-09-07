@@ -4,22 +4,22 @@
         <!-- Domains -->
 
         <record model="cyber_2matrix.block.line.domain" id="app_ctrl_1">
-            <field name="name">5.</field>
+            <field name="name">5. Controles Organizacionales</field>
             <field name="description">Controles Organizativos</field>
         </record>
 
         <record model="cyber_2matrix.block.line.domain" id="app_ctrl_2">
-            <field name="name">6.</field>
+            <field name="name">6. Controles de personal</field>
             <field name="description">Controles de personas</field>
         </record>
 
         <record model="cyber_2matrix.block.line.domain" id="app_ctrl_3">
-            <field name="name">7.</field>
+            <field name="name">7. Controles físicos</field>
             <field name="description">Controles físicos</field>
         </record>
 
         <record model="cyber_2matrix.block.line.domain" id="app_ctrl_4">
-            <field name="name">8.</field>
+            <field name="name">8. Controles tecnológicos</field>
             <field name="description">Controles tecnológicos</field>
         </record>
 
@@ -30,6 +30,7 @@
         <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_51">
             <field name="name">5.1: Políticas de seguridad de la información</field>
             <field name="domain_id" ref="soy_cybersecurity_cybersecurity.app_ctrl_1" />
+            
         </record>
         <record model="cyber_2matrix.block.line.ctrl_target" id="app_ctrl_line_52">
             <field name="name">5.2: Funciones y responsabilidades en materia de seguridad de la información</field>
