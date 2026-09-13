@@ -434,7 +434,7 @@
                 <menuitem
                  id="res_partner_menu"
                   name="Proveedores"
-                  action="mgmtsystem_partner_qualification.initial_evaluation_action"
+                  action="contacts.action_contacts"
                   sequence="10" />
                 <menuitem
                  id="partner_initial_evaluation_menu"

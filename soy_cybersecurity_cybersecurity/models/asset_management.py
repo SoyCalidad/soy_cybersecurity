@@ -283,6 +283,7 @@ class Matrix(models.Model):
         self.env.cr.execute("""SELECT id FROM ir_model 
                           WHERE model = %s""", (str(self._name),))
         info = self.env.cr.dictfetchall()
+        model_id=False
         if info:
             model_id = info[0]['id']
         action['context'] = {
@@ -596,7 +597,6 @@ class Line(models.Model):
         string='Estado',
         selection=[
             ('draft', 'Borrador'),
-            ('elaborate', 'En proceso'),
             ('validate', 'Validado'),
             ('cancel', 'Cancelado')],
         default='draft',
@@ -637,7 +637,7 @@ class Line(models.Model):
         return res
 
     def send_elaborate(self):
-        self.state = 'elaborate'
+        pass
 
     def send_validate(self):
         self.state = 'validate'

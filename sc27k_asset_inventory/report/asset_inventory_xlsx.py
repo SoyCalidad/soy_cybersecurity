@@ -54,7 +54,7 @@ class AssetInventoryXlsx(models.AbstractModel):
                 for result in line.result_ids if result.criterio_id
             }
             values = [
-                line.sc27k_asset_code or '',
+                line.code or '',
                 line.name or '',
                 ', '.join(line.asset_type_id.mapped('name')),
                 line.description or '',

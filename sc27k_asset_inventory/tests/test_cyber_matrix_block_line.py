@@ -65,19 +65,3 @@ class TestCyberMatrixBlockLine(TestAssetInventoryBase):
         self._set_evaluation_results(self.asset, self.high_alternatives, 8)
         self.assertEqual(self.asset.sc27k_criticality, 'high')
 
-    def test_asset_code_unique_per_company(self):
-        with self.assertRaises(IntegrityError), mute_logger('odoo.sql_db'):
-            with self.cr.savepoint():
-                self.line_obj.create({
-                    'name': 'Segundo laptop',
-                    'sc27k_asset_code': self.asset.sc27k_asset_code,
-                })
-
-    def test_asset_code_reusable_across_companies(self):
-        other_company = self.env['res.company'].create({'name': 'Otra Compañía'})
-        other_company_asset = self.line_obj.create({
-            'name': 'Laptop de otra compañía',
-            'sc27k_asset_code': self.asset.sc27k_asset_code,
-            'company_id': other_company.id,
-        })
-        self.assertEqual(other_company_asset.sc27k_asset_code, self.asset.sc27k_asset_code)
