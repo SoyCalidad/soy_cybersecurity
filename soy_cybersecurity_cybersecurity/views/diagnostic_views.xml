@@ -420,12 +420,13 @@
 
 
         <record model="ir.actions.act_window" id="cybersecurity_diagnostic_list_action">
-            <field name="name">Evaluación</field>
+            <field name="name">ANÁLISIS</field>
             <field name="res_model">cybersecurity.diagnostic</field>
             <field name="view_mode">list,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Crea evaluaciónes (analisis) </p>
+                    Crea análisis para la ISO 27001
+                </p>
             </field>
         </record>
 

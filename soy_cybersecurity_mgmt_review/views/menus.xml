@@ -1,0 +1,6 @@
+<odoo>
+    
+    <record id="soy_cybersecurity_cybersecurity.mgmtsystem_review_review_menu" model="ir.ui.menu">
+        <field name="action" ref="soy_cybersecurity_mgmt_review.action_management_review_27k" />
+    </record>
+</odoo>

@@ -10,10 +10,14 @@
     'depends': [
         'mgmtsystem_management_review',
         'mgmtsystem_process_integration',
+        
+        'soy_cybersecurity_cybersecurity',
     ],
     'data': [
         'views/management_review_views.xml',
         'reports/managementreview_report.xml',
+        
+        'views/menus.xml',
     ],
     'demo': [
     ],

@@ -322,6 +322,11 @@
             name="Matriz de Oportunidades"
             action="mgmtsystem_opportunity.matrix_matrix_opportunity_action"
             sequence="40" />
+        <menuitem name="Indicadores de riesgo" 
+        id="indicador_risk_menu"  
+        action="mgmtsystem_opportunity.evaluation_evaluation_action" 
+        groups="mgmtsystem_opportunity.group_opportunity_onlyread" 
+        sequence="50" />
     </menuitem>
 
     <menuitem id="legal_menu"
