@@ -38,6 +38,7 @@ class incident(http.Controller):
 
         reason_arr = []
 
+
         for val in kw.keys():
             if kw[val]:
                 if val == 'incident_files':
@@ -53,27 +54,19 @@ class incident(http.Controller):
                     #print (kw[val])
                     #real_values['categ_id'] = int(kw['categ_id'])
                 elif val == 'type':
-                    if kw[val] == 'Interna':
-                        real_values[val] = 'internal'
-                    elif kw[val] == 'Externa':
-                        real_values[val] = 'ext'
-                    if kw.get('type') and kw['type'] == 'Externa':
+                    real_values[val] = kw[val]
+                    
+                    if kw.get('type') and kw['type'] == 'ext':
                         partner_id = request.env['res.partner'].sudo().search(
                             [('name', '=', kw[val])])
                         if partner_id:
                             real_values['partner_id'] = partner_id.id
-                    elif kw.get('type') and kw['type'] == 'Interna':
+                    elif kw.get('type') and kw['type'] == 'internal':
                         employee_id = request.env['hr.employee'].sudo().search(
                             [('name', '=', kw[val])])
                         if employee_id:
                             real_values['employee_notify_id'] = employee_id.id
-                elif val == 'complainer_delivery_type':
-                    delivery_type_vals = {
-                        'Seleccione como quiere recibir la respuesta a tu reclamo': None,
-                        'Quiero recibirla por correo electronico': 'email',
-                        'Quiero recibirla por celular': 'phone',
-                    }
-                    real_values[val] = delivery_type_vals[kw[val]]
+                
                 else:
                     real_values[val] = kw[val]
                 

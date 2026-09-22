@@ -425,7 +425,7 @@
             <field name="view_mode">list,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Create analyses for ISO 27001.
+                    Create analysis for ISO 27001.
                 </p>
             </field>
         </record>

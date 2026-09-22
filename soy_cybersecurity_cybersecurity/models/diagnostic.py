@@ -6,7 +6,7 @@ from datetime import datetime
 from io import BytesIO
 from tempfile import NamedTemporaryFile
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from openpyxl import Workbook, load_workbook
 from openpyxl.cell.cell import MergedCell
 from openpyxl.styles import Alignment
@@ -17,12 +17,13 @@ _logger = logging.getLogger(__name__)
 
 # Porcentajes para las barras de cargas
 AVAILABLE_PRIORITIES = [
-    ('na', 'N/A - No aplica'),
-    ('0_porcent', '0% - No documentado / No existente'),
-    ('25_porcent', '25% - Aplicado / No documentado'),
-    ('50_porcent', '50% - Documentado / No aplicado'),
-    ('75_porcent', '75% - Aplicado y documentado'),
-    ('100_porcent', '100% - Aplicado, documentado y controlado')]
+    ('na', _('N/A - No aplica')),
+    ('0_porcent', _('0% - No documentado / No existente')),
+    ('25_porcent', _('25% - Applied / Not documented')),
+    ('50_porcent', _('50% - Documented / Not applied')),
+    ('75_porcent', _('75% - Applied and documented')),
+    ('100_porcent', _('100% - Applied, documented, and controlled')),
+]
 
 FIELDS = ( 
     'diagnostic4_1_ids', 'diagnostic4_2_ids', 'diagnostic4_3_ids', 'diagnostic4_4_ids',
@@ -38,18 +39,18 @@ class Requirement(models.Model):
     _description = "Requirimientos de diagnostico de SGSI"
 
     name = fields.Char(string=u'Nombre', required=True)
-    complete_name = fields.Text(string=u'Descripción', required=True)
-    info = fields.Text(string=u'Interpretación', store=True)
+    complete_name = fields.Text(string=u'Description', required=True)
+    info = fields.Text(string=u'Interpretation', store=True)
     clause_id = fields.Many2one(
-        string=u'Clausula', comodel_name='cybersecurity.clause', required=True)
+        string=u'Clause', comodel_name='cybersecurity.clause', required=True)
     chapter = fields.Selection(
-        string=u'Capítulo', related='clause_id.chapter', store=True)
-    position_excel = fields.Char(string=u'Posición en excel')
+        string=u'Chapter', related='clause_id.chapter', store=True)
+    position_excel = fields.Char(string=u'Position in Excel')
 
 
 class DiagnosticLine(models.Model):
     _name = 'cybersecurity.diagnostic.line'
-    _description = 'Linea de análisis de calidad'
+    _description = 'Quality analysis line'
 
     requirement_name = fields.Char(related='requirement_id.name')
     # FIX
@@ -129,10 +130,9 @@ class DiagnosticLine(models.Model):
         comodel_name='cybersecurity.clause',
         ondelete='cascade')
 
-    info = fields.Text(string=u'Interpretación',
-                       help="here is my message", store=True)
+    info = fields.Text(string=u'Interpretation',store=True)
 
-    name = fields.Text(string=u'Nombre requirimiento', store=True)
+    name = fields.Text(string=u'Requirement name', store=True)
 
     qualification = fields.Selection(AVAILABLE_PRIORITIES,
                                      index=True,
@@ -168,11 +168,11 @@ class Clause(models.Model):
     _name = 'cybersecurity.clause'
     _description = "Claúsulas"
 
-    question = fields.Text(string=u'Pregunta ref.', required=True)
-    name = fields.Char(string=u'Nombre', required=True)
-    complete_name = fields.Text(string=u'Descripción', required=True)
+    question = fields.Text(string=u'Question ref.', required=True)
+    name = fields.Char(string=u'Name', required=True)
+    complete_name = fields.Text(string=u'Description', required=True)
     chapter = fields.Selection(
-        string=u'Capítulo',
+        string=u'Chapter',
         selection=[
             ('4_context', 'Contexto de la organización'),
             ('5_leadership', 'Liderazgo'),
@@ -199,7 +199,7 @@ class Diagnostic(models.Model):
     )
 
     company_id = fields.Many2one(
-        string=u'Compañia', 
+        string=u'Company', 
         comodel_name='res.company', 
         required=True,
         domain=lambda self: [('id', 'in', self.env.user.company_ids.ids)], 
@@ -208,7 +208,7 @@ class Diagnostic(models.Model):
     date_diagnostic = fields.Datetime(
         string=u'Creation date', default=fields.Datetime.now, required=True)
     date_validate = fields.Datetime(
-        string=u'Fecha evaluación', related='xls_helper.date_validate')
+        string=u'Evaluation date', related='xls_helper.date_validate')
 
     all_clause = fields.Many2many(
         comodel_name='cybersecurity.clause', string=u'Clausulas')

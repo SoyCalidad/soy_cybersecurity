@@ -12,7 +12,7 @@
 
 /*form styles*/
 
-#msform {
+#incidentForm {
     text-align: center;
     position: relative;
     margin-top: 30px;
@@ -22,7 +22,7 @@
     vertical-align: middle;
 }
 
-#msform fieldset {
+#incidentForm fieldset {
     background: white;
     border: 0 none;
     border-radius: 0px;
@@ -36,13 +36,13 @@
 
 /*Hide all except first fieldset*/
 
-#msform fieldset:not(:first-of-type) {
+#incidentForm fieldset:not(:first-of-type) {
     display: none;
 }
 
 /*inputs*/
 
-#msform input, #msform textarea, #msform select {
+#incidentForm input, #incidentForm textarea, #incidentForm select {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 0px;
@@ -54,7 +54,7 @@
     font-size: 13px;
 }
 
-#msform input:focus, #msform textarea:focus {
+#incidentForm input:focus, #incidentForm textarea:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
@@ -68,7 +68,7 @@
 
 /*buttons*/
 
-#msform .action-button {
+#incidentForm .action-button {
     width: 120px;
     background: #ee0979;
     font-weight: bold;
@@ -82,11 +82,11 @@
     vertical-align: middle;
 }
 
-#msform .action-button:hover, #msform .action-button:focus {
+#incidentForm .action-button:hover, #incidentForm .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
 }
 
-#msform .action-button-previous {
+#incidentForm .action-button-previous {
     width: 100px;
     background: #C5C5F1;
     font-weight: bold;
@@ -98,7 +98,7 @@
     margin: 10px 5px;
 }
 
-#msform .action-button-previous:hover, #msform .action-button-previous:focus {
+#incidentForm .action-button-previous:hover, #incidentForm .action-button-previous:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
 }
 
@@ -257,8 +257,4 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-}
-
-#hidden_email, #hidden_phone {
-    display: none;
 }

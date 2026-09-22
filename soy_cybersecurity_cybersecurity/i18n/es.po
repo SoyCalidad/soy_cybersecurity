@@ -1,0 +1,3499 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* soy_cybersecurity_cybersecurity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-22 17:03+0000\n"
+"PO-Revision-Date: 2026-09-22 17:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.report,print_report_name:soy_cybersecurity_cybersecurity.cyber_2blockline_xlsx
+#: model:ir.actions.report,print_report_name:soy_cybersecurity_cybersecurity.matrix_individual_xlsx
+msgid "'%s' % object.name"
+msgstr "'%s' % object.name"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/diagnostic.py:0
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic_line__qualification__0_porcent
+msgid "0% - No documentado / No existente"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid ""
+"1. Identify the reason for the incident. You can select a maximum of 2 "
+"options."
+msgstr "1. Identifique el motivo del incidente. Puede seleccionar un máximo de 2 opciones."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "10. Mejora"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "10.1 No conformidades y acciones correctivas"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "10.2 Mejora continua"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/diagnostic.py:0
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic_line__qualification__100_porcent
+msgid "100% - Applied, documented, and controlled"
+msgstr "100% - Aplicado, documentado y controlado"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/diagnostic.py:0
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic_line__qualification__25_porcent
+msgid "25% - Applied / Not documented"
+msgstr "25% - Aplicado / No documentado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "4. Context"
+msgstr "4. Contexto"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "4. Contexto de la organización"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "4.1 Comprensión de la organización y de su contexto"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid ""
+"4.2 Comprensión de las necesidades y expectativas de las partes interesadas"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "4.3 Determinación del alcance del SGSI"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "4.4 Sistema de gestión de seguridad de la informacións"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__investigation_method__why
+msgid "5 Whys"
+msgstr "5 Porqués"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "5. Leadership"
+msgstr "5. Liderazgo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "5.1 Leadership and commitment"
+msgstr "5.1 Liderazgo y compromiso"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "5.2 Política de seguridad de la información"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "5.3 Roles, responsabilidades y autoridades"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/diagnostic.py:0
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic_line__qualification__50_porcent
+msgid "50% - Documented / Not applied"
+msgstr "50% - Documentado / No aplicado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "6. Planificación"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "6.1 Acciones para tratar riesgos y oportunidades"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid ""
+"6.2 Objetivos de seguridad de la información y planificación para lograrlos"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "7. Apoyo"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "7.1 Recursos"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "7.2 Competencia"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "7.3 Toma de Conciencia y formación"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "7.4 Comunicación"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "7.5 Informacion Documentada"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/diagnostic.py:0
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic_line__qualification__75_porcent
+msgid "75% - Applied and documented"
+msgstr "75% - Aplicado y documentado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "8. Operación"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "8.1 Planificación y control operacional"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "8.2 Análisis de riesgos de seguridad de la información"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "8.3 Tratamiento de riesgos"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "9. Desempeño"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "9. Evaluación del desempeño"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "9.1 Seguimiento, medición, análisis y evaluación"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "9.2 Auditoría interna"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "9.3 Revisión por la dirección"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid ""
+"<select id=\"complainer_delivery_type\" name=\"complainer_delivery_type\">\n"
+"                            <option selected=\"selected\" value=\"\">Select how you would like to receive the response to your incident.</option>\n"
+"                            <option value=\"email\">I want to receive it by email.</option>\n"
+"                            <option value=\"phone\">I want to receive it on my mobile phone.</option>\n"
+"                        </select>"
+msgstr ""
+"<select id=\"complainer_delivery_type\" name=\"complainer_delivery_type\">\n"
+"                            <option selected=\"selected\" value=\"\">Seleccione cómo desea recibir la respuesta a su incidente.</option>\n"
+"                            <option value=\"email\">Deseo recibirla por correo electrónico.</option>\n"
+"                            <option value=\"phone\">Deseo recibirla en mi teléfono móvil.</option>\n"
+"                        </select>"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid ""
+"<select id=\"type\" name=\"type\" required=\"\">\n"
+"                            <option disabled=\"\" selected=\"selected\" value=\"\">Tipo</option>\n"
+"                            <option value=\"internal\">Internal</option>\n"
+"                            <option value=\"ext\">External</option>\n"
+"                        </select>"
+msgstr ""
+"<select id=\"type\" name=\"type\" required=\"\">\n"
+"                            <option disabled=\"\" selected=\"selected\" value=\"\">Tipo</option>\n"
+"                            <option value=\"internal\">Interno</option>\n"
+"                            <option value=\"ext\">Externo</option>\n"
+"                        </select>"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.module.category,description:soy_cybersecurity_cybersecurity.cybersecurity_management
+msgid "Accesos para módulo Seguridad de la Información"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.menu_act_main
+msgid "Act"
+msgstr "Actuar"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__action_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__name
+msgid "Action"
+msgstr "Acción"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_needaction
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_needaction
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_needaction
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_needaction
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_needaction
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__action_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__action_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__action_ids
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.actions_menu
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_action_action_menu
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_line
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "Actions"
+msgstr "Acciones"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__active
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_evaluation__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_exception_decoration
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_exception_decoration
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_exception_decoration
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_exception_decoration
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_exception_decoration
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_type_icon
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_type_icon
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_type_icon
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_type_icon
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_type_icon
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícono del tipo de actividad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_line_form
+msgid "Add a question"
+msgstr "Añadir una pregunta"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_line_form
+msgid "Add a section"
+msgstr "Añadir una sección"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.controls_block_line_form
+msgid "Add to Statement of Applicability"
+msgstr "Añadir a la Declaración de Aplicabilidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_form
+msgid "Additional Controls"
+msgstr "Controles adicionales"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Additional information"
+msgstr "Información adicional"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__filter__none
+msgid "All Pending Lines"
+msgstr "Todas las líneas pendientes"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__filter__none
+msgid "All pending lines"
+msgstr "Todas las líneas pendientes"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__alternative
+msgid "Alternative"
+msgstr "Alternativa"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__alternative_description
+msgid "Alternative Description"
+msgstr "Descripción de la alternativa"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio__line_ids
+msgid "Alternatives"
+msgstr "Alternativas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_list_action
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__analisis_id
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.diagnosis_evaluation_menu
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.menu_diagnosis_main
+msgid "Analysis"
+msgstr "Análisis"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "Analyze in detail"
+msgstr "Analizar en detalle"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+msgid "Another reason"
+msgstr "Otro motivo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_clause__chapter__7_support
+msgid "Apoyo"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__application
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__applicability_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__application
+msgid "Applicability"
+msgstr "Aplicabilidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_2matrix_block_line
+msgid "Applicability Statement"
+msgstr "Declaración de aplicabilidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_2matrix_matrix
+msgid "Applicability Statement Matrix"
+msgstr "Matriz de declaración de aplicabilidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__description_application
+msgid "Application Description"
+msgstr "Descripción de la aplicación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__applies
+msgid "Applies"
+msgstr "Aplica"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__authorizing_user_id
+msgid "Approving Authority"
+msgstr "Autoridad de aprobación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__elaboration_users_check
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__elaboration_users_check
+msgid "Aprobada elaboración"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__review_users_check
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__review_users_check
+msgid "Aprobada revisión"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__validation_users_check
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__validation_users_check
+msgid "Aprobada validación"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_evaluation_view_form
+msgid "Archivado"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "Are you sure you want to create a new version?"
+msgstr "¿Está seguro de que desea crear una nueva versión?"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__department_id
+msgid "Area"
+msgstr "Área"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.cyber_evaluation_action
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "Assessment"
+msgstr "Evaluación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_block_line_asset_type_form
+msgid "Asset Type Name"
+msgstr "Nombre del tipo de activo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_asset_type__name
+msgid "Asset Types"
+msgstr "Tipos de activos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__ntr
+msgid "Asset Value"
+msgstr "Valor del activo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.cyber_matrix_block_line_asset_type_action
+msgid "Asset types"
+msgstr "Tipos de activos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_attachment_count
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_attachment_count
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_attachment_count
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_attachment_count
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_attachment_count
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__attachment_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__incident_files
+msgid "Attachments"
+msgstr "Archivos adjuntos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_audit_audit_menu
+msgid "Audit Plan"
+msgstr "Plan de auditoría"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_audit_plan_menu
+msgid "Audit Program"
+msgstr "Programa de auditoría"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_audit_audit_report_menu
+msgid "Audit Report"
+msgstr "Informe de auditoría"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.audit_menu
+msgid "Audits"
+msgstr "Auditorías"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "Back"
+msgstr "Regresar"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__filter__date
+msgid "Between Creation Date Range"
+msgstr "Entre rango de fechas de creación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__filter__date
+msgid "Between creation date range"
+msgstr "Entre rango de fechas de creación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__filter__block
+msgid "By Sources"
+msgstr "Por fuentes"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__filter__block
+msgid "By sources"
+msgstr "Por fuentes"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+msgid "CONTROL NAME"
+msgstr "NOMBRE DEL CONTROL"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__qualification
+msgid "Calificación"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__can_edit_form
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__can_edit_form
+msgid "Can Edit Form"
+msgstr "Puede editar formulario"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_checklist_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+msgid "Cancelar"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block__state__cancel
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__state__cancel
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_checklist__state__cancel
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state__cancel
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state_line__cancel
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block__state__cancel
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block_line__state__cancel
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__state__cancel
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__state_line__cancel
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__state__cancel
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_2matrix_categ
+msgid "Categoria de matriz"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__categ_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__categ_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__cause
+msgid "Cause"
+msgstr "Causa"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__agent_id
+msgid "Cause Agent"
+msgstr "Agente causante"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__investigation_method__cause
+msgid "Cause-and-Effect Analysis"
+msgstr "Análisis de causa y efecto"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__cause_ids
+msgid "Causes"
+msgstr "Causas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.matrix_improve_menu
+msgid "Change Management Program"
+msgstr "Programa de gestión de cambios"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.improve_menu
+msgid "Changes"
+msgstr "Cambios"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_clause__chapter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__chapter
+msgid "Chapter"
+msgstr "Capítulo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.menu_check_main
+msgid "Check"
+msgstr "Verificar"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_2matrix_checklist
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__checklist_id
+msgid "Checklist"
+msgstr "Lista de chequeo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_2matrix_checklist_control
+msgid "Checklist Control"
+msgstr "Control de lista de chequeo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_2matrix_checklist_line
+msgid "Checklist Line"
+msgstr "Línea de lista de chequeo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_incident_incident
+msgid "Claim"
+msgstr "Reclamación / Incidente"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_mgmtsystem_nonconformity_cause_why__incident_cause_id
+msgid "Claim (Cause)"
+msgstr "Reclamación (Causa)"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_mgmtsystem_nonconformity_cause_why__incident_why_id
+msgid "Claim (Why?)"
+msgstr "Reclamación (¿Por qué?)"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_incident_via
+msgid "Claim Method"
+msgstr "Método de reclamación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__clause_id
+msgid "Clause"
+msgstr "Cláusula"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.clause_menu_action
+msgid "Clauses"
+msgstr "Cláusulas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.cybersecurity_clause__action
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cybersecurity_clause
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__clause
+msgid "Claúsulas"
+msgstr "Cláusulas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "Client/Supplier"
+msgstr "Cliente/Proveedor"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__state__close
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__comments
+msgid "Comments"
+msgstr "Comentarios"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__complainer_delivery_type
+msgid "Communication Method"
+msgstr "Método de comunicación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_comunication_comunication_plan_line_menu
+msgid "Communication Plan"
+msgstr "Plan de comunicación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_comunication_comunication_plan_menu
+msgid "Communication Program"
+msgstr "Programa de comunicación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.comunication_menu
+msgid "Communications"
+msgstr "Comunicaciones"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_categ__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_agent__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_language__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_location__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_resource__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_system__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_categ__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__company_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_via__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__description
+msgid "Company Perspective"
+msgstr "Perspectiva de la empresa"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_mgmtsystem_nonconformity_cause_why
+msgid "Complaint Complaint Cause Why"
+msgstr "Causa de la queja (¿Por qué?)"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic__state__validate
+msgid "Completed"
+msgstr "Completado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__date_fin
+msgid "Completion Date"
+msgstr "Fecha de finalización"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__conclusions
+msgid "Conclusions"
+msgstr "Conclusiones"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.configuration_menu
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.partner_menu
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_clause__chapter__4_context
+msgid "Contexto de la organización"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__control
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__checklist_control_control
+msgid "Control"
+msgstr "Control"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_2matrix_block_line_ctrl_target
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__ctrl_target_id
+msgid "Control Objective"
+msgstr "Objetivo de control"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_domain__ctrl_target_id
+msgid "Control Objectives"
+msgstr "Objetivos de control"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__type_ctrl
+msgid "Control Type"
+msgstr "Tipo de control"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__applicability_id_description_application
+msgid "Control description"
+msgstr "Descripción del control"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__reference
+msgid "Control implementation reference"
+msgstr "Referencia de implementación del control"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__is_implemented
+msgid "Control implemented?"
+msgstr "¿Control implementado?"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__applicability_id_name
+msgid "Control name"
+msgstr "Nombre del control"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.cyber_2matrix_checklist_control_action
+msgid "Controles de Lista de verificación"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.controls_block_line_action
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__type_ctrl__controls
+msgid "Controls"
+msgstr "Controles"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Correo electrónico"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.actions.act_window,help:soy_cybersecurity_cybersecurity.cybersecurity_clause__action
+msgid "Crea claúsulas de gestión de sistemas de información"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.actions.act_window,help:soy_cybersecurity_cybersecurity.requirement_list_action
+msgid "Crea requisitos de SGSI"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.actions.act_window,help:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_list_action
+msgid "Create analysis for ISO 27001."
+msgstr "Crear análisis para ISO 27001."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_ctrl_target__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_domain__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_categ__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_evaluation__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_agent__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_asset_type__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_language__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_location__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_resource__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_system__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_categ__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_clause__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident_reason__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__create_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_via__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_ctrl_target__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_domain__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_categ__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_evaluation__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_agent__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_asset_type__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_language__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_location__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_resource__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_system__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_categ__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_clause__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident_reason__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__create_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_via__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__date_diagnostic
+msgid "Creation date"
+msgstr "Fecha de creación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_evaluation__criterio_ids
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_evaluation_view_form
+msgid "Criteria"
+msgstr "Criterios"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.evaluation_criterio_line_view_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.evaluation_criterio_line_view_list
+msgid "Criterio"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__criterio_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__criterio_id
+msgid "Criterion"
+msgstr "Criterio"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "Culminate"
+msgstr "Culminar"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__type_partner__internal
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_mgmtsystem_validation_step__cyber_2matrix_elaboration_id
+msgid "Cyber Matrix Elaboration"
+msgstr "Elaboración de matriz de ciberseguridad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_mgmtsystem_validation_step__cyber_2matrix_review_id
+msgid "Cyber Matrix Review"
+msgstr "Revisión de matriz de ciberseguridad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_mgmtsystem_validation_step__cyber_2matrix_validation_id
+msgid "Cyber Matrix Validation"
+msgstr "Validación de matriz de ciberseguridad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__code
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__code
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__code
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__code
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__code
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__code
+msgid "Código"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__old_code
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__old_code
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__old_code
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__old_code
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__old_code
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__old_code
+msgid "Código antiguo"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.diagnosis_data_menu
+msgid "Data"
+msgstr "Datos"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+msgid "Date and time of the incident"
+msgstr "Fecha y hora del incidente"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__deadline
+msgid "Deadline"
+msgstr "Fecha límite"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/app_ctrl_mgmt.py:0
+msgid "Deleting records is only allowed in draft and in progress states"
+msgstr "Solo se permite eliminar registros en los estados borrador y en progreso"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/asset_management.py:0
+msgid "Deleting records is only allowed in draft and preparation states"
+msgstr "Solo se permite eliminar registros en los estados borrador y preparación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.employee_department_menu_action
+msgid "Departments"
+msgstr "Departamentos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Descripción"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_domain__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__checklist_control_description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_agent__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_clause__complete_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__complete_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident_reason__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__description
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_via__description
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.controls_block_line_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic__state__evaluate
+msgid "Detailed"
+msgstr "Detallado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "Details"
+msgstr "Detalles"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_line_form
+msgid "Detalle de linea"
+msgstr "Detalle de línea"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__date_incident
+msgid "Detection Date"
+msgstr "Fecha de detección"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic4_1_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic4_2_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic4_3_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic4_4_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic5_1_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic5_2_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic5_3_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic6_1_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic6_2_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic7_1_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic7_2_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic7_3_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic7_4_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic7_5_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic8_1_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic8_2_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic8_3_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic9_1_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic9_2_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic9_3_id
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "Diagnostico"
+msgstr "Diagnóstico"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic10_1_id
+msgid "Diagnostico 10.1"
+msgstr "Diagnóstico 10.1"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic10_2_id
+msgid "Diagnostico 10.2"
+msgstr "Diagnóstico 10.2"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cybersecurity_diagnostic
+msgid "Diagnostico SI"
+msgstr "Diagnóstico SI"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block_line__storage_medium__digital
+msgid "Digital"
+msgstr "Digital"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_ctrl_target__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_domain__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_categ__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_evaluation__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_agent__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_asset_type__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_language__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_location__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_resource__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_system__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_categ__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_clause__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident_reason__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__display_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_via__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__display_type
+msgid "Display Type"
+msgstr "Tipo de visualización"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.menu_do_main
+msgid "Do"
+msgstr "Hacer"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__complainer_document_number
+msgid "Document Number"
+msgstr "Número de documento"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__complainer_document_type
+msgid "Document Type"
+msgstr "Tipo de documento"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+msgid "Document number"
+msgstr "Número de documento"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__documentary_control_ids
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_2matrix_block_line_domain
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__domain_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_ctrl_target__domain_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__applicability_id_domain_id
+msgid "Domain"
+msgstr "Dominio"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__domain_description
+msgid "Domain Description"
+msgstr "Descripción del dominio"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block__state__draft
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__state__draft
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_checklist__state__draft
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state_line__draft
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block__state__draft
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block_line__state__draft
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__state_line__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__sequence_id
+msgid "Edition Sequence"
+msgstr "Secuencia de edición"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_categ__sequence_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__sequence_id
+msgid "Editions Sequence"
+msgstr "Secuencia de ediciones"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__effect
+msgid "Effect"
+msgstr "Efecto"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident_done
+msgid ""
+"El incidente ha sido enviado con éxito. Nos pondremos en contacto con usted "
+"lo antes posible."
+msgstr ""
+"El incidente ha sido enviado con éxito. Nos pondremos en contacto con usted "
+"lo antes posible."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid ""
+"El proceso ha sido culminado, para ver los datos puede generar un reporte."
+msgstr ""
+"El proceso ha sido culminado, para ver los datos puede generar un reporte."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__elaboration_step
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__elaboration_step
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+msgid "Elaboration"
+msgstr "Elaboración"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__date_elaborate
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__date_elaborate
+msgid "Elaboration Date"
+msgstr "Fecha de elaboración"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__complainer_email
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.employee_employee_menu
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.employees_menu
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__date_fin
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__date_fin
+msgid "End Date"
+msgstr "Fecha final"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Enter the details regarding the incident."
+msgstr "Ingrese los detalles relativos al incidente."
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Enter your personal details"
+msgstr "Ingrese sus datos personales"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.hr_equipment_menu
+msgid "Equipment"
+msgstr "Equipamiento"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_mgmtsystem_validation_step
+msgid "Etapas de validación"
+msgstr "Etapas de validación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_evaluation_view_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_evaluation_view_list
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.evaluation_result_view_form
+msgid "Evaluación"
+msgstr "Evaluación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_clause__chapter__9_evaluation
+msgid "Evaluación del desempeño"
+msgstr "Evaluación del desempeño"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio__evaluation_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__evaluation_id
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "Evaluation"
+msgstr "Evaluación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__date_validate
+msgid "Evaluation date"
+msgstr "Fecha de evaluación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__executor_user_id
+msgid "Execution Person Responsible"
+msgstr "Persona responsable de la ejecución"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__type__ext
+msgid "External"
+msgstr "Externo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.incident_incident_ext_action
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.indicent_menu_ext
+msgid "External Incidents"
+msgstr "Incidentes externos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__deactivate_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__deactivate_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__deactivate_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__deactivate_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__deactivate_date
+msgid "Fecha de expiración"
+msgstr "Fecha de expiración"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Fecha y hora del incidente"
+msgstr "Fecha y hora del incidente"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__datas
+msgid "File"
+msgstr "Archivo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__datas_fname
+msgid "Filename"
+msgstr "Nombre de archivo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__filter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__filter
+msgid "Filter By"
+msgstr "Filtrar por"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+msgid "Fist and last names"
+msgstr "Nombres y apellidos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_follower_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_follower_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_follower_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_follower_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_follower_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_partner_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_partner_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_partner_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_partner_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_partner_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_type_icon
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_type_icon
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_type_icon
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_type_icon
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_type_icon
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome ej. fa-tasks"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__complainer_document_type__car
+msgid "Foreign ID"
+msgstr "Carné de extranjería"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.matrix_block_risk_action
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_list
+msgid "Fuentes"
+msgstr "Fuentes"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__complainer_name
+msgid "Full Name"
+msgstr "Nombre completo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "Generate Report"
+msgstr "Generar reporte"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__employee_id
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__has_message
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__has_message
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__has_message
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__has_message
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__has_message
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__priority__3
+msgid "High"
+msgstr "Alta"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__value_high
+msgid "Higher Value"
+msgstr "Valor más alto"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__complainer_delivery_type__email
+msgid "I want to receive it by email"
+msgstr "Quiero recibirlo por correo electrónico"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+msgid "I want to receive it by email."
+msgstr "Quiero recibirlo por correo electrónico."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__complainer_delivery_type__phone
+msgid "I want to receive it by mobile phone"
+msgstr "Quiero recibirlo en mi teléfono móvil"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+msgid "I want to receive it on my mobile phone."
+msgstr "Quiero recibirlo en mi teléfono móvil."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_ctrl_target__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_domain__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_categ__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_evaluation__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_agent__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_asset_type__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_language__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_location__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_resource__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_system__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_categ__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_clause__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident_reason__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_via__id
+msgid "ID"
+msgstr "ID"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__complainer_document_type__dni
+msgid "ID Card (DNI)"
+msgstr "Documento de identidad (DNI)"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.menu_cybersecurity_root
+msgid "ISO 27001"
+msgstr "ISO 27001"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_exception_icon
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_exception_icon
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_exception_icon
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_exception_icon
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_exception_icon
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_exception_icon
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_exception_icon
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_exception_icon
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_exception_icon
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_exception_icon
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__system_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__system_id
+msgid "Identifier"
+msgstr "Identificador"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.cyber_matrix_block_line_language_action
+msgid "Idiomas"
+msgstr "Idiomas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_needaction
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_needaction
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_needaction
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_needaction
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_needaction
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los nuevos mensajes requieren su atención."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_has_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_has_sms_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_has_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_has_sms_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_has_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_has_sms_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_has_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_has_sms_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_has_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_has_sms_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__message_has_error
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__is_open
+msgid ""
+"If the affected party does not accept the quick action, non-conformities and"
+" actions are opened"
+msgstr ""
+"Si la parte afectada no acepta la acción rápida, se abrirán "
+"no conformidades y acciones"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__implementation_record
+msgid "Implementation Evidence or Record"
+msgstr "Evidencia o registro de implementación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.improve_item_menu
+msgid "Improvement"
+msgstr "Mejora"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__state__elaborate
+msgid "In Preparation"
+msgstr "En preparación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block__state__elaborate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__state_line__elaborate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__state__in_process
+msgid "In Process"
+msgstr "En proceso"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block__state__elaborate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state__elaborate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state_line__elaborate
+msgid "In Progress"
+msgstr "En progreso"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state__review
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__state__review
+msgid "In Review"
+msgstr "En revisión"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state__validate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__state__validate
+msgid "In Validation"
+msgstr "En validación"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Incident information"
+msgstr "Información del incidente"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.indicent_menu
+msgid "Incidents"
+msgstr "Incidentes"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "Indicator"
+msgstr "Indicador"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.target_indicator_action_menu
+msgid "Indicators"
+msgstr "Indicadores"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.matrix_block_line_information_asset_action
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_matrix_block_line
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mitem_block_line_information_asset
+msgid "Information Asset Inventory"
+msgstr "Inventario de activos de información"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.matrix_matrix_information_asset_action
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.matrix_matrix_information_asset_menu
+msgid "Information Asset Inventory Matrix"
+msgstr "Matriz de inventario de activos de información"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_matrix_block_line_language
+msgid "Information Asset Language"
+msgstr "Idioma del activo de información"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_matrix_block_line_location
+msgid "Information Asset Location"
+msgstr "Ubicación del activo de información"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.report,name:soy_cybersecurity_cybersecurity.matrix_individual_xlsx
+msgid "Information Asset Matrix Report"
+msgstr "Informe de la matriz de activos de información"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_matrix_block_line_resource
+msgid "Information Asset Resource"
+msgstr "Recurso del activo de información"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_matrix_block_line_asset_type
+msgid "Information Asset Types"
+msgstr "Tipos de activos de información"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.module.category,name:soy_cybersecurity_cybersecurity.cybersecurity_management
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.si_menu
+msgid "Information Security"
+msgstr "Seguridad de la información"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.partner_initial_evaluation_menu
+msgid "Initial Evaluation"
+msgstr "Evaluación inicial"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.context_stakeholder_menu
+msgid "Interested Parties"
+msgstr "Partes interesadas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_context_stakeholder_matrix_menu
+msgid "Interested Parties Matrix"
+msgstr "Matriz de partes interesadas"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__type__internal
+msgid "Internal"
+msgstr "Interno"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.context_context_internal_issue_menu
+msgid "Internal Context"
+msgstr "Contexto interno"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.incident_incident_int_action
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.indicent_menu_int
+msgid "Internal Incidents"
+msgstr "Incidentes internos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:res.groups,name:soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport
+msgid "Internal user: Read and print"
+msgstr "Usuario interno: Leer e imprimir"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__type__international
+msgid "International"
+msgstr "Internacional"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__interpretation_asset
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__interpretation_opportunity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__info
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__info
+msgid "Interpretation"
+msgstr "Interpretación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__investigation
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "Investigation"
+msgstr "Investigación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__investigation_method
+msgid "Investigation Method"
+msgstr "Método de investigación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "Involved"
+msgstr "Involucrados"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__department_id
+msgid "Involved Area"
+msgstr "Área involucrada"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/login_popup/login_popup.xml:0
+msgid "Ir al sistema"
+msgstr "Ir al sistema"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_is_follower
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_is_follower
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_is_follower
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_is_follower
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_is_follower
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__is_page
+msgid "Is a page?"
+msgstr "¿Es una página?"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.employee_job_menu
+msgid "Job Positions"
+msgstr "Puestos de trabajo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__justification
+msgid "Justification for applicability / non-applicability"
+msgstr "Justificación de aplicabilidad / no aplicabilidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "La alta dirección debe:"
+msgstr "La alta dirección debe:"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "La organización Debe:"
+msgstr "La organización debe:"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "La organización debe"
+msgstr "La organización debe"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "La organización debe:"
+msgstr "La organización debe:"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__language_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_language__name
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_block_line_language_form
+msgid "Language"
+msgstr "Idioma"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_ctrl_target__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_domain__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_categ__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_evaluation__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_agent__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_asset_type__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_language__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_location__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_resource__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_system__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_categ__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_clause__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident_reason__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__write_uid
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_via__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_ctrl_target__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_domain__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_categ__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_evaluation__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_agent__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_asset_type__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_language__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_location__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_resource__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_system__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_categ__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_clause__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident_reason__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__write_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_via__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.legal_menu
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_legal_legal_menu
+msgid "Legal Requirements"
+msgstr "Requisitos legales"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_legal_menu
+msgid "Legal Requirements Matrix"
+msgstr "Matriz de requisitos legales"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_clause__chapter__5_leadership
+msgid "Liderazgo"
+msgstr "Liderazgo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__line_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__line_ids
+msgid "Line"
+msgstr "Línea"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__state_line
+msgid "Line State"
+msgstr "Estado de la línea"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic10_1_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic10_2_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic4_1_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic4_2_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic4_3_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic4_4_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic5_1_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic5_2_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic5_3_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic6_1_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic6_2_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_1_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_2_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_3_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_4_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_5_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic8_1_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic8_2_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic8_3_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic9_1_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic9_2_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic9_3_ids
+msgid "Lineas"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_2matrix_matrix_line
+msgid "Lineas de la Matrix de declaración de aplicabilidad"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__line_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__line_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__line_ids
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_checklist_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_form
+msgid "Lines"
+msgstr "Lineas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+msgid "Lines detail"
+msgstr "Detalle de líneas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.cyber_2matrix_checklist_action
+msgid "Lista de verificación"
+msgstr "Lista de verificación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__location_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_location__name
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_block_line_location_form
+msgid "Location Name"
+msgstr "Nombre de ubicación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__place
+msgid "Location where the incident occurred"
+msgstr "Ubicación donde ocurrió el incidente"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__priority__1
+msgid "Low"
+msgstr "Bajo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__value_less
+msgid "Lower Value"
+msgstr "Valor inferior"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.maintance_menu
+msgid "Maintenance"
+msgstr "Mantenimiento"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.hola_calidad_mgmtsystem_maintance_maintance
+msgid "Maintenance Plan"
+msgstr "Plan de mantenimiento"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.hola_calidad_mgmtsystem_maintance_plan
+msgid "Maintenance Program"
+msgstr "Programa de mantenimiento"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_review_review_menu
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.review_menu
+msgid "Management Review"
+msgstr "Revisión por la dirección"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_review_plan_menu
+msgid "Management Review Program"
+msgstr "Programa de revisión por la dirección"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_process_documentary_menu
+msgid "Master List"
+msgstr "Lista maestra"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_categ__matrix_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_categ__matrix_ids
+msgid "Matrices"
+msgstr "Matrices"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_matrix_matrix
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix_line__matrix_id
+msgid "Matrix"
+msgstr "Matriz"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_matrix_categ
+msgid "Matrix Category"
+msgstr "Categoría de matriz"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_mgmtsystem_validation_step__cyber_matrix_elaboration_id
+msgid "Matrix Cyber Elaboration "
+msgstr "Elaboración de matriz de ciberseguridad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_mgmtsystem_validation_step__cyber_matrix_review_id
+msgid "Matrix Cyber Review"
+msgstr "Revisión de matriz de ciberseguridad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_mgmtsystem_validation_step__cyber_matrix_validation_id
+msgid "Matrix Cyber Validation"
+msgstr "Validación de matriz de ciberseguridad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__categ_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__categ_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__name
+msgid "Matrix Name"
+msgstr "Nombre de matriz"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__priority__2
+msgid "Medium"
+msgstr "Medio"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_comunication_record_meeting_menu
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_review_act_menu
+msgid "Meeting Minutes"
+msgstr "Minuta de reunión"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_clause__chapter__10_improvement
+msgid "Mejora"
+msgstr "Mejora"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_has_error
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_has_error
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_has_error
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_has_error
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_has_error
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de envío de mensaje"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__via_ids
+msgid "Method"
+msgstr "Método"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.controls_block_line_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_checklist_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "Multi-Company"
+msgstr "Multicompañía"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__my_activity_date_deadline
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__my_activity_date_deadline
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__my_activity_date_deadline
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__my_activity_date_deadline
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__my_activity_date_deadline
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de mi actividad"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/diagnostic.py:0
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic_line__qualification__na
+msgid "N/A - No aplica"
+msgstr "N/A - No aplica"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_ctrl_target__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line_domain__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_categ__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_criterio_line__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_evaluation__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_agent__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_system__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_categ__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_clause__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident_reason__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_via__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__type__national
+msgid "National"
+msgstr "Nacional"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "New version"
+msgstr "Nueva versión"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_calendar_event_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_calendar_event_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_calendar_event_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_calendar_event_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_calendar_event_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento del calendario de la siguiente actividad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_date_deadline
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_date_deadline
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_date_deadline
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_date_deadline
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_date_deadline
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite de la siguiente actividad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_summary
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_summary
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_summary
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_summary
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_summary
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_type_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_type_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_type_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_type_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_type_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la siguiente actividad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix_line__application__no
+msgid "No"
+msgstr "No"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__requirement_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__name
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__unrevisioned_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__unrevisioned_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__unrevisioned_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__unrevisioned_name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__unrevisioned_name
+msgid "Nombre de la edición"
+msgstr "Nombre de la edición"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Nombres y apellidos"
+msgstr "Nombres y apellidos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__nonconformity_ids
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_nc_nc_menu
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.nc_menu
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "Non-conformities"
+msgstr "No conformidades"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__priority__0
+msgid "Not Set"
+msgstr "No establecido"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic_line__display_type__line_note
+msgid "Note"
+msgstr "Nota"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__employee_notify_id
+msgid "Notified by"
+msgstr "Notificado por"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__perspective
+msgid "Notifier Description"
+msgstr "Descripción del notificante"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__quick_response
+msgid "Notifier Response"
+msgstr "Respuesta del notificante"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__partner_id
+msgid "Notifying Customer"
+msgstr "Cliente notificante"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__number
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__number_compute
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__checklist_control_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_line__checklist_control_number
+msgid "Number"
+msgstr "Número"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_needaction_counter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_needaction_counter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_needaction_counter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_needaction_counter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_needaction_counter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_has_error_counter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_has_error_counter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_has_error_counter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_has_error_counter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_has_error_counter
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_needaction_counter
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_needaction_counter
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_needaction_counter
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_needaction_counter
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_needaction_counter
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren acción"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_has_error_counter
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_has_error_counter
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_has_error_counter
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_has_error_counter
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_has_error_counter
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Número de documento"
+msgstr "Número de documento"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__version
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__version
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__version
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__version
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__version
+msgid "Número de versión"
+msgstr "Número de versión"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_target_target_action_menu
+msgid "Objectives"
+msgstr "Objetivos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.target_menu
+msgid "Objectives and Measurement"
+msgstr "Objetivos y medición"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__observation
+msgid "Observaciones"
+msgstr "Observaciones"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__old_versions
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__old_versions
+msgid "Old Versions"
+msgstr "Versiones antiguas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "Old versions"
+msgstr "Versiones antiguas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__old_versions
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__old_versions
+msgid "Older Versions"
+msgstr "Versiones anteriores"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_form
+msgid "Older versions"
+msgstr "Versiones anteriores"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__state__open
+msgid "Open"
+msgstr "Abierto"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__elaborate_ids
+msgid "Opened by"
+msgstr "Abierto por"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__opening_date
+msgid "Opening Date"
+msgstr "Fecha de apertura"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__is_open
+msgid "Opening of Corrective Action"
+msgstr "Apertura de acción correctiva"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_clause__chapter__8_operation
+msgid "Operación"
+msgstr "Operación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__opp_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__opps_count
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__opp_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__opps_count
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_opp_action
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "Opportunities"
+msgstr "Oportunidades"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.opp_opp_menu
+msgid "Opportunity Matrix"
+msgstr "Matriz de oportunidades"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.hr_org_chart_menu
+msgid "Organizational Chart"
+msgstr "Organigrama"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.context_menu
+msgid "Organizational Context"
+msgstr "Contexto de la organización"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__other
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__other
+msgid "Other"
+msgstr "Otro"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__reason_other
+msgid "Other Reason"
+msgstr "Otro motivo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Otro motivo"
+msgstr "Otro motivo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__parent_edition
+msgid "Padre"
+msgstr "Padre"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__parent_edition
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__parent_edition
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__parent_edition
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__parent_edition
+msgid "Parent"
+msgstr "Padre"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__type_partner
+msgid "Partner Type"
+msgstr "Tipo de contacto"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__complainer_document_type__pas
+msgid "Passport"
+msgstr "Pasaporte"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__periodic_control
+msgid "Periodic Control"
+msgstr "Control periódico"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "Personal details"
+msgstr "Detalles personales"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Personal information"
+msgstr "Información personal"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__complainer_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block_line__storage_medium__physical
+msgid "Physical"
+msgstr "Físico"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.menu_plan_main
+msgid "Plan"
+msgstr "Plan"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_clause__chapter__6_planning
+msgid "Planificación"
+msgstr "Planificación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.policy_real_menu
+msgid "Policy"
+msgstr "Política"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_requirement__position_excel
+msgid "Position in Excel"
+msgstr "Posición en Excel"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
+msgid "Preliminary analysis"
+msgstr "Análisis preliminar"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__elaborate_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__elaborate_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_via__elaborate_ids
+msgid "Prepared by"
+msgstr "Elaborado por"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic__state__draft
+msgid "Previous"
+msgstr "Anterior"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__priority
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_categ__sequence
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_quick_action__sequence
+msgid "Priority"
+msgstr "Prioridad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__process_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__process_id
+msgid "Procedure"
+msgstr "Procedimiento"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_process_process_menu
+msgid "Procedures"
+msgstr "Procedimientos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__process_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__process_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__process_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__process_id
+msgid "Process"
+msgstr "Proceso"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_process_categ_menu
+msgid "Process Map"
+msgstr "Mapa de procesos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.process_menu
+msgid "Processes"
+msgstr "Procesos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__product_id
+msgid "Product/Service"
+msgstr "Producto/Servicio"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cybersecurity_diagnostic_line
+msgid "Quality analysis line"
+msgstr "Línea de análisis de calidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_clause__question
+msgid "Question ref."
+msgstr "Ref. de pregunta"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__quick_action_id
+msgid "Quick Action"
+msgstr "Acción rápida"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_incident_quick_action
+msgid "Quick action for claim"
+msgstr "Acción rápida para reclamo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__rating_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__rating_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__rating_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__rating_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__rating_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__rating_ids
+msgid "Ratings"
+msgstr "Calificaciones"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.partner_followup_evaluation_menu
+msgid "Re-evaluation"
+msgstr "Reevaluación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_incident_incident_reason
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__reason_ids
+msgid "Reason"
+msgstr "Motivo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.cyber_matrix_block_line_resource_action
+msgid "Recursos"
+msgstr "Recursos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__name
+msgid "Requirement name"
+msgstr "Nombre del requisito"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.requirement_menu_action
+msgid "Requirements"
+msgstr "Requisitos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cybersecurity_diagnostic_requirement
+msgid "Requirimientos de diagnostico de SGSI"
+msgstr "Requerimientos de diagnóstico de SGSI"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__requirement_id
+msgid "Requisito"
+msgstr "Requisito"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.requirement_list_action
+msgid "Requisitos"
+msgstr "Requisitos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__resource_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line_resource__name
+msgid "Resource"
+msgstr "Recurso"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_block_line_resource_form
+msgid "Resource Name"
+msgstr "Nombre del recurso"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__response
+msgid "Response to Action"
+msgstr "Respuesta a la acción"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__user_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__user_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__user_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__responsable_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_user_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_user_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_user_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_user_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_user_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:res.groups,name:soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport
+msgid "Responsible for: Reading and editing "
+msgstr "Responsable de: Lectura y edición "
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__result_ids
+msgid "Results"
+msgstr "Resultados"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__review_step
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__review_step
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+msgid "Review"
+msgstr "Revisión"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__date_review
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__date_review
+msgid "Review Date"
+msgstr "Fecha de revisión"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_matrix_block_line_system
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__system_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__system_id
+msgid "Risk Identifier"
+msgstr "Identificador de riesgo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.indicador_risk_menu
+msgid "Risk Indicators"
+msgstr "Indicadores de riesgo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.opp_risk_menu
+msgid "Risk Matrix"
+msgstr "Matriz de riesgos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__filter__state
+msgid "Risk State"
+msgstr "Estado del riesgo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__filter__state
+msgid "Risk state"
+msgstr "Estado del riesgo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_matrix_block_line_agent
+msgid "Risk/Opportunity Agent"
+msgstr "Agente de riesgo/oportunidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__risk_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__risks_count
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__risk_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__risks_count
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_risk_action
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "Risks"
+msgstr "Riesgos"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.opp_menu
+msgid "Risks and Opportunities"
+msgstr "Riesgos y oportunidades"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "Risks and opportunities"
+msgstr "Riesgos y oportunidades"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__root_cause
+msgid "Root Cause"
+msgstr "Causa raíz"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__message_has_sms_error
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__message_has_sms_error
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__message_has_sms_error
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__message_has_sms_error
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__message_has_sms_error
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+msgid "STATE"
+msgstr "ESTADO"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+msgid "STATEMENT OF APPLICABILITY"
+msgstr "DECLARACIÓN DE APLICABILIDAD"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.factor_foda_menu
+msgid "SWOT"
+msgstr "FODA"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__satisfied
+msgid "Satisfied"
+msgstr "Satisfecho"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:res.groups,name:soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario
+msgid "Secondary User: Editing own documents"
+msgstr "Usuario secundario: Edición de documentos propios"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic_line__display_type__line_section
+msgid "Section"
+msgstr "Sección"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_categ__sequence_id
+msgid "Secuencia de ediciones"
+msgstr "Secuencia de ediciones"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__filter__partial
+msgid "Select Manually"
+msgstr "Seleccionar manualmente"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+msgid "Select how you would like to receive the response to your incident."
+msgstr "Seleccione cómo le gustaría recibir la respuesta a su incidente."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__filter__partial
+msgid "Select manually"
+msgstr "Seleccionar manualmente"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist_control__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__numero
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__numero
+msgid "Sequence Number"
+msgstr "Número de secuencia"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_settings_menu
+msgid "Settings"
+msgstr "Configuración"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "Solution"
+msgstr "Solución"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__date_solution
+msgid "Solution Date"
+msgstr "Fecha de solución"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "Solutionn"
+msgstr "Solución"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_2matrix_block
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_matrix_block
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__block_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__name
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__block_id
+msgid "Source"
+msgstr "Origen"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__block_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__block_ids
+msgid "Sources"
+msgstr "Orígenes"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__xls_helper
+msgid "Soy Calidad"
+msgstr "Soy Calidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_form
+msgid "Start"
+msgstr "Iniciar"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__date_init
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__date_init
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block__state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block__state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__state
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__state_line
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__state
+msgid "State"
+msgstr "Estado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.matrix_block_line_app_ctrl_mgmt_action
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__type_ctrl__app_ctrl
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mitem_block_line_app_ctrl_mgmt
+msgid "Statement of Applicability"
+msgstr "Declaración de aplicabilidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.matrix_matrix_app_ctrl_mgmt_action
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.matrix_matrix_app_ctrl_mgmt_menu
+msgid "Statement of Applicability Matrix"
+msgstr "Matriz de declaración de aplicabilidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.report,name:soy_cybersecurity_cybersecurity.cyber_2blockline_xlsx
+msgid "Statement of Applicability Matrix Report"
+msgstr "Informe de matriz de declaración de aplicabilidad"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_state
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_state
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_state
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_state
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_state
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: La fecha límite ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificada: Actividades futuras."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__storage_medium
+msgid "Storage Medium"
+msgstr "Medio de almacenamiento"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "Sub-cause"
+msgstr "Subcausa"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+msgid "Submit for elaboration"
+msgstr "Enviar a elaboración"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+msgid "Submit for review"
+msgstr "Enviar a revisión"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+msgid "Submit for validation"
+msgstr "Enviar a validación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.survey_item_menu
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.survey_survey_menu
+msgid "Surveys"
+msgstr "Encuestas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__display_type
+msgid "Technical field for UX purpose."
+msgstr "Campo técnico para fines de experiencia de usuario (UX)."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident
+msgid "Teléfono"
+msgstr "Teléfono"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__asset_contains_personal_data
+msgid "The asset contains personal data"
+msgstr "El activo contiene datos personales"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__asset_susceptible_to_fraud
+msgid "The asset is susceptible to fraud or corruption"
+msgstr "El activo es susceptible a fraude o corrupción"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__asset_vital_for_organization
+msgid "The asset is vital for the organization operation"
+msgstr "El activo es vital para la operación de la organización"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/app_ctrl_mgmt.py:0
+msgid ""
+"The selected Control Objective does not belong to the specified domain."
+msgstr ""
+"El Objetivo de Control seleccionado no pertenece al dominio especificado."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_checklist_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "This will render the current record obsolete. Are you sure?"
+msgstr "Esto dejará obsoleto el registro actual. ¿Está seguro?"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_ids_0
+msgid "Total Apoyo 0%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_ids_100
+msgid "Total Apoyo 100%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_ids_25
+msgid "Total Apoyo 25%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_ids_50
+msgid "Total Apoyo 50%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_ids_75
+msgid "Total Apoyo 75%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic4_ids_0
+msgid "Total Contexto 0%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic4_ids_100
+msgid "Total Contexto 100%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic4_ids_25
+msgid "Total Contexto 25%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic4_ids_50
+msgid "Total Contexto 50%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic4_ids_75
+msgid "Total Contexto 75%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic9_ids_0
+msgid "Total Desempeño 0%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic9_ids_100
+msgid "Total Desempeño 100%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic9_ids_25
+msgid "Total Desempeño 25%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic9_ids_50
+msgid "Total Desempeño 50%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic9_ids_75
+msgid "Total Desempeño 75%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic5_ids_0
+msgid "Total Liderazgo 0%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic5_ids_100
+msgid "Total Liderazgo 100%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic5_ids_25
+msgid "Total Liderazgo 25%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic5_ids_50
+msgid "Total Liderazgo 50%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic5_ids_75
+msgid "Total Liderazgo 75%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic10_ids_0
+msgid "Total Mejora 0%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic10_ids_100
+msgid "Total Mejora 100%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic10_ids_25
+msgid "Total Mejora 25%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic10_ids_50
+msgid "Total Mejora 50%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic10_ids_75
+msgid "Total Mejora 75%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic8_ids_0
+msgid "Total Operación 0%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic8_ids_100
+msgid "Total Operación 100%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic8_ids_25
+msgid "Total Operación 25%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic8_ids_50
+msgid "Total Operación 50%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic8_ids_75
+msgid "Total Operación 75%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic6_ids_0
+msgid "Total Planificacion 0%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic6_ids_100
+msgid "Total Planificacion 100%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic6_ids_25
+msgid "Total Planificacion 25%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic6_ids_50
+msgid "Total Planificacion 50%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic6_ids_75
+msgid "Total Planificacion 75%"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic10_ids_total
+msgid "Total Punto 10"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic4_ids_total
+msgid "Total Punto 4"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic5_ids_total
+msgid "Total Punto 5"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic6_ids_total
+msgid "Total Punto 6"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic7_ids_total
+msgid "Total Punto 7"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic8_ids_total
+msgid "Total Punto 8"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic__diagnostic9_ids_total
+msgid "Total Punto 9"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__tracking_hr_employee_id
+msgid "Tracking Person Responsible"
+msgstr "Responsable de seguimiento"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.training_menu
+msgid "Training"
+msgstr "Capacitación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.plan_training_menu
+msgid "Training Plan"
+msgstr "Plan de capacitación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.program_training_plan_menu
+msgid "Training Program"
+msgstr "Programa de capacitación"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__type
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__asset_type_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__activity_exception_decoration
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__activity_exception_decoration
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__activity_exception_decoration
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__activity_exception_decoration
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__activity_exception_decoration
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción en el registro."
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.actions.act_window,name:soy_cybersecurity_cybersecurity.cyber_matrix_block_line_location_action
+msgid "Ubicaciones"
+msgstr "Ubicaciones"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/app_ctrl_mgmt.py:0
+msgid "Undefined"
+msgstr "Indefinido"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:res.groups,name:soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread
+msgid "User: Read-only "
+msgstr "Usuario: Solo lectura "
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.controls_block_line_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_2matrix_checklist_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "Validate"
+msgstr "Validar"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block__state__validate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_block_line__state__validate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_checklist__state__validate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state__validate_ok
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state_line__validate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block__state__validate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block_line__state__validate
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__state__validate_ok
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__state_line__validate
+msgid "Validated"
+msgstr "Validado"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__user_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__user_ids
+msgid "Validated By"
+msgstr "Validado por"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__validation_step
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__validation_step
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_2matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+msgid "Validation"
+msgstr "Validación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__date_validate
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__date_validate
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__validation_date
+msgid "Validation Date"
+msgstr "Fecha de validación"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__value
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_matrix_matrix_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.evaluation_result_view_form
+msgid "Value"
+msgstr "Valor"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_form
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cyber_view_matrix_block_line_form
+msgid "Value at Risk"
+msgstr "Valor en riesgo"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_evaluation_result__text_values
+msgid "Values"
+msgstr "Valores"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__incident_incident__type_partner__ext
+msgid "Vendor"
+msgstr "Proveedor"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.res_partner_menu
+msgid "Vendors"
+msgstr "Proveedores"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__old_versions
+msgid "Versiones antiguas"
+msgstr "Versiones antiguas"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__reclamation_book
+msgid "Was the Complaints Book filled out?"
+msgstr "¿Se completó el libro de reclamaciones?"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__website_message_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__website_message_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__website_message_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__website_message_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__website_message_ids
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__website_message_ids
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_checklist__website_message_ids
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__website_message_ids
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_block_line__website_message_ids
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__website_message_ids
+#: model:ir.model.fields,help:soy_cybersecurity_cybersecurity.field_incident_incident__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__why_ids
+msgid "Whys"
+msgstr "Porqués"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix_line__application__yes
+msgid "Yes"
+msgstr "Sí"
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_evaluation_criterio
+msgid "cyber_evaluation.criterio"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_evaluation_criterio_line
+msgid "cyber_evaluation.criterio.line"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_evaluation_evaluation
+msgid "cyber_evaluation.evaluation"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cyber_evaluation_result
+msgid "cyber_evaluation.result"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.view_incident_incident_form
+msgid "identification"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_incident_categ
+msgid "incident.categ"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_report_cyber_2matrix_matrix_report
+msgid "report.cyber_2matrix_matrix.report"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_report_cyber_matrix_assets_report
+msgid "report.cyber_matrix_assets.report"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-javascript
+#: code:addons/soy_cybersecurity_cybersecurity/static/src/xml/incident.xml:0
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.incident_done
+msgid "¡Gracias!"
+msgstr ""
+
+#. module: soy_cybersecurity_cybersecurity
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_matrix__last_validate_date
+#: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_matrix_matrix__last_validate_date
+msgid "Última fecha de validación"
+msgstr ""

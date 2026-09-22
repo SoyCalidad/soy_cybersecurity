@@ -84,7 +84,7 @@ class Matrix(models.Model):
 
     def action_open_older_versions(self):
         result = self.env.ref(
-            'mgmtsystem_opportunity.matrix_matrix_risk_action').read()[0]
+            'soy_cybersecurity_cybersecurity.matrix_matrix_information_asset_action').read()[0]
         result['domain'] = [('id', 'in', self.old_versions.ids)]
         #result['context'] = {'active_version': False, 'type': self.type}
         return result

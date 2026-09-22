@@ -35,7 +35,7 @@ _CRITICALITY_COLUMN = 14
 
 class AssetInventoryXlsx(models.AbstractModel):
     _name = 'report.sc27k_asset_inventory.report_asset_inventory_xlsx'
-    _description = 'Reporte Excel de Inventario de Activos de Información'
+    _description = 'Excel Report of Information Asset Inventory'
     _inherit = 'report.report_xlsx.abstract'
 
     def generate_xlsx_report(self, workbook, data, lines):

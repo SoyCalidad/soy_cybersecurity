@@ -9,48 +9,48 @@ from odoo.exceptions import UserError
 # riesgos de SI.xlsx" template. Typos in the source ("Responasble") are kept verbatim to
 # match the approved format.
 _COLUMNS = [
-    (_('Nombre del riesgo'), 26), (_('Proceso'), 18), (_('Activo'), 22), (_('Tipo'), 16),
+    (_('Risk name'), 26), (_('Process'), 18), (_('Active'), 22), (_('Type'), 16),
 
-    (_('Descripción'), 30), (_('Agente de la causa'), 18), (_('Causa'), 26), (_('Efecto'), 26),
+    (_('Description'), 30), (_('Agent of the cause'), 18), (_('Cause'), 26), (_('Effect'), 26),
 
-    (_('Responsable del riesgo'), 22),
+    (_('Risk responsible'), 22),
 
-    (_('Amenaza'), 26), (_('Agente de la amenaza'), 24),
+    (_('Threat'), 26), (_('Agent of the threat'), 24),
 
-    (_('Probabilidad'), 14), (_('Confidencialidad'), 14), (_('Integridad'), 12),
+    (_('Probability'), 14), (_('Confidentiality'), 14), (_('Integrity'), 12),
 
-    (_('Disponibilidad'), 14), (_('Trazabilidad'), 14), (_('Autenticidad'), 14),
+    (_('Availability'), 14), (_('Traceability'), 14), (_('Authenticity'), 14),
 
-    (_('Impacto inicial'), 12), (_('Valor de riesgo inicial'), 14), (_('Nivel de riesgo inicial'), 16),
+    (_('Initial impact'), 12), (_('Initial risk value'), 14), (_('Initial risk level'), 16),
 
-    (_('Tratamiento / Salvaguarda'), 20), (_('Descripción del tratamiento'), 28),
+    (_('Treatment / Safeguard'), 20), (_('Treatment description'), 28),
 
-    (_('Fecha inicio'), 12), (_('Fecha objetivo'), 12), (_('Estado'), 14), (_('Controles'), 28),
+    (_('Start date'), 12), (_('Target date'), 12), (_('Status'), 14), (_('Controls'), 28),
 
-    (_('Probabilidad'), 14), (_('Confidencialidad'), 14), (_('Integridad'), 12),
+    (_('Probability'), 14), (_('Confidentiality'), 14), (_('Integrity'), 12),
 
-    (_('Disponibilidad'), 14), (_('Trazabilidad'), 14), (_('Autenticidad'), 14),
+    (_('Availability'), 14), (_('Traceability'), 14), (_('Authenticity'), 14),
 
-    (_('Impacto inicial'), 12), (_('Valor de riesgo residual'), 16), (_('Nivel de riesgo residual'), 16),
+    (_('Initial impact'), 12), (_('Residual risk value'), 16), (_('Residual risk level'), 16),
 
-    (_('Decisión'), 20), (_('Responasble'), 18), (_('Comentario'), 28),
+    (_('Decision'), 20), (_('Person responsible'), 18), (_('Comment'), 28),
 ]
 
 _GROUP_HEADERS = [
-    (_('IDENTIFICACIÓN DEL RIESGO Y ACTIVO'), 0, 8),
-    (_('AMENAZA'), 9, 10),
-    (_('EVALUACIÓN INICIAL'), 11, 19),
-    (_('TRATAMIENTO'), 20, 25),
-    (_('EVALUACIÓN RIESGO RESIDUAL'), 26, 34),
-    (_('RIESGO RESIDUAL'), 35, 37),
+    (_('RISK AND ASSET IDENTIFICATION'), 0, 8),
+    (_('THREAT'), 9, 10),
+    (_('INITIAL ASSESSMENT'), 11, 19),
+    (_('TREATMENT'), 20, 25),
+    (_('RESIDUAL RISK ASSESSMENT'), 26, 34),
+    (_('RESIDUAL RISK'), 35, 37),
 ]
 
 _IMPACT_CRITERIA_ORDER = (
-    _('Confidencialidad'),
-    _('Integridad'),
-    _('Disponibilidad'),
-    _('Trazabilidad'),
-    _('Autenticidad'),
+    _('Confidentiality'),
+    _('Integrity'),
+    _('Availability'),
+    _('Traceability'),
+    _('Authenticity'),
 )
 _INITIAL_LEVEL_COLUMN = 18
 _RESIDUAL_LEVEL_COLUMN = 33
@@ -63,7 +63,7 @@ class RiskReportXlsx(models.AbstractModel):
     the exact same sheet, just over a different set of matrix.block.line records.
     """
     _name = 'report.sc27k_risk_treatment.report_risk_xlsx'
-    _description = 'Reporte Excel de Riesgos de Seguridad de la Información'
+    _description = 'Information Security Risk Excel Report'
     _inherit = 'report.report_xlsx.abstract'
 
     def generate_xlsx_report(self, workbook, data, lines):
@@ -199,7 +199,7 @@ class RiskReportXlsx(models.AbstractModel):
 
 class RiskMatrixReportXlsx(models.AbstractModel):
     _name = 'report.sc27k_risk_treatment.report_risk_matrix_xlsx'
-    _description = 'Reporte Excel de Matriz de Riesgos de Seguridad de la Información'
+    _description = 'Information Security Risk Matrix Excel Report'
     _inherit = 'report.report_xlsx.abstract'
 
     def generate_xlsx_report(self, workbook, data, matrices):
@@ -209,8 +209,8 @@ class RiskMatrixReportXlsx(models.AbstractModel):
             lines = matrix.line_ids.filtered('sc27k_is_security_profile')
             if not lines:
                 raise UserError(_(
-                    'La matriz "%(matrix_name)s" no tiene riesgos con el Identificador '
-                    '"Seguridad de la información"; no hay nada que reportar.',
+                    'The matrix "%(matrix_name)s" has no risks with the Identifier '
+                    '"Information security"; there is nothing to report.',
                     matrix_name=matrix.name or matrix.code or matrix.id,
                 ))
             risk_report._sc27k_write_risk_sheet(

@@ -17,7 +17,6 @@
 
 
     'depends': [
-        'documents',
         'hr_recruitment',
         'website',
 

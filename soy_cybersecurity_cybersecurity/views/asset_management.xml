@@ -261,7 +261,7 @@
                     </group>
 
                     <notebook>
-                        <page string="Evaluación">
+                        <page string="Evaluation">
                             <group>
                                 <field name="evaluation_id"
                                     string="Indicator"
