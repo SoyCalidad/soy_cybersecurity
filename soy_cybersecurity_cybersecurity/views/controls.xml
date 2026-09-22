@@ -34,7 +34,7 @@
             <form class="o_matrix_block_line">
                 <header>
                     <field name="state" widget="statusbar" clickable="True" statusbar_visible="draft,validate"/>
-                    <button string="Añadir a Declaración de Aplicabilidad"
+                    <button string="Add to Statement of Applicability"
                         name="button_custom_save_redirect"
                         type="object"
                         class="btn-primary"
@@ -42,7 +42,7 @@
 
                     <button name="send_validate"
                             type="object"
-                            string="Validar"
+                            string="Validate"
                             class="btn-primary"
                             invisible="state != 'draft'" />
                     <!--        
@@ -121,12 +121,12 @@
                     </group>
 
                     <notebook>
-                        <page string="Descripción">
+                        <page string="Description">
                             <field name="description" 
                             readonly="state not in 'draft'"/>
                             <!--<field name="action_ids" />-->
                         </page>
-                        <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                        <page string="Multi-Company" name="multi_company" groups="base.group_multi_company">
                             <group>
                                 <field name="company_id"/>
                             </group>
@@ -141,7 +141,7 @@
 
 
     <record model="ir.actions.act_window" id="controls_block_line_action">
-        <field name="name">Controles</field>
+        <field name="name">Controls</field>
         <field name="res_model">cyber_2matrix.block.line</field>
         <field name="view_mode">list,form</field>
         <!--<field name="domain">[('type_ctrl', '=', 'controls')]</field>-->

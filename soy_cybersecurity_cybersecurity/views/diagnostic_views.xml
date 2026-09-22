@@ -53,32 +53,32 @@
                     <header>
                         <button name="evaluate_diagnostic"
                                 invisible="state in ('draft')"
-                                string="Generar Reporte"
+                                string="Generate Report"
                                 type="object"
                                 class="btn-primary"
                                 groups="soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
                         <button name="change_state_draft"
                                 invisible="state in ('draft','validate')"
-                                string="Atrás"
+                                string="Back"
                                 type="object"
                                 class="btn-primary"
                                 groups="soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
                         <button name="change_state_eval"
                                 invisible="state in ('validate','evaluate')"
-                                string="Analizar detalladamente"
+                                string="Analyze in detail"
                                 type="object"
                                 class="btn-primary oe_edit_only"
                                 groups="soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
                         <button name="change_state_validate"
                                 invisible="state in ('draft','validate')"
-                                string="Culminar"
+                                string="Culminate"
                                 type="object"
                                 class="btn-primary"
                                 groups="soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport" />
                         <field name="state" widget="statusbar" />
                     </header>
                     <sheet>
-                        <group string="Detalles" invisible="state in ('evaluate')">
+                        <group string="Details" invisible="state in ('evaluate')">
                             <group>
                                 <field name="name" invisible="state in ('validate')" />
                                 <field name="user_id" invisible="state in ('validate')" />
@@ -90,16 +90,16 @@
                                 <field name="date_validate" groups="base.group_no_one,base.group_system" readonly="1" />
                             </group>
                         </group>
-                        <separator string="Análisis previo" invisible="state in ('evaluate','validate','evaluate')"/>
+                        <separator string="Preliminary analysis" invisible="state in ('evaluate','validate','evaluate')"/>
                         <field name="all_clause" invisible="state in ('evaluate','validate','evaluate')">
                             <list editable="bottom" delete="false">
                                 <field name="name" />
                                 <field name="question" readonly="1" />
                             </list>
                         </field>
-                        <separator string="Evaluación" invisible="state in ('draft','validate')" />
+                        <separator string="Assessment" invisible="state in ('draft','validate')" />
                         <notebook invisible="state in ('draft','validate')">
-                            <page string="4. Contexto">
+                            <page string="4. Context">
                                 <h1>4. Contexto de la organización</h1>
                                 <h2>4.1 Comprensión de la organización y de su contexto</h2>
                                 <h4>La organización debe</h4>
@@ -154,9 +154,9 @@
                                     <field name="diagnostic4_ids_0" widget="progressbar" options="{'current_value': 'diagnostic4_ids_0', 'max_value': 'diagnostic4_ids_total', 'editable': false}" />
                                 </group>
                             </page>
-                            <page string="5. Liderazgo">
-                                <h1>5. Liderazgo</h1>
-                                <h2>5.1 Liderazgo y compromiso</h2>
+                            <page string="5. Leadership">
+                                <h1>5. Leadership</h1>
+                                <h2>5.1 Leadership and commitment</h2>
                                 <h4>La alta dirección debe:</h4>
                                 <field name="diagnostic5_1_ids">
                                     <list editable="bottom" delete="false">
@@ -420,12 +420,12 @@
 
 
         <record model="ir.actions.act_window" id="cybersecurity_diagnostic_list_action">
-            <field name="name">ANÁLISIS</field>
+            <field name="name">Analysis</field>
             <field name="res_model">cybersecurity.diagnostic</field>
             <field name="view_mode">list,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Crea análisis para la ISO 27001
+                    Create analyses for ISO 27001.
                 </p>
             </field>
         </record>

@@ -16,31 +16,31 @@ _SC27K_SECURITY_SYSTEM_XMLID = 'sc27k_base.system_cybersecurity'
 # security profile — a fixed list, distinct from the generic free-form asset_type_id
 # used by non-security clients of this inventory.
 _SC27K_ASSET_TYPES = [
-    ('D', '[D] Datos / Información'),
-    ('K', '[K] Claves criptográficas'),
-    ('S', '[S] Servicios'),
+    ('D', '[D] Data / Information'),
+    ('K', '[K] Cryptographic keys'),
+    ('S', '[S] Services'),
     ('SW', '[SW] Software'),
     ('HW', '[HW] Hardware'),
-    ('COM', '[COM] Redes de comunicaciones'),
-    ('MEDIA', '[Media] Soportes de información'),
-    ('AUX', '[AUX] Equipamiento auxiliar'),
-    ('L', '[L] Instalaciones'),
-    ('P', '[P] Personal'),
+    ('COM', '[COM] Communication networks'),
+    ('MEDIA', '[Media] Information media'),
+    ('AUX', '[AUX] Auxiliary equipment'),
+    ('L', '[L] Facilities'),
+    ('P', '[P] Personnel'),
 ]
 
 
 class Sc27kCategory(models.Model):
     _name = 'sc27k.asset.inventory.category'
-    _description = 'Categoría de inventario de activo'
+    _description = 'Asset Inventory Category'
     _order = 'name'
 
     name = fields.Char(
-        string='Nombre',
+        string='Name',
         required=True,
     )
 
     active = fields.Boolean(
-        string='Activo',
+        string='Active',
         default=True,
     )
 
@@ -52,85 +52,85 @@ class CyberMatrixBlockLine(models.Model):
     # -------------------------------------------------------------------------
 
     sc27k_is_security_profile = fields.Boolean(
-        string='Perfil de seguridad de la información',
+        string='Information Security Profile',
         compute='_sc27k_compute_is_security_profile',
         store=True,
     )
     sc27k_asset_code = fields.Char(
-        string='Código',
+        string='Code',
         copy=False,
     )
     sc27k_asset_type = fields.Selection(
         selection=_SC27K_ASSET_TYPES,
-        string='Tipo de activo',
+        string='Asset Type',
     )
     sc27k_owner_job_id = fields.Many2one(
         'hr.job',
-        string='Propietario del activo',
+        string='Asset Owner',
     )
     sc27k_custodian_id = fields.Many2one(
         'hr.employee',
-        string='Usuario asignado / Custodio',
+        string='Assigned User / Custodian',
     )
     sc27k_ownership = fields.Selection(
         selection=[
-            ('corporate', 'Corporativo'),
+            ('corporate', 'Corporate'),
             ('personal_byod', 'Personal / BYOD'),
-            ('third_party', 'Tercero'),
+            ('third_party', 'Third Party'),
         ],
-        string='Titularidad',
+        string='Ownership',
     )
     sc27k_information_classification = fields.Selection(
         selection=[
-            ('not_applicable', 'No aplica'),
-            ('internal', 'Interna'),
-            ('restricted', 'Restringida'),
-            ('confidential', 'Confidencial'),
+            ('not_applicable', 'Not Applicable'),
+            ('internal', 'Internal'),
+            ('restricted', 'Restricted'),
+            ('confidential', 'Confidential'),
         ],
-        string='Clasificación de la información',
+        string='Information Classification',
     )
     sc27k_personal_data_level = fields.Selection(
         selection=[
             ('no', 'No'),
-            ('yes', 'Sí'),
-            ('may_process', 'Puede procesar'),
-            ('may_contain', 'Puede contener'),
+            ('yes', 'Yes'),
+            ('may_process', 'May process'),
+            ('may_contain', 'May contain'),
         ],
-        string='¿Contiene o procesa datos personales?',
+        string='Contains or Processes Personal Data?',
     )
     sc27k_asset_state = fields.Selection(
         selection=[
-            ('active', 'Activo'),
-            ('inactive', 'Inactivo'),
-            ('decommissioned', 'Dado de baja'),
+            ('active', 'Active'),
+            ('inactive', 'Inactive'),
+            ('decommissioned', 'Decommissioned'),
         ],
-        string='Estado del activo',
+        string='Asset Status',
         default='active',
     )
-    sc27k_last_review_date = fields.Date(string='Última revisión')
-    sc27k_next_review_date = fields.Date(string='Próxima revisión')
+    sc27k_last_review_date = fields.Date(string='Last Review')
+    sc27k_next_review_date = fields.Date(string='Next Review')
     sc27k_criticality = fields.Selection(
         selection=[
-            ('low', 'Baja'),
-            ('medium', 'Media'),
-            ('high', 'Alta'),
+            ('low', 'Low'),
+            ('medium', 'Medium'),
+            ('high', 'High'),
         ],
-        string='Criticidad',
+        string='Criticality',
         compute='_sc27k_compute_criticality',
         store=True,
     )
     sc27k_security_certification = fields.Selection(
         selection=[
-            ('yes', 'Sí'),
+            ('yes', 'Yes'),
             ('no', 'No'),
-            ('not_applicable', 'No aplica'),
+            ('not_applicable', 'Not Applicable'),
         ],
-        string='¿Cuenta con certificación de seguridad?',
+        string='Has Security Certification?',
     )
 
     sc27k_category_ids = fields.Many2many(
         'sc27k.asset.inventory.category',
-        string='Categoría',
+        string='Category',
     )
 
     # -------------------------------------------------------------------------
@@ -173,7 +173,7 @@ class CyberMatrixBlockLine(models.Model):
 
     _sql_constraints = [
         ('sc27k_asset_code_company_uniq', 'unique(sc27k_asset_code, company_id)',
-         'El código del activo ya existe para esta compañía.'),
+         _('The asset code already exists for this company.')),
     ]
 
     # -------------------------------------------------------------------------

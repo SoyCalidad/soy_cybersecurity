@@ -189,10 +189,10 @@ class Diagnostic(models.Model):
     _name = 'cybersecurity.diagnostic'
     _description = "Diagnostico SI"
 
-    name = fields.Char(string=u'Nombre', required=True,
-                       default=lambda self: "Análisis de ...")
+    name = fields.Char(string=u'Name', required=True,
+                       default=lambda self: "Analysis of ...")
     user_id = fields.Many2one(
-        string='Responsable',
+        string='Responsible',
         comodel_name='res.users',
         ondelete='cascade',
         default=lambda self: self.env.user and self.env.user.id or False,
@@ -206,7 +206,7 @@ class Diagnostic(models.Model):
         default=lambda self: self.env.company,
     )
     date_diagnostic = fields.Datetime(
-        string=u'Fecha creación', default=fields.Datetime.now, required=True)
+        string=u'Creation date', default=fields.Datetime.now, required=True)
     date_validate = fields.Datetime(
         string=u'Fecha evaluación', related='xls_helper.date_validate')
 
@@ -267,10 +267,10 @@ class Diagnostic(models.Model):
         string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic10_2_id', )
 
     state = fields.Selection(
-        string=u'Estado',
-        selection=[('draft', 'Previo'),
-                   ('evaluate', 'Detallado'),
-                   ('validate', 'Culminado')],
+        string=u'State',
+        selection=[('draft', 'Previous'),
+                   ('evaluate', 'Detailed'),
+                   ('validate', 'Completed')],
         default='draft',
     )
 

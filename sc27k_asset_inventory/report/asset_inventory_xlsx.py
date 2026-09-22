@@ -1,11 +1,31 @@
 # -*- coding: utf-8 -*-
-from odoo import models
+from odoo import models, _
 
+# _HEADERS = [
+#     'Código', 'Nombre del activo', 'Tipo de activo', 'Descripción', 'Proceso',
+#     'Propietario del activo', 'Usuario asignado / Custodio', 'Ubicación', 'Titularidad',
+#     'Clasificación de la información', 'Datos personales', 'Confidencialidad', 'Integridad',
+#     'Disponibilidad', 'Criticidad', 'Estado', 'Última revisión', 'Próxima revisión',
+# ]
 _HEADERS = [
-    'Código', 'Nombre del activo', 'Tipo de activo', 'Descripción', 'Proceso',
-    'Propietario del activo', 'Usuario asignado / Custodio', 'Ubicación', 'Titularidad',
-    'Clasificación de la información', 'Datos personales', 'Confidencialidad', 'Integridad',
-    'Disponibilidad', 'Criticidad', 'Estado', 'Última revisión', 'Próxima revisión',
+    _('Code'),
+    _('Asset Name'),
+    _('Asset Type'),
+    _('Description'),
+    _('Process'),
+    _('Asset Owner'),
+    _('Assigned User / Custodian'),
+    _('Location'),
+    _('Ownership'),
+    _('Information Classification'),
+    _('Personal Data'),
+    _('Confidentiality'),
+    _('Integrity'),
+    _('Availability'),
+    _('Criticality'),
+    _('Status'),
+    _('Last Review'),
+    _('Next Review'),
 ]
 _COLUMN_WIDTHS = [14, 30, 16, 35, 20, 22, 24, 16, 16, 22, 16, 16, 12, 14, 12, 12, 14, 14]
 # Left-aligned text columns; the rest are centered.
@@ -34,7 +54,7 @@ class AssetInventoryXlsx(models.AbstractModel):
             'bg_color': '#F8CBAD',
         })
 
-        sheet = workbook.add_worksheet('Inventario de Activos')
+        sheet = workbook.add_worksheet(_('Asset Inventory'))
         for col, width in enumerate(_COLUMN_WIDTHS):
             sheet.set_column(col, col, width)
         for col, header in enumerate(_HEADERS):

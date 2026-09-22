@@ -11,19 +11,19 @@ _SC27K_SECURITY_SYSTEM_XMLID = 'sc27k_base.system_cybersecurity'
 # dimensions (not their product) — confirmed by the "Formato reporte de riesgos de SI"
 # template, which reports each dimension separately plus a single "Impacto inicial"
 # column. Matched by evaluation.criterio name.
-_SC27K_PROBABILITY_CRITERIA_NAME = 'Probabilidad'
+_SC27K_PROBABILITY_CRITERIA_NAME = 'Probability'
 _SC27K_IMPACT_CRITERIA_NAMES = (
-    'Confidencialidad', 'Integridad', 'Disponibilidad', 'Trazabilidad', 'Autenticidad',
+    'Confidentiality', 'Integrity', 'Availability', 'Traceability', 'Authenticity',
 )
 
 _SC27K_RISK_INTERPRETATION = (
-    'El nivel de riesgo se obtiene multiplicando el impacto máximo sobre la seguridad '
-    'de la información (max(Confidencialidad, Integridad, Disponibilidad, Trazabilidad, '
-    'Autenticidad)) por la probabilidad realista de ocurrencia, '
-    'resultando en una escala de 1 a 25. Valores iguales o superiores a 12 (Riesgo Alto '
-    'o Crítico) son inaceptables y requieren la implementación obligatoria de controles '
-    'del Anexo A de la norma ISO/IEC 27001:2022 y un plan de tratamiento formal. Valores '
-    'entre 5 y 11 (Medio) deben ser gestionados o monitoreados periódicamente.'
+    'The risk level is obtained by multiplying the maximum impact on information '
+    'security (max(Confidentiality, Integrity, Availability, Traceability, '
+    'Authenticity)) by the realistic probability of occurrence, '
+    'resulting in a scale from 1 to 25. Values equal to or greater than 12 (High '
+    'or Critical Risk) are unacceptable and require the mandatory implementation of '
+    'controls from Annex A of the ISO/IEC 27001:2022 standard and a formal treatment '
+    'plan. Values between 5 and 11 (Medium) must be managed or monitored periodically.'
 )
 
 # Risk level bands for the Impacto (1-5) x Probabilidad (1-5) indicator, per the
@@ -35,30 +35,30 @@ _SC27K_RISK_LEVEL_HIGH_THRESHOLD = 12
 _SC27K_RISK_LEVEL_CRITICAL_THRESHOLD = 20
 
 _SC27K_TREATMENT_OPTIONS = [
-    ('reduce', 'Reducir'),
-    ('avoid', 'Evitar'),
-    ('share_transfer', 'Compartir / Transferir'),
-    ('accept', 'Aceptar'),
+    ('reduce', 'Reduce'),
+    ('avoid', 'Avoid'),
+    ('share_transfer', 'Share / Transfer'),
+    ('accept', 'Accept'),
 ]
 _SC27K_TREATMENT_STATES = [
-    ('pending', 'Pendiente'),
-    ('in_process', 'En proceso'),
-    ('implemented', 'Implementado'),
-    ('verified', 'Verificado'),
+    ('pending', 'Pending'),
+    ('in_process', 'In Progress'),
+    ('implemented', 'Implemented'),
+    ('verified', 'Verified'),
 ]
 _SC27K_TREATMENT_APPROVAL_STATES = [
-    ('pending', 'Pendiente'),
-    ('approved', 'Aprobado'),
-    ('rework', 'Modificación solicitada'),
+    ('pending', 'Pending'),
+    ('approved', 'Approved'),
+    ('rework', 'Modification Requested'),
 ]
 _SC27K_RESIDUAL_DECISIONS = [
-    ('accept', 'Aceptar riesgo residual'),
-    ('additional_treatment', 'Solicitar tratamiento adicional'),
+    ('accept', 'Accept Residual Risk'),
+    ('additional_treatment', 'Request Additional Treatment'),
 ]
 _SC27K_RESIDUAL_ACCEPTANCE_STATES = [
-    ('pending', 'Pendiente'),
-    ('accepted', 'Aceptado'),
-    ('additional_treatment', 'Tratamiento adicional solicitado'),
+    ('pending', 'Pending'),
+    ('accepted', 'Accepted'),
+    ('additional_treatment', 'Additional Treatment Requested'),
 ]
 
 
@@ -70,105 +70,105 @@ class MatrixBlockLine(models.Model):
     # -------------------------------------------------------------------------
 
     sc27k_is_security_profile = fields.Boolean(
-        string='Perfil de seguridad de la información',
+        string='Information Security Profile',
         compute='_sc27k_compute_is_security_profile',
         store=True,
     )
 
     sc27k_asset_id = fields.Many2one(
         'cyber_matrix.block.line',
-        string='Activo',
+        string='Asset',
     )
-    sc27k_threat = fields.Char(string='Amenaza')
-    sc27k_threat_agent = fields.Char(string='Agente de la amenaza')
+    sc27k_threat = fields.Char(string='Threat')
+    sc27k_threat_agent = fields.Char(string='Threat Agent')
 
     sc27k_initial_ntr = fields.Integer(
-        string='Valor de riesgo inicial',
+        string='Initial Risk Value',
         compute='_sc27k_compute_initial_ntr',
         store=True,
     )
     sc27k_risk_level = fields.Selection(
         selection=[
-            ('low', 'Bajo'),
-            ('medium', 'Medio'),
-            ('high', 'Alto'),
-            ('critical', 'Crítico'),
+            ('low', 'Low'),
+            ('medium', 'Medium'),
+            ('high', 'High'),
+            ('critical', 'Critical'),
         ],
-        string='Nivel de riesgo inicial',
+        string='Initial Risk Level',
         compute='_sc27k_compute_risk_levels',
         store=True,
     )
     sc27k_interpretation = fields.Text(
-        string='Interpretación',
+        string='Interpretation',
         default=_SC27K_RISK_INTERPRETATION,
         translate=True,
     )
 
     sc27k_treatment_option = fields.Selection(
         selection=_SC27K_TREATMENT_OPTIONS,
-        string='Opción de tratamiento',
+        string='Treatment Option',
     )
-    sc27k_treatment_description = fields.Text(string='Descripción del tratamiento')
+    sc27k_treatment_description = fields.Text(string='Treatment Description')
     sc27k_treatment_responsible_id = fields.Many2one(
         'res.users',
-        string='Responsable del tratamiento',
+        string='Treatment Responsible',
     )
-    sc27k_treatment_start_date = fields.Date(string='Fecha de inicio')
-    sc27k_treatment_target_date = fields.Date(string='Fecha objetivo')
+    sc27k_treatment_start_date = fields.Date(string='Start Date')
+    sc27k_treatment_target_date = fields.Date(string='Target Date')
     sc27k_treatment_state = fields.Selection(
         selection=_SC27K_TREATMENT_STATES,
-        string='Estado del tratamiento',
+        string='Treatment Status',
         default='pending',
     )
 
     sc27k_residual_evaluation_id = fields.Many2one(
         'evaluation.evaluation',
-        string='Indicador (evaluación residual)',
+        string='Indicator (Residual Evaluation)',
         ondelete='restrict',
     )
     sc27k_residual_result_ids = fields.One2many(
         'evaluation.result',
         inverse_name='sc27k_residual_matrix_block_line_id',
-        string='Resultados (evaluación residual)',
+        string='Results (Residual Evaluation)',
         copy=True,
     )
     sc27k_residual_ntr = fields.Integer(
-        string='Valor de riesgo residual',
+        string='Residual Risk Value',
         compute='_sc27k_compute_residual_ntr',
         store=True,
     )
     sc27k_residual_risk_level = fields.Selection(
         selection=[
-            ('low', 'Bajo'),
-            ('medium', 'Medio'),
-            ('high', 'Alto'),
-            ('critical', 'Crítico'),
+            ('low', 'Low'),
+            ('medium', 'Medium'),
+            ('high', 'High'),
+            ('critical', 'Critical'),
         ],
-        string='Nivel de riesgo residual',
+        string='Residual Risk Level',
         compute='_sc27k_compute_risk_levels',
         store=True,
     )
 
-    sc27k_treatment_owner_id = fields.Many2one('res.users', string='Propietario del riesgo')
-    sc27k_treatment_approval_date = fields.Date(string='Fecha de aprobación del tratamiento')
-    sc27k_treatment_approval_comment = fields.Text(string='Comentario de aprobación del tratamiento')
-    sc27k_treatment_approved_by_id = fields.Many2one('res.users', string='Aprobado por')
+    sc27k_treatment_owner_id = fields.Many2one('res.users', string='Risk Owner')
+    sc27k_treatment_approval_date = fields.Date(string='Treatment Approval Date')
+    sc27k_treatment_approval_comment = fields.Text(string='Treatment Approval Comment')
+    sc27k_treatment_approved_by_id = fields.Many2one('res.users', string='Approved By')
     sc27k_treatment_approval_state = fields.Selection(
         selection=_SC27K_TREATMENT_APPROVAL_STATES,
-        string='Estado de aprobación del tratamiento',
+        string='Treatment Approval Status',
         default='pending',
     )
 
     sc27k_residual_decision = fields.Selection(
         selection=_SC27K_RESIDUAL_DECISIONS,
-        string='Decisión sobre el riesgo residual',
+        string='Residual Risk Decision',
     )
-    sc27k_residual_accepted_by_id = fields.Many2one('res.users', string='Aceptado por')
-    sc27k_residual_acceptance_date = fields.Date(string='Fecha de aceptación del riesgo residual')
-    sc27k_residual_acceptance_comment = fields.Text(string='Comentario de aceptación del riesgo residual')
+    sc27k_residual_accepted_by_id = fields.Many2one('res.users', string='Accepted By')
+    sc27k_residual_acceptance_date = fields.Date(string='Residual Risk Acceptance Date')
+    sc27k_residual_acceptance_comment = fields.Text(string='Residual Risk Acceptance Comment')
     sc27k_residual_acceptance_state = fields.Selection(
         selection=_SC27K_RESIDUAL_ACCEPTANCE_STATES,
-        string='Estado de aceptación del riesgo residual',
+        string='Residual Risk Acceptance Status',
         default='pending',
     )
 

@@ -4,34 +4,34 @@ from odoo import models, fields, api, exceptions, _
 from odoo.exceptions import UserError
 
 
-_ASSET_INTERPRETATION = 'El valor del activo de la información permite evaluar los diferentes niveles y ordenarlos según sus prioridades. Cuando se obtengan Números de Prioridad de Activos elevados (mayores a 100) se establecerán acciones.'
-_OPP_INTERPRETATION = 'El valor de oportunidad permite evaluar los diferentes niveles de oportunidades y ordenarlas según sus prioridades. Cuando se obtengan Números de Prioridad de Oportunidad elevados (Entre 8-10) se debe establecer acciones inmediatas para aprovechar la oportunidad, índices más bajos a estos deben ser evaluados cuidadosamente en cuanto a costo y beneficio.'
+_ASSET_INTERPRETATION = 'The value of the information asset allows evaluating the different levels and sorting them according to their priorities. When high Asset Priority Numbers (greater than 100) are obtained, actions will be established.'
+_OPP_INTERPRETATION = 'The opportunity value allows evaluating the different levels of opportunities and sorting them according to their priorities. When high Opportunity Priority Numbers (between 8-10) are obtained, immediate actions must be established to take advantage of the opportunity; lower indices than these must be carefully evaluated regarding cost and benefit.'
 
 
 class Categ(models.Model):
     _name = 'cyber_matrix.categ'
-    _description = "Categoria de matriz"
+    _description = "Matrix Category"
 
     name = fields.Char(
-        string=u'Nombre',
+        string='Name',
         required=True,
     )
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     sequence_id = fields.Many2one(
-        string=u'Secuencia de ediciones',
+        string='Editions Sequence',
         comodel_name='ir.sequence',
         ondelete='cascade',
     )
     '''
     type = fields.Selection(
-        string='Tipo',
+        string='Type',
         selection=[
-            ('risk', 'Riesgo'),
-            ('opportunity', 'Oportunidad')],
+            ('risk', 'Risk'),
+            ('opportunity', 'Opportunity')],
     )
     '''
     matrix_ids = fields.One2many(
@@ -43,7 +43,7 @@ class Categ(models.Model):
     @api.onchange('name')
     def _onchange_name(self):
         if self.sequence_id:
-            self.sequence_id.name = 'Secuencia de '+self.name
+            self.sequence_id.name = 'Sequence of ' + self.name
 
     @api.model_create_multi
     def create(self, values_list):
@@ -69,17 +69,17 @@ class Categ(models.Model):
 class Matrix(models.Model):
     _name = 'cyber_matrix.matrix'
     _inherit = ['mgmtsystem.validation.mail', 'mgmtsystem.code']
-    _description = "Matriz"
+    _description = "Matrix"
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     parent_edition = fields.Many2one(
-        comodel_name='cyber_matrix.matrix', string='Padre', copy=False)
+        comodel_name='cyber_matrix.matrix', string='Parent', copy=False)
     old_versions = fields.One2many(
-        comodel_name='cyber_matrix.matrix', string='Versiones antiguas',
+        comodel_name='cyber_matrix.matrix', string='Older Versions',
         inverse_name='parent_edition', context={'active_version': False})
 
     def action_open_older_versions(self):
@@ -90,24 +90,24 @@ class Matrix(models.Model):
         return result
 
     name = fields.Char(
-        string='Nombre de matriz',
+        string='Matrix Name',
     )
 
     numero = fields.Char(
-        string="Numero de secuencia",
+        string="Sequence Number",
         readonly=True,
         required=True,
         copy=False,
-        default='Sin definir',
+        default='Undefined',
     )
 
     categ_id = fields.Many2one(
-        string=u'Nombre de matríz',
+        string='Matrix Name',
         comodel_name='cyber_matrix.categ',
         ondelete='cascade',
     )
     system_id = fields.Many2one(
-        'mgmtsystem.context.system', string='Identificador de riesgo', default=lambda self: self.env.ref('hola_calidad.policy_system_1'))
+        'mgmtsystem.context.system', string='Risk Identifier', default=lambda self: self.env.ref('hola_calidad.policy_system_1'))
 
     @api.onchange('categ_id')
     def _onchange_categ_id(self):
@@ -116,10 +116,10 @@ class Matrix(models.Model):
 
     '''
     type = fields.Selection(
-        string='Tipo',
+        string='Type',
         selection=[
-            ('risk', 'Riesgo'),
-            ('opportunity', 'Oportunidad')],
+            ('risk', 'Risk'),
+            ('opportunity', 'Opportunity')],
         required=True,
     )
     
@@ -133,27 +133,27 @@ class Matrix(models.Model):
     '''
 
     sequence_id = fields.Many2one(
-        string=u'Secuencia de ediciones',
+        string='Editions Sequence',
         comodel_name='ir.sequence',
         related='categ_id.sequence_id',
     )
 
     date_elaborate = fields.Datetime(
-        string='Fecha elaboración',
+        string='Elaboration Date',
         default=fields.Datetime.now,
         readonly=True,
         store=True,
     )
 
     date_review = fields.Datetime(
-        string='Fecha revisado',
+        string='Review Date',
         default=fields.Datetime.now,
         readonly=True,
         store=True,
     )
 
     user_ids = fields.Many2many(
-        string='Validado',
+        string='Validated By',
         comodel_name='res.users',
         relation='cyber_matrix_users_rel',
         column1='user_id',
@@ -161,31 +161,31 @@ class Matrix(models.Model):
     )
 
     date_validate = fields.Datetime(
-        string='Fecha validación',
+        string='Validation Date',
         readonly=True,
         store=True,
     )
 
     filter = fields.Selection(
-        string='Filtrar por',
+        string='Filter By',
         selection=[
-            ('none', 'Todos las lineas pendientes'),
-            ('date', 'Entre rango de fechas de creación'),
-            ('block', 'Por fuentes'),
-            ('state', 'Estado de riesgo'),
-            ('partial', 'Seleccionar manualmente')],
+            ('none', 'All pending lines'),
+            ('date', 'Between creation date range'),
+            ('block', 'By sources'),
+            ('state', 'Risk state'),
+            ('partial', 'Select manually')],
         default='none',
     )
 
     date_init = fields.Date(
-        string='Fecha inicio',
+        string='Start Date',
     )
     date_fin = fields.Date(
-        string='Fecha final',
+        string='End Date',
     )
 
     block_ids = fields.Many2many(
-        string='Fuentes',
+        string='Sources',
         comodel_name='cyber_matrix.block',
         relation='cyber_matrix_block_line_rel',
         column1='block_id',
@@ -193,26 +193,26 @@ class Matrix(models.Model):
     )
 
     state = fields.Selection(
-        string='Estado',
+        string='State',
         selection=[
-            ('elaborate', 'En elaboración'),
-            ('review', 'En revisión'),
-            ('validate', 'En validación'),
-            ('validate_ok', 'Validado'),
-            ('cancel', 'Cancelado')],
+            ('elaborate', 'In Preparation'),
+            ('review', 'In Review'),
+            ('validate', 'In Validation'),
+            ('validate_ok', 'Validated'),
+            ('cancel', 'Cancelled')],
         default='elaborate',
     )
     state_line = fields.Selection(
-        string='Estado',
+        string='State',
         selection=[
-            ('draft', 'Borrador'),
-            ('elaborate', 'En proceso'),
-            ('validate', 'Validado'),
-            ('cancel', 'Cancelado')],
+            ('draft', 'Draft'),
+            ('elaborate', 'In Process'),
+            ('validate', 'Validated'),
+            ('cancel', 'Cancelled')],
     )
 
     line_ids = fields.Many2many(
-        string='line',
+        string='Line',
         comodel_name='cyber_matrix.block.line',
         relation='cyber_matrix_m_block_line_rel',
         column1='line_id',
@@ -222,17 +222,17 @@ class Matrix(models.Model):
                                 relation='cyber_matrix_matrix_risk_rel',
                                 column1='risk_id',
                                 column2='cyber_matrix_matrix_id',
-                                string='Riesgos',
+                                string='Risks',
                                 domain=[('type', '=', 'risk')])
-    risks_count = fields.Integer(compute='_compute_risks_count', string='Riesgos')
+    risks_count = fields.Integer(compute='_compute_risks_count', string='Risks')
 
     opp_ids = fields.Many2many('matrix.block.line',
                                relation='cyber_matrix_matrix_opp_rel',
                                column1='opp_id',
                                column2='cyber_matrix_matrix_id',
-                               string='Oportunidades',
+                               string='Opportunities',
                                domain=[('type', '=', 'opportunity')])
-    opps_count = fields.Integer(compute='_compute_opps_count', string='Oportunidades')
+    opps_count = fields.Integer(compute='_compute_opps_count', string='Opportunities')
 
     @api.depends('risk_ids')
     def _compute_risks_count(self):
@@ -299,29 +299,29 @@ class Matrix(models.Model):
         for matrix in self:
             if matrix.state not in ['draft', 'elaborate']:
                 raise exceptions.ValidationError(
-                    _('Solo se permite eliminar registros en borrador y en elaboración'))
+                    _('Deleting records is only allowed in draft and preparation states'))
         return super(Matrix, self).unlink()
 
 
 class Block(models.Model):
     _name = 'cyber_matrix.block'
-    _description = "Fuente"
+    _description = "Source"
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     name = fields.Char(
-        string='Fuente',
+        string='Source',
     )
 
     '''
     type = fields.Selection(
-        string='Tipo',
+        string='Type',
         selection=[
-            ('risk', 'Riesgo'),
-            ('opportunity', 'Oportunidad')],
+            ('risk', 'Risk'),
+            ('opportunity', 'Opportunity')],
     )
     '''
     @api.onchange('process_id')
@@ -334,28 +334,28 @@ class Block(models.Model):
         self.name = self.other
 
     process_id = fields.Many2one(
-        string='Proceso',
+        string='Process',
         comodel_name='process.edition',
         ondelete='cascade',
         domain=[('active','=',True)]
     )
     other = fields.Char(
-        string='Otro',
+        string='Other',
     )
 
     line_ids = fields.One2many(
-        string='Lineas',
+        string='Lines',
         comodel_name='cyber_matrix.block.line',
         inverse_name='block_id',
     )
 
     state = fields.Selection(
-        string='Estado',
+        string='State',
         selection=[
-            ('draft', 'Borrador'),
-            ('elaborate', 'En proceso'),
-            ('validate', 'Validado'),
-            ('cancel', 'Cancelado')],
+            ('draft', 'Draft'),
+            ('elaborate', 'In Process'),
+            ('validate', 'Validated'),
+            ('cancel', 'Cancelled')],
         default='draft',
     )
 
@@ -377,92 +377,92 @@ class Block(models.Model):
 
 class LineAgent(models.Model):
     _name = 'cyber_matrix.block.line.agent'
-    _description = 'Agente Riesgo/Oportunidad'
+    _description = 'Risk/Opportunity Agent'
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
-    name = fields.Char(string='Nombre')
-    description = fields.Text(string='Descripción')
+    name = fields.Char(string='Name')
+    description = fields.Text(string='Description')
 
 '''
 class LineType(models.Model):
     _name = 'cyber_matrix.block.line.type'
-    _description = 'Tipo Riesgo/Oportunidad'
+    _description = 'Risk/Opportunity Type'
 
-    name = fields.Char(string='Nombre')
-    description = fields.Text(string='Descripción')
+    name = fields.Char(string='Name')
+    description = fields.Text(string='Description')
 '''
 
 class CyberMatrixBlockLineSystem(models.Model):
     _name = 'cyber_matrix.block.line.system'
-    _description = 'Identificador de riesgo'
+    _description = 'Risk Identifier'
 
-    name = fields.Char(string='Nombre')
+    name = fields.Char(string='Name')
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
 
 
 class CyberMatrixBlockLineResource(models.Model):
     _name = 'cyber_matrix.block.line.resource'
-    _description = 'Recurso de activos de información'
+    _description = 'Information Asset Resource'
 
-    name = fields.Char(string='Recurso')
+    name = fields.Char(string='Resource')
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
 
 class CyberMatrixBlockLineLocation(models.Model):
     _name = 'cyber_matrix.block.line.location'
-    _description = 'Ubicación de activos de información'
+    _description = 'Information Asset Location'
 
-    name = fields.Char(string='Ubicación')
+    name = fields.Char(string='Location')
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
 
 class CyberMatrixBlockLineLanguage(models.Model):
     _name = 'cyber_matrix.block.line.language'
-    _description = 'Idioma de activos de información'
+    _description = 'Information Asset Language'
 
-    name = fields.Char(string='Idioma')
+    name = fields.Char(string='Language')
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
 
 class MatrixBlockLineSystem(models.Model):
     _name = 'cyber_matrix.block.line.asset_type'
-    _description = 'Tipos de activos de información'
+    _description = 'Information Asset Types'
 
-    name = fields.Char(string='Tipos de activo')
+    name = fields.Char(string='Asset Types')
 
 
 class Line(models.Model):
     _name = 'cyber_matrix.block.line'
     _inherit = ['mgmtsystem.version', 'mail.thread',
                 'mail.activity.mixin', 'mgmtsystem.code']
-    _description = "Inventario de activos de información"
+    _description = "Information Asset Inventory"
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     parent_edition = fields.Many2one(
-        comodel_name='cyber_matrix.block.line', string='Padre', copy=False)
+        comodel_name='cyber_matrix.block.line', string='Parent', copy=False)
     old_versions = fields.One2many(
-        comodel_name='cyber_matrix.block.line', string='Versiones antiguas',
+        comodel_name='cyber_matrix.block.line', string='Older Versions',
         inverse_name='parent_edition', context={'active_version': False})
 
     def action_open_older_versions(self):
@@ -473,25 +473,25 @@ class Line(models.Model):
         return result
 
     name = fields.Char(
-        string='Nombre',
+        string='Name',
         required=True,
     )
     block_id = fields.Many2one(
-        string='Fuente',
+        string='Source',
         comodel_name='cyber_matrix.block',
         ondelete='restrict',
     )
-    user_id = fields.Many2one(comodel_name='res.users', string='Responsable')
+    user_id = fields.Many2one(comodel_name='res.users', string='Responsible')
 
     agent_id = fields.Many2one(
-        comodel_name='cyber_matrix.block.line.agent', string='Agente de la causa')
+        comodel_name='cyber_matrix.block.line.agent', string='Cause Agent')
     '''
     type_id = fields.Many2one(
-        comodel_name='cyber_matrix.block.line.type', string='Tipo')
+        comodel_name='cyber_matrix.block.line.type', string='Type')
     '''
     system_id = fields.Many2one(
-        'mgmtsystem.context.system', string='Identificador', default=lambda self: self.env.ref('sc27k_base.system_cybersecurity'))
-    process_id = fields.Many2one('mgmt.categ', string='Proceso')
+        'mgmtsystem.context.system', string='Identifier', default=lambda self: self.env.ref('sc27k_base.system_cybersecurity'))
+    process_id = fields.Many2one('mgmt.categ', string='Process')
 
     '''
     def _get_interpretation(self):
@@ -503,9 +503,9 @@ class Line(models.Model):
             self.interpretation = 'a'
     '''
     interpretation_asset = fields.Text(
-        string='Interpretación', default=_ASSET_INTERPRETATION)
+        string='Interpretation', default=_ASSET_INTERPRETATION)
     interpretation_opportunity = fields.Text(
-        string='Interpretación', default=_OPP_INTERPRETATION)
+        string='Interpretation', default=_OPP_INTERPRETATION)
 
     '''
     @api.onchange('block_id')
@@ -531,22 +531,22 @@ class Line(models.Model):
         }
     '''
 
-    asset_contains_personal_data = fields.Boolean(string='El activo contiene datos personales', default=False)
-    asset_susceptible_to_fraud = fields.Boolean(string='El activo es susceptible de fraude o corrupción', default=False)
-    asset_vital_for_organization = fields.Boolean(string='El activo es vital para la operación de la organización', default=False)
+    asset_contains_personal_data = fields.Boolean(string='The asset contains personal data', default=False)
+    asset_susceptible_to_fraud = fields.Boolean(string='The asset is susceptible to fraud or corruption', default=False)
+    asset_vital_for_organization = fields.Boolean(string='The asset is vital for the organization operation', default=False)
 
-    resource_id = fields.Many2many('cyber_matrix.block.line.resource', string='Recurso')
+    resource_id = fields.Many2many('cyber_matrix.block.line.resource', string='Resource')
 
-    location_id = fields.Many2many('cyber_matrix.block.line.location', string='Ubicación')
+    location_id = fields.Many2many('cyber_matrix.block.line.location', string='Location')
 
-    language_id = fields.Many2many('cyber_matrix.block.line.language', string='Idioma')
+    language_id = fields.Many2many('cyber_matrix.block.line.language', string='Language')
 
-    asset_type_id = fields.Many2many('cyber_matrix.block.line.asset_type', string='Tipo')
+    asset_type_id = fields.Many2many('cyber_matrix.block.line.asset_type', string='Type')
 
     storage_medium = fields.Selection(
-        string='Medio de Conservación',
+        string='Storage Medium',
         selection=[
-            ('physical', 'Física'),
+            ('physical', 'Physical'),
             ('digital', 'Digital')],
     )
 
@@ -555,25 +555,25 @@ class Line(models.Model):
         comodel_name='hr.department',
     )
     description = fields.Text(
-        string='Descripción',
+        string='Description',
     )
 
     #
     effect = fields.Text(
-        string='Efecto',
+        string='Effect',
     )
     cause = fields.Text(
-        string='Causa',
+        string='Cause',
     )
     #
 
     evaluation_id = fields.Many2one(
-        string='Evaluación',
+        string='Evaluation',
         comodel_name='cyber_evaluation.evaluation',
         ondelete='restrict',
     )
     result_ids = fields.Many2many(
-        string='Resultados',
+        string='Results',
         comodel_name='cyber_evaluation.result',
         relation='cyber_block_line_evaluation_result_rel',
         column1='result_id',
@@ -581,12 +581,12 @@ class Line(models.Model):
         copy=True,
     )
     ntr = fields.Integer(
-        string='Valor del Activo',
+        string='Asset Value',
         compute='_compute_ntr',
         store=True,
     )
     action_ids = fields.Many2many(
-        string='Acciones',
+        string='Actions',
         comodel_name='mgmtsystem.action',
         relation='cyber_block_line_action_rel',
         column1='action_id',
@@ -594,28 +594,28 @@ class Line(models.Model):
     )
 
     state = fields.Selection(
-        string='Estado',
+        string='State',
         selection=[
-            ('draft', 'Borrador'),
-            ('validate', 'Validado'),
-            ('cancel', 'Cancelado')],
+            ('draft', 'Draft'),
+            ('validate', 'Validated'),
+            ('cancel', 'Cancelled')],
         default='draft',
     )
     risk_ids = fields.Many2many('matrix.block.line',
                                 relation='cyber_matrix_block_line_risk_rel',
                                 column1='risk_id',
                                 column2='cyber_matrix_block_line_id',
-                                string='Riesgos',
+                                string='Risks',
                                 domain=[('type', '=', 'risk')])
-    risks_count = fields.Integer(compute='_compute_risks_count', string='Riesgos')
+    risks_count = fields.Integer(compute='_compute_risks_count', string='Risks')
 
     opp_ids = fields.Many2many('matrix.block.line',
                                relation='cyber_matrix_block_line_opp_rel',
                                column1='opp_id',
                                column2='cyber_matrix_block_line_id',
-                               string='Oportunidades',
+                               string='Opportunities',
                                domain=[('type', '=', 'opportunity')])
-    opps_count = fields.Integer(compute='_compute_opps_count', string='Oportunidades')
+    opps_count = fields.Integer(compute='_compute_opps_count', string='Opportunities')
 
     @api.depends('risk_ids')
     def _compute_risks_count(self):

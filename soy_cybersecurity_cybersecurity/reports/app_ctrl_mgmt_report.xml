@@ -3,7 +3,7 @@
   <data>
     <record id="cyber_2blockline_xlsx" model="ir.actions.report">
       <field name="model">cyber_2matrix.matrix</field>
-      <field name="name">Reporte de Matriz de Declaración de Aplicabilidad</field>
+      <field name="name">Statement of Applicability Matrix Report</field>
       <field name="report_type">xlsx</field>
       <field name="report_name">cyber_2matrix_matrix.report</field>
       <field name="report_file">Matriz de Declaración de Aplicabilidad</field>

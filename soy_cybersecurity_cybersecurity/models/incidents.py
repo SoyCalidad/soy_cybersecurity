@@ -8,90 +8,90 @@ class incidentCateg(models.Model):
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     elaborate_ids = fields.Many2one(
-        string=u'Abierto por',
+        string=u'Opened by',
         comodel_name='res.users',
         default=lambda self: self.env.user
     )
 
     name = fields.Char(
-        string='Nombre',
+        string='Name',
         required=True,
     )
     sequence = fields.Integer(
-        string='Prioridad',
+        string='Priority',
         default=5,
     )
     description = fields.Text(
-        string='Descripción',
+        string='Description',
     )
 
 
 class incidentVia(models.Model):
     _name = 'incident.via'
-    _description = 'Vía de reclamo'
+    _description = 'Claim Method'
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     elaborate_ids = fields.Many2one(
-        string=u'Elaborado',
+        string=u'Prepared by',
         comodel_name='res.users',
         default=lambda self: self.env.user
     )
     name = fields.Char(
-        string='Nombre',
+        string='Name',
         required=True,
     )
     description = fields.Text(
-        string='Descripción',
+        string='Description',
     )
 
 
 class incidentQuickAction(models.Model):
     _name = 'incident.quick.action'
     _order = 'sequence asc'
-    _description = 'Acción rápida para reclamo'
+    _description = 'Quick action for claim'
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     elaborate_ids = fields.Many2one(
-        string=u'Elaborado por',
+        string=u'Prepared by',
         comodel_name='res.users',
         default=lambda self: self.env.user
     )
 
     name = fields.Char(
-        string='Acción',
+        string='Action',
         required=True,
     )
     categ_id = fields.Many2one(
-        string='Categoría',
+        string='Category',
         comodel_name='incident.categ',
     )
     sequence = fields.Integer(
-        string='Prioridad',
+        string='Priority',
         default=5,
     )
     description = fields.Text(
-        string='Descripción',
+        string='Description',
     )
 
 
 class incidentReason(models.Model):
     _name = 'incident.incident.reason'
-    _description = 'Motivo'
+    _description = 'Reason'
 
-    name = fields.Text(string='Nombre')
-    description = fields.Text(string='Descripción')
+    name = fields.Text(string='Name')
+    description = fields.Text(string='Description')
 
 
 class incidentincidentCauseWhy(models.Model):
@@ -100,102 +100,102 @@ class incidentincidentCauseWhy(models.Model):
     # One2many references
 
     incident_cause_id = fields.Many2one(
-        'incident.incident', string='Reclamo (Causa)', ondelete='set null')
+        'incident.incident', string='Claim (Cause)', ondelete='set null')
     incident_why_id = fields.Many2one(
-        'incident.incident', string='Reclamo (¿Por qué?)', ondelete='set null')
+        'incident.incident', string='Claim (Why?)', ondelete='set null')
 
 class incident(models.Model):
     _name = 'incident.incident'
     _inherit = ['mail.thread', 'mail.activity.mixin', 'mgmtsystem.code']
     _order = 'date_incident desc'
-    _description = 'Reclamo'
+    _description = 'Claim'
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     elaborate_ids = fields.Many2one(
-        string=u'Elaborado',
+        string=u'Prepared by',
         comodel_name='res.users',
         default=lambda self: self.env.user
     )
     name = fields.Char(
-        string='Nombre',
+        string='Name',
         required=True,
     )
     description = fields.Text(
-        string='Perspectiva de la empresa',
+        string='Company Perspective',
     )
     perspective = fields.Text(
-        string='Descripción del notificante',
+        string='Notifier Description',
     )
     date_incident = fields.Datetime(
-        string='Fecha detección',
+        string='Detection Date',
         default=fields.Datetime.now,
         required=True,
     )
     date_fin = fields.Datetime(
-        string='Fecha finalización',
+        string='Completion Date',
     )
-    validation_date = fields.Date('Fecha de validación')
+    validation_date = fields.Date('Validation Date')
     reason_ids = fields.Many2many(
-        'incident.incident.reason', string='Motivo')
-    reason_other = fields.Text('Otro motivo')
+        'incident.incident.reason', string='Reason')
+    reason_other = fields.Text('Other Reason')
 
     
     analisis_id = fields.Many2one(
-        string='Analisis',
+        string='Analysis',
         comodel_name='incident.analisis',
         ondelete='restrict',
     )
 
     
     categ_id = fields.Many2one(
-        string='Categoría',
+        string='Category',
         comodel_name='incident.categ',
     )
     
     department_id = fields.Many2one(
-        string='Área implicada',
+        string='Involved Area',
         comodel_name='hr.department',
     )
     partner_id = fields.Many2one(
-        string='Cliente que notifica',
+        string='Notifying Customer',
         comodel_name='res.partner',
     )
     via_ids = fields.Many2many(
-        string='Medio',
+        string='Method',
         comodel_name='incident.via',
         relation='incident_via_rel',
         column1='via_id',
         column2='incident_id',
     )
     quick_action_id = fields.Many2one(
-        string='Acción rápida',
+        string='Quick Action',
         comodel_name='incident.quick.action',
     )
     quick_response = fields.Text(
-        string='Respuesta del notificante',
+        string='Notifier Response',
     )
     is_open = fields.Boolean(
-        string='Apertura de acción correctiva',
-        help="Si el afectado no acepta la acción rápida se realiza la apertura de No conformidades y acciones",
+        string='Opening of Corrective Action',
+        help="If the affected party does not accept the quick action, non-conformities and actions are opened",
         default=False,
     )
-    attachment_ids = fields.Many2many('ir.attachment', string='Adjuntos')
+    attachment_ids = fields.Many2many('ir.attachment', string='Attachments')
     date_solution = fields.Datetime(
-        string='Fecha de solución',
+        string='Solution Date',
     )
     action_ids = fields.Many2many(
-        string='Acción',
+        string='Action',
         comodel_name='mgmtsystem.action',
         relation='action_incident_rel',
         column1='action_id',
         column2='incident_id',
     )
     nonconformity_ids = fields.Many2many(
-        string=u'No conformidades',
+        string=u'Non-conformities',
         comodel_name='mgmtsystem.nonconformity',
         relation='nonconformity_incident_rel',
         column1='nonconformity_id',
@@ -203,43 +203,43 @@ class incident(models.Model):
     )
 
     state = fields.Selection(
-        string='Estado',
+        string='Status',
         selection=[
-            ('open', 'Abierto'),
-            ('in_process', 'En proceso'),
-            ('close', 'Cerrado'),
-            ('cancel', 'Cancelado')],
+            ('open', 'Open'),
+            ('in_process', 'In Process'),
+            ('close', 'Closed'),
+            ('cancel', 'Cancelled')],
         default='open',
     )
     # Tipos en realidad son: Interna o externa, no se pudo cambiar el selection por todo lo avanzado
     type = fields.Selection(
-        string='Tipo',
+        string='Type',
         selection=[
-            ('internal', 'Interna'),
-            ('ext', 'Externa')],
+            ('internal', 'Internal'),
+            ('ext', 'External')],
     )
     type_partner = fields.Selection(
-        string='Tipo de socio',
+        string='Partner Type',
         selection=[
-            ('internal', 'Cliente'),
-            ('ext', 'Proveedor')],
+            ('internal', 'Customer'),
+            ('ext', 'Vendor')],
     )
 
-    investigation = fields.Text(string='Investigación')
-    conclusions = fields.Text(string='Conclusiones')
+    investigation = fields.Text(string='Investigation')
+    conclusions = fields.Text(string='Conclusions')
 
     investigation_method = fields.Selection([
-        ('cause', 'Análisis causa-efecto'),
-        ('why', '5 ¿Por qué?'),
-    ], string='Metodo de investigación')
+        ('cause', 'Cause-and-Effect Analysis'),
+        ('why', '5 Whys'),
+    ], string='Investigation Method')
 
     cause_ids = fields.One2many(
-        'mgmtsystem.nonconformity.cause_why', 'incident_cause_id', string='Causas')
+        'mgmtsystem.nonconformity.cause_why', 'incident_cause_id', string='Causes')
 
     why_ids = fields.One2many(
-        'mgmtsystem.nonconformity.cause_why', 'incident_why_id', string='¿Por qué?')
+        'mgmtsystem.nonconformity.cause_why', 'incident_why_id', string='Whys')
 
-    root_cause = fields.Char(string='Causa raiz')
+    root_cause = fields.Char(string='Root Cause')
 
     @api.onchange('type_partner')
     def _onchange_type_partner(self):
@@ -255,44 +255,44 @@ class incident(models.Model):
                     }}
 
     response = fields.Text(
-        string='Respuesta ante la acción',
+        string='Response to Action',
     )
     satisfied = fields.Boolean(
-        string='Satisfecho',
+        string='Satisfied',
     )
 
     product_id = fields.Many2one(
-        string='Producto/Servicio',
+        string='Product/Service',
         comodel_name='product.product',
     )
     reclamation_book = fields.Boolean(
-        string='¿Se llenó el libro de reclamaciones?')
-    employee_id = fields.Many2one('hr.employee', string='Atendida por')
+        string='Was the Complaints Book filled out?')
+    employee_id = fields.Many2one('hr.employee', string='Handled by')
     employee_notify_id = fields.Many2one(
-        'hr.employee', string='Notificada por')
-    place = fields.Char(string='Lugar donde ocurrió el incidente')
-    responsable_id = fields.Many2one('res.users', 'Responsable')
+        'hr.employee', string='Notified by')
+    place = fields.Char(string='Location where the incident occurred')
+    responsable_id = fields.Many2one('res.users', 'Responsible')
 
-    incident_files = fields.Binary(string='Anexos', attachment=True)
+    incident_files = fields.Binary(string='Attachments', attachment=True)
 
     # Contact data
 
-    complainer_name = fields.Char(string='Nombres y apellidos')
-    complainer_phone = fields.Char(string='Teléfono')
-    complainer_email = fields.Char(string='Correo electrónico')
+    complainer_name = fields.Char(string='Full Name')
+    complainer_phone = fields.Char(string='Phone')
+    complainer_email = fields.Char(string='Email')
 
     complainer_document_type = fields.Selection([
-        ('dni', 'DNI'),
-        ('car', 'Carnet de extranjería'),
-        ('pas', 'Pasaporte'),
-    ], string='Tipo de documento')
+        ('dni', 'ID Card (DNI)'),
+        ('car', 'Foreign ID'),
+        ('pas', 'Passport'),
+    ], string='Document Type')
 
-    complainer_document_number = fields.Char(string='Numero de documento')
+    complainer_document_number = fields.Char(string='Document Number')
 
     complainer_delivery_type = fields.Selection([
-        ('email', 'Quiero recibirla por correo electronico'),
-        ('phone', 'Quiero recibirla por celular'),
-    ], string='Medio de comunicación')
+        ('email', 'I want to receive it by email'),
+        ('phone', 'I want to receive it by mobile phone'),
+    ], string='Communication Method')
 
     @api.onchange('satisfied')
     def _onchange_satisfied(self):
@@ -303,9 +303,9 @@ class incident(models.Model):
     def onchange_quick_action_id(self):
         if self.quick_action_id:
             if not self.investigation:
-                raise UserError('El campo de investigación está vacio')
-            if not self.conclusions:
-                raise UserError('El campo de conclusiones está vacio')
+                raise UserError('The investigation field is empty')
+            if not self.investigation_method=='why' and not self.conclusions:
+                raise UserError('The conclusions field is empty')
         if self.quick_action_id:
             self.state = 'in_process'
 

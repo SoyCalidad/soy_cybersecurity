@@ -2,7 +2,7 @@
 <odoo>
 
     <record id="sc27k_asset_inventory_report_xlsx" model="ir.actions.report">
-        <field name="name">Inventario de Activos de Información (Excel)</field>
+        <field name="name">Information Asset Inventory (Excel)</field>
         <field name="model">cyber_matrix.block.line</field>
         <field name="report_type">xlsx</field>
         <field name="report_name">sc27k_asset_inventory.report_asset_inventory_xlsx</field>

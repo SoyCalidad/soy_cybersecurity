@@ -8,12 +8,12 @@ class Categ(models.Model):
     _description = "Categoria de matriz"
 
     name = fields.Char(
-        string=u'Nombre',
+        string=u'Name',
         required=True,
     )
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     
@@ -61,23 +61,23 @@ class MatrixLine(models.Model):
 
     applicability_id = fields.Many2one(
         comodel_name='cyber_2matrix.block.line',
-        string="Aplicabilidad",
+        string="Applicability",
         required=True,
     )
-    justification  = fields.Text(string="Justificación de la aplicabilidad / no aplicabilidad")
-    reference  = fields.Text(string="Referencia de la implementación del control")
-    is_implemented = fields.Boolean(default=False, string="¿Control implementado?")
+    justification  = fields.Text(string="Justification for applicability / non-applicability")
+    reference  = fields.Text(string="Control implementation reference")
+    is_implemented = fields.Boolean(default=False, string="Control implemented?")
 
     applicability_id_name = fields.Char(
         related='applicability_id.name',
-        string="Nombre del control",
+        string="Control name",
     )
     applicability_id_domain_id = fields.Many2one(
         related='applicability_id.domain_id',
     )
     applicability_id_description_application = fields.Text(
         related='applicability_id.description_application',
-        string="Descripción del control",
+        string="Control description",
     )
     # applicability_id_application = fields.Boolean(
     #     related='applicability_id.application',
@@ -86,13 +86,13 @@ class MatrixLine(models.Model):
     application = fields.Selection(
         selection=[
             ('no', 'No'),
-            ('yes', 'Si'),
+            ('yes', 'Yes'),
         ],
-        string='Aplicabilidad', default='no')
+        string='Applicability', default='no')
 
     action_ids = fields.Many2many(
         comodel_name='mgmtsystem.action',
-        string="Acciones",
+        string="Actions",
     )
 
     matrix_id = fields.Many2one(
@@ -102,44 +102,45 @@ class MatrixLine(models.Model):
     )
 
 
+
 class Matrix(models.Model):
     _name = 'cyber_2matrix.matrix'
     _inherit = ['mgmtsystem.validation.mail', 'mgmtsystem.code']
-    _description = "Matriz de declaración de aplicabilidad"
+    _description = "Applicability Statement Matrix"
 
     parent_edition = fields.Many2one(
-        comodel_name='cyber_2matrix.matrix', string='Padre', copy=False)
+        comodel_name='cyber_2matrix.matrix', string='Parent', copy=False)
     old_versions = fields.One2many(
-        comodel_name='cyber_2matrix.matrix', string='Versiones antiguas',
+        comodel_name='cyber_2matrix.matrix', string='Old Versions',
         inverse_name='parent_edition', context={'active_version': False})
 
     def action_open_older_versions(self):
         result = self.env.ref(
             'mgmtsystem_opportunity.matrix_matrix_risk_action').read()[0]
         result['domain'] = [('id', 'in', self.old_versions.ids)]
-        #result['context'] = {'active_version': False, 'type': self.type}
+        # result['context'] = {'active_version': False, 'type': self.type}
         return result
 
     name = fields.Char(
-        string='Nombre de matriz',
+        string='Matrix Name',
     )
-    company_id = fields.Many2one('res.company', string='Compañia', default=lambda self: self.env.company)
+    company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company)
 
     numero = fields.Char(
-        string="Numero de secuencia",
+        string="Sequence Number",
         readonly=True,
         required=True,
         copy=False,
-        default='Sin definir',
+        default=lambda self: _('Undefined'),
     )
 
     categ_id = fields.Many2one(
-        string=u'Nombre de matríz',
+        string='Matrix Name',
         comodel_name='cyber_2matrix.categ',
         ondelete='cascade',
     )
     system_id = fields.Many2one(
-        'mgmtsystem.context.system', string='Identificador de riesgo', default=lambda self: self.env.ref('hola_calidad.policy_system_1'))
+        'mgmtsystem.context.system', string='Risk Identifier', default=lambda self: self.env.ref('hola_calidad.policy_system_1'))
 
     @api.onchange('categ_id')
     def _onchange_categ_id(self):
@@ -148,27 +149,27 @@ class Matrix(models.Model):
 
 
     sequence_id = fields.Many2one(
-        string=u'Secuencia de ediciones',
+        string='Edition Sequence',
         comodel_name='ir.sequence',
         related='categ_id.sequence_id',
     )
 
     date_elaborate = fields.Datetime(
-        string='Fecha elaboración',
+        string='Elaboration Date',
         default=fields.Datetime.now,
         readonly=True,
         store=True,
     )
 
     date_review = fields.Datetime(
-        string='Fecha revisado',
+        string='Review Date',
         default=fields.Datetime.now,
         readonly=True,
         store=True,
     )
 
     user_ids = fields.Many2many(
-        string='Validado',
+        string='Validated By',
         comodel_name='res.users',
         relation='cyber_2matrix_users_rel',
         column1='user_id',
@@ -176,31 +177,31 @@ class Matrix(models.Model):
     )
 
     date_validate = fields.Datetime(
-        string='Fecha validación',
+        string='Validation Date',
         readonly=True,
         store=True,
     )
 
     filter = fields.Selection(
-        string='Filtrar por',
+        string='Filter By',
         selection=[
-            ('none', 'Todos las lineas pendientes'),
-            ('date', 'Entre rango de fechas de creación'),
-            ('block', 'Por fuentes'),
-            ('state', 'Estado de riesgo'),
-            ('partial', 'Seleccionar manualmente')],
+            ('none', 'All Pending Lines'),
+            ('date', 'Between Creation Date Range'),
+            ('block', 'By Sources'),
+            ('state', 'Risk State'),
+            ('partial', 'Select Manually')],
         default='none',
     )
 
     date_init = fields.Date(
-        string='Fecha inicio',
+        string='Start Date',
     )
     date_fin = fields.Date(
-        string='Fecha final',
+        string='End Date',
     )
 
     block_ids = fields.Many2many(
-        string='Fuentes',
+        string='Sources',
         comodel_name='cyber_2matrix.block',
         relation='cyber_2matrix_block_line_rel',
         column1='block_id',
@@ -208,31 +209,24 @@ class Matrix(models.Model):
     )
 
     state = fields.Selection(
-        string='Estado',
+        string='State',
         selection=[
-            ('elaborate', 'En elaboración'),
-            ('review', 'En revisión'),
-            ('validate', 'En validación'),
-            ('validate_ok', 'Validado'),
-            ('cancel', 'Cancelado')],
+            ('elaborate', 'In Progress'),
+            ('review', 'In Review'),
+            ('validate', 'In Validation'),
+            ('validate_ok', 'Validated'),
+            ('cancel', 'Cancelled')],
         default='elaborate',
     )
     state_line = fields.Selection(
-        string='Estado',
+        string='Line State',
         selection=[
-            ('draft', 'Borrador'),
-            ('elaborate', 'En proceso'),
-            ('validate', 'Validado'),
-            ('cancel', 'Cancelado')],
+            ('draft', 'Draft'),
+            ('elaborate', 'In Progress'),
+            ('validate', 'Validated'),
+            ('cancel', 'Cancelled')],
     )
 
-    # line_ids = fields.Many2many(
-    #     string='line',
-    #     comodel_name='cyber_2matrix.matrix.line',
-    #     relation='cyber_2matrix_m_block_line_rel',
-    #     column1='line_id',
-    #     column2='matrix_id',
-    # )
     line_ids = fields.One2many(
         'cyber_2matrix.matrix.line',
         'matrix_id',
@@ -242,38 +236,15 @@ class Matrix(models.Model):
         self.state = 'elaborate'
 
     def send_elaborate_o(self):
-        #self.exec_filter()
+        # self.exec_filter()
         self.state = 'elaborate'
 
-    '''
-    def exec_filter(self):
-        type_ = None
-        if self.type == 'risk':
-            type_ = ('type', '=', 'risk')
-        elif self.type == 'oppotunity':
-            type_ = ('type', '=', 'opportunity')
-        if not filter or not type_:
-            return
-        if self.filter == 'none':
-            self.line_ids = self.env['matrix.block.line'].search(
-                [('state', '=', 'elaborate'), type_])
-        if self.filter == 'date':
-            self.line_ids = self.env['matrix.block.line'].search(
-                [('create_date', '<=', self.date_fin), ('create_date', '>=', self.date_init), type_])
-        if self.filter == 'block':
-            self.line_ids = self.env['matrix.block.line'].search(
-                [('block_id', 'in', self.block_ids.ids), type_])
-        if self.filter == 'state':
-            self.line_ids = self.env['matrix.block.line'].search(
-                [('state', '=', self.state_line), type_])
-    '''
     def create_action(self, vuser_id):
-
         action = self.env.ref('hola_calidad.p_mail_activity_action').read()[0]
         self.env.cr.execute("""SELECT id FROM ir_model 
-                          WHERE model = %s""", (str(self._name),))
+                                  WHERE model = %s""", (str(self._name),))
         info = self.env.cr.dictfetchall()
-        model_id=False
+        model_id = False
         if info:
             model_id = info[0]['id']
         action['context'] = {
@@ -284,12 +255,11 @@ class Matrix(models.Model):
         }
         return action
 
-
     def unlink(self):
         for matrix in self:
             if matrix.state not in ['draft', 'elaborate']:
-                raise exceptions.ValidationError(
-                    _('Solo se permite eliminar registros en borrador y en elaboración'))
+                raise ValidationError(
+                    _('Deleting records is only allowed in draft and in progress states'))
         return super(Matrix, self).unlink()
 
     @api.model
@@ -308,48 +278,20 @@ class Matrix(models.Model):
 
         return res
 
-    # @api.model_create_multi
-    # def create(self, vals_list): 
-    #     applicability_ids = self.env['cyber_2matrix.block.line'].search([]).ids
-
-    #     commands = [
-    #         (0, 0, {
-    #             'applicability_id': applicability_id,
-    #             'is_implemented': False,
-    #         })
-    #         for applicability_id in applicability_ids
-    #     ]
-
-    #     for vals in vals_list:
-    #         vals.setdefault('line_ids', list(commands))
-    #     res = super().create(vals_list)
-
-    #     return res
-
-
-
 
 class Block(models.Model):
     _name = 'cyber_2matrix.block'
-    _description = "Fuente"
+    _description = "Source"
 
     name = fields.Char(
-        string='Fuente',
+        string='Source',
     )
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
 
-    '''
-    type = fields.Selection(
-        string='Tipo',
-        selection=[
-            ('risk', 'Riesgo'),
-            ('opportunity', 'Oportunidad')],
-    )
-    '''
     @api.onchange('process_id')
     def _onchange_process_id(self):
         if self.process_id:
@@ -360,35 +302,33 @@ class Block(models.Model):
         self.name = self.other
 
     process_id = fields.Many2one(
-        string='Proceso',
+        string='Process',
         comodel_name='process.edition',
         ondelete='cascade',
-        domain=[('active','=',True)]
+        domain=[('active', '=', True)]
     )
     other = fields.Char(
-        string='Otro',
+        string='Other',
     )
 
     line_ids = fields.One2many(
-        string='Lineas',
+        string='Lines',
         comodel_name='cyber_2matrix.block.line',
         inverse_name='block_id',
     )
 
     state = fields.Selection(
-        string='Estado',
+        string='State',
         selection=[
-            ('draft', 'Borrador'),
-            ('elaborate', 'En proceso'),
-            ('validate', 'Validado'),
-            ('cancel', 'Cancelado')],
+            ('draft', 'Draft'),
+            ('elaborate', 'In Progress'),
+            ('validate', 'Validated'),
+            ('cancel', 'Cancelled')],
         default='draft',
     )
 
     def send_elaborate(self):
         self.state = 'elaborate'
-        #for line in self.line_ids:
-            #line.send_elaborate()
 
     def send_validate(self):
         self.state = 'validate'
@@ -401,65 +341,45 @@ class Block(models.Model):
             line.send_cancel()
 
 
-
 class CyberMatrixBlockLineDomain(models.Model):
     _name = 'cyber_2matrix.block.line.domain'
-    _description = 'Dominio'
+    _description = 'Domain'
 
-    name = fields.Char(string='Nombre')
-    description = fields.Text(string='Descripción',)
+    name = fields.Char(string='Name')
+    description = fields.Text(string='Description')
 
     ctrl_target_id = fields.One2many(
-        string='Objetivos de control',
+        string='Control Objectives',
         comodel_name='cyber_2matrix.block.line.ctrl_target',
         inverse_name='domain_id',
     )
 
+
 class CyberMatrixBlockLineCtrlTarget(models.Model):
     _name = 'cyber_2matrix.block.line.ctrl_target'
-    _description = 'Objetivo de control'
+    _description = 'Control Objective'
 
-    name = fields.Char(string='Nombre')
-    domain_id = fields.Many2one('cyber_2matrix.block.line.domain', string='Dominio')
+    name = fields.Char(string='Name')
+    domain_id = fields.Many2one('cyber_2matrix.block.line.domain', string='Domain')
 
 
 class Checklist(models.Model):
     _name = 'cyber_2matrix.checklist'
     _inherit = ['mgmtsystem.version', 'mail.thread', 'mail.activity.mixin', 'mgmtsystem.code']
-    _description = "Lista de verificación"
+    _description = "Checklist"
 
-    name = fields.Char('Nombre')
+    name = fields.Char('Name')
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     state = fields.Selection([
-        ('draft', 'Borrador'),
-        ('validate', 'Validado'),
-        ('cancel', 'Cancelado'),
-    ], default='draft', string='Estado')
-    line_ids = fields.One2many('cyber_2matrix.checklist.line', 'checklist_id', string='Líneas')
-    dms_lines_evidence_ids = fields.Many2many('documents.document', string='Evidencias')
-    dms_lines_evidence_count = fields.Integer(compute='_compute_dms_lines_evidence_count', string='Evidencias')
-
-    @api.depends('line_ids.dms_evidence_ids')
-    def _compute_dms_lines_evidence_count(self):
-        for checklist in self:
-            all_evidence = checklist.line_ids.mapped('dms_evidence_ids')
-            checklist.dms_lines_evidence_ids = [(6, 0, all_evidence.ids)]
-            checklist.dms_lines_evidence_count = len(all_evidence)
-
-    def set_root_directory(self):
-        directory = 'soy_cybersecurity_cybersecurity.directory_soy_cybersecurity'
-        return directory
-
-    def action_dms_lines_evidence_ids(self):
-        result = self.env.ref('documents.action_dms_file').read()[0]
-        directory = self.set_root_directory()
-        result['domain'] = [('id', 'in', self.dms_lines_evidence_ids.ids)]
-        result['context'] = {'default_directory_id': self.env.ref(directory).id}
-        return result
+        ('draft', 'Draft'),
+        ('validate', 'Validated'),
+        ('cancel', 'Cancelled'),
+    ], default='draft', string='State')
+    line_ids = fields.One2many('cyber_2matrix.checklist.line', 'checklist_id', string='Lines')
 
     def action_send_validate(self):
         self.state = 'validate'
@@ -479,19 +399,19 @@ class Checklist(models.Model):
 
 class ChecklistControl(models.Model):
     _name = 'cyber_2matrix.checklist.control'
-    _description = "Control de lista de verificación"
+    _description = "Checklist Control"
     _order = 'sequence, id'
     _rec_name = 'number'
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     sequence = fields.Integer(default=10)
-    number = fields.Char('Número')
-    number_compute = fields.Char('Número', compute='_compute_number')
-    description = fields.Char('Descripción')
+    number = fields.Char('Number')
+    number_compute = fields.Char('Number', compute='_compute_number')
+    description = fields.Char('Description')
     control = fields.Text('Control')
 
     @api.depends('number')
@@ -502,85 +422,73 @@ class ChecklistControl(models.Model):
 
 class ChecklistLine(models.Model):
     _name = 'cyber_2matrix.checklist.line'
-    _description = "Línea de lista de verificación"
+    _description = "Checklist Line"
     _rec_name = 'checklist_control_id'
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
-    checklist_id = fields.Many2one('cyber_2matrix.checklist', string='Lista de verificación')
-    checklist_control_id = fields.Many2one('cyber_2matrix.checklist.control', string='Número')
-    checklist_control_number = fields.Char(related='checklist_control_id.number_compute', string='Número')
-    checklist_control_description = fields.Char(related='checklist_control_id.description', string='Descripción')
+    checklist_id = fields.Many2one('cyber_2matrix.checklist', string='Checklist')
+    checklist_control_id = fields.Many2one('cyber_2matrix.checklist.control', string='Number')
+    checklist_control_number = fields.Char(related='checklist_control_id.number_compute', string='Number')
+    checklist_control_description = fields.Char(related='checklist_control_id.description', string='Description')
     checklist_control_control = fields.Text(related='checklist_control_id.control', string='Control')
-    applies = fields.Boolean('Aplica', default=False)
-    documentary_control_ids = fields.Many2many('documentary.control', string='Documentos')
-    dms_evidence_ids = fields.Many2many('documents.document', string='Evidencia')
-    dms_evidence_count = fields.Integer(compute='_compute_dms_evidence_count', string='Evidencias')
-    comments = fields.Text('Comentario')
-
-    def set_root_directory(self):
-        directory = 'soy_cybersecurity_cybersecurity.directory_soy_cybersecurity'
-        return directory
-
-    @api.depends('dms_evidence_ids')
-    def _compute_dms_evidence_count(self):
-        for each in self:
-            each.dms_evidence_count = len(each.dms_evidence_ids)
+    applies = fields.Boolean('Applies', default=False)
+    documentary_control_ids = fields.Many2many('documentary.control', string='Documents')
+    comments = fields.Text('Comments')
 
 
 class Line(models.Model):
     _name = 'cyber_2matrix.block.line'
     _inherit = ['mgmtsystem.version', 'mail.thread',
                 'mail.activity.mixin', 'mgmtsystem.code']
-    _description = "Declaración de aplicabilidad"
+    _description = "Applicability Statement"
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     parent_edition = fields.Many2one(
-        comodel_name='cyber_2matrix.block.line', string='Padre', copy=False)
+        comodel_name='cyber_2matrix.block.line', string='Parent', copy=False)
     old_versions = fields.One2many(
-        comodel_name='cyber_2matrix.block.line', string='Versiones antiguas',
+        comodel_name='cyber_2matrix.block.line', string='Old Versions',
         inverse_name='parent_edition', context={'active_version': False})
 
     def action_open_older_versions(self):
         result = self.env.ref(
             'mgmtsystem_opportunity.matrix_block_line_risk_action').read()[0]
         result['domain'] = [('id', 'in', self.old_versions.ids)]
-        #result['context'] = {'active_version': False, 'type': self.type}
+        # result['context'] = {'active_version': False, 'type': self.type}
         return result
 
-    active = fields.Boolean(default=True, string="Activo")
+    active = fields.Boolean(default=True, string="Active")
     sequence = fields.Integer(default=1, string="#")
     name = fields.Char(
-        string='Nombre',
+        string='Name',
         required=True,
     )
     block_id = fields.Many2one(
-        string='Fuente',
+        string='Source',
         comodel_name='cyber_2matrix.block',
         ondelete='restrict',
     )
-    user_id = fields.Many2one(comodel_name='res.users', string='Responsable')
+    user_id = fields.Many2one(comodel_name='res.users', string='Responsible')
 
     system_id = fields.Many2one(
-        'mgmtsystem.context.system', string='Identificador', default=lambda self: self.env.ref('hola_calidad.policy_system_1'))
-    process_id = fields.Many2one('mgmt.categ', string='Proceso')
+        'mgmtsystem.context.system', string='Identifier', default=lambda self: self.env.ref('hola_calidad.policy_system_1'))
+    process_id = fields.Many2one('mgmt.categ', string='Process')
 
     description = fields.Text(
-        string='Descripción',
+        string='Description',
     )
 
-    domain_id = fields.Many2one('cyber_2matrix.block.line.domain', string='Dominio')
-    domain_description = fields.Text(related='domain_id.description', readonly=True, string='Descripción del Dominio')
+    domain_id = fields.Many2one('cyber_2matrix.block.line.domain', string='Domain')
+    domain_description = fields.Text(related='domain_id.description', readonly=True, string='Domain Description')
 
-    ctrl_target_id = fields.Many2one('cyber_2matrix.block.line.ctrl_target', string='Objetivo de control')
-
+    ctrl_target_id = fields.Many2one('cyber_2matrix.block.line.ctrl_target', string='Control Objective')
 
     @api.onchange('domain_id')
     def _onchange_domain_id(self):
@@ -588,26 +496,25 @@ class Line(models.Model):
             return {'domain': {'ctrl_target_id': [('domain_id', '=', self.domain_id.id)]}}
         else:
             return {'domain': {'ctrl_target_id': []}}
-        
+
     @api.constrains('ctrl_target_id', 'domain_id')
     def _check_ctrl_target(self):
         if self.ctrl_target_id and self.domain_id and self.ctrl_target_id.domain_id != self.domain_id:
-            raise ValidationError(_("El Objetivo de control seleccionado no corresponde al dominio indicado."))
+            raise ValidationError(_("The selected Control Objective does not belong to the specified domain."))
 
+    application = fields.Boolean(string='Applicability', default=False)
+    description_application = fields.Text(string='Application Description')
 
-    application = fields.Boolean(string='Aplicación', default=False)
-    description_application = fields.Text(string='Descripción de la aplicación',)
-
-    implementation_record = fields.Text(string='Evidencia o registro de implementación',)
+    implementation_record = fields.Text(string='Implementation Evidence or Record')
     type = fields.Selection(
-        string='Tipo',
+        string='Type',
         selection=[
-            ('national', 'Nacional'),
-            ('international', 'Internacional')],
+            ('national', 'National'),
+            ('international', 'International')],
     )
 
     action_ids = fields.Many2many(
-        string='Acciones',
+        string='Actions',
         comodel_name='mgmtsystem.action',
         relation='cyber2_block_line_action_rel',
         column1='action_id',
@@ -615,11 +522,11 @@ class Line(models.Model):
     )
 
     state = fields.Selection(
-        string='Estado',
+        string='State',
         selection=[
-            ('draft', 'Borrador'),
-            ('validate', 'Validado'),
-            ('cancel', 'Cancelado')],
+            ('draft', 'Draft'),
+            ('validate', 'Validated'),
+            ('cancel', 'Cancelled')],
         default='draft',
     )
 
@@ -632,18 +539,3 @@ class Line(models.Model):
 
     def send_cancel(self):
         self.state = 'cancel'
-
-
-    '''important_review_it
-    @api.constrains('state')
-    def _check_state(self):
-        for record in self:
-            if record.type == 'opportunity':
-                if record.state == 'validate' and record.ntr >= 8 and not record.action_ids:
-                    raise exceptions.ValidationError(
-                        _('Valor de oportunidad muy alto. Para validar tiene que ingresar al menos una acción'))
-            if record.type == 'risk':
-                if record.state == 'validate' and record.ntr >= 100 and not record.action_ids:
-                    raise exceptions.ValidationError(
-                        _('Valor de riesgo muy alto. Para validar tiene que ingresar al menos una acción'))
-    '''

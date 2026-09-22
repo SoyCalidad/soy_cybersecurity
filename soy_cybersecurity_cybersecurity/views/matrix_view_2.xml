@@ -30,7 +30,7 @@
                         <field name="reference"  invisible="application=='no'"/>
                     </group>
                     <notebook >
-                        <page invisible="application=='no'" name="actions" string="Acciones">
+                        <page invisible="application=='no'" name="actions" string="Actions">
                             <group>
                                 <label for="action_ids" />
                                 <field name="action_ids"  nolabel="1" />
@@ -51,34 +51,34 @@
                 <header>
                     <button name="send_review"
                             type="object"
-                            string="Enviar a revisar"
+                            string="Submit for review"
                             class="btn-primary"
                             invisible="state != 'elaborate'" />
                     <button name="send_validate"
                             type="object"
-                            string="Enviar a validar"
+                            string="Submit for validation"
                             class="btn-primary"
                             invisible="state != 'review'" />
                     <button name="send_validate_ok"
                             type="object"
-                            string="Validar"
+                            string="Validate"
                             class="btn-primary"
                             invisible="state != 'validate'" />
                     <button name="send_elaborate"
                             type="object"
-                            string="Enviar a elaboración"
+                            string="Submit for elaboration"
                             class="btn-second"
                             invisible="state != 'validate'" />
                     <button name="send_cancel"
-                            confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
+                            confirm="This will render the current record obsolete. Are you sure?"
                             type="object"
-                            string="Cancelar"
+                            string="Cancel"
                             class="btn-second"
                             invisible="state == 'cancel'" />
                     <field name="state" widget="statusbar" statusbar_visible="elaborate,review,validate,validate_ok,cancel" />
                     <button name="button_new_version"
                             type="object"
-                            string="Nueva versión"
+                            string="New version"
                             invisible="state !=  'validate_ok'"
                             class="oe_highlight" />
                 </header>
@@ -89,7 +89,7 @@
                                 class="oe_stat_button"
                                 icon="fa-archive"
                                 style="white-space: nowrap;"
-                                string="Versiones antiguas" />
+                                string="Old versions" />
                     </div>
                     
                     <h1>
@@ -111,30 +111,30 @@
                         -->
                     </group>
                     <notebook>
-                        <page string="DECLARACIÓN DE APLICABILIDAD">
+                        <page string="STATEMENT OF APPLICABILITY">
                             <!--<field name="line_ids" domain="[('type', '=', type)]" context="{'default_type': type}" attrs="{'readonly':[('state','=','validate_ok')]}">-->
                             <field name="line_ids" 
 
                             readonly="state == 'validate_ok'" force_save="1">
                                 <list delete="0" create="0">
-                                    <field name="applicability_id" string="NOMBRE DEL CONTROL" width="300" />
+                                    <field name="applicability_id" string="CONTROL NAME" width="300" />
                                     <field name="justification" />
-                                    <field name="is_implemented" string="ESTADO" />
+                                    <field name="is_implemented" string="STATE" />
                                 </list>
                             </field>
                         </page>
-                        <page string="Validación">
+                        <page string="Validation">
                             <group>
                                 <group>
                                     <field name="version" />
                                 </group>
                                 <group colspan="4">
-                                    <separator string="Elaboración" />
+                                    <separator string="Elaboration" />
                                     <field name="elaboration_step" colspan="4" nolabel="1" 
                                     readonly="state not in ['elaborate']" />
-                                    <separator string="Revisión" />
+                                    <separator string="Review" />
                                     <field name="review_step" colspan="4" nolabel="1" readonly="state not in ['elaborate', 'review']" />
-                                    <separator string="Validación" />
+                                    <separator string="Validation" />
                                     <field name="validation_step" colspan="4" nolabel="1" readonly="state not in ['elaborate', 'review', 'validate']" />
                                 </group>
                                 <group>
@@ -165,7 +165,7 @@
 
     
     <record model="ir.actions.act_window" id="matrix_matrix_app_ctrl_mgmt_action">
-        <field name="name">Matriz de declaración de aplicabilidad</field>
+        <field name="name">Statement of Applicability Matrix</field>
         <field name="res_model">cyber_2matrix.matrix</field>
         <field name="view_mode">list,form</field>
         <!--<field name="domain">[('type','=','risk'), ('state','!=','cancel')]</field>-->

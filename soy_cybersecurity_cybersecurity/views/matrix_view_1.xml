@@ -24,26 +24,26 @@
                 <header>
                     <button name="send_review"
                             type="object"
-                            string="Enviar a revisar"
+                            string="Submit for review"
                             class="btn-primary"
                             invisible="state != 'elaborate'" />
                     <button name="send_validate"
                             type="object"
-                            string="Enviar a validar"
+                            string="Submit for validation"
                             class="btn-primary"
                             invisible="state != 'review'" />
                     <button name="send_validate_ok"
                             type="object"
-                            string="Validar"
+                            string="Validate"
                             class="btn-primary"
                             invisible="state != 'validate'" />
                     <button name="send_elaborate"
                             type="object"
-                            string="Enviar a elaboración"
+                            string="Submit for elaboration"
                             class="btn-second"
                             invisible="state != 'validate'" />
                     <button name="send_cancel"
-                            confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
+                            confirm="This will render the current record obsolete. Are you sure?"
                             type="object"
                             string="Cancelar"
                             class="btn-second"
@@ -51,7 +51,7 @@
                     <field name="state" widget="statusbar" statusbar_visible="elaborate,review,validate,validate_ok" />
                     <button name="button_new_version"
                             type="object"
-                            string="Nueva versión"
+                            string="New version"
                             invisible="state != 'validate_ok'"
                             class="oe_highlight" />
                 </header>
@@ -62,7 +62,7 @@
                                 class="oe_stat_button"
                                 icon="fa-archive"
                                 style="white-space: nowrap;"
-                                string="Versiones antiguas" />
+                                string="Old versions" />
                     </div>
                     <h1>
                         <field name="code" />
@@ -82,7 +82,7 @@
                         -->
                     </group>
                     <notebook>
-                        <page string="Detalles de lineas">
+                        <page string="Lines detail">
                             <!--<field name="line_ids" domain="[('type', '=', type)]" context="{'default_type': type}" attrs="{'readonly':[('state','=','validate_ok')]}">-->
                             <field name="line_ids" 
                             readonly="state == 'validate_ok'">
@@ -91,23 +91,23 @@
                                     <field name="effect" />
                                     <!--<field name="type" />-->
                                     <field name="cause" />
-                                    <field name="ntr" string="Valor" />
+                                    <field name="ntr" string="Value" />
                                     <field name="action_ids" />
                                     <field name="state" />
                                 </list>
                             </field>
                         </page>
-                        <page string="Validación">
+                        <page string="Validation">
                             <group>
                                 <group>
                                     <field name="version" />
                                 </group>
                                 <group colspan="4">
-                                    <separator string="Elaboración" />
+                                    <separator string="Elaboration" />
                                     <field name="elaboration_step" colspan="4" nolabel="1" readonly="state not in ['elaborate']" />
-                                    <separator string="Revisión" />
+                                    <separator string="Review" />
                                     <field name="review_step" colspan="4" nolabel="1" readonly="state not in ['elaborate', 'review']" />
-                                    <separator string="Validación" />
+                                    <separator string="Validation" />
                                     <field name="validation_step" colspan="4" nolabel="1" readonly="state not in ['elaborate', 'review', 'validate']" />
                                 </group>
                                 <group>
@@ -117,13 +117,13 @@
                                 </group>
                             </group>
                         </page>
-                        <page name="risk_opp" string="Riesgos y oportunidades">
-                            <separator string="Riesgos"/>
+                        <page name="risk_opp" string="Risks and opportunities">
+                            <separator string="Risks"/>
                             <field name="risk_ids" context="{'default_type': 'risk'}"/>
-                            <separator string="Oportunidades"/>
+                            <separator string="Opportunities"/>
                             <field name="opp_ids" context="{'default_type': 'opportunity'}"/>
                         </page>
-                        <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                        <page string="Multi-Company" name="multi_company" groups="base.group_multi_company">
                     <group>
                         <field name="company_id"/>
                     </group>
@@ -148,7 +148,7 @@
 
     
     <record model="ir.actions.act_window" id="matrix_matrix_information_asset_action">
-        <field name="name">Matriz de inventario de activos de la información</field>
+        <field name="name">Information Asset Inventory Matrix</field>
         <field name="res_model">cyber_matrix.matrix</field>
         <field name="view_mode">list,form</field>
         <!--<field name="domain">[('type','=','risk'), ('state','!=','cancel')]</field>-->

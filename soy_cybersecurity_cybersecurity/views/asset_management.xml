@@ -43,7 +43,7 @@
                         <field name="alternative_description" />
                     </group>
                     <group>
-                        <field name="value" string='Valor' />
+                        <field name="value" string='Value' />
                         <field name="text_values" string='' />
                     </group>
                 </sheet>
@@ -84,19 +84,19 @@
                 <header>
                     <button name="send_elaborate"
                         type="object"
-                        string="Iniciar"
+                        string="Start"
                         class="btn-primary"
                         invisible="state != 'draft'"
                     />
                     <button name="send_validate"
                         type="object"
-                        string="Validar"
+                        string="Validate"
                         class="btn-primary"
                         invisible="state != 'in_process'" />
                     <button name="send_cancel"
-                        confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
+                        confirm="This will render the current record obsolete. Are you sure?"
                         type="object"
-                        string="Cancelar"
+                        string="Cancel"
                         class="btn-second"
                         invisible="state == 'cancel'" />
                     <field name="state" widget="statusbar"
@@ -118,7 +118,7 @@
                         name="type" invisible="1" />-->
                     </group>
                     <notebook>
-                        <page string="Lineas">
+                        <page string="Lines">
                             <field name="line_ids"
                                 readonly="state not in ['draft','in_process']">
                                 <list>
@@ -129,7 +129,7 @@
                                     <!--<field
                                     name="ntr" string="Valor de riesgo" attrs="{'invisible':
                                     [('type','!=','risk')]}" />-->
-                                    <field name="ntr" string="Valor de riesgo" />
+                                    <field name="ntr" string="Value at Risk" />
                                     <!--<field
                                     name="ntr" string="Valor de oportunidad"/>-->
                                     <field name="action_ids" />
@@ -139,7 +139,7 @@
                                 </list>
                             </field>
                         </page>
-                        <page string="Multi-Compañía" name="multi_company"
+                        <page string="Multi-Company" name="multi_company"
                             groups="base.group_multi_company">
                             <group>
                                 <field name="company_id" />
@@ -175,20 +175,20 @@
                 <header>
                     <button name="send_validate"
                         type="object"
-                        string="Validar"
+                        string="Validate"
                         class="btn-primary"
                         invisible="state != 'draft'" />
                     <button name="send_cancel"
-                        confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
+                        confirm="This will render the current record obsolete. Are you sure?"
                         type="object"
-                        string="Cancelar"
+                        string="Cancel"
                         class="btn-second"
                         invisible="state == 'cancel'" />
                     <field name="state" widget="statusbar" statusbar_visible="draft,validate" />
                     <button name="button_new_version"
                         type="object"
-                        string="Nueva versión"
-                        confirm="¿Está seguro de crear una nueva versión?"
+                        string="New version"
+                        confirm="Are you sure you want to create a new version?"
                         invisible="state != 'validate'"
                         class="oe_highlight" />
                 </header>
@@ -200,7 +200,7 @@
                             icon="fa-archive"
                             style="white-space: nowrap;"
                             invisible="version==1"
-                            string="Versiones antiguas" />
+                            string="Old versions" />
                     </div>
                     <div class="oe_title">
                         <label for="name" />
@@ -264,7 +264,7 @@
                         <page string="Evaluación">
                             <group>
                                 <field name="evaluation_id"
-                                    string="Indicador"
+                                    string="Indicator"
                                     readonly="state not in ['draft','in_process']"
                                     options="{'no_create':True,'no_create_edit':True}"
                                     class="o_mbline_evaluation_id" /> <!--domain="[('type','=',type)]"-->
@@ -279,7 +279,7 @@
                                         <field name="value" />
                                     </list>
                                 </field>
-                                <field name="ntr" string="Valor de riesgo"
+                                <field name="ntr" string="Value at Risk"
                                     readonly="state not in ['draft','in_process']" /><!--
                                 attrs="{'invisible': [('type','!=','risk')], -->
                                 <!--<field
@@ -297,16 +297,16 @@
                                 in',('draft','in_process'))]}" />-->
                             </group>
                         </page>
-                        <page string="Acciones">
+                        <page string="Actions">
                             <field name="action_ids" />
                         </page>
-                        <page name="risk_opp" string="Riesgos y oportunidades">
-                            <separator string="Riesgos" />
+                        <page name="risk_opp" string="Risks and opportunities">
+                            <separator string="Risks" />
                             <field name="risk_ids" context="{'default_type': 'risk'}" />
-                            <separator string="Oportunidades" />
+                            <separator string="Opportunities" />
                             <field name="opp_ids" context="{'default_type': 'opportunity'}" />
                         </page>
-                        <page string="Multi-Compañía" name="multi_company"
+                        <page string="Multi-Company" name="multi_company"
                             groups="base.group_multi_company">
                             <group>
                                 <field name="company_id" />
@@ -340,7 +340,7 @@
 
 
     <record model="ir.actions.act_window" id="matrix_block_line_information_asset_action">
-        <field name="name">Inventario de Activos de Información</field>
+        <field name="name">Information Asset Inventory</field>
         <field name="res_model">cyber_matrix.block.line</field>
         <field name="view_mode">list,form</field>
         <!--

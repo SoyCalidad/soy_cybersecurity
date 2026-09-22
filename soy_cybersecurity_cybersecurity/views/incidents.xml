@@ -35,7 +35,7 @@
                             <field name="name" />
                         </h2>
                     </div>
-                    <group string="Identificación">
+                    <group string="identification">
                         <field name="validation_date" />
                         <field name="type" invisible="1" />
                         <field name="reason_ids" widget="many2many_tags" />
@@ -43,9 +43,9 @@
                         <!--<field name="categ_id" options="{'no_open': True, 'no_create_edit': True}" />-->
                         <field name="department_id" options="{'no_open': True, 'no_create': True, 'no_create_edit': True}" />
                         <field name="employee_id" options="{'no_create':True,'no_create_edit':True}" 
-                        invisible="type != 'ext'" string="Implicado" />
+                        invisible="type != 'ext'" string="Involved" />
                         <field name="elaborate_ids" />
-                        <field name="partner_id" options="{'no_create':True,'no_create_edit':True}" string="Cliente/Proveedor" 
+                        <field name="partner_id" options="{'no_create':True,'no_create_edit':True}" string="Client/Supplier" 
                         invisible="type != 'ext'" />
                         <field name="employee_notify_id" options="{'no_create':True,'no_create_edit':True}" 
                         invisible="type != 'internal'" />
@@ -61,7 +61,7 @@
                         <field name="description" />
                     </group>
                     <notebook>
-                        <page name="personal_data" string="Datos personales">
+                        <page name="personal_data" string="Personal details">
                             <group>
                                 <field name="complainer_name" />
                                 <field name="complainer_document_type" />
@@ -71,7 +71,7 @@
                                 <field name="complainer_email" />
                             </group>
                         </page>
-                        <page name="investigation" string="Investigación">
+                        <page name="investigation" string="Investigation">
                             <group>
                                 <field name="investigation" />
                                 <field name="investigation_method" />
@@ -84,7 +84,7 @@
                                         <field name="description" />
                                         <field name="subcause_ids" widget="many2many_tags" context="{'default_parent_id': cause_id}">
                                             <form>
-                                                <field name="name" string="Subcausa" />
+                                                <field name="name" string="Sub-cause" />
                                                 <field name="description" />
                                             </form>
                                         </field>
@@ -107,8 +107,8 @@
                                 <field name="incident_files" />
                             </group>
                         </page>
-                        <page name="solution" string="Solución">
-                            <group string="Solución">
+                        <page name="solution" string="Solution">
+                            <group string="Solutionn">
                                 <field name="quick_action_id" />
                                 <field name="date_solution" />
                                 <field name="is_open" class="oe_inline" />
@@ -122,15 +122,15 @@
                             </group>
                             -->
                         </page>
-                        <page string="No conformidades" 
+                        <page string="Non-conformities" 
                         invisible="is_open == False">
                             <field name="nonconformity_ids" />
                         </page>
-                        <page name="action_ids" string="Acciones" 
+                        <page name="action_ids" string="Actions" 
                         invisible="is_open == False">
                             <field name="action_ids" />
                         </page>
-                        <page string="Multi-Compañía" name="multi_company" groups="base.group_multi_company">
+                        <page string="Multi-Company" name="multi_company" groups="base.group_multi_company">
                     <group>
                         <field name="company_id"/>
                     </group>
@@ -149,7 +149,7 @@
             sequence="15" />-->
 
     <record model="ir.actions.act_window" id="incident_incident_int_action">
-        <field name="name">Incidentes internos</field>
+        <field name="name">Internal Incidents</field>
         <field name="res_model">incident.incident</field>
         <field name="view_mode">list,form</field>
         <!--<field name="search_view_id" ref="view_incident_incident_search" />-->
@@ -165,7 +165,7 @@
               action="incident_incident_int_action" />-->
 
     <record model="ir.actions.act_window" id="incident_incident_ext_action">
-        <field name="name">Incidentes externos</field>
+        <field name="name">External Incidents</field>
         <field name="res_model">incident.incident</field>
         <field name="view_mode">list,form</field>
         <!--<field name="search_view_id" ref="view_incident_incident_search" />-->

@@ -9,29 +9,49 @@ from odoo.exceptions import UserError
 # riesgos de SI.xlsx" template. Typos in the source ("Responasble") are kept verbatim to
 # match the approved format.
 _COLUMNS = [
-    ('Nombre del riesgo', 26), ('Proceso', 18), ('Activo', 22), ('Tipo', 16),
-    ('Descripción', 30), ('Agente de la causa', 18), ('Causa', 26), ('Efecto', 26),
-    ('Responsable del riesgo', 22),
-    ('Amenaza', 26), ('Agente de la amenaza', 24),
-    ('Probabilidad', 14), ('Confidencialidad', 14), ('Integridad', 12),
-    ('Disponibilidad', 14), ('Trazabilidad', 14), ('Autenticidad', 14),
-    ('Impacto inicial', 12), ('Valor de riesgo inicial', 14), ('Nivel de riesgo inicial', 16),
-    ('Tratamiento / Salvaguarda', 20), ('Descripción del tratamiento', 28),
-    ('Fecha inicio', 12), ('Fecha objetivo', 12), ('Estado', 14), ('Controles', 28),
-    ('Probabilidad', 14), ('Confidencialidad', 14), ('Integridad', 12),
-    ('Disponibilidad', 14), ('Trazabilidad', 14), ('Autenticidad', 14),
-    ('Impacto inicial', 12), ('Valor de riesgo residual', 16), ('Nivel de riesgo residual', 16),
-    ('Decisión', 20), ('Responasble', 18), ('Comentario', 28),
+    (_('Nombre del riesgo'), 26), (_('Proceso'), 18), (_('Activo'), 22), (_('Tipo'), 16),
+
+    (_('Descripción'), 30), (_('Agente de la causa'), 18), (_('Causa'), 26), (_('Efecto'), 26),
+
+    (_('Responsable del riesgo'), 22),
+
+    (_('Amenaza'), 26), (_('Agente de la amenaza'), 24),
+
+    (_('Probabilidad'), 14), (_('Confidencialidad'), 14), (_('Integridad'), 12),
+
+    (_('Disponibilidad'), 14), (_('Trazabilidad'), 14), (_('Autenticidad'), 14),
+
+    (_('Impacto inicial'), 12), (_('Valor de riesgo inicial'), 14), (_('Nivel de riesgo inicial'), 16),
+
+    (_('Tratamiento / Salvaguarda'), 20), (_('Descripción del tratamiento'), 28),
+
+    (_('Fecha inicio'), 12), (_('Fecha objetivo'), 12), (_('Estado'), 14), (_('Controles'), 28),
+
+    (_('Probabilidad'), 14), (_('Confidencialidad'), 14), (_('Integridad'), 12),
+
+    (_('Disponibilidad'), 14), (_('Trazabilidad'), 14), (_('Autenticidad'), 14),
+
+    (_('Impacto inicial'), 12), (_('Valor de riesgo residual'), 16), (_('Nivel de riesgo residual'), 16),
+
+    (_('Decisión'), 20), (_('Responasble'), 18), (_('Comentario'), 28),
 ]
+
 _GROUP_HEADERS = [
-    ('IDENTIFICACIÓN DEL RIESGO Y ACTIVO', 0, 8),
-    ('AMENAZA', 9, 10),
-    ('EVALUACIÓN INICIAL', 11, 19),
-    ('TRATAMIENTO', 20, 25),
-    ('EVALUACIÓN RIESGO RESIDUAL', 26, 34),
-    ('RIESGO RESIDUAL', 35, 37),
+    (_('IDENTIFICACIÓN DEL RIESGO Y ACTIVO'), 0, 8),
+    (_('AMENAZA'), 9, 10),
+    (_('EVALUACIÓN INICIAL'), 11, 19),
+    (_('TRATAMIENTO'), 20, 25),
+    (_('EVALUACIÓN RIESGO RESIDUAL'), 26, 34),
+    (_('RIESGO RESIDUAL'), 35, 37),
 ]
-_IMPACT_CRITERIA_ORDER = ('Confidencialidad', 'Integridad', 'Disponibilidad', 'Trazabilidad', 'Autenticidad')
+
+_IMPACT_CRITERIA_ORDER = (
+    _('Confidencialidad'),
+    _('Integridad'),
+    _('Disponibilidad'),
+    _('Trazabilidad'),
+    _('Autenticidad'),
+)
 _INITIAL_LEVEL_COLUMN = 18
 _RESIDUAL_LEVEL_COLUMN = 33
 _LEFT_ALIGN_COLUMNS = (0, 4, 6, 7, 21)
@@ -89,7 +109,7 @@ class RiskReportXlsx(models.AbstractModel):
         if company.logo:
             buf_image = io.BytesIO(base64.b64decode(company.logo))
             sheet.insert_image('A1', 'logo.png', {'image_data': buf_image, 'x_scale': 0.3, 'y_scale': 0.3})
-        sheet.merge_range(0, 0, 2, last_col, 'MATRIZ DE RIESGOS DE SEGURIDAD DE LA INFORMACIÓN', formats['title'])
+        sheet.merge_range(0, 0, 2, last_col, _('Information Security Risk Matrix'), formats['title'])
         sheet.set_row(0, 22)
         sheet.set_row(1, 22)
         sheet.set_row(2, 22)

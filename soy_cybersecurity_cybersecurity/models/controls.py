@@ -6,41 +6,40 @@ class Line(models.Model):
     #_description = "Controles"
 
     type_ctrl = fields.Selection(
-        string='Tipo de control',
+        string='Control Type',
         selection=[
-            ('app_ctrl', 'Declaración de Aplicabilidad'),
-            ('controls', 'Controles')]   
+            ('app_ctrl', 'Statement of Applicability'),
+            ('controls', 'Controls')]   
     )
 
-
-    executor_user_id = fields.Many2one('res.users', string='Responsable de Ejecución', ondelete='set null')
-    tracking_hr_employee_id = fields.Many2one('hr.employee', string='Responsable de Seguimiento',ondelete='set null')
-    authorizing_user_id = fields.Many2one('res.users', string='Autoridad Aprobatoria', ondelete='set null')
+    executor_user_id = fields.Many2one('res.users', string='Execution Person Responsible', ondelete='set null')
+    tracking_hr_employee_id = fields.Many2one('hr.employee', string='Tracking Person Responsible', ondelete='set null')
+    authorizing_user_id = fields.Many2one('res.users', string='Approving Authority', ondelete='set null')
 
     opening_date = fields.Datetime(
-        string='Fecha de Apertura',
+        string='Opening Date',
         default=fields.Datetime.now,
         store=True,
     )
 
-    periodic_control = fields.Boolean(string='Control Periódico', default=False)
+    periodic_control = fields.Boolean(string='Periodic Control', default=False)
 
     deadline = fields.Datetime(
-        string='Fecha límite',
+        string='Deadline',
         store=True,
     )
 
     reference = fields.Text(
-        string='Referencia',
+        string='Reference',
     )
 
     priority = fields.Selection(
-        string='Prioridad',
+        string='Priority',
         selection=[
-            ('0', 'No establecida'),
-            ('1', 'Baja'),
-            ('2', 'Media'),
-            ('3', 'Alta')],
+            ('0', 'Not Set'),
+            ('1', 'Low'),
+            ('2', 'Medium'),
+            ('3', 'High')],
         default='0',
     )
 
@@ -52,7 +51,7 @@ class Line(models.Model):
         view_id = self.env.ref('soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_form').id
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Editar Campos Adicionales',
+            'name': 'Edit Additional Fields',
             'view_mode': 'form',
             'res_model': 'cyber_2matrix.block.line',
             'res_id': self.id,

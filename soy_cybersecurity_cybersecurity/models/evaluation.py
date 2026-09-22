@@ -8,30 +8,30 @@ class Result(models.Model):
 
     company_id = fields.Many2one(
         'res.company', 
-        string='Compañia', 
+        string='Company', 
         default=lambda self: self.env.company,
     )
     criterio_id = fields.Many2one(
-        string='Criterio',
+        string='Criterion',
         comodel_name='cyber_evaluation.criterio',
         ondelete='restrict',
     )
     name = fields.Char(
-        string='Nombre',
+        string='Name',
         related='criterio_id.name',
         store=True,
     )
     description = fields.Text(
-        string='Descripción',
+        string='Description',
     )
     value = fields.Integer(
-        string='Valor',
+        string='Value',
     )
-    alternative = fields.Many2one(comodel_name='cyber_evaluation.criterio.line', string='Alternativa', domain="[('criterio_id','=',criterio_id)]")
+    alternative = fields.Many2one(comodel_name='cyber_evaluation.criterio.line', string='Alternative', domain="[('criterio_id','=',criterio_id)]")
     
-    alternative_description = fields.Text(related='alternative.description', string='Descripción de la alternativa')
+    alternative_description = fields.Text(related='alternative.description', string='Alternative Description')
     
-    text_values = fields.Char(compute='_compute_text_values', string='Valores')
+    text_values = fields.Char(compute='_compute_text_values', string='Values')
     
     @api.depends('alternative')
     def _compute_text_values(self):
@@ -39,23 +39,23 @@ class Result(models.Model):
             text_values = ''
             alternative = record.alternative
             if alternative:
-                text_values = 'El valor mínimo es %s y el máximo es %s' % (alternative.value_less, alternative.value_high)
+                text_values = 'The minimum value is %s and the maximum is %s' % (alternative.value_less, alternative.value_high)
             record.text_values = text_values
 
     @api.onchange('value')
     def _onchange_value(self):
         if self.value < self.alternative.value_less or self.value > self.alternative.value_high:
-            msg = 'El valor tiene que estar entre %s y %s' % (self.alternative.value_less, self.alternative.value_high)
+            msg = 'The value must be between %s and %s' % (self.alternative.value_less, self.alternative.value_high)
             raise UserError(msg)
     
     @api.constrains('value')
     def _constrains_value(self):
         for each in self:
             if each.value < each.alternative.value_less or each.value > each.alternative.value_high:
-                msg = 'El valor tiene que estar entre %s y %s' % (each.alternative.value_less, each.alternative.value_high)
+                msg = 'The value must be between %s and %s' % (each.alternative.value_less, each.alternative.value_high)
                 raise UserError(msg)
             if each.value == 0:
-                msg = 'El valor del resultado %s no puede ser 0' % each.criterio_id.name
+                msg = 'The value of result %s cannot be 0' % each.criterio_id.name
                 raise UserError(msg)
 
 
@@ -63,7 +63,7 @@ class Eval(models.Model):
     _name = 'cyber_evaluation.evaluation'
 
     name = fields.Char(
-        string='Nombre',
+        string='Name',
         required=True,
     )
     '''
@@ -75,12 +75,12 @@ class Eval(models.Model):
     )
     '''
     criterio_ids = fields.One2many(
-        string='Criterios',
+        string='Criteria',
         comodel_name='cyber_evaluation.criterio',
         inverse_name='evaluation_id',
     )
     active = fields.Boolean(
-        string='Activo',
+        string='Active',
         default=True,
     )
 
@@ -89,12 +89,12 @@ class Criterio(models.Model):
     _name = 'cyber_evaluation.criterio'
 
     name = fields.Char(
-        string='Nombre',
+        string='Name',
         required=True,
     )
-    description = fields.Text(string='Descripción')
+    description = fields.Text(string='Description')
     evaluation_id = fields.Many2one(
-        string='Evaluación',
+        string='Evaluation',
         comodel_name='cyber_evaluation.evaluation',
         ondelete='restrict',
     )
@@ -107,7 +107,7 @@ class Criterio(models.Model):
     '''
 
     line_ids = fields.One2many(
-        string='Alternativas',
+        string='Alternatives',
         comodel_name='cyber_evaluation.criterio.line',
         inverse_name='criterio_id',
     )
@@ -118,11 +118,11 @@ class CriterioLine(models.Model):
     _name = 'cyber_evaluation.criterio.line'
 
     name = fields.Char(
-        string='Nombre',
+        string='Name',
         required=True,
     )
     criterio_id = fields.Many2one(
-        string='Criterio',
+        string='Criterion',
         comodel_name='cyber_evaluation.criterio',
         ondelete='restrict',
     )
@@ -133,11 +133,11 @@ class CriterioLine(models.Model):
     )
     '''
     description = fields.Text(
-        string='Descripción',
+        string='Description',
     )
     value_less = fields.Integer(
-        string='Valor menor',
+        string='Lower Value',
     )
     value_high = fields.Integer(
-        string='Valor mayor',
+        string='Higher Value',
     )

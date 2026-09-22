@@ -3,7 +3,7 @@
   <data>
     <record id="matrix_individual_xlsx" model="ir.actions.report">
         <field name="model">cyber_matrix.matrix</field>
-        <field name="name">Reporte de Matriz de Activos de la información</field>
+        <field name="name">Information Asset Matrix Report</field>
         <field name="report_type">xlsx</field>
         <field name="report_name">cyber_matrix_assets.report</field>
         <field name="report_file">Matriz</field>

@@ -5,25 +5,25 @@ class MatrixMatrix(models.Model):
     _inherit = 'cyber_matrix.matrix'
 
     elaboration_step = fields.One2many(
-        'mgmtsystem.validation.step', 'cyber_matrix_elaboration_id', string='Elaboración')
+        'mgmtsystem.validation.step', 'cyber_matrix_elaboration_id', string='Elaboration')
     review_step = fields.One2many(
-        'mgmtsystem.validation.step', 'cyber_matrix_review_id', string='Revisión')
+        'mgmtsystem.validation.step', 'cyber_matrix_review_id', string='Review')
     validation_step = fields.One2many(
-        'mgmtsystem.validation.step', 'cyber_matrix_validation_id', string='Validación')
+        'mgmtsystem.validation.step', 'cyber_matrix_validation_id', string='Validation')
 
     process_id = fields.Many2one(
-        'process.edition', string='Procedimiento', domain=[('active','=',True)],  ondelete='set null')
+        'process.edition', string='Procedure', domain=[('active','=',True)],  ondelete='set null')
 
 
 class MatrixValidation(models.Model):
     _inherit = 'mgmtsystem.validation.step'
 
     cyber_matrix_elaboration_id = fields.Many2one(
-        'cyber_matrix.matrix', string='Padre', ondelete='set null')
+        'cyber_matrix.matrix', string='Matrix Cyber Elaboration ', ondelete='set null')
     cyber_matrix_review_id = fields.Many2one(
-        'cyber_matrix.matrix', string='Padre', ondelete='set null')
+        'cyber_matrix.matrix', string='Matrix Cyber Review', ondelete='set null')
     cyber_matrix_validation_id = fields.Many2one(
-        'cyber_matrix.matrix', string='Padre', ondelete='set null')
+        'cyber_matrix.matrix', string='Matrix Cyber Validation', ondelete='set null')
 
 
 class MatrixBlockLine(models.Model):

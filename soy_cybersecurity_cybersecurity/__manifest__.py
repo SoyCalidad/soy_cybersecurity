@@ -12,13 +12,14 @@
     'author': "Soy Calidad",
 
 
-    'category': 'iso27001',
+    'category': 'iso',
     'version': '0.1',
 
 
     'depends': [
         'documents',
         'hr_recruitment',
+        'website',
 
 
         'mgmtsystem_action',
@@ -34,7 +35,6 @@
         'soycalidad_improve',
         'sc27k_base',
 
-        #'soycalidad_dms',
     ],
 
 
@@ -47,7 +47,6 @@
         'data/app_ctrl_data.xml',
         'data/incidents_data.xml',
         'data/data_others.xml',
-        'data/dms.xml',
         'data/cybersecurity.clause.csv',
         'data/cybersecurity.diagnostic.requirement.csv',
         'data/cyber_2matrix_block_line.xml',

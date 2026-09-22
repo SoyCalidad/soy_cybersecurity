@@ -9,7 +9,7 @@
             <form>
                 <sheet>
                     <div>
-                        <label for="name" string="Nombre del Recurso" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
+                        <label for="name" string="Resource Name" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
                         <field name="name" style="font-size: 18px; display: block;"/>
                     </div>
                 </sheet>
@@ -17,17 +17,7 @@
         </field>
     </record>
 
-        <!-- tree view resources
-    <record id="cyber_matrix_block_line_resource_tree" model="ir.ui.view">
-        <field name="name">cyber_matrix.block.line.resource.tree</field>
-        <field name="model">cyber_matrix.block.line.resource</field>
-        <field name="arch" type="xml">
-            <tree string="Lista de Recursos">
-                <field name="name" string="Nombre del Recurso"/>
-            </tree>
-        </field>
-    </record>
-    -->
+
         <!-- Locations Settings-->
     <record id="cyber_matrix_block_line_location_form" model="ir.ui.view">
         <field name="name">cyber_matrix.block.line.location.form</field>
@@ -36,7 +26,7 @@
             <form>
                 <sheet>
                     <div>
-                        <label for="name" string="Nombre de la Ubicación" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
+                        <label for="name" string="Location Name" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
                         <field name="name" style="font-size: 18px; display: block;"/>
                     </div>
                 </sheet>
@@ -52,7 +42,7 @@
             <form>
                 <sheet>
                     <div>
-                        <label for="name" string="Idioma" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
+                        <label for="name" string="Language" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
                         <field name="name" style="font-size: 18px; display: block;"/>
                     </div>
                 </sheet>
@@ -68,7 +58,7 @@
             <form>
                 <sheet>
                     <div>
-                        <label for="name" string="Nombre del Tipo de Activo" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
+                        <label for="name" string="Asset Type Name" style="font-size: 20px; display: block; margin-bottom: 15px;"/>
                         <field name="name" style="font-size: 18px; display: block;"/>
                     </div>
                 </sheet>
@@ -98,7 +88,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="cyber_matrix_block_line_asset_type_action">
-        <field name="name">Tipos de activos</field>
+        <field name="name">Asset types</field>
         <field name="res_model">cyber_matrix.block.line.asset_type</field>
         <field name="view_mode">list,form</field>
     </record>
