@@ -26,11 +26,11 @@
                         <field name="applicability_id_description_application" />
                         <field name="application" widget="radio" />
                         <field name="justification" />
-                        <field name="is_implemented" invisible="application=='no'" />
-                        <field name="reference"  invisible="application=='no'"/>
+                        <field name="is_implemented" widget="radio" invisible="application=='no' or application==False" />
+                        <field name="reference"  invisible="is_implemented=='no' or not is_implemented"/>
                     </group>
                     <notebook >
-                        <page invisible="application=='no'" name="actions" string="Actions">
+                        <page invisible="application=='no' or application==False" name="actions" string="Actions">
                             <group>
                                 <label for="action_ids" />
                                 <field name="action_ids"  nolabel="1" />

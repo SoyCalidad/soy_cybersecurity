@@ -66,7 +66,13 @@ class MatrixLine(models.Model):
     )
     justification  = fields.Text(string="Justification for applicability / non-applicability")
     reference  = fields.Text(string="Control implementation reference")
-    is_implemented = fields.Boolean(default=False, string="Control implemented?")
+    is_implemented = fields.Selection(
+        selection=[
+            ('no', 'No'),
+            ('yes', 'Yes'),
+        ],
+        default='no', 
+        string="Control implemented?")
 
     applicability_id_name = fields.Char(
         related='applicability_id.name',

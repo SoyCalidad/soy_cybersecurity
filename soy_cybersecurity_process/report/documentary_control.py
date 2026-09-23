@@ -49,10 +49,11 @@ class DocumentaryControlReportXLS(models.AbstractModel):
             records = self.env['documentary.control'].search([])
 
         sheet.set_column('A:A', 20)
-        sheet.set_column('C:C', 20)
-        sheet.set_column('E:J', 25)
         sheet.set_column('B:B', 20)
+        sheet.set_column('C:C', 25)
         sheet.set_column('D:D', 20)
+        sheet.set_column('E:J', 25)
+        sheet.set_column('K:L', 20)
         sheet.set_row(4, 25)
 
         company_id = self.env.user.company_id
@@ -84,7 +85,7 @@ class DocumentaryControlReportXLS(models.AbstractModel):
         # sheet.insert_image('A1', "logo.png", {
         #     'image_data': buf_image, 'x_scale': x_scale, 'y_scale': y_scale})
         sheet.merge_range('A1:A3', '', format_title)
-        self._insert_centered_image(sheet, 'A1', company_id.logo, )
+        self._insert_centered_image(sheet, 'A1:A3', company_id.logo,container_width=130, container_height=50,)
         sheet.merge_range('B1:I3', 'Lista maestra', format_title)
         sheet.merge_range('J1:L1', f"Código: {code}", format_data)
         sheet.merge_range('J2:L2', f"Versión: {version}", format_data)
@@ -108,12 +109,12 @@ class DocumentaryControlReportXLS(models.AbstractModel):
         for doc in records:
             sheet.write(entrie_row, 0, doc.process_code, format_data)
             sheet.write(entrie_row, 1, doc.process_last_edition, format_data)
-            sheet.write(entrie_row, 2, doc.process_id.name, format_data)
-            sheet.write(entrie_row, 3, doc.process_approval_date, format_data)
+            sheet.write(entrie_row, 2, doc.process_id.name or '', format_data)
+            sheet.write(entrie_row, 3, str(doc.process_approval_date or ''), format_data)
             sheet.write(entrie_row, 4, doc.code, format_data)
             sheet.write(entrie_row, 5, doc.version, format_data)
             sheet.write(entrie_row, 6, doc.name, format_data)
-            sheet.write(entrie_row, 7, doc.approval_date, format_data)
+            sheet.write(entrie_row, 7, str(doc.approval_date or ''), format_data)
             sheet.write(entrie_row, 8, doc.department_id.name if doc.department_id else "", format_data)
             sheet.write(entrie_row, 9, doc.type_storage, format_data)
             sheet.write(entrie_row, 10, doc.type, format_data)
