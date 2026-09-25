@@ -217,7 +217,10 @@ class IndividualReport(models.AbstractModel):
                     sheet.write(prod_row, i, 'SI' if line.application else "NO", format21_left)
                     i += 1
 
-                    sheet.write(prod_row, i, line.description_application, format21_left)
+                    if line.application:
+                        sheet.write(prod_row, i, line.description_application or '', format21_left)
+                    else:
+                        sheet.write(prod_row, i, '', format21_left)
                     i += 1
 
                     sheet.write(prod_row, i, line.implementation_record, format21_left)
