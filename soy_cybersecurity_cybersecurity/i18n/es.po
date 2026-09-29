@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e-20260817\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-23 21:24+0000\n"
-"PO-Revision-Date: 2026-09-23 21:24+0000\n"
+"POT-Creation-Date: 2026-09-28 21:11+0000\n"
+"PO-Revision-Date: 2026-09-28 21:11+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -402,6 +402,12 @@ msgstr "Alternativas"
 #: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.menu_diagnosis_main
 msgid "Analysis"
 msgstr "Análisis"
+
+#. module: soy_cybersecurity_cybersecurity
+#. odoo-python
+#: code:addons/soy_cybersecurity_cybersecurity/models/diagnostic.py:0
+msgid "Analysis of "
+msgstr "Análisis de "
 
 #. module: soy_cybersecurity_cybersecurity
 #: model_terms:ir.ui.view,arch_db:soy_cybersecurity_cybersecurity.cybersecurity_diagnostic_form
@@ -805,7 +811,7 @@ msgstr "Causa de la queja (¿Por qué?)"
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic__state__validate
 msgid "Completed"
-msgstr "Completado"
+msgstr "Culminado"
 
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__date_fin
@@ -1122,6 +1128,11 @@ msgid "Detection Date"
 msgstr "Fecha de detección"
 
 #. module: soy_cybersecurity_cybersecurity
+#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cybersecurity_diagnostic
+msgid "Diagnosis SI"
+msgstr "Diagnóstico SI"
+
+#. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic4_1_id
 #: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic4_2_id
 #: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic4_3_id
@@ -1155,11 +1166,6 @@ msgstr "Diagnóstico 10.1"
 #: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cybersecurity_diagnostic_line__diagnostic10_2_id
 msgid "Diagnostico 10.2"
 msgstr "Diagnóstico 10.2"
-
-#. module: soy_cybersecurity_cybersecurity
-#: model:ir.model,name:soy_cybersecurity_cybersecurity.model_cybersecurity_diagnostic
-msgid "Diagnostico SI"
-msgstr "Diagnóstico SI"
 
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block_line__storage_medium__digital
@@ -1477,7 +1483,7 @@ msgstr "Generar reporte"
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_incident_incident__employee_id
 msgid "Handled by"
-msgstr "Tiene mensaje"
+msgstr "Atendida por"
 
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__has_message
@@ -1647,7 +1653,7 @@ msgstr "Mejora"
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_matrix__state__elaborate
 msgid "In Preparation"
-msgstr "En preparación"
+msgstr "Elaboración"
 
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_matrix_block__state__elaborate
@@ -1661,7 +1667,7 @@ msgstr "En proceso"
 #: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state__elaborate
 #: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state_line__elaborate
 msgid "In Progress"
-msgstr "En progreso"
+msgstr "En elaboración"
 
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cyber_2matrix_matrix__state__review
@@ -2128,7 +2134,7 @@ msgstr "Medio"
 #: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_comunication_record_meeting_menu
 #: model:ir.ui.menu,name:soy_cybersecurity_cybersecurity.mgmtsystem_review_act_menu
 msgid "Meeting Minutes"
-msgstr "Minuta de reunión"
+msgstr "Acta de reunión"
 
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_clause__chapter__10_improvement
@@ -2568,7 +2574,7 @@ msgstr "Elaborado por"
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields.selection,name:soy_cybersecurity_cybersecurity.selection__cybersecurity_diagnostic__state__draft
 msgid "Previous"
-msgstr "Anterior"
+msgstr "Previo"
 
 #. module: soy_cybersecurity_cybersecurity
 #: model:ir.model.fields,field_description:soy_cybersecurity_cybersecurity.field_cyber_2matrix_block_line__priority

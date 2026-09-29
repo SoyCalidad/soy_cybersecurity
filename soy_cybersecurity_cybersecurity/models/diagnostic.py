@@ -187,10 +187,13 @@ class Clause(models.Model):
 
 class Diagnostic(models.Model):
     _name = 'cybersecurity.diagnostic'
-    _description = "Diagnostico SI"
+    _description = "Diagnosis SI"
 
-    name = fields.Char(string=u'Name', required=True,
-                       default=lambda self: "Analysis of ...")
+    name = fields.Char(
+        string=u'Name', 
+        required=True,
+        default=lambda self: _("Analysis of "),
+    )
     user_id = fields.Many2one(
         string='Responsible',
         comodel_name='res.users',
