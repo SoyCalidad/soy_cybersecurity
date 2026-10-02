@@ -10,38 +10,38 @@
                 invisible="system_id != %(sc27k_base.system_cybersecurity)d"
                 
                 >
-                    <field name="cyber_organization_context" string="Contexto de la organización" 
+                    <field name="cyber_organization_context" string="Context of the organization" 
                     readonly="state in ['validate_ok', 'cancel']"
                     />
-                    <field name="cyber_direction_help" string="Apoyo para la dirección" 
+                    <field name="cyber_direction_help" string="Management support" 
                     readonly="state in ['validate_ok', 'cancel']"
                     
                     />
                                 
-                    <field name="cyber_risk_handling" string="Evaluación y tratamiento de riesgos" 
+                    <field name="cyber_risk_handling" string="Risk assessment and treatment" 
                     readonly="state in ['validate_ok', 'cancel']"
                     />  
-                    <field name="cyber_legal_req" string="Requisitos Legales" 
+                    <field name="cyber_legal_req" string="Legal Requirements" 
                     readonly="state in ['validate_ok', 'cancel']"  
                     />
-                    <field name="cyber_responsibility_assignment" string="Asignación de responsabilidades" 
+                    <field name="cyber_responsibility_assignment" string="Assignment of responsibilities" 
                     readonly="state in ['validate_ok', 'cancel']"
                     />
 
-                    <field name="cyber_standard_commitment" string="Compromiso para los requisitos de la norma" 
+                    <field name="cyber_standard_commitment" string="Commitment to the requirements of the standard" 
                     readonly="state in ['validate_ok', 'cancel']" 
                     
                     />  
-                    <field name="cyber_staff_participation" string="Participación del personal" 
+                    <field name="cyber_staff_participation" string="Staff participation" 
                     readonly="state in ['validate_ok', 'cancel']"
                     />
-                    <field name="cyber_continuous_improvement" string="Mejora continua" 
+                    <field name="cyber_continuous_improvement" string="Continual improvement" 
                     readonly="state in ['validate_ok', 'cancel']" 
                      />  
-                    <field name="cyber_control_implementation" string="Implementación de controles" 
+                    <field name="cyber_control_implementation" string="Implementation of controls" 
                     readonly="state in ['validate_ok', 'cancel']" 
                      />  
-                    <field name="cyber_security_goals" string="Objetivos para la seguridad de la información" 
+                    <field name="cyber_security_goals" string="Information security objectives" 
                     readonly="state in ['validate_ok', 'cancel']"  />
 
                 </group>

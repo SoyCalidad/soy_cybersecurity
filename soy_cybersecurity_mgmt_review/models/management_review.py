@@ -10,16 +10,16 @@ class ManagementReview(models.Model):
 
 
     it_security_target = fields.Html( 
-        string='Objetivo de seguridad de la información',
+        string='Information security objective',
         store=True,)
     
-    it_security_target_description = fields.Text( string='Interpretación')
+    it_security_target_description = fields.Text( string='Interpretation')
 
     it_legal_requirements = fields.Html( 
-        string='Requerimientos legales y otros requerimientos',
+        string='Legal requirements and other requirements',
         store=True,)
     
-    it_legal_requirements_description = fields.Text( string='Interpretación')
+    it_legal_requirements_description = fields.Text( string='Interpretation')
 
     # G. COMUNICACIONES PERTINENTES CON LAS PARTES INTERESADAS
 
@@ -28,10 +28,10 @@ class ManagementReview(models.Model):
     it_comunication_plan_ids = fields.Many2many(
         'comunication.plan.line',
         relation='management_review_it_comunication_plan_rel',
-        string='Planes de Comunicación')
-    it_comunication_plan = fields.Html('Comunicaciones')
+        string='Communication plans')
+    it_comunication_plan = fields.Html('Communications')
     it_comunication_plan_interpretation = fields.Text(
-        'Interpretación de las comunicaciones')
+        'Interpretation of the communications')
     
     type_review = fields.Selection(
         selection_add=[
@@ -39,8 +39,8 @@ class ManagementReview(models.Model):
         ],
     )
     
-    sc27k_soa_matrix_html = fields.Html(string="Matriz de riesgos / plan de tratamiento / SoA")
-    sc27k_soa_matrix_inter = fields.Text(string="Interpretacion: Matriz de riesgos / plan de tratamiento / SoA")
+    sc27k_soa_matrix_html = fields.Html(string="Risk matrix / treatment plan / SoA")
+    sc27k_soa_matrix_inter = fields.Text(string="Interpretation: Risk matrix / treatment plan / SoA")
     
     def generate_soa_matrix_html(self):
         if self.is_last:
@@ -51,7 +51,7 @@ class ManagementReview(models.Model):
                 ('date_validate', '<=', self.date_fin)
             ], order="create_date desc")
         data_tmp = "<table class='table table-bordered'>"
-        data_tmp += "<tr><td><strong>Dominio</strong></td><td><strong>Nombre</strong></td><td><strong>Descripción del control</strong></td><td><strong>Aplicabilidad</strong></td><td><strong>Justificación</strong></td></tr>"
+        data_tmp += _("<tr><td><strong>Domain</strong></td><td><strong>Name</strong></td><td><strong>Control description</strong></td><td><strong>Applicability</strong></td><td><strong>Justification</strong></td></tr>")
         application_dict = dict(self.env['cyber_2matrix.matrix.line']._fields['application'].selection)
         action = self.env.ref(XMLID_ACTION_SOA_MATRIX, raise_if_not_found=False)
         for data in matrix_ids:
@@ -65,7 +65,7 @@ class ManagementReview(models.Model):
                     action.id if action else 0,
                     data.id,
                     data.id,
-                    line.applicability_id_name or 'Sin nombre',
+                    line.applicability_id_name or _('Unnamed'),
                 )
                 data_tmp += "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (
                 line.applicability_id_domain_id.display_name or '', link, line.applicability_id_description_application or '', application_dict.get(line.application, ''), line.justification or '')

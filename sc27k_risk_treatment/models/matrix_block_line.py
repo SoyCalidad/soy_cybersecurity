@@ -1,22 +1,21 @@
 # -*- coding: utf-8 -*-
 import logging
 
-from odoo import api, fields, models, _
+from odoo import api, fields, models
+from odoo.tools.translate import LazyTranslate
+
+from .evaluation_criterio import SC27K_IMPACT_CRITERION_TYPES, SC27K_PROBABILITY_CRITERION_TYPE
 
 _logger = logging.getLogger(__name__)
+_lt = LazyTranslate(__name__)
 
 _SC27K_SECURITY_SYSTEM_XMLID = 'sc27k_base.system_cybersecurity'
 
-# The risk value is Probabilidad x Impacto, where Impacto is the MAX across these five
-# dimensions (not their product) — confirmed by the "Formato reporte de riesgos de SI"
-# template, which reports each dimension separately plus a single "Impacto inicial"
-# column. Matched by evaluation.criterio name.
-_SC27K_PROBABILITY_CRITERIA_NAME = 'Probability'
-_SC27K_IMPACT_CRITERIA_NAMES = (
-    'Confidentiality', 'Integrity', 'Availability', 'Traceability', 'Authenticity',
-)
-
-_SC27K_RISK_INTERPRETATION = (
+# The risk value is Probability x Impact, where Impact is the MAX across the five impact
+# dimensions (not their product), reported separately plus a single "Initial impact" column
+# in the "Information security risk report" template. The criteria are identified by their
+# sc27k_criterion_type, not by their name.
+_SC27K_RISK_INTERPRETATION = _lt(
     'The risk level is obtained by multiplying the maximum impact on information '
     'security (max(Confidentiality, Integrity, Availability, Traceability, '
     'Authenticity)) by the realistic probability of occurrence, '
@@ -26,9 +25,9 @@ _SC27K_RISK_INTERPRETATION = (
     'plan. Values between 5 and 11 (Medium) must be managed or monitored periodically.'
 )
 
-# Risk level bands for the Impacto (1-5) x Probabilidad (1-5) indicator, per the
-# interpretation text above: <5 Bajo, 5-11 Medio, 12-19 Alto, >=20 Crítico. Only the
-# products of two integers in [1, 5] are reachable, so the Alto/Crítico split at 20
+# Risk level bands for the Impact (1-5) x Probability (1-5) indicator, per the
+# interpretation text above: <5 Low, 5-11 Medium, 12-19 High, >=20 Critical. Only the
+# products of two integers in [1, 5] are reachable, so the High/Critical split at 20
 # matches every value the 5x5 matrix can actually produce.
 _SC27K_RISK_LEVEL_MEDIUM_THRESHOLD = 5
 _SC27K_RISK_LEVEL_HIGH_THRESHOLD = 12
@@ -100,8 +99,7 @@ class MatrixBlockLine(models.Model):
     )
     sc27k_interpretation = fields.Text(
         string='Interpretation',
-        default=_SC27K_RISK_INTERPRETATION,
-        translate=True,
+        default=lambda self: self.env._(_SC27K_RISK_INTERPRETATION),
     )
 
     sc27k_treatment_option = fields.Selection(
@@ -184,14 +182,14 @@ class MatrixBlockLine(models.Model):
                 security_system and record.type == 'risk' and record.system_id == security_system
             )
 
-    @api.depends('result_ids', 'result_ids.value', 'result_ids.criterio_id')
+    @api.depends('result_ids', 'result_ids.value', 'result_ids.sc27k_criterion_type')
     def _sc27k_compute_initial_ntr(self):
         for record in self:
             probability, impact = record._sc27k_extract_probability_and_max_impact(record.result_ids)
             record.sc27k_initial_ntr = probability * impact
 
     @api.depends('sc27k_residual_result_ids', 'sc27k_residual_result_ids.value',
-                 'sc27k_residual_result_ids.criterio_id')
+                 'sc27k_residual_result_ids.sc27k_criterion_type')
     def _sc27k_compute_residual_ntr(self):
         for record in self:
             probability, impact = record._sc27k_extract_probability_and_max_impact(
@@ -267,7 +265,7 @@ class MatrixBlockLine(models.Model):
     # -------------------------------------------------------------------------
 
     def _sc27k_get_risk_level(self, ntr):
-        """Map a 1-25 Impacto x Probabilidad score to its risk band."""
+        """Map a 1-25 Impact x Probability score to its risk band."""
         self.ensure_one()
         if ntr >= _SC27K_RISK_LEVEL_CRITICAL_THRESHOLD:
             return 'critical'
@@ -279,16 +277,17 @@ class MatrixBlockLine(models.Model):
 
     def _sc27k_extract_probability_and_max_impact(self, results):
         """Return (probability_value, max_impact_value) from an evaluation.result
-        recordset, matched by criterio name. Missing criteria contribute 0, so a
-        partially-filled evaluation yields a value of 0 rather than raising.
+        recordset, matched by the criterion's sc27k_criterion_type. Missing criteria
+        contribute 0, so a partially-filled evaluation yields a value of 0 rather than
+        raising.
         """
         self.ensure_one()
         probability = 0
         impact = 0
         for result in results:
-            criterio_name = result.criterio_id.name
-            if criterio_name == _SC27K_PROBABILITY_CRITERIA_NAME:
+            criterion_type = result.sc27k_criterion_type
+            if criterion_type == SC27K_PROBABILITY_CRITERION_TYPE:
                 probability = result.value
-            elif criterio_name in _SC27K_IMPACT_CRITERIA_NAMES:
+            elif criterion_type in SC27K_IMPACT_CRITERION_TYPES:
                 impact = max(impact, result.value)
         return probability, impact

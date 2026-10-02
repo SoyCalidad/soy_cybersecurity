@@ -4,7 +4,7 @@
         <field name="name">cyber_evaluation.criterio.line.view.form</field>
         <field name="model">cyber_evaluation.criterio.line</field>
         <field name="arch" type="xml">
-            <form string="Criterio">
+            <form string="Criterion">
                 <sheet>
                     <group>
                         <field name="name" />
@@ -21,7 +21,7 @@
         <field name="name">cyber_evaluation.criterio.line.view.list</field>
         <field name="model">cyber_evaluation.criterio.line</field>
         <field name="arch" type="xml">
-            <list string="Criterio">
+            <list string="Criterion">
                 <field name="name" />
                 <field name="description" />
                 <field name="value_less" />
@@ -34,7 +34,7 @@
         <field name="name">cyber_evaluation.result.view.form</field>
         <field name="model">cyber_evaluation.result</field>
         <field name="arch" type="xml">
-            <form string="Evaluación">
+            <form string="Evaluation">
                 <sheet>
                     <group>
                         <field name="criterio_id" create="false" no_edit="true" />
@@ -66,7 +66,7 @@
         <field name="name">cyber_matrix.block.list</field>
         <field name="model">cyber_matrix.block</field>
         <field name="arch" type="xml">
-            <list string="Fuentes" class="o_matrix_block" decoration-muted="state=='cancel'">
+            <list string="Sources" class="o_matrix_block" decoration-muted="state=='cancel'">
                 <field name="name" />
                 <field name="line_ids" />
                 <field name="state" />
@@ -80,7 +80,7 @@
         <field name="name">cyber_matrix.block.form</field>
         <field name="model">cyber_matrix.block</field>
         <field name="arch" type="xml">
-            <form string="Fuentes" class="o_matrix_block">
+            <form string="Sources" class="o_matrix_block">
                 <header>
                     <button name="send_elaborate"
                         type="object"
@@ -127,11 +127,11 @@
                                     <field name="effect" />
                                     <field name="cause" />
                                     <!--<field
-                                    name="ntr" string="Valor de riesgo" attrs="{'invisible':
+                                    name="ntr" string="Risk value" attrs="{'invisible':
                                     [('type','!=','risk')]}" />-->
                                     <field name="ntr" string="Value at Risk" />
                                     <!--<field
-                                    name="ntr" string="Valor de oportunidad"/>-->
+                                    name="ntr" string="Opportunity value"/>-->
                                     <field name="action_ids" />
                                     <field name="state" />
                                     <!--<field
@@ -283,7 +283,7 @@
                                     readonly="state not in ['draft','in_process']" /><!--
                                 attrs="{'invisible': [('type','!=','risk')], -->
                                 <!--<field
-                                name="ntr" string="Valor de oportunidad" attrs="{'invisible':
+                                name="ntr" string="Opportunity value" attrs="{'invisible':
                                 [('type','!=','opportunity')], 'readonly': [('state','not
                                 in',('draft','in_process'))]}" />-->
                                 <!--<field
@@ -320,7 +320,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="matrix_block_risk_action">
-        <field name="name">Fuentes</field>
+        <field name="name">Sources</field>
         <field name="res_model">cyber_matrix.block</field>
         <field name="view_mode">list,form</field>
         <!--
@@ -330,7 +330,7 @@
     </record>
 
     <!-- <menuitem
-        name="Fuentes"
+        name="Sources"
         id="mitem_block_risk"
         parent="menu_information_asset_management"
         sequence="8"
@@ -362,7 +362,7 @@
     <!--Oportunidades-->
     <!--
     <record model="ir.actions.act_window" id="matrix_block_opportunity_action">
-        <field name="name">Fuentes</field>
+        <field name="name">Sources</field>
         <field name="res_model">cyber_matrix.block</field>
         <field name="view_mode">list,form</field>
         <field name="domain">[('type','=','opportunity')]</field>
@@ -388,7 +388,7 @@
     -->
 
     <!-- <menuitem
-        name="Fuentes"
+        name="Sources"
         id="mitem_block_opportunity"
         parent="menu_opportunity"
         sequence="8"

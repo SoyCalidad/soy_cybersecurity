@@ -12,7 +12,7 @@ class TestAssetInventoryBase(BaseCommon):
         cls.result_obj = cls.env['cyber_evaluation.result']
         cls.evaluation = cls.env.ref('soy_cybersecurity_cybersecurity.cyber_evaluation_1')
 
-        # Confidencialidad, Integridad and Disponibilidad each have a "low"
+        # Confidentiality, Integrity and Availability each have a "low"
         # (1-3), "medium" (4-7), and "high" (8-10) alternative; a fixed value
         # per band from each criterio gives a deterministic product (ntr).
         cls.low_alternatives = cls.env['cyber_evaluation.criterio.line'].browse([

@@ -3,38 +3,38 @@ from odoo import api, fields, models
 class PolicyTemplate(models.Model):
     _inherit = 'mgmtsystem.context.policy.template'
 
-    cyber_organization_context = fields.Text(string='Contexto de la organización')
-    cyber_direction_help = fields.Text(string='Apoyo para la dirección')
+    cyber_organization_context = fields.Text(string='Context of the organization')
+    cyber_direction_help = fields.Text(string='Management support')
     
-    cyber_risk_handling = fields.Text(string='Evaluación y tratamiento de riesgos') #new
-    cyber_legal_req = fields.Text(string='Requisitos Legales')
-    cyber_responsibility_assignment = fields.Text(string='Asignación de responsabilidades') #new
+    cyber_risk_handling = fields.Text(string='Risk assessment and treatment') #new
+    cyber_legal_req = fields.Text(string='Legal Requirements')
+    cyber_responsibility_assignment = fields.Text(string='Assignment of responsibilities') #new
 
-    cyber_standard_commitment = fields.Text(string='Compromiso para los requisitos de la norma')
-    cyber_staff_participation = fields.Text(string='Participación del personal')
-    cyber_continuous_improvement = fields.Text(string='Mejora Continua')
+    cyber_standard_commitment = fields.Text(string='Commitment to the requirements of the standard')
+    cyber_staff_participation = fields.Text(string='Staff participation')
+    cyber_continuous_improvement = fields.Text(string='Continual Improvement')
 
-    cyber_control_implementation = fields.Text(string='Implementación de controles') #new
-    cyber_security_goals = fields.Text(string='Objetivos para la seguridad de la información') #new
+    cyber_control_implementation = fields.Text(string='Implementation of controls') #new
+    cyber_security_goals = fields.Text(string='Information security objectives') #new
 
 
 
 class Policy(models.Model):
     _inherit = 'mgmtsystem.context.policy'
 
-    cyber_organization_context = fields.Text(string='Contexto de la organización')
-    cyber_direction_help = fields.Text(string='Apoyo para la dirección')
+    cyber_organization_context = fields.Text(string='Context of the organization')
+    cyber_direction_help = fields.Text(string='Management support')
 
-    cyber_risk_handling = fields.Text(string='Evaluación y tratamiento de riesgos') #new
-    cyber_legal_req = fields.Text(string='Requisitos Legales')
-    cyber_responsibility_assignment = fields.Text(string='Asignación de responsbilidades') #new
+    cyber_risk_handling = fields.Text(string='Risk assessment and treatment') #new
+    cyber_legal_req = fields.Text(string='Legal Requirements')
+    cyber_responsibility_assignment = fields.Text(string='Assignment of responsibilities') #new
 
-    cyber_standard_commitment = fields.Text(string='Compromiso para los requisitos de la norma')
-    cyber_staff_participation = fields.Text(string='Participación del personal')
-    cyber_continuous_improvement = fields.Text(string='Mejora Continua')
+    cyber_standard_commitment = fields.Text(string='Commitment to the requirements of the standard')
+    cyber_staff_participation = fields.Text(string='Staff participation')
+    cyber_continuous_improvement = fields.Text(string='Continual Improvement')
 
-    cyber_control_implementation = fields.Text(string='Implementación de controles') #new
-    cyber_security_goals = fields.Text(string='Objetivos para la seguridad de la información') #new
+    cyber_control_implementation = fields.Text(string='Implementation of controls') #new
+    cyber_security_goals = fields.Text(string='Information security objectives') #new
 
     @api.onchange('template_')
     def _onchange_template_(self):

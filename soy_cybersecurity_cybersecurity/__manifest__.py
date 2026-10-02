@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Gestión de Seguridad de la Información",
+    'name': "Information Security Management",
 
     'summary': """
-        Gestión de Seguridad de la Información""",
+        Information security management""",
 
     'description': """
-        [Descripción]
+        [Description]
     """,
 
     'author': "Soy Calidad",
@@ -30,6 +30,7 @@
         'mgmtsystem_opportunity',
         'mgmtsystem_infrastructure',
         'mgmtsystem_employees',
+        'hr_job_functions',
 
         'soycalidad_improve',
         'sc27k_base',

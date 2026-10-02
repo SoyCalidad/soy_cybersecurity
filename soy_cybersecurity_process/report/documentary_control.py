@@ -17,7 +17,7 @@ _logger = logging.getLogger(__name__)
 
 class DocumentaryControlReportXLS(models.AbstractModel):
     _inherit = 'report.mgmtsystem_process.documentary_control_xls'
-    _description = 'Reporte de lista maestra'
+    _description = 'Master list report'
 
     def generate_xlsx_report(self, workbook, data, records):
         """Generate a xls report with the data
@@ -43,7 +43,7 @@ class DocumentaryControlReportXLS(models.AbstractModel):
             {'font_size': 10, 'font_name': 'Arial', 'border': True, 'align': 'center', 'text_wrap': True,
              'valign': 'vcenter'})
 
-        sheet = workbook.add_worksheet('Lista Maestra')
+        sheet = workbook.add_worksheet(_('Master List'))
 
         if not records:
             records = self.env['documentary.control'].search([])
@@ -86,23 +86,23 @@ class DocumentaryControlReportXLS(models.AbstractModel):
         #     'image_data': buf_image, 'x_scale': x_scale, 'y_scale': y_scale})
         sheet.merge_range('A1:A3', '', format_title)
         self._insert_centered_image(sheet, 'A1:A3', company_id.logo,container_width=130, container_height=50,)
-        sheet.merge_range('B1:I3', 'Lista maestra', format_title)
-        sheet.merge_range('J1:L1', f"Código: {code}", format_data)
-        sheet.merge_range('J2:L2', f"Versión: {version}", format_data)
-        sheet.merge_range('J3:L3', f"Fecha de aprobación: {date_approval}", format_data)
+        sheet.merge_range('B1:I3', _('Master list'), format_title)
+        sheet.merge_range('J1:L1', _('Code: %s', code), format_data)
+        sheet.merge_range('J2:L2', _('Version: %s', version), format_data)
+        sheet.merge_range('J3:L3', _('Approval date: %s', date_approval), format_data)
 
-        sheet.write(4, 0, "Código del procedimiento", format_header)
-        sheet.write(4, 1, "Versión", format_header)
-        sheet.write(4, 2, "Nombre del procedimiento", format_header)
-        sheet.write(4, 3, "Fecha de aprobación", format_header)
-        sheet.write(4, 4, "Código del formato", format_header)
-        sheet.write(4, 5, "Versión", format_header)
-        sheet.write(4, 6, "Nombre del formato", format_header)
-        sheet.write(4, 7, "Fecha de aprobación", format_header)
-        sheet.write(4, 8, "Área Responsable", format_header)
-        sheet.write(4, 9, "Tipo De Almacenamiento", format_header)
-        sheet.write(4, 10, "Tipo", format_header)
-        sheet.write(4, 11, "Clase", format_header)
+        sheet.write(4, 0, _('Procedure code'), format_header)
+        sheet.write(4, 1, _('Version'), format_header)
+        sheet.write(4, 2, _('Procedure name'), format_header)
+        sheet.write(4, 3, _('Approval date'), format_header)
+        sheet.write(4, 4, _('Format code'), format_header)
+        sheet.write(4, 5, _('Version'), format_header)
+        sheet.write(4, 6, _('Format name'), format_header)
+        sheet.write(4, 7, _('Approval date'), format_header)
+        sheet.write(4, 8, _('Responsible area'), format_header)
+        sheet.write(4, 9, _('Storage type'), format_header)
+        sheet.write(4, 10, _('Type'), format_header)
+        sheet.write(4, 11, _('Class'), format_header)
 
         entrie_row = 5
         code = ""

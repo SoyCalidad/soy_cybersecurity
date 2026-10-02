@@ -19,11 +19,11 @@ class MatrixValidation(models.Model):
     _inherit = 'mgmtsystem.validation.step'
 
     cyber_matrix_elaboration_id = fields.Many2one(
-        'cyber_matrix.matrix', string='Matrix Cyber Elaboration ', ondelete='set null')
+        'cyber_matrix.matrix', string='Cyber Matrix Elaboration', ondelete='set null')
     cyber_matrix_review_id = fields.Many2one(
-        'cyber_matrix.matrix', string='Matrix Cyber Review', ondelete='set null')
+        'cyber_matrix.matrix', string='Cyber Matrix Review', ondelete='set null')
     cyber_matrix_validation_id = fields.Many2one(
-        'cyber_matrix.matrix', string='Matrix Cyber Validation', ondelete='set null')
+        'cyber_matrix.matrix', string='Cyber Matrix Validation', ondelete='set null')
 
 
 class MatrixBlockLine(models.Model):

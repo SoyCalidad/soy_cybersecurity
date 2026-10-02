@@ -4,22 +4,95 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e-20260817\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-22 14:36+0000\n"
-"PO-Revision-Date: 2026-09-22 14:36+0000\n"
+"POT-Creation-Date: 2026-10-02 00:00+0000\n"
+"PO-Revision-Date: 2026-10-02 00:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
 #. module: sc27k_asset_inventory
+#: model:ir.module.module,description:base.module_sc27k_asset_inventory
+msgid ""
+"\n"
+"        Extends the Information Asset Inventory (cyber_matrix.block.line) with the owner,\n"
+"        custodian, ownership, information classification, status and review date fields,\n"
+"        and adds an Excel report with the consolidated detail.\n"
+"    "
+msgstr ""
+"\n"
+"        Extiende el Inventario de Activos de Información (cyber_matrix.block.line) con\n"
+"        los campos de propietario, custodio, titularidad, clasificación de la información,\n"
+"        estado y fechas de revisión, y agrega un reporte Excel con el detalle consolidado.\n"
+"    "
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__aux
+msgid "[AUX] Auxiliary equipment"
+msgstr "[AUX] Equipos auxiliares"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__com
+msgid "[COM] Communication networks"
+msgstr "[COM] Redes de comunicación"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__d
+msgid "[D] Data / Information"
+msgstr "[D] Datos / Información"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__hw
+msgid "[HW] Hardware"
+msgstr "[HW] Hardware"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__k
+msgid "[K] Cryptographic keys"
+msgstr "[K] Claves criptográficas"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__l
+msgid "[L] Facilities"
+msgstr "[L] Instalaciones"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__media
+msgid "[Media] Information media"
+msgstr "[Media] Medios de información"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__p
+msgid "[P] Personnel"
+msgstr "[P] Personal"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__s
+msgid "[S] Services"
+msgstr "[S] Servicios"
+
+#. module: sc27k_asset_inventory
+#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__sw
+msgid "[SW] Software"
+msgstr "[SW] Software"
+
+#. module: sc27k_asset_inventory
 #: model:ir.model.fields,field_description:sc27k_asset_inventory.field_sc27k_asset_inventory_category__active
 #: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_state__active
 msgid "Active"
 msgstr "Activo"
+
+#. module: sc27k_asset_inventory
+#: model:ir.module.module,summary:base.module_sc27k_asset_inventory
+msgid "Additional fields and Excel report for the Information Asset Inventory"
+msgstr ""
+"Campos adicionales y reporte Excel para el Inventario de Activos de "
+"Información"
 
 #. module: sc27k_asset_inventory
 #. odoo-python
@@ -102,6 +175,7 @@ msgstr "¿Contiene o procesa datos personales?"
 #: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_ownership__corporate
 msgid "Corporate"
 msgstr "Corporativo"
+
 #. module: sc27k_asset_inventory
 #: model:ir.model.fields,field_description:sc27k_asset_inventory.field_sc27k_asset_inventory_category__create_uid
 msgid "Created by"
@@ -136,6 +210,11 @@ msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: sc27k_asset_inventory
+#: model:ir.model,name:sc27k_asset_inventory.model_report_sc27k_asset_inventory_report_asset_inventory_xlsx
+msgid "Excel Report of Information Asset Inventory"
+msgstr "Reporte Excel de Inventario de Activos de Información"
+
+#. module: sc27k_asset_inventory
 #: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_security_certification
 msgid "Has Security Certification?"
 msgstr "¿Tiene certificación de seguridad?"
@@ -164,6 +243,11 @@ msgstr "Inventario de Activos de Información"
 #: model:ir.actions.report,name:sc27k_asset_inventory.sc27k_asset_inventory_report_xlsx
 msgid "Information Asset Inventory (Excel)"
 msgstr "Inventario de Activos de Información (Excel)"
+
+#. module: sc27k_asset_inventory
+#: model:ir.module.module,shortdesc:base.module_sc27k_asset_inventory
+msgid "Information Asset Inventory - ISO 27001 Fields"
+msgstr "Inventario de Activos de Información - Campos ISO 27001"
 
 #. module: sc27k_asset_inventory
 #. odoo-python
@@ -260,7 +344,7 @@ msgstr "No Aplica"
 #: code:addons/sc27k_asset_inventory/report/asset_inventory_xlsx.py:0
 #: model:ir.model.fields,field_description:sc27k_asset_inventory.field_cyber_matrix_block_line__sc27k_ownership
 msgid "Ownership"
-msgstr "Propiedad"
+msgstr "Titularidad"
 
 #. module: sc27k_asset_inventory
 #: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_ownership__personal_byod
@@ -280,11 +364,6 @@ msgid "Process"
 msgstr "Proceso"
 
 #. module: sc27k_asset_inventory
-#: model:ir.model,name:sc27k_asset_inventory.model_report_sc27k_asset_inventory_report_asset_inventory_xlsx
-msgid "Reporte Excel de Inventario de Activos de Información"
-msgstr "Reporte Excel de Inventario de Activos de Información"
-
-#. module: sc27k_asset_inventory
 #: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_information_classification__restricted
 msgid "Restricted"
 msgstr "Restringido"
@@ -297,7 +376,6 @@ msgstr "Estado"
 
 #. module: sc27k_asset_inventory
 #. odoo-python
-#: code:addons/sc27k_asset_inventory/models/cyber_matrix_block_line.py:0
 #: model:ir.model.constraint,message:sc27k_asset_inventory.constraint_cyber_matrix_block_line_sc27k_asset_code_company_uniq
 msgid "The asset code already exists for this company."
 msgstr "El código del activo ya existe para esta compañía."
@@ -312,53 +390,3 @@ msgstr "Tercero"
 #: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_security_certification__yes
 msgid "Yes"
 msgstr "Sí"
-
-#. module: sc27k_asset_inventory
-#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__aux
-msgid "[AUX] Auxiliary equipment"
-msgstr "[AUX] Equipos auxiliares"
-
-#. module: sc27k_asset_inventory
-#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__com
-msgid "[COM] Communication networks"
-msgstr "[COM] Redes de comunicación"
-
-#. module: sc27k_asset_inventory
-#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__d
-msgid "[D] Data / Information"
-msgstr "[D] Datos / Información"
-
-#. module: sc27k_asset_inventory
-#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__hw
-msgid "[HW] Hardware"
-msgstr "[HW] Hardware"
-
-#. module: sc27k_asset_inventory
-#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__k
-msgid "[K] Cryptographic keys"
-msgstr "[K] Claves criptográficas"
-
-#. module: sc27k_asset_inventory
-#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__l
-msgid "[L] Facilities"
-msgstr "[L] Instalaciones"
-
-#. module: sc27k_asset_inventory
-#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__media
-msgid "[Media] Information media"
-msgstr "[Media] Medios de información"
-
-#. module: sc27k_asset_inventory
-#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__p
-msgid "[P] Personnel"
-msgstr "[P] Personal"
-
-#. module: sc27k_asset_inventory
-#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__sw
-msgid "[SW] Software"
-msgstr "[SW] Software"
-
-#. module: sc27k_asset_inventory
-#: model:ir.model.fields.selection,name:sc27k_asset_inventory.selection__cyber_matrix_block_line__sc27k_asset_type__s
-msgid "[S] Services"
-msgstr "[S] Servicios"

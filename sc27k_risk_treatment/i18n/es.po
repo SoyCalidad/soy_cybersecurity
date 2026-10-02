@@ -4,22 +4,114 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e-20260817\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-22 14:59+0000\n"
-"PO-Revision-Date: 2026-09-22 14:59+0000\n"
+"POT-Creation-Date: 2026-10-02 00:00+0000\n"
+"PO-Revision-Date: 2026-10-02 00:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
 #. module: sc27k_risk_treatment
+#: model:ir.module.module,description:base.module_sc27k_risk_treatment
+msgid ""
+"\n"
+"        Extends matrix.block.line (Risks and Opportunities) with a conditional profile,\n"
+"        active when the Identifier is \"Information security\" and the record is a risk:\n"
+"        affected asset, threat and threat agent, a workflow of initial assessment ->\n"
+"        treatment/controls -> residual assessment -> risk acceptance, and the\n"
+"        \"Information Security Risk Assessment\" indicator (Impact x Probability,\n"
+"        scale 1-25).\n"
+"    "
+msgstr ""
+"\n"
+"        Extiende matrix.block.line (Riesgos y Oportunidades) con un perfil condicional,\n"
+"        activo cuando el Identificador es \"Seguridad de la información\" y el registro es\n"
+"        un riesgo: activo afectado, amenaza y agente de la amenaza, un flujo de evaluación\n"
+"        inicial -> tratamiento/controles -> evaluación residual -> aceptación del riesgo,\n"
+"        y el indicador \"Evaluación de Riesgos de Seguridad de la Información\" (Impacto x\n"
+"        Probabilidad, escala 1-25).\n"
+"    "
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_confidentiality_1
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_integrity_1
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_availability_1
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_traceability_1
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_authenticity_1
+msgid "1 (Very Low)"
+msgstr "1 (Muy Bajo)"
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_probability_1
+msgid "1 (Very Rare)"
+msgstr "1 (Muy Rara)"
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_confidentiality_2
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_integrity_2
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_availability_2
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_traceability_2
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_authenticity_2
+msgid "2 (Low)"
+msgstr "2 (Bajo)"
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_probability_2
+msgid "2 (Unlikely)"
+msgstr "2 (Poco Probable)"
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_confidentiality_3
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_integrity_3
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_availability_3
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_traceability_3
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_authenticity_3
+msgid "3 (Medium)"
+msgstr "3 (Medio)"
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_probability_3
+msgid "3 (Possible)"
+msgstr "3 (Posible)"
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_confidentiality_4
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_integrity_4
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_availability_4
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_traceability_4
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_authenticity_4
+msgid "4 (High)"
+msgstr "4 (Alto)"
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_probability_4
+msgid "4 (Likely)"
+msgstr "4 (Probable)"
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_probability_5
+msgid "5 (Almost Certain)"
+msgstr "5 (Casi Segura)"
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_confidentiality_5
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_integrity_5
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_availability_5
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_traceability_5
+#: model:evaluation.criterio.line,name:sc27k_risk_treatment.criterio_line_security_authenticity_5
+msgid "5 (Very High)"
+msgstr "5 (Muy Alto)"
+
+#. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_option__accept
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_treatment_option__accept
 msgid "Accept"
-msgstr ""
+msgstr "Aceptar"
 
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_decision__accept
@@ -58,17 +150,6 @@ msgstr "Aceptado por"
 #: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
 msgid "Accepted by"
 msgstr "Aceptado por"
-
-#. module: sc27k_risk_treatment
-#: model:ir.model,name:sc27k_risk_treatment.model_mgmtsystem_action
-msgid "Acción"
-msgstr "Acción"
-
-#. module: sc27k_risk_treatment
-#. odoo-python
-#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
-msgid "Active"
-msgstr "Activo"
 
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_acceptance_state__additional_treatment
@@ -111,7 +192,67 @@ msgid "Approved By"
 msgstr "Aprobado por"
 
 #. module: sc27k_risk_treatment
+#: model:evaluation.criterio,description:sc27k_risk_treatment.criterio_security_authenticity
+msgid ""
+"Assesses the impact on authenticity if the risk materializes: loss of the "
+"ability to verify the identity of users, systems or the origin of the "
+"information."
+msgstr ""
+"Evalúa el impacto sobre la autenticidad si el riesgo se materializa: pérdida"
+" de la capacidad de verificar la identidad de usuarios, sistemas o el origen"
+" de la información."
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio,description:sc27k_risk_treatment.criterio_security_availability
+msgid ""
+"Assesses the impact on the availability of information if the risk "
+"materializes: loss, damage or interruption of access."
+msgstr ""
+"Evalúa el impacto sobre la disponibilidad de la información si el riesgo se "
+"materializa: pérdida, daño o interrupción del acceso."
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio,description:sc27k_risk_treatment.criterio_security_confidentiality
+msgid ""
+"Assesses the impact on the confidentiality of information if the risk "
+"materializes: unauthorized access, disclosure, copying or modification."
+msgstr ""
+"Evalúa el impacto sobre la confidencialidad de la información si el riesgo "
+"se materializa: acceso, divulgación, copia o modificación no autorizados."
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio,description:sc27k_risk_treatment.criterio_security_integrity
+msgid ""
+"Assesses the impact on the integrity of information if the risk "
+"materializes: unauthorized modification, destruction or corruption."
+msgstr ""
+"Evalúa el impacto sobre la integridad de la información si el riesgo se "
+"materializa: modificación, destrucción o corrupción no autorizada."
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio,description:sc27k_risk_treatment.criterio_security_traceability
+msgid ""
+"Assesses the impact on traceability if the risk materializes: loss of the "
+"ability to reconstruct who did what and when."
+msgstr ""
+"Evalúa el impacto sobre la trazabilidad si el riesgo se materializa: pérdida"
+" de la capacidad de reconstruir quién hizo qué y cuándo."
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.criterio,description:sc27k_risk_treatment.criterio_security_probability
+msgid ""
+"Assesses the realistic possibility that the information security risk "
+"materializes, considering history, exposure, threats, existing "
+"vulnerabilities and currently implemented controls."
+msgstr ""
+"Evalúa la posibilidad realista de que el riesgo de seguridad de la "
+"información se materialice, considerando antecedentes, exposición, amenazas,"
+" vulnerabilidades existentes y controles actualmente implementados."
+
+#. module: sc27k_risk_treatment
+#. odoo-python
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_asset_id
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_asset_id
 msgid "Asset"
 msgstr "Activo"
@@ -119,12 +260,16 @@ msgstr "Activo"
 #. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__evaluation_criterio__sc27k_criterion_type__authenticity
+#: model:evaluation.criterio,name:sc27k_risk_treatment.criterio_security_authenticity
 msgid "Authenticity"
 msgstr "Autenticidad"
 
 #. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__evaluation_criterio__sc27k_criterion_type__availability
+#: model:evaluation.criterio,name:sc27k_risk_treatment.criterio_security_availability
 msgid "Availability"
 msgstr "Disponibilidad"
 
@@ -150,6 +295,8 @@ msgstr "Comentario"
 #. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__evaluation_criterio__sc27k_criterion_type__confidentiality
+#: model:evaluation.criterio,name:sc27k_risk_treatment.criterio_security_confidentiality
 msgid "Confidentiality"
 msgstr "Confidencialidad"
 
@@ -167,8 +314,8 @@ msgstr "Controles"
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_risk_level__critical
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_risk_level__critical
-#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_residual_risk_level__critical
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_risk_level__critical
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_residual_risk_level__critical
 msgid "Critical"
 msgstr "Crítico"
 
@@ -176,6 +323,13 @@ msgstr "Crítico"
 #: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
 msgid "Date"
 msgstr "Fecha"
+
+#. module: sc27k_risk_treatment
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+#, python-format
+msgid "Date: %s"
+msgstr "Fecha: %s"
 
 #. module: sc27k_risk_treatment
 #. odoo-python
@@ -197,23 +351,12 @@ msgid "Effect"
 msgstr "Efecto"
 
 #. module: sc27k_risk_treatment
-#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
-msgid "Fecha"
-msgstr "Date"
-
-#. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_risk_level__high
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_risk_level__high
-#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_residual_risk_level__high
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_risk_level__high
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_residual_risk_level__high
 msgid "High"
 msgstr "Alto"
-
-#. module: sc27k_risk_treatment
-#. odoo-python
-#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
-msgid "INITIAL ASSESSMENT"
-msgstr "EVALUACIÓN INICIAL"
 
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_mgmtsystem_action__sc27k_implementation_record
@@ -245,6 +388,12 @@ msgid "Indicator (Residual Evaluation)"
 msgstr "Indicador (Evaluación Residual)"
 
 #. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_evaluation_criterio__sc27k_criterion_type
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_evaluation_result__sc27k_criterion_type
+msgid "Information Security Criterion"
+msgstr "Criterio de seguridad de la información"
+
+#. module: sc27k_risk_treatment
 #: model:ir.actions.report,name:sc27k_risk_treatment.sc27k_risk_treatment_matrix_report_xlsx
 msgid "Information Security Matrix Report"
 msgstr "Reporte de la matriz de seguridad de la información"
@@ -254,6 +403,11 @@ msgstr "Reporte de la matriz de seguridad de la información"
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_is_security_profile
 msgid "Information Security Profile"
 msgstr "Perfil de seguridad de la información"
+
+#. module: sc27k_risk_treatment
+#: model:evaluation.evaluation,name:sc27k_risk_treatment.evaluation_security_information
+msgid "Information Security Risk Assessment"
+msgstr "Evaluación de Riesgos de Seguridad de la Información"
 
 #. module: sc27k_risk_treatment
 #: model:ir.model,name:sc27k_risk_treatment.model_report_sc27k_risk_treatment_report_risk_xlsx
@@ -277,16 +431,10 @@ msgid "Information Security Risk Report (Excel)"
 msgstr "Reporte de riesgos de seguridad de la información (Excel)"
 
 #. module: sc27k_risk_treatment
-#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_risk_level
-#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_risk_level
-msgid "Initial Risk Level"
-msgstr "Nivel de Riesgo Inicial"
-
-#. module: sc27k_risk_treatment
-#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_initial_ntr
-#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_initial_ntr
-msgid "Initial Risk Value"
-msgstr "Valor de Riesgo Inicial"
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid "INITIAL ASSESSMENT"
+msgstr "EVALUACIÓN INICIAL"
 
 #. module: sc27k_risk_treatment
 #: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
@@ -300,11 +448,23 @@ msgid "Initial impact"
 msgstr "Impacto inicial"
 
 #. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_risk_level
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_risk_level
+msgid "Initial Risk Level"
+msgstr "Nivel de Riesgo Inicial"
+
+#. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
 #: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
 msgid "Initial risk level"
 msgstr "Nivel de riesgo inicial"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_initial_ntr
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_initial_ntr
+msgid "Initial Risk Value"
+msgstr "Valor de Riesgo Inicial"
 
 #. module: sc27k_risk_treatment
 #. odoo-python
@@ -316,6 +476,8 @@ msgstr "Valor del riesgo inicial"
 #. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__evaluation_criterio__sc27k_criterion_type__integrity
+#: model:evaluation.criterio,name:sc27k_risk_treatment.criterio_security_integrity
 msgid "Integrity"
 msgstr "Integridad"
 
@@ -328,31 +490,33 @@ msgstr "Interpretación"
 #. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
-msgid ""
-"The matrix \"%(matrix_name)s\" has no risks with the Identifier "
-"\"Information security\"; there is nothing to report."
-msgstr ""
-"La matriz \"%(matrix_name)s\" no tiene riesgos con el Identificador "
-"\"Seguridad de la información\"; no hay nada que reportar."
+msgid "IS Risk Matrix"
+msgstr "Matriz de Riesgos SI"
 
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_risk_level__low
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_risk_level__low
-#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_residual_risk_level__low
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_risk_level__low
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_residual_risk_level__low
 msgid "Low"
 msgstr "Bajo"
 
 #. module: sc27k_risk_treatment
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid "Matrix"
+msgstr "Matriz"
+
+#. module: sc27k_risk_treatment
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_evaluation_result__sc27k_residual_matrix_block_line_id
 msgid "Matrix record (residual assessment)"
-msgstr "Registro de matriz (evaluación de residuos)"
+msgstr "Registro de matriz (evaluación residual)"
 
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_risk_level__medium
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_risk_level__medium
-#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_residual_risk_level__medium
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_risk_level__medium
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_residual_risk_level__medium
 msgid "Medium"
 msgstr "Medio"
 
@@ -366,9 +530,9 @@ msgstr "Modificación solicitada"
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_acceptance_state__pending
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_approval_state__pending
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_state__pending
-#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_residual_acceptance_state__pending
-#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_treatment_approval_state__pending
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_treatment_state__pending
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_treatment_approval_state__pending
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_residual_acceptance_state__pending
 msgid "Pending"
 msgstr "Pendiente"
 
@@ -381,6 +545,8 @@ msgstr "Persona responsable"
 #. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__evaluation_criterio__sc27k_criterion_type__probability
+#: model:evaluation.criterio,name:sc27k_risk_treatment.criterio_security_probability
 msgid "Probability"
 msgstr "Probabilidad"
 
@@ -391,28 +557,15 @@ msgid "Process"
 msgstr "Proceso"
 
 #. module: sc27k_risk_treatment
-#. odoo-python
-#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
-msgid "RESIDUAL RISK"
-msgstr "RIESGO RESIDUAL"
-
-#. module: sc27k_risk_treatment
-#. odoo-python
-#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
-msgid "RESIDUAL RISK ASSESSMENT"
-msgstr "EVALUACIÓN DEL RIESGO RESIDUAL"
-
-#. module: sc27k_risk_treatment
-#. odoo-python
-#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
-msgid "RISK AND ASSET IDENTIFICATION"
-msgstr "IDENTIFICACIÓN DE RIESGOS Y ACTIVOS"
-
-#. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_option__reduce
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_treatment_option__reduce
 msgid "Reduce"
 msgstr "Reducir"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Request a modification"
+msgstr "Solicitar una modificación"
 
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_residual_decision__additional_treatment
@@ -422,13 +575,30 @@ msgstr "Solicitar tratamiento adicional"
 
 #. module: sc27k_risk_treatment
 #: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
-msgid "Request a modification"
-msgstr "Solicitar una modificación"
+msgid "Request additional treatment"
+msgstr "Solicitar tratamiento adicional"
 
 #. module: sc27k_risk_treatment
 #: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
-msgid "Request additional treatment"
-msgstr "Solicitar tratamiento adicional"
+msgid "Residual evaluation"
+msgstr "Evaluación residual"
+
+#. module: sc27k_risk_treatment
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid "Residual impact"
+msgstr "Impacto residual"
+
+#. module: sc27k_risk_treatment
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid "RESIDUAL RISK"
+msgstr "RIESGO RESIDUAL"
+
+#. module: sc27k_risk_treatment
+#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
+msgid "Residual risk"
+msgstr "Riesgo residual"
 
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_acceptance_comment
@@ -449,6 +619,12 @@ msgid "Residual Risk Acceptance Status"
 msgstr "Estado de aceptación del riesgo residual"
 
 #. module: sc27k_risk_treatment
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid "RESIDUAL RISK ASSESSMENT"
+msgstr "EVALUACIÓN DEL RIESGO RESIDUAL"
+
+#. module: sc27k_risk_treatment
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_decision
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_residual_decision
 msgid "Residual Risk Decision"
@@ -461,27 +637,17 @@ msgid "Residual Risk Level"
 msgstr "Nivel de riesgo residual"
 
 #. module: sc27k_risk_treatment
-#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_ntr
-#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_residual_ntr
-msgid "Residual Risk Value"
-msgstr "Valor de riesgo residual"
-
-#. module: sc27k_risk_treatment
-#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
-msgid "Residual evaluation"
-msgstr "Evaluación residual"
-
-#. module: sc27k_risk_treatment
-#: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
-msgid "Residual risk"
-msgstr "Riesgo residual"
-
-#. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
 #: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
 msgid "Residual risk level"
 msgstr "Nivel de riesgo residual"
+
+#. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_ntr
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_residual_ntr
+msgid "Residual Risk Value"
+msgstr "Valor de riesgo residual"
 
 #. module: sc27k_risk_treatment
 #. odoo-python
@@ -499,18 +665,13 @@ msgstr "Responsable"
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_residual_result_ids
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_residual_result_ids
 msgid "Results (Residual Evaluation)"
-msgstr "Resultados (Evaluación de residuos)"
+msgstr "Resultados (Evaluación residual)"
 
 #. module: sc27k_risk_treatment
-#: model:ir.model,name:sc27k_risk_treatment.model_matrix_block_line
-msgid "Riesgo/Oportunidad"
-msgstr "Riesgo/Oportunidad"
-
-#. module: sc27k_risk_treatment
-#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_owner_id
-#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_treatment_owner_id
-msgid "Risk Owner"
-msgstr "Dueño del riesgo"
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid "RISK AND ASSET IDENTIFICATION"
+msgstr "IDENTIFICACIÓN DE RIESGOS Y ACTIVOS"
 
 #. module: sc27k_risk_treatment
 #. odoo-python
@@ -519,10 +680,21 @@ msgid "Risk name"
 msgstr "Nombre del riesgo"
 
 #. module: sc27k_risk_treatment
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_owner_id
+#: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_treatment_owner_id
+msgid "Risk Owner"
+msgstr "Propietario del riesgo"
+
+#. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
 msgid "Risk responsible"
 msgstr "Responsable del riesgo"
+
+#. module: sc27k_risk_treatment
+#: model:ir.module.module,shortdesc:base.module_sc27k_risk_treatment
+msgid "Risks and Opportunities - ISO 27001 Risk Profile"
+msgstr "Riesgos y Oportunidades - Perfil de Riesgo ISO 27001"
 
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__matrix_block_line__sc27k_treatment_option__share_transfer
@@ -549,18 +721,6 @@ msgid "Status"
 msgstr "Estado"
 
 #. module: sc27k_risk_treatment
-#. odoo-python
-#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
-msgid "THREAT"
-msgstr "AMENAZA"
-
-#. module: sc27k_risk_treatment
-#. odoo-python
-#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
-msgid "TREATMENT"
-msgstr "TRATAMIENTO"
-
-#. module: sc27k_risk_treatment
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_target_date
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_treatment_target_date
 msgid "Target Date"
@@ -571,6 +731,43 @@ msgstr "Fecha objetivo"
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
 msgid "Target date"
 msgstr "Fecha objetivo"
+
+#. module: sc27k_risk_treatment
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid ""
+"The matrix \"%(matrix_name)s\" has no risks with the Identifier "
+"\"Information security\"; there is nothing to report."
+msgstr ""
+"La matriz \"%(matrix_name)s\" no tiene riesgos con el Identificador "
+"\"Seguridad de la información\"; no hay nada que reportar."
+
+#. module: sc27k_risk_treatment
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/models/matrix_block_line.py:0
+msgid ""
+"The risk level is obtained by multiplying the maximum impact on information "
+"security (max(Confidentiality, Integrity, Availability, Traceability, "
+"Authenticity)) by the realistic probability of occurrence, resulting in a "
+"scale from 1 to 25. Values equal to or greater than 12 (High or Critical "
+"Risk) are unacceptable and require the mandatory implementation of controls "
+"from Annex A of the ISO/IEC 27001:2022 standard and a formal treatment plan."
+" Values between 5 and 11 (Medium) must be managed or monitored periodically."
+msgstr ""
+"El nivel de riesgo se obtiene multiplicando el impacto máximo sobre la "
+"seguridad de la información (máx(Confidencialidad, Integridad, "
+"Disponibilidad, Trazabilidad, Autenticidad)) por la probabilidad realista de"
+" ocurrencia, resultando en una escala de 1 a 25. Los valores iguales o "
+"mayores a 12 (Riesgo Alto o Crítico) son inaceptables y requieren la "
+"implementación obligatoria de controles del Anexo A de la norma ISO/IEC "
+"27001:2022 y un plan formal de tratamiento. Los valores entre 5 y 11 (Medio)"
+" deben gestionarse o monitorearse periódicamente."
+
+#. module: sc27k_risk_treatment
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid "THREAT"
+msgstr "AMENAZA"
 
 #. module: sc27k_risk_treatment
 #. odoo-python
@@ -589,8 +786,16 @@ msgstr "Agente de la amenaza"
 #. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+#: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__evaluation_criterio__sc27k_criterion_type__traceability
+#: model:evaluation.criterio,name:sc27k_risk_treatment.criterio_security_traceability
 msgid "Traceability"
 msgstr "Trazabilidad"
+
+#. module: sc27k_risk_treatment
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid "TREATMENT"
+msgstr "TRATAMIENTO"
 
 #. module: sc27k_risk_treatment
 #: model_terms:ir.ui.view,arch_db:sc27k_risk_treatment.matrix_block_line_form_view_sc27k_risk_treatment
@@ -601,7 +806,16 @@ msgstr "Tratamiento / Monitoreo"
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
 msgid "Treatment / Safeguard"
-msgstr "Tratamiento / Salvaguardia"
+msgstr "Tratamiento / Salvaguarda"
+
+#. module: sc27k_risk_treatment
+#: model:ir.module.module,summary:base.module_sc27k_risk_treatment
+msgid ""
+"Treatment and acceptance profile for information security risks on top of "
+"Risks and Opportunities"
+msgstr ""
+"Perfil de tratamiento y aceptación de riesgos de seguridad de la información"
+" sobre Riesgos y Oportunidades"
 
 #. module: sc27k_risk_treatment
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_approval_comment
@@ -628,6 +842,12 @@ msgid "Treatment Description"
 msgstr "Descripción del tratamiento"
 
 #. module: sc27k_risk_treatment
+#. odoo-python
+#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
+msgid "Treatment description"
+msgstr "Descripción del tratamiento"
+
+#. module: sc27k_risk_treatment
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_matrix_block_line__sc27k_treatment_option
 #: model:ir.model.fields,field_description:sc27k_risk_treatment.field_sst_matrix_block_line__sc27k_treatment_option
 msgid "Treatment Option"
@@ -648,12 +868,6 @@ msgstr "Estado del Tratamiento"
 #. module: sc27k_risk_treatment
 #. odoo-python
 #: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
-msgid "Treatment description"
-msgstr "Descripción del tratamiento"
-
-#. module: sc27k_risk_treatment
-#. odoo-python
-#: code:addons/sc27k_risk_treatment/report/risk_report_xlsx.py:0
 msgid "Type"
 msgstr "Tipo"
 
@@ -662,8 +876,3 @@ msgstr "Tipo"
 #: model:ir.model.fields.selection,name:sc27k_risk_treatment.selection__sst_matrix_block_line__sc27k_treatment_state__verified
 msgid "Verified"
 msgstr "Verificado"
-
-#. module: sc27k_risk_treatment
-#: model:ir.model,name:sc27k_risk_treatment.model_evaluation_result
-msgid "evaluation.result"
-msgstr "evaluation.result"

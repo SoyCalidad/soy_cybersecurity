@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Riesgos y Oportunidades - Perfil de Riesgo ISO 27001",
-    'summary': "Perfil de tratamiento y aceptación de riesgos de seguridad de la información sobre Riesgos y Oportunidades",
+    'name': "Risks and Opportunities - ISO 27001 Risk Profile",
+    'summary': "Treatment and acceptance profile for information security risks on top of Risks and Opportunities",
     'description': """
-        Extiende matrix.block.line (Riesgos y Oportunidades) con un perfil condicional,
-        activo cuando el Identificador es "Seguridad de la información" y el registro es
-        un riesgo: activo afectado, amenaza y agente de la amenaza, un flujo de evaluación
-        inicial -> tratamiento/controles -> evaluación residual -> aceptación del riesgo,
-        y el indicador "Evaluación de Riesgos de Seguridad de la Información" (Impacto x
-        Probabilidad, escala 1-25).
+        Extends matrix.block.line (Risks and Opportunities) with a conditional profile,
+        active when the Identifier is "Information security" and the record is a risk:
+        affected asset, threat and threat agent, a workflow of initial assessment ->
+        treatment/controls -> residual assessment -> risk acceptance, and the
+        "Information Security Risk Assessment" indicator (Impact x Probability,
+        scale 1-25).
     """,
     'author': "Soy Calidad",
     'category': 'iso27001',

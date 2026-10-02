@@ -27,8 +27,8 @@ class TestAssetInventoryReport(TestAssetInventoryBase):
         self.assertTrue(xlsx_bytes)
 
         strings = self._shared_strings(xlsx_bytes)
-        self.assertIn('Código', strings)
-        self.assertIn('Criticidad', strings)
+        self.assertIn('Code', strings)
+        self.assertIn('Criticality', strings)
         self.assertIn(self.asset.sc27k_asset_code, strings)
         self.assertIn(self.asset.name, strings)
         self.assertIn(self.job_cto.name, strings)
@@ -40,7 +40,7 @@ class TestAssetInventoryReport(TestAssetInventoryBase):
             _REPORT_NAME, self.asset.ids, {}
         )
         strings = self._shared_strings(xlsx_bytes)
-        self.assertIn('Alta', strings)
+        self.assertIn('High', strings)
 
     def test_report_generation_with_empty_optional_fields(self):
         bare_asset = self.line_obj.create({

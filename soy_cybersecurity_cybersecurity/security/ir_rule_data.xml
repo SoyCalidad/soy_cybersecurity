@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- TODO: noupdate="1" was removed from this file so that -u updates the existing records to the
+     English text. Add it back afterwards. -->
 <odoo>
-    <data noupdate="1">
+    <data>
         <record id="model_cyber_2matrix_categ_rule" model="ir.rule">
             <field name="name">model_cyber_2matrix_categ_rule</field>
             <field name="model_id" ref="soy_cybersecurity_cybersecurity.model_cyber_2matrix_categ" />

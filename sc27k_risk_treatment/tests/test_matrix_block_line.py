@@ -3,8 +3,8 @@ from lxml import etree
 
 from .common import TestRiskTreatmentBase
 
-_SIX_CRITERIA_NAMES = {
-    'Probabilidad', 'Confidencialidad', 'Integridad', 'Disponibilidad', 'Trazabilidad', 'Autenticidad',
+_SIX_CRITERIA_TYPES = {
+    'probability', 'confidentiality', 'integrity', 'availability', 'traceability', 'authenticity',
 }
 
 
@@ -12,8 +12,8 @@ class TestMatrixBlockLine(TestRiskTreatmentBase):
 
     def test_new_fields_defaults(self):
         self.assertEqual(self.risk.sc27k_asset_id, self.asset)
-        self.assertEqual(self.risk.sc27k_threat, 'Ransomware / phishing / robo de credenciales')
-        self.assertEqual(self.risk.sc27k_threat_agent, 'Ciberdelincuente / usuario interno')
+        self.assertEqual(self.risk.sc27k_threat, 'Ransomware / phishing / credential theft')
+        self.assertEqual(self.risk.sc27k_threat_agent, 'Cybercriminal / internal user')
         self.assertEqual(self.risk.sc27k_treatment_state, 'pending')
         self.assertEqual(self.risk.sc27k_treatment_approval_state, 'pending')
         self.assertEqual(self.risk.sc27k_residual_acceptance_state, 'pending')
@@ -28,7 +28,7 @@ class TestMatrixBlockLine(TestRiskTreatmentBase):
         self.assertFalse(self.opportunity_security_identifier.sc27k_is_security_profile)
 
     def test_initial_ntr_is_probability_times_max_impact(self):
-        # Impacto = max(4, 2, 3, 1, 1) = 4; Valor de riesgo = Probabilidad(3) x 4 = 12.
+        # Impact = max(4, 2, 3, 1, 1) = 4; Risk value = Probability(3) x 4 = 12.
         self._set_results(self.risk, 'result_ids', {
             'probability': 3,
             'confidentiality': 4,
@@ -41,8 +41,8 @@ class TestMatrixBlockLine(TestRiskTreatmentBase):
         self.assertEqual(self.risk.sc27k_risk_level, 'high')
 
     def test_initial_ntr_ignores_non_impact_criteria_for_the_max(self):
-        # Only Probabilidad and the 5 impact dimensions feed the formula; the highest
-        # single value here is Probabilidad(5) itself, which must NOT count as impact.
+        # Only Probability and the 5 impact dimensions feed the formula; the highest
+        # single value here is Probability(5) itself, which must NOT count as impact.
         self._set_results(self.risk, 'result_ids', {
             'probability': 5,
             'confidentiality': 2,
@@ -121,8 +121,8 @@ class TestMatrixBlockLine(TestRiskTreatmentBase):
         self.risk._sc27k_onchange_residual_evaluation_id()
         self.assertEqual(len(self.risk.sc27k_residual_result_ids), 6)
         self.assertEqual(
-            set(self.risk.sc27k_residual_result_ids.mapped('criterio_id.name')),
-            _SIX_CRITERIA_NAMES,
+            set(self.risk.sc27k_residual_result_ids.mapped('sc27k_criterion_type')),
+            _SIX_CRITERIA_TYPES,
         )
 
     def test_residual_evaluation_onchange_replaces_previous_lines(self):
@@ -134,7 +134,7 @@ class TestMatrixBlockLine(TestRiskTreatmentBase):
         self.assertEqual(len(self.risk.sc27k_residual_result_ids), 6)
         self.assertFalse(set(first_line_ids) & set(self.risk.sc27k_residual_result_ids.ids))
 
-    def test_acciones_and_origenes_tabs_hidden_for_security_profile(self):
+    def test_actions_and_origins_tabs_hidden_for_security_profile(self):
         # Querying the already-fetched arch by @string is fine here: the "no @string
         # selector" rule only applies to <xpath> elements Odoo evaluates while
         # composing inherited views, not to plain lxml queries over the result.
@@ -144,21 +144,21 @@ class TestMatrixBlockLine(TestRiskTreatmentBase):
         self.assertEqual(len(origin_pages), 1)
         self.assertEqual(origin_pages[0].get('invisible'), 'sc27k_is_security_profile')
 
-        acciones_pages = arch.xpath("//page[@string='Acciones']")
-        self.assertEqual(len(acciones_pages), 1)
-        self.assertEqual(acciones_pages[0].get('invisible'), 'sc27k_is_security_profile')
+        actions_pages = arch.xpath("//page[@string='Actions']")
+        self.assertEqual(len(actions_pages), 1)
+        self.assertEqual(actions_pages[0].get('invisible'), 'sc27k_is_security_profile')
 
-        treatment_pages = arch.xpath("//page[@string='Tratamiento / Controles']")
+        treatment_pages = arch.xpath("//page[@string='Treatment / Monitoring']")
         self.assertEqual(len(treatment_pages), 1)
         self.assertNotEqual(treatment_pages[0].get('invisible'), 'sc27k_is_security_profile')
 
     def test_mgmtsystem_action_implementation_record_field(self):
         action = self.env['mgmtsystem.action'].create({
-            'name': 'Implementar MFA en accesos remotos',
-            'type_action_id': self.env['mgmtsystem.action.type'].create({'name': 'Preventiva'}).id,
-            'sc27k_implementation_record': 'Evidencia: captura de configuración MFA en Azure AD',
+            'name': 'Implement MFA for remote access',
+            'type_action_id': self.env['mgmtsystem.action.type'].create({'name': 'Preventive'}).id,
+            'sc27k_implementation_record': 'Evidence: screenshot of the MFA configuration in Azure AD',
         })
         self.assertEqual(
             action.sc27k_implementation_record,
-            'Evidencia: captura de configuración MFA en Azure AD',
+            'Evidence: screenshot of the MFA configuration in Azure AD',
         )

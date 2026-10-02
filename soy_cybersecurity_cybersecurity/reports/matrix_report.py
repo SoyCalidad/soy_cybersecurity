@@ -4,7 +4,7 @@ import io
 from datetime import date, datetime
 from math import ceil
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 from PIL import Image
 
@@ -65,16 +65,16 @@ class IndividualReport(models.AbstractModel):
                 sheet.set_row(4, 25)
 
                 sheet.merge_range(prod_row-1, i, prod_row,
-                                  i, 'N°', format21_c_bold)
+                                  i, _('No.'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'PROCESO', format21_c_bold)
+                                  _('PROCESS'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'NOMBRE DEL ACTIVO', format21_c_bold)
+                                  _('ASSET NAME'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'ÁREA', format21_c_bold)
+                                  _('AREA'), format21_c_bold)
                 
 
                 sheet.merge_range(
@@ -105,63 +105,62 @@ class IndividualReport(models.AbstractModel):
                 
 
                 sheet.merge_range(prod_row-1, i, prod_row,
-                                  i, 'DESCRIPCIÓN DE ACTIVO', format21_c_bold)
+                                  i, _('ASSET DESCRIPTION'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'UBICACIÓN', format21_c_bold)
+                                  _('LOCATION'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'RESPONSABLE', format21_c_bold)
+                                  _('RESPONSIBLE'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'IDIOMA', format21_c_bold)
+                                  _('LANGUAGE'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row,
-                                  i, 'RECURSOS', format21_c_bold)
+                                  i, _('RESOURCES'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'TIPO', format21_c_bold)
+                                  _('TYPE'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'MEDIO DE CONSERVACIÓN', format21_c_bold)
+                                  _('STORAGE MEDIUM'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'EL ACTIVO CONTIENE DATOS PERSONALES', format21_c_bold)
+                                  _('THE ASSET CONTAINS PERSONAL DATA'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'EL ACTIVO ES SUSCEPTIBLE A FRAUDE O CORRUPCIÓN', format21_c_bold)
+                                  _('THE ASSET IS SUSCEPTIBLE TO FRAUD OR CORRUPTION'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'EL ACTIVO ES VITAL PARA LA OPERACIÓN DE LA EMPRESA', format21_c_bold)
+                                  _('THE ASSET IS VITAL FOR THE OPERATION OF THE COMPANY'), format21_c_bold)
                 i += 1
 
                 # EVALUATION
                 sheet.merge_range(prod_row-1, i, prod_row-1, i+2,
-                                  'EVALUACIÓN', format21_c_bold)
+                                  _('EVALUATION'), format21_c_bold)
                 
 
-                sheet.write(prod_row, i, 'CONFIDENCIALIDAD', format21_gray_bold)
+                sheet.write(prod_row, i, _('CONFIDENTIALITY'), format21_gray_bold)
                 i += 1
-                sheet.write(prod_row, i, 'INTEGRIDAD', format21_gray_bold)
+                sheet.write(prod_row, i, _('INTEGRITY'), format21_gray_bold)
                 i += 1
-                sheet.write(prod_row, i, 'DISPONIBILIDAD', format21_gray_bold)
+                sheet.write(prod_row, i, _('AVAILABILITY'), format21_gray_bold)
                 i += 1
 
                 sheet.merge_range(prod_row-1, i, prod_row,
-                                  i, 'VALOR DE ACTIVO', format21_c_bold)
+                                  i, _('ASSET VALUE'), format21_c_bold)
                 i += 1
                 sheet.merge_range(prod_row-1, i, prod_row, i,
-                                  'ACCIONES', format21_c_bold)
+                                  _('ACTIONS'), format21_c_bold)
                 
 
 
                 sheet.merge_range(prod_row-4, i-2, prod_row-4,
-                                  i, 'Código: '+str(matrix.code), format21_c_bold)
+                                  i, _('Code: %s', matrix.code), format21_c_bold)
                 sheet.merge_range(prod_row-3, i-2, prod_row-3, i,
-                                  'Edición: '+str(matrix.version), format21_c_bold)
+                                  _('Edition: %s', matrix.version), format21_c_bold)
                 
-                sheet.merge_range(prod_row-2, i-2, prod_row-2, i, 'Fecha de aprobación: '+str(
-                    matrix.date_validate or "Sin definir"), format21_c_bold) # old date_validate
+                sheet.merge_range(prod_row-2, i-2, prod_row-2, i, _('Approval date: %s', matrix.date_validate or _('Undefined')), format21_c_bold) # old date_validate
                 
                        
                 '''
@@ -342,6 +341,6 @@ class IndividualReport(models.AbstractModel):
 
         except Exception as e:
             print(e)
-            raise UserError("Hubo un error al generar el reporte")
+            raise UserError(_("Error generating the report"))
 
 

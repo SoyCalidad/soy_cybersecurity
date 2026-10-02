@@ -4,7 +4,7 @@
         <xpath expr="//div[@name='reference']" position="after">
             <t t-if="not o.show_scope_integrated">
                 <p>
-                    <strong>Alcance del Sistema de Seguridad de la Información</strong>
+                    <strong>Scope of the Information Security System</strong>
                 </p>
                 <p t-field="o.cybersecurity_scope" />
             </t>

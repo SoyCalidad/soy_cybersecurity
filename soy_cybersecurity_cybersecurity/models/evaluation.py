@@ -39,23 +39,23 @@ class Result(models.Model):
             text_values = ''
             alternative = record.alternative
             if alternative:
-                text_values = 'The minimum value is %s and the maximum is %s' % (alternative.value_less, alternative.value_high)
+                text_values = _('The minimum value is %s and the maximum is %s', alternative.value_less, alternative.value_high)
             record.text_values = text_values
 
     @api.onchange('value')
     def _onchange_value(self):
         if self.value < self.alternative.value_less or self.value > self.alternative.value_high:
-            msg = 'The value must be between %s and %s' % (self.alternative.value_less, self.alternative.value_high)
+            msg = _('The value must be between %s and %s', self.alternative.value_less, self.alternative.value_high)
             raise UserError(msg)
     
     @api.constrains('value')
     def _constrains_value(self):
         for each in self:
             if each.value < each.alternative.value_less or each.value > each.alternative.value_high:
-                msg = 'The value must be between %s and %s' % (each.alternative.value_less, each.alternative.value_high)
+                msg = _('The value must be between %s and %s', each.alternative.value_less, each.alternative.value_high)
                 raise UserError(msg)
-            if each.value == 0:
-                msg = 'The value of result %s cannot be 0' % each.criterio_id.name
+            if each.value == 0 and each.alternative:
+                msg = _('The value of result %s cannot be 0', each.criterio_id.name)
                 raise UserError(msg)
 
 
@@ -65,6 +65,7 @@ class Eval(models.Model):
     name = fields.Char(
         string='Name',
         required=True,
+        translate=True,
     )
     '''
     type = fields.Selection(
@@ -91,8 +92,9 @@ class Criterio(models.Model):
     name = fields.Char(
         string='Name',
         required=True,
+        translate=True,
     )
-    description = fields.Text(string='Description')
+    description = fields.Text(string='Description', translate=True)
     evaluation_id = fields.Many2one(
         string='Evaluation',
         comodel_name='cyber_evaluation.evaluation',
@@ -120,6 +122,7 @@ class CriterioLine(models.Model):
     name = fields.Char(
         string='Name',
         required=True,
+        translate=True,
     )
     criterio_id = fields.Many2one(
         string='Criterion',
@@ -134,6 +137,7 @@ class CriterioLine(models.Model):
     '''
     description = fields.Text(
         string='Description',
+        translate=True,
     )
     value_less = fields.Integer(
         string='Lower Value',

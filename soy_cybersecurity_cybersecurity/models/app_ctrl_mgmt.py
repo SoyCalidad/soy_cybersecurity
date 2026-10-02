@@ -5,7 +5,7 @@ from odoo.exceptions import UserError, ValidationError
 
 class Categ(models.Model):
     _name = 'cyber_2matrix.categ'
-    _description = "Categoria de matriz"
+    _description = "Matrix Category"
 
     name = fields.Char(
         string=u'Name',
@@ -18,7 +18,7 @@ class Categ(models.Model):
     )
     
     sequence_id = fields.Many2one(
-        string=u'Secuencia de ediciones',
+        string='Editions Sequence',
         comodel_name='ir.sequence',
         ondelete='cascade',
     )
@@ -32,15 +32,15 @@ class Categ(models.Model):
     @api.onchange('name')
     def _onchange_name(self):
         if self.sequence_id:
-            self.sequence_id.name = 'Secuencia de '+self.name
+            self.sequence_id.name = 'Sequence of ' + self.name
 
     @api.model_create_multi
     def create(self, values_list):
         for values in values_list:
             sequence = self.env['ir.sequence'].sudo().create({
-                'name': 'Secuencia de '+values.get('name'),
+                'name': 'Sequence of ' + values.get('name'),
                 'active': True,
-                'prefix': 'Edición-nro.',
+                'prefix': 'Edition-no.',
                 'padding': 4,
                 'number_next': 1,
                 'number_increment': 1,
@@ -57,7 +57,7 @@ class Categ(models.Model):
 
 class MatrixLine(models.Model):
     _name = 'cyber_2matrix.matrix.line'
-    _description = "Lineas de la Matrix de declaración de aplicabilidad"
+    _description = "Applicability Statement Matrix Lines"
 
     applicability_id = fields.Many2one(
         comodel_name='cyber_2matrix.block.line',
@@ -351,8 +351,8 @@ class CyberMatrixBlockLineDomain(models.Model):
     _name = 'cyber_2matrix.block.line.domain'
     _description = 'Domain'
 
-    name = fields.Char(string='Name')
-    description = fields.Text(string='Description')
+    name = fields.Char(string='Name', translate=True)
+    description = fields.Text(string='Description', translate=True)
 
     ctrl_target_id = fields.One2many(
         string='Control Objectives',
@@ -365,7 +365,7 @@ class CyberMatrixBlockLineCtrlTarget(models.Model):
     _name = 'cyber_2matrix.block.line.ctrl_target'
     _description = 'Control Objective'
 
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Name', translate=True)
     domain_id = fields.Many2one('cyber_2matrix.block.line.domain', string='Domain')
 
 
@@ -475,6 +475,7 @@ class Line(models.Model):
     name = fields.Char(
         string='Name',
         required=True,
+        translate=True,
     )
     block_id = fields.Many2one(
         string='Source',
@@ -509,7 +510,7 @@ class Line(models.Model):
             raise ValidationError(_("The selected Control Objective does not belong to the specified domain."))
 
     application = fields.Boolean(string='Applicability', default=False)
-    description_application = fields.Text(string='Application Description')
+    description_application = fields.Text(string='Application Description', translate=True)
 
     implementation_record = fields.Text(string='Implementation Evidence or Record')
     type = fields.Selection(

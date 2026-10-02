@@ -4,7 +4,7 @@ import io
 from datetime import date, datetime
 from math import ceil
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 from PIL import Image
 import logging 
@@ -104,7 +104,7 @@ class IndividualReport(models.AbstractModel):
             date_format = workbook.add_format(
                 {'font_size': 10, 'bg_color': '#A0A0A0','num_format': 'dd/mm/yyyy', 'bold': True, 'align': 'center', 'valign': 'vcenter', 'text_wrap': True})
             for matrix in matrixes:
-                sheet = workbook.add_worksheet(str(matrix.name or 'Sin nombre'))
+                sheet = workbook.add_worksheet(str(matrix.name or _('Unnamed')))
 
 
 
@@ -145,32 +145,31 @@ class IndividualReport(models.AbstractModel):
 
                 sheet.merge_range(
                     0, MAX_COL -2, 0,
-                    MAX_COL, f'Código: {matrix.code or ""}', format10_c_bold)
+                    MAX_COL, _('Code: %s', matrix.code or ''), format10_c_bold)
                 sheet.merge_range(1, MAX_COL -2, 1, MAX_COL,
-                                    'Versión: '+str(matrix.version), format10_c_bold)
+                                    _('Version: %s', matrix.version), format10_c_bold)
                 
-                sheet.merge_range(2, MAX_COL -2, 2, MAX_COL, 'Fecha de validación: '+str(
-                    matrix.date_validate or "Sin definir"), format10_c_bold) # old date_validate
+                sheet.merge_range(2, MAX_COL -2, 2, MAX_COL, _('Validation date: %s', matrix.date_validate or _('Undefined')), format10_c_bold) # old date_validate
 
-                sheet.write(prod_row, i, 'N°', format21_c_bold)
+                sheet.write(prod_row, i, _('No.'), format21_c_bold)
                 i += 1
-                sheet.write(prod_row, i, 'Nombre del control', format21_c_bold)
+                sheet.write(prod_row, i, _('Control name'), format21_c_bold)
                 i += 1
-                sheet.write(prod_row, i, 'Descripción del control', format21_c_bold)
+                sheet.write(prod_row, i, _('Control description'), format21_c_bold)
                 sheet.merge_range(0, 0, 2, 1, "", format26_c_bold)       
                 sheet.merge_range(0, i, 2, i+2, matrix.name, format26_c_bold)       
 
                 i += 1
-                sheet.write(prod_row, i,'Aplicabilidad (SÍ/NO)', format21_c_bold)
+                sheet.write(prod_row, i,_('Applicability (YES/NO)'), format21_c_bold)
                 i += 1
-                sheet.write(prod_row, i, 'Justificación de la aplicabilidad / no aplicabilidad', format21_c_bold)
+                sheet.write(prod_row, i, _('Justification for applicability / non-applicability'), format21_c_bold)
                 i += 1
-                sheet.write(prod_row, i, '¿Control Implementado? (SÍ/NO)', format21_c_bold)
+                sheet.write(prod_row, i, _('Control implemented? (YES/NO)'), format21_c_bold)
                 i += 1
-                sheet.write(prod_row, i, 'Referencia de la implementación del control', format21_c_bold)
+                sheet.write(prod_row, i, _('Control implementation reference'), format21_c_bold)
 
                 i += 1
-                sheet.write(prod_row, i, 'Acciones', format21_c_bold)
+                sheet.write(prod_row, i, _('Actions'), format21_c_bold)
 
                 
                 # REPORT DATA CONTENT
@@ -185,7 +184,7 @@ class IndividualReport(models.AbstractModel):
 
                 
                 group_lines = defaultdict(list)
-                application_lbl = dict(self.env['cyber_2matrix.matrix.line']._fields['application'].selection)
+                application_lbl = dict(self.env['cyber_2matrix.matrix.line'].fields_get(['application'])['application']['selection'])
 
                 for line in lines:
                     group_lines[line.applicability_id_domain_id].append(line)
@@ -221,7 +220,7 @@ class IndividualReport(models.AbstractModel):
                         sheet.write(prod_row, i, line.justification or '', format21_left)
                         i += 1
 
-                        sheet.write(prod_row, i, "SÍ" if line.is_implemented else "NO", format21_left)
+                        sheet.write(prod_row, i, _('YES') if line.is_implemented == 'yes' else _('NO'), format21_left)
                         i += 1
 
 
@@ -237,6 +236,6 @@ class IndividualReport(models.AbstractModel):
 
         except Exception as e:
             _logger.warning(str(e))
-            raise UserError("Hubo un error al generar el reporte")
+            raise UserError(_("Error generating the report"))
 
 

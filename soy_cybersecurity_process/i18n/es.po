@@ -1,0 +1,185 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* soy_cybersecurity_process
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-30 00:00+0000\n"
+"PO-Revision-Date: 2026-09-30 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Approval date"
+msgstr "Fecha de aprobación"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+#, python-format
+msgid "Approval date: %s"
+msgstr "Fecha de aprobación: %s"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+#, python-format
+msgid "Code: %s"
+msgstr "Código: %s"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Format code"
+msgstr "Código del formato"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Format name"
+msgstr "Nombre del formato"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Master List"
+msgstr "Lista Maestra"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Master list"
+msgstr "Lista maestra"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Procedure code"
+msgstr "Código del procedimiento"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Procedure name"
+msgstr "Nombre del procedimiento"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Responsible area"
+msgstr "Área Responsable"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Storage type"
+msgstr "Tipo De Almacenamiento"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Version"
+msgstr "Versión"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+#, python-format
+msgid "Version: %s"
+msgstr "Versión: %s"
+
+#. module: soy_cybersecurity_process
+#: model:ir.actions.act_window,name:soy_cybersecurity_process.documentary_control_clazz_action
+#: model:ir.ui.menu,name:soy_cybersecurity_process.documentary_control_clazz_menu_action
+msgid "Classes"
+msgstr "Clases"
+
+#. module: soy_cybersecurity_process
+#: model:ir.model,name:soy_cybersecurity_process.model_documentary_control_clazz
+msgid "Master list class"
+msgstr "Clase de Lista maestra"
+
+#. module: soy_cybersecurity_process
+#. odoo-python
+#: model:ir.model.fields,field_description:soy_cybersecurity_process.field_documentary_control__clazz_id
+#: model:ir.model.fields,field_description:soy_cybersecurity_process.field_process_edition__clazz_id
+#: code:addons/soy_cybersecurity_process/report/documentary_control.py:0
+msgid "Class"
+msgstr "Clase"
+
+#. module: soy_cybersecurity_process
+#: model:ir.model.fields,field_description:soy_cybersecurity_process.field_documentary_control_clazz__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: soy_cybersecurity_process
+#: model:ir.module.module,shortdesc:base.module_soy_cybersecurity_process
+#: model:ir.module.module,summary:base.module_soy_cybersecurity_process
+#: model:ir.module.module,description:base.module_soy_cybersecurity_process
+msgid "Adaptation of the processes module for the ISO 27001 system"
+msgstr "Adecución del módulo de procesos para el sistema ISO 27001"
+
+#. module: soy_cybersecurity_process
+#: model:ir.ui.menu,name:soy_cybersecurity_process.mgmt_process_configuration_menu
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: soy_cybersecurity_process
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_process.report_process_edition_template
+msgid "Approval date:"
+msgstr "Fecha de aprobación:"
+
+#. module: soy_cybersecurity_process
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_process.report_process_edition_template
+msgid "Class:"
+msgstr "Clase:"
+
+#. module: soy_cybersecurity_process
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_process.report_process_edition_template
+msgid "Code:"
+msgstr "Código:"
+
+#. module: soy_cybersecurity_process
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_process.report_process_edition_template
+msgid "Version:"
+msgstr "Versión:"
+
+#. module: soy_cybersecurity_process
+#: model:ir.model.fields,field_description:soy_cybersecurity_process.field_documentary_control_clazz__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: soy_cybersecurity_process
+#: model:ir.model.fields,field_description:soy_cybersecurity_process.field_documentary_control_clazz__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: soy_cybersecurity_process
+#: model:ir.model.fields,field_description:soy_cybersecurity_process.field_documentary_control_clazz__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: soy_cybersecurity_process
+#: model:ir.model.fields,field_description:soy_cybersecurity_process.field_documentary_control_clazz__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: soy_cybersecurity_process
+#: model:ir.model.fields,field_description:soy_cybersecurity_process.field_documentary_control_clazz__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"

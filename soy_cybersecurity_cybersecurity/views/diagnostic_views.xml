@@ -30,7 +30,7 @@
             <field name="name">cybersecurity.diagnostic.line.form</field>
             <field name="model">cybersecurity.diagnostic.line</field>
             <field name="arch" type="xml">
-                <form string="Detalle de linea">
+                <form string="Line detail">
                     <group>
                         <field name="requirement_id" />
                         <field name="qualification" />
@@ -49,7 +49,7 @@
             <field name="name">cybersecurity.diagnostic.form</field>
             <field name="model">cybersecurity.diagnostic</field>
             <field name="arch" type="xml">
-                <form string="Diagnostico">
+                <form string="Diagnosis">
                     <header>
                         <button name="evaluate_diagnostic"
                                 invisible="state in ('draft')"
@@ -100,9 +100,9 @@
                         <separator string="Assessment" invisible="state in ('draft','validate')" />
                         <notebook invisible="state in ('draft','validate')">
                             <page string="4. Context">
-                                <h1>4. Contexto de la organización</h1>
-                                <h2>4.1 Comprensión de la organización y de su contexto</h2>
-                                <h4>La organización debe</h4>
+                                <h1>4. Context of the organization</h1>
+                                <h2>4.1 Understanding the organization and its context</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic4_1_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -112,8 +112,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>4.2 Comprensión de las necesidades y expectativas de las partes interesadas</h2>
-                                <h4>La organización debe</h4>
+                                <h2>4.2 Understanding the needs and expectations of interested parties</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic4_2_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -124,8 +124,8 @@
                                     </list>
                                 </field>
 
-                                <h2>4.3 Determinación del alcance del SGSI</h2>
-                                <h4>La organización debe</h4>
+                                <h2>4.3 Determining the scope of the ISMS</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic4_3_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -135,8 +135,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>4.4 Sistema de gestión de seguridad de la informacións</h2>
-                                <h4> La organización debe</h4>
+                                <h2>4.4 Information security management system</h2>
+                                <h4> The organization shall:</h4>
                                 <field name="diagnostic4_4_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -157,7 +157,7 @@
                             <page string="5. Leadership">
                                 <h1>5. Leadership</h1>
                                 <h2>5.1 Leadership and commitment</h2>
-                                <h4>La alta dirección debe:</h4>
+                                <h4>Top management shall:</h4>
                                 <field name="diagnostic5_1_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -169,8 +169,8 @@
                                     </list>
                                 </field>
 
-                                <h2>5.2 Política de seguridad de la información</h2>
-                                <h4>La alta dirección debe:</h4>
+                                <h2>5.2 Information security policy</h2>
+                                <h4>Top management shall:</h4>
                                 <field name="diagnostic5_2_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -181,8 +181,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>5.3 Roles, responsabilidades y autoridades</h2>
-                                <h4>La organización debe:</h4>
+                                <h2>5.3 Roles, responsibilities and authorities</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic5_3_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -201,10 +201,10 @@
                                     <field name="diagnostic5_ids_0" widget="progressbar" options="{'current_value': 'diagnostic5_ids_0', 'max_value': 'diagnostic5_ids_total', 'editable': false}" />
                                 </group>
                             </page>
-                            <page string="6. Planificación">
-                                <h1>6. Planificación</h1>
-                                <h2>6.1 Acciones para tratar riesgos y oportunidades</h2>
-                                <h4>La organización debe:</h4>
+                            <page string="6. Planning">
+                                <h1>6. Planning</h1>
+                                <h2>6.1 Actions to address risks and opportunities</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic6_1_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -214,8 +214,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>6.2 Objetivos de seguridad de la información y planificación para lograrlos</h2>
-                                <h3>La organización Debe:</h3>
+                                <h2>6.2 Information security objectives and planning to achieve them</h2>
+                                <h3>The organization shall:</h3>
                                 <field name="diagnostic6_2_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -233,10 +233,10 @@
                                     <field name="diagnostic6_ids_0" widget="progressbar" options="{'current_value': 'diagnostic6_ids_0', 'max_value': 'diagnostic6_ids_total', 'editable': false}" />
                                 </group>
                             </page>
-                            <page string="7. Apoyo">
-                                <h1>7. Apoyo</h1>
-                                <h2>7.1 Recursos</h2>
-                                <h4>La organización debe:</h4>
+                            <page string="7. Support">
+                                <h1>7. Support</h1>
+                                <h2>7.1 Resources</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic7_1_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -246,8 +246,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>7.2 Competencia</h2>
-                                <h4>La organización debe:</h4>
+                                <h2>7.2 Competence</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic7_2_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -257,8 +257,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>7.3 Toma de Conciencia y formación </h2>
-                                <h4>La organización debe:</h4>
+                                <h2>7.3 Awareness and training </h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic7_3_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -268,8 +268,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>7.4 Comunicación</h2>
-                                <h4>La organización debe:</h4>
+                                <h2>7.4 Communication</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic7_4_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -279,8 +279,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>7.5 Informacion Documentada</h2>
-                                <h4>La organización debe:</h4>
+                                <h2>7.5 Documented information</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic7_5_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -299,10 +299,10 @@
                                     <field name="diagnostic7_ids_0" widget="progressbar" options="{'current_value': 'diagnostic7_ids_0', 'max_value': 'diagnostic7_ids_total', 'editable': false}" />
                                 </group>
                             </page>
-                            <page string="8. Operación">
-                                <h1>8. Operación</h1>
-                                <h2>8.1 Planificación y control operacional</h2>
-                                <h4>La organización debe:</h4>
+                            <page string="8. Operation">
+                                <h1>8. Operation</h1>
+                                <h2>8.1 Operational planning and control</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic8_1_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -312,8 +312,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>8.2 Análisis de riesgos de seguridad de la información</h2>
-                                <h4>La organización debe: </h4>
+                                <h2>8.2 Information security risk assessment</h2>
+                                <h4>The organization shall: </h4>
                                 <field name="diagnostic8_2_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -323,8 +323,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>8.3 Tratamiento de riesgos</h2>
-                                <h4>La organización debe:</h4>
+                                <h2>8.3 Risk treatment</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic8_3_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -336,10 +336,10 @@
                                 </field>
 
                             </page> 
-                            <page string="9. Desempeño">
-                                <h1>9. Evaluación del desempeño</h1>
-                                <h2>9.1 Seguimiento, medición, análisis y evaluación</h2>
-                                <h4>La organización debe:</h4>
+                            <page string="9. Performance">
+                                <h1>9. Performance evaluation</h1>
+                                <h2>9.1 Monitoring, measurement, analysis and evaluation</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic9_1_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -349,8 +349,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>9.2 Auditoría interna</h2>
-                                <h4>La organización debe</h4>
+                                <h2>9.2 Internal audit</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic9_2_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -360,8 +360,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>9.3 Revisión por la dirección</h2>
-                                <h4>La organización debe:</h4>
+                                <h2>9.3 Management review</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic9_3_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -379,10 +379,10 @@
                                     <field name="diagnostic9_ids_0" widget="progressbar" options="{'current_value': 'diagnostic9_ids_0', 'max_value': 'diagnostic9_ids_total', 'editable': false}" />
                                 </group>
                             </page>
-                            <page string="10. Mejora">
-                                <h1>10. Mejora</h1>
-                                <h2>10.1 No conformidades y acciones correctivas</h2>
-                                <h4>La organización debe:</h4>
+                            <page string="10. Improvement">
+                                <h1>10. Improvement</h1>
+                                <h2>10.1 Nonconformities and corrective actions</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic10_1_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -392,8 +392,8 @@
                                         <field name="observation" />
                                     </list>
                                 </field>
-                                <h2>10.2 Mejora continua</h2>
-                                <h4>La organización debe:</h4>
+                                <h2>10.2 Continual improvement</h2>
+                                <h4>The organization shall:</h4>
                                 <field name="diagnostic10_2_ids">
                                     <list editable="bottom" delete="false">
                                         <field name="requirement_id" />
@@ -412,7 +412,7 @@
                                 </group>
                             </page>
                         </notebook>
-                        <separator string="El proceso ha sido culminado, para ver los datos puede generar un reporte." invisible="state in ('draft','evaluate')" />
+                        <separator string="The process has been completed. To see the data you can generate a report." invisible="state in ('draft','evaluate')" />
                     </sheet>
                 </form>
             </field>
@@ -431,11 +431,11 @@
         </record>
 
         <record model="ir.actions.act_window" id="cybersecurity_clause__action">
-            <field name="name">Claúsulas</field>
+            <field name="name">Clauses</field>
             <field name="res_model">cybersecurity.clause</field>
             <field name="view_mode">list,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Crea claúsulas de gestión de sistemas de información</p>
+                <p class="oe_view_nocontent_create">Create information security management system clauses</p>
             </field>
         </record>
 
@@ -452,13 +452,13 @@
         </record>
 
         <record model="ir.actions.act_window" id="requirement_list_action">
-            <field name="name">Requisitos</field>
+            <field name="name">Requirements</field>
             <field name="res_model">cybersecurity.diagnostic.requirement</field>
       
             <field name="view_mode">list,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Crea requisitos de SGSI
+                    Create ISMS requirements
                 </p>
             </field>
         </record>

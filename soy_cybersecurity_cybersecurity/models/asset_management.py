@@ -4,8 +4,6 @@ from odoo import models, fields, api, exceptions, _
 from odoo.exceptions import UserError
 
 
-_ASSET_INTERPRETATION = 'The value of the information asset allows evaluating the different levels and sorting them according to their priorities. When high Asset Priority Numbers (greater than 100) are obtained, actions will be established.'
-_OPP_INTERPRETATION = 'The opportunity value allows evaluating the different levels of opportunities and sorting them according to their priorities. When high Opportunity Priority Numbers (between 8-10) are obtained, immediate actions must be established to take advantage of the opportunity; lower indices than these must be carefully evaluated regarding cost and benefit.'
 
 
 class Categ(models.Model):
@@ -49,9 +47,9 @@ class Categ(models.Model):
     def create(self, values_list):
         for values in values_list:
             sequence = self.env['ir.sequence'].sudo().create({
-                'name': 'Secuencia de '+values.get('name'),
+                'name': 'Sequence of ' + values.get('name'),
                 'active': True,
-                'prefix': 'Edición-nro.',
+                'prefix': 'Edition-no.',
                 'padding': 4,
                 'number_next': 1,
                 'number_increment': 1,
@@ -400,7 +398,7 @@ class CyberMatrixBlockLineSystem(models.Model):
     _name = 'cyber_matrix.block.line.system'
     _description = 'Risk Identifier'
 
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Name', translate=True)
     company_id = fields.Many2one(
         'res.company', 
         string='Company', 
@@ -503,9 +501,11 @@ class Line(models.Model):
             self.interpretation = 'a'
     '''
     interpretation_asset = fields.Text(
-        string='Interpretation', default=_ASSET_INTERPRETATION)
+        string='Interpretation',
+        default=lambda self: _('The value of the information asset allows evaluating the different levels and sorting them according to their priorities. When high Asset Priority Numbers (greater than 100) are obtained, actions will be established.'))
     interpretation_opportunity = fields.Text(
-        string='Interpretation', default=_OPP_INTERPRETATION)
+        string='Interpretation',
+        default=lambda self: _('The opportunity value allows evaluating the different levels of opportunities and sorting them according to their priorities. When high Opportunity Priority Numbers (between 8-10) are obtained, immediate actions must be established to take advantage of the opportunity; lower indices than these must be carefully evaluated regarding cost and benefit.'))
 
     '''
     @api.onchange('block_id')

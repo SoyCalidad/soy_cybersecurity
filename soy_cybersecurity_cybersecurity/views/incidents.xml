@@ -108,7 +108,7 @@
                             </group>
                         </page>
                         <page name="solution" string="Solution">
-                            <group string="Solutionn">
+                            <group string="Solution">
                                 <field name="quick_action_id" />
                                 <field name="date_solution" />
                                 <field name="is_open" class="oe_inline" />

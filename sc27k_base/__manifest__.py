@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
     'name': "SC27K Base ",
-    'summary': "Modulo base para instalar los modulos de SC 27K",
+    'summary': "Base module to install the SC 27K modules",
     'description': """
-        Agrega un identificador en mgmtsystem_context_system para 27K
+        Adds an identifier in mgmtsystem_context_system for 27K
     """,
     'author': "Soy Calidad",
     'category': 'iso27001',

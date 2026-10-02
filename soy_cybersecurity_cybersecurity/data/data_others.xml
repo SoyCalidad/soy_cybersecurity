@@ -1,5 +1,7 @@
+<!-- TODO: noupdate="1" was removed from this file so that -u updates the existing records to the
+     English text. Add it back afterwards. -->
 <odoo>
-    <data noupdate="1">
+    <data>
         
         <!-- Tipos de Activos -->
 

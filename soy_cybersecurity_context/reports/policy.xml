@@ -2,47 +2,47 @@
 <odoo>
     <template id="cyber_policy_report" inherit_id="mgmtsystem_context.politica_de_calidad">
         <xpath expr="//div[@name='principal']" position="inside">
-            <t t-if="doc.system_id.name == 'Seguridad de la información'">
+            <t t-if="doc.system_id == env.ref('sc27k_base.system_cybersecurity')">
                 <p>
                     <p t-field="doc.introduction" />
                 </p>
-                <h5>Contexto de la organización</h5>
+                <h5>Context of the organization</h5>
                 <p>
                     <p t-field="doc.cyber_organization_context" />
                 </p>
-                <h5>Apoyo para la dirección</h5>
+                <h5>Management support</h5>
                 <p>
                     <p t-field="doc.cyber_direction_help" />
                 </p>
-                <h5>Evaluación y tratamiento de riesgos</h5>
+                <h5>Risk assessment and treatment</h5>
                 <p>
                     <p t-field="doc.cyber_risk_handling" />
                 </p>
-                <h5>Requisitos legales</h5>
+                <h5>Legal requirements</h5>
                 <p>
                     <p t-field="doc.cyber_legal_req" />
                 </p>
-                <h5>Asignación de responsabilidades</h5>
+                <h5>Assignment of responsibilities</h5>
                 <p>
                     <p t-field="doc.cyber_responsibility_assignment" />
                 </p>                
-                <h5>Compromiso para los requisitos de la norma</h5>
+                <h5>Commitment to the requirements of the standard</h5>
                 <p>
                     <p t-field="doc.cyber_standard_commitment" />
                 </p>
-                <h5>Participación del personal</h5>
+                <h5>Staff participation</h5>
                 <p>
                     <p t-field="doc.cyber_staff_participation" />
                 </p>
-                <h5>Mejora continua</h5>
+                <h5>Continual improvement</h5>
                 <p>
                     <p t-field="doc.cyber_continuous_improvement" />
                 </p>
-                <h5>Implementación de controles</h5>
+                <h5>Implementation of controls</h5>
                 <p>
                     <p t-field="doc.cyber_control_implementation" />
                 </p>
-                <h5>Objetivos para la seguridad de la información</h5>
+                <h5>Information security objectives</h5>
                 <p>  
                     <p t-field="doc.cyber_security_goals" />
                 </p>
@@ -52,47 +52,47 @@
 
     <template id="cyber_policy_template_report" inherit_id="mgmtsystem_context.politica_de_calidad_simple">
         <xpath expr="//div[@name='principal']" position="inside">
-            <t t-if="doc.system_id.name == 'Seguridad de la información'">
+            <t t-if="doc.system_id == env.ref('sc27k_base.system_cybersecurity')">
                 <p>
                     <p t-field="doc.introduction" />
                 </p>
-                <h5>Contexto de la organización</h5>
+                <h5>Context of the organization</h5>
                 <p>
                     <p t-field="doc.cyber_organization_context" />
                 </p>
-                <h5>Apoyo para la dirección</h5>
+                <h5>Management support</h5>
                 <p>
                     <p t-field="doc.cyber_direction_help" />
                 </p>
-                <h5>Evaluación y tratamiento de riesgos</h5>
+                <h5>Risk assessment and treatment</h5>
                 <p>
                     <p t-field="doc.cyber_risk_handling" />
                 </p>
-                <h5>Requisitos legales</h5>
+                <h5>Legal requirements</h5>
                 <p>
                     <p t-field="doc.cyber_legal_req" />
                 </p>
-                <h5>Asignación de responsabilidades</h5>
+                <h5>Assignment of responsibilities</h5>
                 <p>
                     <p t-field="doc.cyber_responsibility_assignment" />
                 </p>                
-                <h5>Compromiso para los requisitos de la norma</h5>
+                <h5>Commitment to the requirements of the standard</h5>
                 <p>
                     <p t-field="doc.cyber_standard_commitment" />
                 </p>
-                <h5>Participación del personal</h5>
+                <h5>Staff participation</h5>
                 <p>
                     <p t-field="doc.cyber_staff_participation" />
                 </p>
-                <h5>Mejora continua</h5>
+                <h5>Continual improvement</h5>
                 <p>
                     <p t-field="doc.cyber_continuous_improvement" />
                 </p>
-                <h5>Implementación de controles</h5>
+                <h5>Implementation of controls</h5>
                 <p>
                     <p t-field="doc.cyber_control_implementation" />
                 </p>
-                <h5>Objetivos para la seguridad de la información</h5>
+                <h5>Information security objectives</h5>
                 <p>  
                     <p t-field="doc.cyber_security_goals" />
                 </p>

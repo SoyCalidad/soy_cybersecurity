@@ -171,7 +171,7 @@
                     <field name="state" widget="statusbar" statusbar_visible="draft,validate" />
                 </header>
                 <sheet>
-                    <div class="oe_button_box">
+                    <div class="oe_button_box" name="button_box">
                     </div>
                     <div class="oe_title">
                         <label for="name" />
@@ -198,7 +198,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="cyber_2matrix_checklist_action">
-        <field name="name">Lista de verificación</field>
+        <field name="name">Checklist</field>
         <field name="res_model">cyber_2matrix.checklist</field>
         <field name="view_mode">list,form</field>
     </record>
@@ -279,7 +279,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="cyber_2matrix_checklist_control_action">
-        <field name="name">Controles de Lista de verificación</field>
+        <field name="name">Checklist Controls</field>
         <field name="res_model">cyber_2matrix.checklist.control</field>
         <field name="view_mode">list,form</field>
     </record>

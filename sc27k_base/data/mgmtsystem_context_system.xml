@@ -1,7 +1,9 @@
+<!-- TODO: noupdate="1" was removed from this file so that -u updates the existing records to the
+     English text. Add it back afterwards. -->
 <odoo>
-    <data noupdate="1">
+    <data>
         <record id="system_cybersecurity" model="mgmtsystem.context.system">
-            <field name="name">Seguridad de la información</field>
+            <field name="name">Information security</field>
         </record>
     </data>
 </odoo>

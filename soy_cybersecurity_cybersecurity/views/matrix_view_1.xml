@@ -45,7 +45,7 @@
                     <button name="send_cancel"
                             confirm="This will render the current record obsolete. Are you sure?"
                             type="object"
-                            string="Cancelar"
+                            string="Cancel"
                             class="btn-second"
                             invisible="state == 'cancel'" />
                     <field name="state" widget="statusbar" statusbar_visible="elaborate,review,validate,validate_ok" />
@@ -77,7 +77,7 @@
                     <group>
                         <field name="process_id" />
                         <!--
-                        <field name="system_id" options="{'no_create': True, 'no_edit': True}"  string="Identificador de la oportunidad" attrs="{'invisible':[('type','!=','opportunity')]}" />
+                        <field name="system_id" options="{'no_create': True, 'no_edit': True}"  string="Opportunity identifier" attrs="{'invisible':[('type','!=','opportunity')]}" />
                         <field name="system_id" options="{'no_create': True, 'no_edit': True}"  string="Identificador del riesgo" attrs="{'invisible':[('type','!=','risk')]}" />
                         -->
                     </group>

@@ -56,7 +56,7 @@
                     <fieldset>
                         <h2 class="fs-title">Personal information</h2>
                         <h3 class="fs-subtitle">Enter your personal details</h3>
-                        <input type="text" name="name" placeholder="Fist and last names" />
+                        <input type="text" name="name" placeholder="First and last names" />
                         <input type="text" name="complainer_document_number" placeholder="Document number" />
                         <select id="complainer_delivery_type" name="complainer_delivery_type" >
                             <option selected="selected" value="">Select how you would like to receive the response to your incident.</option>
@@ -80,9 +80,9 @@
             <div class="thankyou-page" style="text-align: center; padding: 50px 0;">
                 <div class="thankyou-content" style="max-width: 600px; margin: auto; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background: #f9f9f9;">
                     <!--<img src="/web/static/src/img/icons/thankyou_icon.png" alt="Thank You" style="width: 100px; height: auto; margin-bottom: 20px;"/>-->
-                    <h1 style="color: #4CAF50; font-size: 36px; font-weight: bold; margin-bottom: 20px;">¡Gracias!</h1>
+                    <h1 style="color: #4CAF50; font-size: 36px; font-weight: bold; margin-bottom: 20px;">Thank you!</h1>
                     <p style="color: #666; font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
-                        El incidente ha sido enviado con éxito. Nos pondremos en contacto con usted lo antes posible.
+                        The incident has been submitted successfully. We will contact you as soon as possible.
                     </p>
                     <!--
                     <a href="/" style="display: inline-block; padding: 12px 30px; font-size: 18px; color: #fff; background: #4CAF50; border-radius: 5px; text-decoration: none; transition: background 0.3s;">

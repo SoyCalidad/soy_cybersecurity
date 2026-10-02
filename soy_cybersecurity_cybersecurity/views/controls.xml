@@ -49,14 +49,14 @@
                     <button name="send_cancel"
                             confirm="Esto volverá obsoleto el presente registro. ¿Está seguro(a)?"
                             type="object"
-                            string="Cancelar"
+                            string="Cancel"
                             class="btn-second"
                             attrs="{'invisible': [('state','=','cancel')]}" />
                     -->        
                     <!--
                     <button name="button_new_version"
                             type="object"
-                            string="Nueva versión"
+                            string="New version"
                             attrs="{'invisible':[('state', '!=', 'validate')]}"
                             class="oe_highlight" />
                     -->               

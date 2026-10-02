@@ -3,9 +3,9 @@
         <field name="name">cyber_evaluation.evaluation.view.form</field>
         <field name="model">cyber_evaluation.evaluation</field>
         <field name="arch" type="xml">
-            <form string="Evaluación">
+            <form string="Evaluation">
                 <sheet>
-                    <widget name="web_ribbon" title="Archivado" bg_color="text-bg-danger" invisible="active == True" />
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active == True" />
                     <group>
                         <field name="name" />
                         <field name="active" invisible="1" />
@@ -29,7 +29,7 @@
         <field name="name">cyber_evaluation.evaluation.view.list</field>
         <field name="model">cyber_evaluation.evaluation</field>
         <field name="arch" type="xml">
-            <list string="Evaluación">
+            <list string="Evaluation">
                 <field name="name" />
             </list>
         </field>

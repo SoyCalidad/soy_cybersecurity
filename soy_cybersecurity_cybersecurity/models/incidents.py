@@ -90,8 +90,8 @@ class incidentReason(models.Model):
     _name = 'incident.incident.reason'
     _description = 'Reason'
 
-    name = fields.Text(string='Name')
-    description = fields.Text(string='Description')
+    name = fields.Text(string='Name', translate=True)
+    description = fields.Text(string='Description', translate=True)
 
 
 class incidentincidentCauseWhy(models.Model):
@@ -303,9 +303,9 @@ class incident(models.Model):
     def onchange_quick_action_id(self):
         if self.quick_action_id:
             if not self.investigation:
-                raise UserError('The investigation field is empty')
+                raise UserError(_('The investigation field is empty'))
             if not self.investigation_method=='why' and not self.conclusions:
-                raise UserError('The conclusions field is empty')
+                raise UserError(_('The conclusions field is empty'))
         if self.quick_action_id:
             self.state = 'in_process'
 

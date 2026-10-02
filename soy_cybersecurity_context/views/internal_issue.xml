@@ -15,7 +15,7 @@
                 <field 
                 name="quality_policy" 
                 widget="many2many_tags" 
-                string="Políticas" 
+                string="Policies" 
                 required="state in ['validate']"
                 />
             </xpath>

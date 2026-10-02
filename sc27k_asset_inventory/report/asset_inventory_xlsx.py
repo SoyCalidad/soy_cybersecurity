@@ -1,36 +1,41 @@
 # -*- coding: utf-8 -*-
 from odoo import models, _
+from odoo.tools.translate import LazyTranslate
 
-# _HEADERS = [
-#     'Código', 'Nombre del activo', 'Tipo de activo', 'Descripción', 'Proceso',
-#     'Propietario del activo', 'Usuario asignado / Custodio', 'Ubicación', 'Titularidad',
-#     'Clasificación de la información', 'Datos personales', 'Confidencialidad', 'Integridad',
-#     'Disponibilidad', 'Criticidad', 'Estado', 'Última revisión', 'Próxima revisión',
-# ]
+_lt = LazyTranslate(__name__)
+
 _HEADERS = [
-    _('Code'),
-    _('Asset Name'),
-    _('Asset Type'),
-    _('Description'),
-    _('Process'),
-    _('Asset Owner'),
-    _('Assigned User / Custodian'),
-    _('Location'),
-    _('Ownership'),
-    _('Information Classification'),
-    _('Personal Data'),
-    _('Confidentiality'),
-    _('Integrity'),
-    _('Availability'),
-    _('Criticality'),
-    _('Status'),
-    _('Last Review'),
-    _('Next Review'),
+    _lt('Code'),
+    _lt('Asset Name'),
+    _lt('Asset Type'),
+    _lt('Description'),
+    _lt('Process'),
+    _lt('Asset Owner'),
+    _lt('Assigned User / Custodian'),
+    _lt('Location'),
+    _lt('Ownership'),
+    _lt('Information Classification'),
+    _lt('Personal Data'),
+    _lt('Confidentiality'),
+    _lt('Integrity'),
+    _lt('Availability'),
+    _lt('Criticality'),
+    _lt('Status'),
+    _lt('Last Review'),
+    _lt('Next Review'),
 ]
 _COLUMN_WIDTHS = [14, 30, 16, 35, 20, 22, 24, 16, 16, 22, 16, 16, 12, 14, 12, 12, 14, 14]
 # Left-aligned text columns; the rest are centered.
 _LEFT_ALIGN_COLUMNS = {1, 3}
 _CRITICALITY_COLUMN = 14
+
+# The evaluation criteria are identified by their external id, never by their (translatable)
+# name.
+_CRITERIA_XMLIDS = {
+    'soy_cybersecurity_cybersecurity.criterio_1': 'confidentiality',
+    'soy_cybersecurity_cybersecurity.criterio_2': 'integrity',
+    'soy_cybersecurity_cybersecurity.criterio_3': 'availability',
+}
 
 
 class AssetInventoryXlsx(models.AbstractModel):
@@ -58,7 +63,7 @@ class AssetInventoryXlsx(models.AbstractModel):
         for col, width in enumerate(_COLUMN_WIDTHS):
             sheet.set_column(col, col, width)
         for col, header in enumerate(_HEADERS):
-            sheet.write(0, col, header, header_format)
+            sheet.write(0, col, self.env._(header), header_format)
         sheet.freeze_panes(1, 0)
 
         ownership_labels = dict(lines._fields['sc27k_ownership'].selection)
@@ -69,10 +74,12 @@ class AssetInventoryXlsx(models.AbstractModel):
 
         row = 1
         for line in lines:
-            criteria_values = {
-                result.criterio_id.name: result.alternative.name
-                for result in line.result_ids if result.criterio_id
-            }
+            external_ids = line.result_ids.criterio_id.get_external_id()
+            criteria_values = {}
+            for result in line.result_ids:
+                key = _CRITERIA_XMLIDS.get(external_ids.get(result.criterio_id.id))
+                if key:
+                    criteria_values[key] = result.alternative.name
             values = [
                 line.code or '',
                 line.name or '',
@@ -85,9 +92,9 @@ class AssetInventoryXlsx(models.AbstractModel):
                 ownership_labels.get(line.sc27k_ownership, ''),
                 classification_labels.get(line.sc27k_information_classification, ''),
                 personal_data_labels.get(line.sc27k_personal_data_level, ''),
-                criteria_values.get('Confidencialidad', ''),
-                criteria_values.get('Integridad', ''),
-                criteria_values.get('Disponibilidad', ''),
+                criteria_values.get('confidentiality', ''),
+                criteria_values.get('integrity', ''),
+                criteria_values.get('availability', ''),
                 criticality_labels.get(line.sc27k_criticality, ''),
                 state_labels.get(line.sc27k_asset_state, ''),
                 str(line.sc27k_last_review_date or ''),

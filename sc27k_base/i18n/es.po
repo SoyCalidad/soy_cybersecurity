@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sc27k_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-01 00:00+0000\n"
+"PO-Revision-Date: 2026-10-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sc27k_base
+#: model:ir.module.module,summary:base.module_sc27k_base
+msgid "Base module to install the SC 27K modules"
+msgstr "Módulo base para instalar los módulos de SC 27K"
+
+#. module: sc27k_base
+#: model:ir.module.module,description:base.module_sc27k_base
+msgid ""
+"\n"
+"        Adds an identifier in mgmtsystem_context_system for 27K\n"
+"    "
+msgstr ""
+"\n"
+"        Agrega un identificador en mgmtsystem_context_system para 27K\n"
+"    "
+
+#. module: sc27k_base
+#: model:mgmtsystem.context.system,name:sc27k_base.system_cybersecurity
+msgid "Information security"
+msgstr "Seguridad de la información"

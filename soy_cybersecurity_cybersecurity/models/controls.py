@@ -51,7 +51,7 @@ class Line(models.Model):
         view_id = self.env.ref('soy_cybersecurity_cybersecurity.cyber_view_2matrix_block_line_form').id
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Edit Additional Fields',
+            'name': _('Edit Additional Fields'),
             'view_mode': 'form',
             'res_model': 'cyber_2matrix.block.line',
             'res_id': self.id,

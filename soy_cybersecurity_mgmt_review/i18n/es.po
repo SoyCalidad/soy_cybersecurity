@@ -1,0 +1,486 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* soy_cybersecurity_mgmt_review
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-30 00:00+0000\n"
+"PO-Revision-Date: 2026-09-30 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: soy_cybersecurity_mgmt_review
+#. odoo-python
+#: code:addons/soy_cybersecurity_mgmt_review/models/management_review.py:0
+msgid ""
+"<tr><td><strong>Domain</strong></td><td><strong>Name</strong></td><td><strong>Control"
+" "
+"description</strong></td><td><strong>Applicability</strong></td><td><strong>Justification</strong></td></tr>"
+msgstr ""
+"<tr><td><strong>Dominio</strong></td><td><strong>Nombre</strong></td><td><strong>Descripción"
+" del "
+"control</strong></td><td><strong>Aplicabilidad</strong></td><td><strong>Justificación</strong></td></tr>"
+
+#. module: soy_cybersecurity_mgmt_review
+#. odoo-python
+#: code:addons/soy_cybersecurity_mgmt_review/models/management_review.py:0
+msgid "Unnamed"
+msgstr "Sin nombre"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model:ir.actions.act_window,name:soy_cybersecurity_mgmt_review.action_management_review_27k
+msgid "Management review"
+msgstr "Revisión por la dirección"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model:ir.model.fields,field_description:soy_cybersecurity_mgmt_review.field_management_review__it_comunication_plan
+msgid "Communications"
+msgstr "Comunicaciones"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model:ir.model.fields,field_description:soy_cybersecurity_mgmt_review.field_management_review__it_comunication_plan_ids
+msgid "Communication plans"
+msgstr "Planes de Comunicación"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model:ir.model.fields,field_description:soy_cybersecurity_mgmt_review.field_management_review__it_comunication_plan_interpretation
+msgid "Interpretation of the communications"
+msgstr "Interpretación de las comunicaciones"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model:ir.model.fields,field_description:soy_cybersecurity_mgmt_review.field_management_review__it_legal_requirements
+msgid "Legal requirements and other requirements"
+msgstr "Requerimientos legales y otros requerimientos"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model:ir.model.fields,field_description:soy_cybersecurity_mgmt_review.field_management_review__it_security_target
+msgid "Information security objective"
+msgstr "Objetivo de seguridad de la información"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model:ir.model.fields,field_description:soy_cybersecurity_mgmt_review.field_management_review__sc27k_soa_matrix_html
+msgid "Risk matrix / treatment plan / SoA"
+msgstr "Matriz de riesgos / plan de tratamiento / SoA"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model:ir.model.fields,field_description:soy_cybersecurity_mgmt_review.field_management_review__sc27k_soa_matrix_inter
+msgid "Interpretation: Risk matrix / treatment plan / SoA"
+msgstr "Interpretacion: Matriz de riesgos / plan de tratamiento / SoA"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model:ir.module.module,shortdesc:base.module_soy_cybersecurity_mgmt_review
+#: model:ir.module.module,summary:base.module_soy_cybersecurity_mgmt_review
+#: model:ir.module.module,description:base.module_soy_cybersecurity_mgmt_review
+msgid "Adaptation of the management review module for the ISO 27001 system"
+msgstr ""
+"Adecución del módulo de Revisión por la Dirección para el sistema ISO 27001"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.actions.act_window,help:soy_cybersecurity_mgmt_review.action_management_review_27k
+msgid "Create management reviews for ISO 27001"
+msgstr "Cree revisiones por la dirección para la ISO 27001"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "A. STATUS OF ACTIONS FROM PREVIOUS MANAGEMENT REVIEWS"
+msgstr "A. ESTADO DE LAS ACCIONES DE REVISIONES POR LA DIRECCIÓN PREVIAS"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "B. CHANGES IN EXTERNAL AND INTERNAL ISSUES"
+msgstr "B. CAMBIOS EN LAS CUESTIONES EXTERNAS E INTERNAS"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "C. CHANGES IN THE NEEDS AND EXPECTATIONS OF INTERESTED PARTIES"
+msgstr ""
+"C. CAMBIOS EN LAS NECESIDADES Y EXPECTATIVAS DE LAS PARTES INTERESADAS"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid ""
+"Changes in the context that may affect the ISMS are reviewed, including "
+"technological, regulatory and organizational changes and the consideration "
+"of climate change where relevant."
+msgstr ""
+"Se revisan los cambios del contexto que puedan afectar al SGSI, incluyendo "
+"cambios tecnológicos, regulatorios, organizacionales y la consideración del "
+"cambio climático cuando resulte pertinente."
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid ""
+"Changes in the relevant requirements of customers, authorities, staff, "
+"suppliers and other interested parties are reviewed."
+msgstr ""
+"Se revisan cambios en requisitos pertinentes de clientes, autoridades, "
+"personal, proveedores y demás partes interesadas."
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "D. INFORMATION ON THE PERFORMANCE AND EFFECTIVENESS OF THE ISMS"
+msgstr "D. INFORMACIÓN SOBRE EL DESEMPEÑO Y LA EFICACIA DEL SGSI"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "D.1 Nonconformities and corrective actions"
+msgstr "D.1 No conformidades y acciones correctivas"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "D.2 Monitoring and measurement results"
+msgstr "D.2 Resultados de seguimiento y medición"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "D.3 Audit results"
+msgstr "D.3 Resultados de auditorías"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "D.4 Information security objectives"
+msgstr "D.4 Objetivos de seguridad de la información"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "E. FEEDBACK FROM INTERESTED PARTIES"
+msgstr "E. RETROALIMENTACIÓN DE LAS PARTES INTERESADAS"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "F. RISK ASSESSMENT RESULTS AND STATUS OF THE RISK TREATMENT PLAN"
+msgstr ""
+"F. RESULTADOS DE LA EVALUACIÓN DE RIESGOS Y ESTADO DEL PLAN DE TRATAMIENTO"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "Feedback / communications"
+msgstr "Retroalimentación / comunicaciones"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "G. OPPORTUNITIES FOR CONTINUAL IMPROVEMENT"
+msgstr "G. OPORTUNIDADES DE MEJORA CONTINUA"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "Identified opportunities"
+msgstr "Oportunidades identificadas"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "Interested parties and requirements"
+msgstr "Partes interesadas y requisitos"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+#: model:ir.model.fields,field_description:soy_cybersecurity_mgmt_review.field_management_review__it_security_target_description
+#: model:ir.model.fields,field_description:soy_cybersecurity_mgmt_review.field_management_review__it_legal_requirements_description
+msgid "Interpretation"
+msgstr "Interpretación"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid ""
+"Opportunities to strengthen the effectiveness of the ISMS are identified."
+msgstr "Se identifican oportunidades para fortalecer la eficacia del SGSI."
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "SWOT / context analysis"
+msgstr "FODA / análisis de contexto"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid ""
+"The adequacy of resources to maintain the EMS and improve environmental "
+"performance is evaluated."
+msgstr ""
+"Se evalúa la suficiencia de recursos para mantener el SGA y mejorar el "
+"desempeño ambiental."
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid ""
+"The evolution of risks, residual risks and the implementation status of the "
+"treatment plan are reviewed."
+msgstr ""
+"Se revisa la evolución de los riesgos, los riesgos residuales y el estado de"
+" implementación del plan de tratamiento."
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid "The status of the actions agreed in previous ISMS reviews is reviewed."
+msgstr ""
+"Se revisa el estado de las acciones acordadas en revisiones previas del "
+"SGSI."
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.management_review_form_view_inherit
+msgid ""
+"Trends in nonconformities, monitoring and measurement, audits and the "
+"fulfilment of information security objectives are reviewed."
+msgstr ""
+"Se revisan tendencias de no conformidades, seguimiento y medición, "
+"auditorías y cumplimiento de objetivos de seguridad de la información."
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<br/>\n"
+"                    <span class=\"report-section-title\">\n"
+"                        MANAGEMENT REVIEW RESPONSIBLE PERSONS\n"
+"                    </span>"
+msgstr ""
+"<br/>\n"
+"                    <span class=\"report-section-title\">\n"
+"                        RESPONSABLES DE REVISIÓN POR LA DIRECCIÓN\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        1. INTRODUCTION\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        1. INTRODUCCIÓN\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        2. REVIEW INPUTS\n"
+"                    </span>\n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        A. STATUS OF ACTIONS FROM PREVIOUS MANAGEMENT REVIEWS\t\t\t\t\t\t\t\t\t\t\n"
+"                    </span>\n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        B. CHANGES IN EXTERNAL AND INTERNAL ISSUES\n"
+"                    </span>\n"
+"                     \n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        C. CHANGES IN THE NEEDS AND EXPECTATIONS OF INTERESTED PARTIES\t\t\t\t\t\t\t\t\t\t\n"
+"\n"
+"                    </span>\n"
+"                    \n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        D. INFORMATION ON THE PERFORMANCE AND EFFECTIVENESS OF THE ISMS\n"
+"                    </span>\n"
+"                    <span class=\"report-subsection-title d1\">D.1 Nonconformities and corrective actions</span>\n"
+"                    <span class=\"report-subsection-title d2\">D.2 Monitoring and measurement results\n"
+"</span>\n"
+"                    <span class=\"report-subsection-title d3\">D.3 Audit results</span>\n"
+"                    <span class=\"report-subsection-title d4\">D.4 Information security objectives</span> \n"
+"\n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        E. FEEDBACK FROM INTERESTED PARTIES\n"
+"                    </span>\n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        F. RISK ASSESSMENT RESULTS AND STATUS OF THE RISK TREATMENT PLAN\n"
+"                    </span>\n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        G. OPPORTUNITIES FOR CONTINUAL IMPROVEMENT\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        2. INFORMACIÓN DE ENTRADA PARA LA REVISIÓN\n"
+"                    </span>\n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        A. ESTADO DE LAS ACCIONES DE REVISIONES POR LA DIRECCIÓN PREVIAS\t\t\t\t\t\t\t\t\t\t\n"
+"                    </span>\n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        B. CAMBIOS EN LAS CUESTIONES EXTERNAS E INTERNAS\n"
+"                    </span>\n"
+"                     \n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        C. CAMBIOS EN LAS NECESIDADES Y EXPECTATIVAS DE LAS PARTES INTERESADAS\t\t\t\t\t\t\t\t\t\t\n"
+"\n"
+"                    </span>\n"
+"                    \n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        D. INFORMACIÓN SOBRE EL DESEMPEÑO Y LA EFICACIA DEL SGSI\n"
+"                    </span>\n"
+"                    <span class=\"report-subsection-title d1\">D.1 No conformidades y acciones correctivas</span>\n"
+"                    <span class=\"report-subsection-title d2\">D.2 Resultados de seguimiento y medición\n"
+"</span>\n"
+"                    <span class=\"report-subsection-title d3\">D.3 Resultados de auditorías</span>\n"
+"                    <span class=\"report-subsection-title d4\">D.4 Objetivos de seguridad de la información</span> \n"
+"\n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        E. RETROALIMENTACIÓN DE LAS PARTES INTERESADAS\n"
+"                    </span>\n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        F. RESULTADOS DE LA EVALUACIÓN DE RIESGOS Y ESTADO DEL PLAN DE TRATAMIENTO\n"
+"                    </span>\n"
+"                    <span class=\"report-section-title-light\">\n"
+"                        G. OPORTUNIDADES DE MEJORA CONTINUA\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        A. The status of the actions from previous management reviews\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        A. El estado de las acciones de las revisiones por la dirección previas\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        B. Changes in external and internal issues\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        B. Cambios en las cuestiones externas e internas\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        C. CHANGES IN THE NEEDS AND EXPECTATIONS OF INTERESTED PARTIES\t\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        C. CAMBIOS EN LAS NECESIDADES Y EXPECTATIVAS DE LAS PARTES INTERESADAS\t\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        D. INFORMATION ON THE PERFORMANCE AND EFFECTIVENESS OF THE ISMS\n"
+"                    </span>\n"
+"\n"
+"                    <span class=\"report-section-title\">\n"
+"                        D.1 Nonconformities and corrective actions\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        D. INFORMACIÓN SOBRE EL DESEMPEÑO Y LA EFICACIA DEL SGSI\n"
+"                    </span>\n"
+"\n"
+"                    <span class=\"report-section-title\">\n"
+"                        D.1 No conformidades y acciones correctivas\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        D.2 Monitoring and measurement results\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        D.2 Resultados de seguimiento y medición\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        D.4 Information security objectives\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        D.4 Objetivos de seguridad de la información\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        E. FEEDBACK FROM INTERESTED PARTIES\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        E. RETROALIMENTACIÓN DE LAS PARTES INTERESADAS\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        F. RISK ASSESSMENT RESULTS AND STATUS OF THE RISK TREATMENT PLAN\t\t\t\t\t\t\t\t\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        F. RESULTADOS DE LA EVALUACIÓN DE RIESGOS Y ESTADO DEL PLAN DE TRATAMIENTO\t\t\t\t\t\t\t\t\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                        G. OPPORTUNITIES FOR CONTINUAL IMPROVEMENT\t\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                        G. OPORTUNIDADES DE MEJORA CONTINUA\t\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                       D.3 Audit results\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                       D.3 Resultados de auditorías\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid ""
+"<span class=\"report-section-title\">\n"
+"                      D.6 Risk and opportunity performance\n"
+"                    </span>"
+msgstr ""
+"<span class=\"report-section-title\">\n"
+"                      D.6 Desempeño de riesgos y oportunidades\n"
+"                    </span>"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid "External interested parties"
+msgstr "Interesados externos"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid "Interested party"
+msgstr "Parte interesada"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid "Internal interested parties"
+msgstr "Interesados internos"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid "Rating"
+msgstr "Calificación"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model_terms:ir.ui.view,arch_db:soy_cybersecurity_mgmt_review.mgmtreview_document_template
+msgid "Stakeholder"
+msgstr "Interesado"
+
+#. module: soy_cybersecurity_mgmt_review
+#: model:ir.model.fields,field_description:soy_cybersecurity_mgmt_review.field_management_review__type_review
+msgid "Review type"
+msgstr "Tipo de revisión"

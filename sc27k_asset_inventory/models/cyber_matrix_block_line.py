@@ -173,7 +173,7 @@ class CyberMatrixBlockLine(models.Model):
 
     _sql_constraints = [
         ('sc27k_asset_code_company_uniq', 'unique(sc27k_asset_code, company_id)',
-         _('The asset code already exists for this company.')),
+         'The asset code already exists for this company.'),
     ]
 
     # -------------------------------------------------------------------------

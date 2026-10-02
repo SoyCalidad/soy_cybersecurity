@@ -17,8 +17,8 @@ _logger = logging.getLogger(__name__)
 
 # Porcentajes para las barras de cargas
 AVAILABLE_PRIORITIES = [
-    ('na', _('N/A - No aplica')),
-    ('0_porcent', _('0% - No documentado / No existente')),
+    ('na', _('N/A - Not applicable')),
+    ('0_porcent', _('0% - Not documented / Non-existent')),
     ('25_porcent', _('25% - Applied / Not documented')),
     ('50_porcent', _('50% - Documented / Not applied')),
     ('75_porcent', _('75% - Applied and documented')),
@@ -36,11 +36,11 @@ FIELDS = (
 
 class Requirement(models.Model):
     _name = 'cybersecurity.diagnostic.requirement'
-    _description = "Requirimientos de diagnostico de SGSI"
+    _description = "ISMS Diagnostic Requirements"
 
-    name = fields.Char(string=u'Nombre', required=True)
-    complete_name = fields.Text(string=u'Description', required=True)
-    info = fields.Text(string=u'Interpretation', store=True)
+    name = fields.Char(string='Name', required=True)
+    complete_name = fields.Text(string=u'Description', required=True, translate=True)
+    info = fields.Text(string=u'Interpretation', store=True, translate=True)
     clause_id = fields.Many2one(
         string=u'Clause', comodel_name='cybersecurity.clause', required=True)
     chapter = fields.Selection(
@@ -50,83 +50,83 @@ class Requirement(models.Model):
 
 class DiagnosticLine(models.Model):
     _name = 'cybersecurity.diagnostic.line'
-    _description = 'Quality analysis line'
+    _description = 'Diagnostic line'
 
     requirement_name = fields.Char(related='requirement_id.name')
     # FIX
     diagnostic4_1_id = fields.Many2one(
-        string=u'Diagnostico', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
+        string='Diagnosis', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic4_2_id = fields.Many2one(
-        string=u'Diagnostico', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
+        string='Diagnosis', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic4_3_id = fields.Many2one(
-        string=u'Diagnostico', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
+        string='Diagnosis', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic4_4_id = fields.Many2one(
-        string=u'Diagnostico', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
+        string='Diagnosis', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
 
     diagnostic5_1_id = fields.Many2one(
-        string=u'Diagnostico', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
+        string='Diagnosis', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic5_2_id = fields.Many2one(
-        string=u'Diagnostico', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
+        string='Diagnosis', comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic5_3_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     
     diagnostic6_1_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic6_2_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     
     diagnostic7_1_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic7_2_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic7_3_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic7_4_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic7_5_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     
     diagnostic8_1_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic8_2_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic8_3_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
         
     diagnostic9_1_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic9_2_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic9_3_id = fields.Many2one(
-        string=u'Diagnostico', 
+        string='Diagnosis', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     
     diagnostic10_1_id = fields.Many2one(
-        string=u'Diagnostico 10.1', 
+        string='Diagnosis 10.1', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     diagnostic10_2_id = fields.Many2one(
-        string=u'Diagnostico 10.2', 
+        string='Diagnosis 10.2', 
         comodel_name='cybersecurity.diagnostic', ondelete='cascade')
     
     requirement_id = fields.Many2one(
-        string=u'Requisito',
+        string='Requirement',
         comodel_name='cybersecurity.diagnostic.requirement',)
-    clause_id = fields.Text(string=u'Clausula ID', store=True)
+    clause_id = fields.Text(string='Clause ID', store=True)
     clause = fields.Many2one(
-        string=u'Claúsulas', 
+        string='Clauses', 
         comodel_name='cybersecurity.clause',
         ondelete='cascade')
 
@@ -136,12 +136,12 @@ class DiagnosticLine(models.Model):
 
     qualification = fields.Selection(AVAILABLE_PRIORITIES,
                                      index=True,
-                                     string=u'Calificación',
+                                     string='Rating',
                                      required=True,
                                      default='na',
                                      store=True)
 
-    observation = fields.Text(string=u'Observaciones')
+    observation = fields.Text(string='Observations')
     is_page = fields.Boolean('Is a page?')
     display_type = fields.Selection([
         ('line_section', 'Section'),
@@ -166,28 +166,28 @@ class DiagnosticLine(models.Model):
 
 class Clause(models.Model):
     _name = 'cybersecurity.clause'
-    _description = "Claúsulas"
+    _description = "Clauses"
 
-    question = fields.Text(string=u'Question ref.', required=True)
+    question = fields.Text(string=u'Question ref.', required=True, translate=True)
     name = fields.Char(string=u'Name', required=True)
-    complete_name = fields.Text(string=u'Description', required=True)
+    complete_name = fields.Text(string=u'Description', required=True, translate=True)
     chapter = fields.Selection(
         string=u'Chapter',
         selection=[
-            ('4_context', 'Contexto de la organización'),
-            ('5_leadership', 'Liderazgo'),
-            ('6_planning', 'Planificación'),
-            ('7_support', 'Apoyo'),
-            ('8_operation', 'Operación'),
-            ('9_evaluation', 'Evaluación del desempeño'),
-            ('10_improvement', 'Mejora')],
+            ('4_context', 'Context of the organization'),
+            ('5_leadership', 'Leadership'),
+            ('6_planning', 'Planning'),
+            ('7_support', 'Support'),
+            ('8_operation', 'Operation'),
+            ('9_evaluation', 'Performance evaluation'),
+            ('10_improvement', 'Improvement')],
         required=True,
     )
 
 
 class Diagnostic(models.Model):
     _name = 'cybersecurity.diagnostic'
-    _description = "Diagnosis SI"
+    _description = "Information Security Diagnosis"
 
     name = fields.Char(
         string=u'Name', 
@@ -214,60 +214,60 @@ class Diagnostic(models.Model):
         string=u'Evaluation date', related='xls_helper.date_validate')
 
     all_clause = fields.Many2many(
-        comodel_name='cybersecurity.clause', string=u'Clausulas')
+        comodel_name='cybersecurity.clause', string='Clauses')
 
 
     diagnostic4_1_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic4_1_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic4_1_id',)
     diagnostic4_2_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic4_2_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic4_2_id',)
     diagnostic4_3_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic4_3_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic4_3_id',)
     diagnostic4_4_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic4_4_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic4_4_id',)
 
     diagnostic5_1_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic5_1_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic5_1_id',)
     diagnostic5_2_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic5_2_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic5_2_id',)
     diagnostic5_3_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic5_3_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic5_3_id',)
 
     diagnostic6_1_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic6_1_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic6_1_id',)
     diagnostic6_2_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic6_2_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic6_2_id',)
 
     diagnostic7_1_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic7_1_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic7_1_id',)
     diagnostic7_2_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic7_2_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic7_2_id',)
     diagnostic7_3_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic7_3_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic7_3_id',)
     diagnostic7_4_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic7_4_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic7_4_id',)
     diagnostic7_5_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic7_5_id',)
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic7_5_id',)
 
     diagnostic8_1_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic8_1_id', )
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic8_1_id', )
     diagnostic8_2_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic8_2_id', )
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic8_2_id', )
     diagnostic8_3_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic8_3_id', )
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic8_3_id', )
 
     diagnostic9_1_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic9_1_id', )
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic9_1_id', )
     diagnostic9_2_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic9_2_id', )
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic9_2_id', )
     diagnostic9_3_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic9_3_id', )
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic9_3_id', )
     
 
     diagnostic10_1_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic10_1_id', )
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic10_1_id', )
     diagnostic10_2_ids = fields.One2many(
-        string=u'Lineas', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic10_2_id', )
+        string='Lines', comodel_name='cybersecurity.diagnostic.line', inverse_name='diagnostic10_2_id', )
 
     state = fields.Selection(
         string=u'State',
@@ -278,96 +278,96 @@ class Diagnostic(models.Model):
     )
 
     diagnostic4_ids_100 = fields.Integer(
-        string=u'Total Contexto 100%', compute='_get_diagnostic', store=True)
+        string='Total Context 100%', compute='_get_diagnostic', store=True)
     diagnostic4_ids_75 = fields.Integer(
-        string=u'Total Contexto 75%', compute='_get_diagnostic', store=True)
+        string='Total Context 75%', compute='_get_diagnostic', store=True)
     diagnostic4_ids_50 = fields.Integer(
-        string=u'Total Contexto 50%', compute='_get_diagnostic', store=True)
+        string='Total Context 50%', compute='_get_diagnostic', store=True)
     diagnostic4_ids_25 = fields.Integer(
-        string=u'Total Contexto 25%', compute='_get_diagnostic', store=True)
+        string='Total Context 25%', compute='_get_diagnostic', store=True)
     diagnostic4_ids_0 = fields.Integer(
-        string=u'Total Contexto 0%', compute='_get_diagnostic', store=True)
+        string='Total Context 0%', compute='_get_diagnostic', store=True)
 
     diagnostic5_ids_100 = fields.Integer(
-        string=u'Total Liderazgo 100%', compute='_get_diagnostic', store=True)
+        string='Total Leadership 100%', compute='_get_diagnostic', store=True)
     diagnostic5_ids_75 = fields.Integer(
-        string=u'Total Liderazgo 75%', compute='_get_diagnostic', store=True)
+        string='Total Leadership 75%', compute='_get_diagnostic', store=True)
     diagnostic5_ids_50 = fields.Integer(
-        string=u'Total Liderazgo 50%', compute='_get_diagnostic', store=True)
+        string='Total Leadership 50%', compute='_get_diagnostic', store=True)
     diagnostic5_ids_25 = fields.Integer(
-        string=u'Total Liderazgo 25%', compute='_get_diagnostic', store=True)
+        string='Total Leadership 25%', compute='_get_diagnostic', store=True)
     diagnostic5_ids_0 = fields.Integer(
-        string=u'Total Liderazgo 0%', compute='_get_diagnostic', store=True)
+        string='Total Leadership 0%', compute='_get_diagnostic', store=True)
 
     diagnostic6_ids_100 = fields.Integer(
-        string=u'Total Planificacion 100%', compute='_get_diagnostic', store=True)
+        string='Total Planning 100%', compute='_get_diagnostic', store=True)
     diagnostic6_ids_75 = fields.Integer(
-        string=u'Total Planificacion 75%', compute='_get_diagnostic', store=True)
+        string='Total Planning 75%', compute='_get_diagnostic', store=True)
     diagnostic6_ids_50 = fields.Integer(
-        string=u'Total Planificacion 50%', compute='_get_diagnostic', store=True)
+        string='Total Planning 50%', compute='_get_diagnostic', store=True)
     diagnostic6_ids_25 = fields.Integer(
-        string=u'Total Planificacion 25%', compute='_get_diagnostic', store=True)
+        string='Total Planning 25%', compute='_get_diagnostic', store=True)
     diagnostic6_ids_0 = fields.Integer(
-        string=u'Total Planificacion 0%', compute='_get_diagnostic', store=True)
+        string='Total Planning 0%', compute='_get_diagnostic', store=True)
 
     diagnostic7_ids_100 = fields.Integer(
-        string=u'Total Apoyo 100%', compute='_get_diagnostic', store=True)
+        string='Total Support 100%', compute='_get_diagnostic', store=True)
     diagnostic7_ids_75 = fields.Integer(
-        string=u'Total Apoyo 75%', compute='_get_diagnostic', store=True)
+        string='Total Support 75%', compute='_get_diagnostic', store=True)
     diagnostic7_ids_50 = fields.Integer(
-        string=u'Total Apoyo 50%', compute='_get_diagnostic', store=True)
+        string='Total Support 50%', compute='_get_diagnostic', store=True)
     diagnostic7_ids_25 = fields.Integer(
-        string=u'Total Apoyo 25%', compute='_get_diagnostic', store=True)
+        string='Total Support 25%', compute='_get_diagnostic', store=True)
     diagnostic7_ids_0 = fields.Integer(
-        string=u'Total Apoyo 0%', compute='_get_diagnostic', store=True)
+        string='Total Support 0%', compute='_get_diagnostic', store=True)
 
     diagnostic8_ids_100 = fields.Integer(
-        string=u'Total Operación 100%', compute='_get_diagnostic', store=True)
+        string='Total Operation 100%', compute='_get_diagnostic', store=True)
     diagnostic8_ids_75 = fields.Integer(
-        string=u'Total Operación 75%', compute='_get_diagnostic', store=True)
+        string='Total Operation 75%', compute='_get_diagnostic', store=True)
     diagnostic8_ids_50 = fields.Integer(
-        string=u'Total Operación 50%', compute='_get_diagnostic', store=True)
+        string='Total Operation 50%', compute='_get_diagnostic', store=True)
     diagnostic8_ids_25 = fields.Integer(
-        string=u'Total Operación 25%', compute='_get_diagnostic', store=True)
+        string='Total Operation 25%', compute='_get_diagnostic', store=True)
     diagnostic8_ids_0 = fields.Integer(
-        string=u'Total Operación 0%', compute='_get_diagnostic', store=True)
+        string='Total Operation 0%', compute='_get_diagnostic', store=True)
 
     diagnostic9_ids_100 = fields.Integer(
-        string=u'Total Desempeño 100%', compute='_get_diagnostic', store=True)
+        string='Total Performance 100%', compute='_get_diagnostic', store=True)
     diagnostic9_ids_75 = fields.Integer(
-        string=u'Total Desempeño 75%', compute='_get_diagnostic', store=True)
+        string='Total Performance 75%', compute='_get_diagnostic', store=True)
     diagnostic9_ids_50 = fields.Integer(
-        string=u'Total Desempeño 50%', compute='_get_diagnostic', store=True)
+        string='Total Performance 50%', compute='_get_diagnostic', store=True)
     diagnostic9_ids_25 = fields.Integer(
-        string=u'Total Desempeño 25%', compute='_get_diagnostic', store=True)
+        string='Total Performance 25%', compute='_get_diagnostic', store=True)
     diagnostic9_ids_0 = fields.Integer(
-        string=u'Total Desempeño 0%', compute='_get_diagnostic', store=True)
+        string='Total Performance 0%', compute='_get_diagnostic', store=True)
 
     diagnostic10_ids_100 = fields.Integer(
-        string=u'Total Mejora 100%', compute='_get_diagnostic', store=True)
+        string='Total Improvement 100%', compute='_get_diagnostic', store=True)
     diagnostic10_ids_75 = fields.Integer(
-        string=u'Total Mejora 75%', compute='_get_diagnostic', store=True)
+        string='Total Improvement 75%', compute='_get_diagnostic', store=True)
     diagnostic10_ids_50 = fields.Integer(
-        string=u'Total Mejora 50%', compute='_get_diagnostic', store=True)
+        string='Total Improvement 50%', compute='_get_diagnostic', store=True)
     diagnostic10_ids_25 = fields.Integer(
-        string=u'Total Mejora 25%', compute='_get_diagnostic', store=True)
+        string='Total Improvement 25%', compute='_get_diagnostic', store=True)
     diagnostic10_ids_0 = fields.Integer(
-        string=u'Total Mejora 0%', compute='_get_diagnostic', store=True)
+        string='Total Improvement 0%', compute='_get_diagnostic', store=True)
 
     diagnostic4_ids_total = fields.Integer(
-        string=u'Total Punto 4', compute='_get_diagnostic', store=True)
+        string='Total Clause 4', compute='_get_diagnostic', store=True)
     diagnostic5_ids_total = fields.Integer(
-        string=u'Total Punto 5', compute='_get_diagnostic', store=True)
+        string='Total Clause 5', compute='_get_diagnostic', store=True)
     diagnostic6_ids_total = fields.Integer(
-        string=u'Total Punto 6', compute='_get_diagnostic', store=True)
+        string='Total Clause 6', compute='_get_diagnostic', store=True)
     diagnostic7_ids_total = fields.Integer(
-        string=u'Total Punto 7', compute='_get_diagnostic', store=True)
+        string='Total Clause 7', compute='_get_diagnostic', store=True)
     diagnostic8_ids_total = fields.Integer(
-        string=u'Total Punto 8', compute='_get_diagnostic', store=True)
+        string='Total Clause 8', compute='_get_diagnostic', store=True)
     diagnostic9_ids_total = fields.Integer(
-        string=u'Total Punto 9', compute='_get_diagnostic', store=True)
+        string='Total Clause 9', compute='_get_diagnostic', store=True)
     diagnostic10_ids_total = fields.Integer(
-        string=u'Total Punto 10', compute='_get_diagnostic', store=True)
+        string='Total Clause 10', compute='_get_diagnostic', store=True)
 
     def get_diagnostic_values(self, diagnostic_list):
         total_100 = total_75 = total_50 = total_25 = total_0 = total_na = 0
@@ -435,7 +435,7 @@ class Diagnostic(models.Model):
                 record.update(updates)
 
         except Exception as e:
-            raise UserError(f"Ocurrió un error al calcular los diagnósticos: {str(e)}")
+            raise UserError(_("An error occurred while calculating the diagnostics: %s", str(e)))
 
 
     def _default_diagnostic_line_ids(self, vchapter):
@@ -684,7 +684,7 @@ class Diagnostic(models.Model):
         Cambia el estado de draft a evalate,  cuando son seleccionadas las clausulas
         """
         if not self.all_clause:
-            raise UserError("Debe seleccionar al menos una registro en ANALISIS PREVIO, antes de proceder con el análisis.")
+            raise UserError(_('You must select at least one record in PRELIMINARY ANALYSIS before proceeding with the analysis.'))
         
 
 
@@ -695,8 +695,8 @@ class Diagnostic(models.Model):
         if (len(ids_clause_list_all)):
             ids_clause_list = []
 
-            print("LISTA DE Existentes ", clausulas_analis_prev)
-            print("LISTA DE ALL PREVIO ", clausulas_analis_prev)
+            print("LIST OF Existing ", clausulas_analis_prev)
+            print("LIST OF ALL PREVIOUS ", clausulas_analis_prev)
 
             # TODO: CUANDO SE ELIMINA AUN NO FUNCIONA; FALTA QUE SEPA CUAND
             # SE ESTA ELIMINANDO el registro

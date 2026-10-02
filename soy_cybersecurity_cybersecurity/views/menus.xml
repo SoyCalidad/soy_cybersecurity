@@ -47,7 +47,7 @@
     
         <menuitem
                 id="menu_controls_checklist"
-                name="Lista de verificación"
+                name="Checklist"
                 parent="menu_controls"
                 sequence="15"
                 action="cyber_2matrix_checklist_action"
@@ -71,7 +71,7 @@
         />
     
         <menuitem
-                name="Controles de Lista de verificación"
+                name="Checklist Controls"
                 id="mitem_cyber_2matrix_checklist_control"
                 parent="menu_configuration"
                 sequence="20"
@@ -95,7 +95,7 @@
 
     <!-- Menus -->
     <!-- <menuitem
-                name="Recursos"
+                name="Resources"
                 id="mitem_cyber_matrix_block_line_resource"
                 parent="menu_configuration"
                 sequence="11"
@@ -103,7 +103,7 @@
     groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
     
         <menuitem
-                name="Ubicaciones"
+                name="Locations"
                 id="mitem_cyber_matrix_block_line_location"
                 parent="menu_configuration"
                 sequence="12"
@@ -111,7 +111,7 @@
     groups="base.group_no_one,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread,soy_cybersecurity_cybersecurity.group_cybersecurity_onlyread_printreport,soy_cybersecurity_cybersecurity.group_cybersecurity_user_secundario,soy_cybersecurity_cybersecurity.group_cybersecurity_write_printreport"/>
     
         <menuitem
-                name="Idiomas"
+                name="Languages"
                 id="mitem_cyber_matrix_block_line_language"
                 parent="menu_configuration"
                 sequence="13"
@@ -222,7 +222,7 @@
 
         <menuitem id="employee_job_menu"
             name="Job Positions"
-            action="hr.action_hr_job"
+            action="hr_job_functions.action_hr_job"
             sequence="20" />
         <menuitem id="hr_org_chart_menu"
             name="Organizational Chart"

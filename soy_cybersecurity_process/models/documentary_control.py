@@ -4,12 +4,12 @@ from odoo.exceptions import UserError
 
 class DocumentaryControlClazz(models.Model):
     _name = 'documentary.control.clazz'
-    _description = 'Clase de Lista maestra'
+    _description = 'Master list class'
 
-    name = fields.Char('Nombre')
+    name = fields.Char('Name')
 
 
 class DocumentaryControl(models.Model):
     _inherit = 'documentary.control'
 
-    clazz_id = fields.Many2one('documentary.control.clazz', string='Clase', ondelete='set null')
+    clazz_id = fields.Many2one('documentary.control.clazz', string='Class', ondelete='set null')

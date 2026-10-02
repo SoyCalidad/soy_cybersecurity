@@ -1,8 +1,8 @@
 {
-    'name': 'Adecución del módulo de contexto para el sistema ISO 27001',
+    'name': 'Adaptation of the context module for the ISO 27001 system',
     'version': '1.0',
-    'description': 'Adecución del módulo de contexto para el sistema ISO 27001',
-    'summary': 'Adecución del módulo de contexto para el sistema ISO 27001',
+    'description': 'Adaptation of the context module for the ISO 27001 system',
+    'summary': 'Adaptation of the context module for the ISO 27001 system',
     'author': 'Soy Calidad',
     'website': 'www.soycalidad.com',
     'license': 'Other proprietary',

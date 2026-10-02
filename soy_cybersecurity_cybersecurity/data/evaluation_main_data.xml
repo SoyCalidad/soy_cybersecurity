@@ -2,12 +2,12 @@
 <odoo>
 
     <record id="matrix_block_line_system_1" model="cyber_matrix.block.line.system">
-        <field name="name">Calidad</field>
+        <field name="name">Quality</field>
     </record>
 
      <!--Evaluaciones-->
         <record model="cyber_evaluation.evaluation" id="cyber_evaluation_1">
-            <field name="name">Evaluación de activos de información</field>
+            <field name="name">Information asset evaluation</field>
             <!--<field name="type">risk</field>-->
         </record>
         
@@ -20,18 +20,18 @@
 
         <!--Criterios: cyber_evaluation_1-->
         <record model="cyber_evaluation.criterio" id="criterio_1">
-            <field name="name">Confidencialidad</field>
-            <field name="description">La confidencialidad se refiere a la protección de la información de forma que solo las personas autorizadas puedan acceder a ella. Esto incluye la protección contra el acceso, la divulgación, la copia o la modificación no autorizados.</field>
+            <field name="name">Confidentiality</field>
+            <field name="description">Confidentiality refers to protecting information so that only authorized persons can access it. This includes protection against unauthorized access, disclosure, copying or modification.</field>
             <field name="evaluation_id" ref="cyber_evaluation_1"/>
         </record>
         <record model="cyber_evaluation.criterio" id="criterio_2">
-            <field name="name">Integridad</field>
-            <field name="description">La integridad se refiere a la protección de la información de forma que no se modifique, destruya o corrompa sin autorización. Esto incluye la protección contra el acceso no autorizado, la modificación, la destrucción o la corrupción.</field>
+            <field name="name">Integrity</field>
+            <field name="description">Integrity refers to protecting information so that it is not modified, destroyed or corrupted without authorization. This includes protection against unauthorized access, modification, destruction or corruption.</field>
             <field name="evaluation_id" ref="cyber_evaluation_1"/>
         </record>
         <record model="cyber_evaluation.criterio" id="criterio_3">
-            <field name="name">Disponibilidad</field>
-            <field name="description">La disponibilidad se refiere a la protección de la información de forma que esté disponible cuando se necesite. Esto incluye la protección contra la pérdida, el daño o la interrupción del acceso.</field>
+            <field name="name">Availability</field>
+            <field name="description">Availability refers to protecting information so that it is available when needed. This includes protection against loss, damage or interruption of access.</field>
             <field name="evaluation_id" ref="cyber_evaluation_1"/>
         </record>
         <!--Criterio: cyber_evaluation_2-->
@@ -45,30 +45,30 @@
 
         <!--lineas de Confidencialidad-->
         <record model="cyber_evaluation.criterio.line" id="criterio_line_1_1">
-            <field name="name">No Clasificada</field>
+            <field name="name">Unclassified</field>
             <field name="criterio_id" ref="criterio_1"/>
-            <field name="description">Información sin restricciones especiales, pero no necesariamente destinada al público general.</field>
+            <field name="description">Information without special restrictions, but not necessarily intended for the general public.</field>
             <field name="value_less">8</field>
             <field name="value_high">10</field>
         </record>
         <record model="cyber_evaluation.criterio.line" id="criterio_line_1_2">
-            <field name="name">Pública</field>
+            <field name="name">Public</field>
             <field name="criterio_id" ref="criterio_1"/>
-            <field name="description">Información accesible para todos sin restricciones.</field>
+            <field name="description">Information accessible to everyone without restrictions.</field>
             <field name="value_less">1</field>
             <field name="value_high">3</field>
         </record>
         <record model="cyber_evaluation.criterio.line" id="criterio_line_1_3">
-            <field name="name">Confidencial</field>
+            <field name="name">Confidential</field>
             <field name="criterio_id" ref="criterio_1"/>
-            <field name="description">Información sensible que podría causar daños moderados si se divulga.</field>
+            <field name="description">Sensitive information that could cause moderate damage if disclosed.</field>
             <field name="value_less">4</field>
             <field name="value_high">7</field>
         </record>
         <record model="cyber_evaluation.criterio.line" id="criterio_line_1_4">
-            <field name="name">Altamente confidencial</field>
+            <field name="name">Highly confidential</field>
             <field name="criterio_id" ref="criterio_1"/>
-            <field name="description">Información crítica cuya divulgación podría causar daños graves.</field>
+            <field name="description">Critical information whose disclosure could cause serious damage.</field>
             <field name="value_less">8</field>
             <field name="value_high">10</field>
         </record>
@@ -115,46 +115,46 @@
         <!--lineas de Integridad-->
 
         <record model="cyber_evaluation.criterio.line" id="criterio_line_2_1">
-            <field name="name">Baja</field>
+            <field name="name">Low</field>
             <field name="criterio_id" ref="criterio_2"/>
-            <field name="description">Información importante, pero la exactitud puede tolerar ligeras modificaciones sin graves consecuencias.</field>
+            <field name="description">Important information, but its accuracy can tolerate slight modifications without serious consequences.</field>
             <field name="value_less">1</field>
             <field name="value_high">3</field>
         </record>
         <record model="cyber_evaluation.criterio.line" id="criterio_line_2_2">
-            <field name="name">Moderada</field>
+            <field name="name">Moderate</field>
             <field name="criterio_id" ref="criterio_2"/>
-            <field name="description">Información muy importante donde la precisión es necesaria, pero pequeñas alteraciones no causan graves daños.</field>
+            <field name="description">Very important information where accuracy is necessary, but small alterations do not cause serious damage.</field>
             <field name="value_less">4</field>
             <field name="value_high">7</field>
         </record>
         <record model="cyber_evaluation.criterio.line" id="criterio_line_2_3">
-            <field name="name">Alta</field>
+            <field name="name">High</field>
             <field name="criterio_id" ref="criterio_2"/>
-            <field name="description">Información crítica que debe mantenerse exacta y sin alteraciones.</field>
+            <field name="description">Critical information that must be kept accurate and unaltered.</field>
             <field name="value_less">8</field>
             <field name="value_high">10</field>
         </record>
 
         <!--lineas de Disponibilidad-->
         <record model="cyber_evaluation.criterio.line" id="criterio_line_3_1">
-            <field name="name">Baja</field>
+            <field name="name">Low</field>
             <field name="criterio_id" ref="criterio_3"/>
-            <field name="description">La accesibilidad es importante, pero puede tolerar interrupciones ocasionales sin graves consecuencias.</field>
+            <field name="description">Accessibility is important, but occasional interruptions can be tolerated without serious consequences.</field>
             <field name="value_less">1</field>
             <field name="value_high">3</field>
         </record>        
         <record model="cyber_evaluation.criterio.line" id="criterio_line_3_2">
-            <field name="name">Media</field>
+            <field name="name">Medium</field>
             <field name="criterio_id" ref="criterio_3"/>
-            <field name="description">Debe estar accesible en la mayoría de los casos, pero puede tolerar breves periodos de inaccesibilidad.</field>
+            <field name="description">It must be accessible in most cases, but brief periods of inaccessibility can be tolerated.</field>
             <field name="value_less">4</field>
             <field name="value_high">7</field>
         </record>
         <record model="cyber_evaluation.criterio.line" id="criterio_line_3_3">
-            <field name="name">Alta</field>
+            <field name="name">High</field>
             <field name="criterio_id" ref="criterio_3"/>
-            <field name="description">Debe estar siempre accesible, su falta puede causar daños graves.</field>
+            <field name="description">It must always be accessible; its unavailability can cause serious damage.</field>
             <field name="value_less">8</field>
             <field name="value_high">10</field>
         </record>

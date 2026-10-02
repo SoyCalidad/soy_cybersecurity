@@ -6,13 +6,13 @@
                 <div class="report-page">
 
                     <span class="report-section-title">
-                        1. INTRODUCCIÓN
+                        1. INTRODUCTION
                     </span>
 
                     <span t-field="o.introduction" />
                     <br />
                     <span class="report-section-title">
-                        RESPONSABLES DE REVISIÓN POR LA DIRECCIÓN
+                        MANAGEMENT REVIEW RESPONSIBLE PERSONS
                     </span>
                     <t t-if="o.team_id">
                         <t t-foreach="o.team_id.member_ids" t-as="e">
@@ -32,37 +32,37 @@
                      ===================================================== -->
                 <div class="report-page report-page-break contents">
                     <span class="report-section-title">
-                        2. INFORMACIÓN DE ENTRADA PARA LA REVISIÓN
+                        2. REVIEW INPUTS
                     </span>
                     <span class="report-section-title-light">
-                        A. ESTADO DE LAS ACCIONES DE REVISIONES POR LA DIRECCIÓN PREVIAS										
+                        A. STATUS OF ACTIONS FROM PREVIOUS MANAGEMENT REVIEWS										
                     </span>
                     <span class="report-section-title-light">
-                        B. CAMBIOS EN LAS CUESTIONES EXTERNAS E INTERNAS
+                        B. CHANGES IN EXTERNAL AND INTERNAL ISSUES
                     </span>
                      
                     <span class="report-section-title-light">
-                        C. CAMBIOS EN LAS NECESIDADES Y EXPECTATIVAS DE LAS PARTES INTERESADAS										
+                        C. CHANGES IN THE NEEDS AND EXPECTATIONS OF INTERESTED PARTIES										
 
                     </span>
                     
                     <span class="report-section-title-light">
-                        D. INFORMACIÓN SOBRE EL DESEMPEÑO Y LA EFICACIA DEL SGSI
+                        D. INFORMATION ON THE PERFORMANCE AND EFFECTIVENESS OF THE ISMS
                     </span>
-                    <span class="report-subsection-title d1">D.1 No conformidades y acciones correctivas</span>
-                    <span class="report-subsection-title d2">D.2 Resultados de seguimiento y medición
+                    <span class="report-subsection-title d1">D.1 Nonconformities and corrective actions</span>
+                    <span class="report-subsection-title d2">D.2 Monitoring and measurement results
 </span>
-                    <span class="report-subsection-title d3">D.3 Resultados de auditorías</span>
-                    <span class="report-subsection-title d4">D.4 Objetivos de seguridad de la información</span> 
+                    <span class="report-subsection-title d3">D.3 Audit results</span>
+                    <span class="report-subsection-title d4">D.4 Information security objectives</span> 
 
                     <span class="report-section-title-light">
-                        E. RETROALIMENTACIÓN DE LAS PARTES INTERESADAS
+                        E. FEEDBACK FROM INTERESTED PARTIES
                     </span>
                     <span class="report-section-title-light">
-                        F. RESULTADOS DE LA EVALUACIÓN DE RIESGOS Y ESTADO DEL PLAN DE TRATAMIENTO
+                        F. RISK ASSESSMENT RESULTS AND STATUS OF THE RISK TREATMENT PLAN
                     </span>
                     <span class="report-section-title-light">
-                        G. OPORTUNIDADES DE MEJORA CONTINUA
+                        G. OPPORTUNITIES FOR CONTINUAL IMPROVEMENT
                     </span>
 
                 </div>
@@ -73,7 +73,7 @@
                      ===================================================== -->
                 <div class="report-page">
                     <span class="report-section-title">
-                        A. El estado de las acciones de las revisiones por la dirección previas
+                        A. The status of the actions from previous management reviews
                     </span>
                     <t t-raw="o.record_meeting_actions" />
                 </div>
@@ -84,7 +84,7 @@
                      ===================================================== -->
                 <div class="report-page">
                     <span class="report-section-title">
-                        B. Cambios en las cuestiones externas e internas
+                        B. Changes in external and internal issues
                     </span>
                     <t t-raw="o.foda" />
                     <span t-field="o.foda_description" />
@@ -94,19 +94,19 @@
 
                 <div id="section_c" class="report-page">
                     <span class="report-section-title">
-                        C. CAMBIOS EN LAS NECESIDADES Y EXPECTATIVAS DE LAS PARTES INTERESADAS	
+                        C. CHANGES IN THE NEEDS AND EXPECTATIONS OF INTERESTED PARTIES	
                     </span> 
 
-                    <h5>Interesados internos</h5>
+                    <h5>Internal interested parties</h5>
 
                     <table t-if="o.stakeholders_id"
                         class="table table-bordered">
 
                         <thead>
                             <tr>
-                                <th>Parte interesada</th>
-                                <th>Interesado</th>
-                                <th>Calificación</th>
+                                <th>Interested party</th>
+                                <th>Stakeholder</th>
+                                <th>Rating</th>
                             </tr>
                         </thead>
 
@@ -133,15 +133,15 @@
 
                     </table>
 
-                    <h5>Interesados externos</h5>
+                    <h5>External interested parties</h5>
                     <table t-if="o.stakeholders_id"
                         class="table table-bordered">
 
                         <thead>
                             <tr>
-                                <th>Parte interesada</th>
-                                <th>Interesado</th>
-                                <th>Calificación</th>
+                                <th>Interested party</th>
+                                <th>Stakeholder</th>
+                                <th>Rating</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -175,11 +175,11 @@
 
                 <div id="section_d" class="report-page">
                     <span class="report-section-title">
-                        D. INFORMACIÓN SOBRE EL DESEMPEÑO Y LA EFICACIA DEL SGSI
+                        D. INFORMATION ON THE PERFORMANCE AND EFFECTIVENESS OF THE ISMS
                     </span>
 
                     <span class="report-section-title">
-                        D.1 No conformidades y acciones correctivas
+                        D.1 Nonconformities and corrective actions
                     </span>
 
                     <t t-raw="o.nonconformity_action" />
@@ -190,7 +190,7 @@
                     </div>
 
                     <span class="report-section-title">
-                        D.2 Resultados de seguimiento y medición
+                        D.2 Monitoring and measurement results
                     </span>
 
                      <t t-raw="o.target" />
@@ -199,20 +199,20 @@
 
 
                     <span class="report-section-title">
-                       D.3 Resultados de auditorías
+                       D.3 Audit results
                     </span>
                     <t t-raw="o.audit" />
                     <span t-field="o.audit_description" />
 
                     <span class="report-section-title">
-                        D.4 Objetivos de seguridad de la información
+                        D.4 Information security objectives
                     </span>
                     <t t-raw="o.measurement_html" />
                     <span t-field="o.measurement_description" />
 
 
                     <span class="report-section-title">
-                      D.6 Desempeño de riesgos y oportunidades
+                      D.6 Risk and opportunity performance
                     </span>
                     <t t-raw="o.risk" />
                     <t t-raw="o.risk_description" />
@@ -220,7 +220,7 @@
 
                 <div class="report-page" id="item_e">
                     <span class="report-section-title">
-                        E. RETROALIMENTACIÓN DE LAS PARTES INTERESADAS
+                        E. FEEDBACK FROM INTERESTED PARTIES
                     </span>
 
                     <t t-raw="o.communication_plan_html" />
@@ -230,7 +230,7 @@
                 </div>
                 <div class="report-page" id="item_f">
                     <span class="report-section-title">
-                        F. RESULTADOS DE LA EVALUACIÓN DE RIESGOS Y ESTADO DEL PLAN DE TRATAMIENTO								
+                        F. RISK ASSESSMENT RESULTS AND STATUS OF THE RISK TREATMENT PLAN								
                     </span>
 
                     <t t-raw="o.sc27k_soa_matrix_html" />
@@ -239,7 +239,7 @@
                 </div>
                 <div class="report-page" id="item_g">
                     <span class="report-section-title">
-                        G. OPORTUNIDADES DE MEJORA CONTINUA	
+                        G. OPPORTUNITIES FOR CONTINUAL IMPROVEMENT	
                     </span>
 
                     <t t-raw="o.improve_action" />

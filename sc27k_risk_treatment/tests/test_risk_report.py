@@ -37,9 +37,9 @@ class TestRiskReport(TestRiskTreatmentBase):
         self.assertTrue(xlsx_bytes)
 
         strings = self._shared_strings(xlsx_bytes)
-        self.assertIn('MATRIZ DE RIESGOS DE SEGURIDAD DE LA INFORMACIÓN', strings)
-        self.assertIn('Nivel de riesgo inicial', strings)
-        self.assertIn('Nivel de riesgo residual', strings)
+        self.assertIn('Information Security Risk Matrix', strings)
+        self.assertIn('Initial risk level', strings)
+        self.assertIn('Residual risk level', strings)
         self.assertIn(self.risk.name, strings)
         self.assertIn(self.risk.sc27k_threat, strings)
         self.assertIn(self.asset.name, strings)

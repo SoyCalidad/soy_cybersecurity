@@ -39,8 +39,8 @@ class TestRiskTreatmentBase(BaseCommon):
             'type': 'risk',
             'system_id': cls.security_system.id,
             'sc27k_asset_id': cls.asset.id,
-            'sc27k_threat': 'Ransomware / phishing / robo de credenciales',
-            'sc27k_threat_agent': 'Ciberdelincuente / usuario interno',
+            'sc27k_threat': 'Ransomware / phishing / credential theft',
+            'sc27k_threat_agent': 'Cybercriminal / internal user',
         })
 
         cls.risk_other_identifier = cls.line_obj.create({
